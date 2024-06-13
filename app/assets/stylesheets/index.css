@@ -1,0 +1,13 @@
+/* app/assets/stylesheets/index.css */
+
+html {
+    text-align: center;
+}
+h1 {
+    color: black;
+}
+
+p {
+    font-size: 16px;
+    color: gray;
+}
