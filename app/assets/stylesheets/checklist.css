@@ -20,7 +20,7 @@ body {
     position: relative;
 }
 
-.topSection{
+.topSection {
     padding-bottom: 15px;
 }
 
@@ -43,19 +43,53 @@ h1 {
     border-bottom: none;
 }
 
-input[type="checkbox"] {
-    display: none;
-}
-
 label {
-    flex-grow: 1;
-    text-align: left;
+    display: flex;
+    align-items: center;
     cursor: pointer;
     color: #555;
     position: relative;
-    padding-left: 35px; /* Space for the custom checkbox */
     font-size: 16px;
     line-height: 24px;
+    flex-grow: 1;
+}
+
+.sample-image {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    cursor: pointer;
+    transition: transform 0.1s;
+    position: relative;
+}
+
+.sample-image:hover {
+    transform: scale(1.5);
+}
+
+.sample-image::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.1s;
+    z-index: 10;
+}
+
+.sample-image:hover::after {
+    opacity: 1;
+}
+
+input[type="checkbox"] {
+    display: none;
 }
 
 label:before {
@@ -66,7 +100,7 @@ label:before {
     border: 2px solid #ff3333;
     border-radius: 4px;
     position: absolute;
-    left: 0;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     background-color: #fff;
@@ -75,20 +109,6 @@ label:before {
 
 input[type="checkbox"]:checked + label:before {
     background-color: #ff3333;
-    border-color: #ff3333;
-}
-
-input[type="checkbox"]:checked + label:after {
-    content: "";
-    display: block;
-    width: 6px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
 }
 
 button {
@@ -100,20 +120,26 @@ button {
     font-size: 16px;
     transition: background-color 0.3s ease;
     margin-top: 20px;
+    font-weight: bold;
 }
 
 #nextButton {
     background-color: #ff3333;
+    border: 2px solid #ff3333;
     width: 100%;
 }
 
 #nextButton:disabled {
     background-color: grey;
+    border: 2px solid grey;
     cursor: not-allowed;
 }
 
-#nextButton:hover {
-    background-color: #b71c1c;
+#nextButton:hover:not(:disabled) {
+    background-color: white;
+    color: #ff3333;
+    border: 2px solid #ff3333;
+    font-weight: bolder;
 }
 
 #backButton {
@@ -136,4 +162,36 @@ button {
 
 button:focus {
     outline: none;
+}
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #ff3333;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    position: absolute;
+    z-index: 1;
+    top: 105%; /* Position the tooltip below the tooltip container */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
 }
