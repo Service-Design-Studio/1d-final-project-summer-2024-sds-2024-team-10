@@ -1,2 +1,35 @@
-<h1>Feature 1</h1>
-<p>This is the page for feature 1, testing.</p>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feature1</title>
+    <%= stylesheet_link_tag 'feature1', media: 'all' %>
+    <%= javascript_include_tag 'controllers/feature1' %>
+</head>
+<body>
+    <div class="container">
+        <h1>Prepare</h1>
+        <form id="checklistForm">
+            <div class="item">
+                <input type="checkbox" id="passport" name="passport">
+                <label for="passport">Passport</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="employment" name="employment">
+                <label for="employment">Proof of Employment</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="address" name="address">
+                <label for="address">Proof of Residential Address</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="tax" name="tax">
+                <label for="tax">Proof of Tax Residency</label>
+            </div>
+            <div class="item">
+                <input type="checkbox" id="mobile" name="mobile">
+                <label for="mobile">Proof of Mobile Ownership</label>
+            </div>
+            <button type="submit" id="nextButton">Next</button>
+        </form>
+    </div>
+</body>
