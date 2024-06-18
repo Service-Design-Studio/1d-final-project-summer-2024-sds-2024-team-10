@@ -7,61 +7,59 @@
 </head>
 <body>
     <div class="container">
-        <button type="button" id="backButton"><</button>
+        <%= link_to '<', root_path, class: 'button', id: 'backButton' %>
         <h1>Document Checklist</h1>
         <p>Tick when you prepared the doc</p>
-        <form id="checklistForm">
+        <%= form_with url: submit_checklist_path, method: :post, id: 'checklistForm' do %>
             <div class="item">
                 <div class="tooltip">
-                    <img src="assets/1.svg.png" alt="passport" name="passport" class="sample-image">
+                    <%= link_to image_tag('passport.jpg', alt: 'Passport', class: 'sample-image'), checklist_item_path('passport') %>
                     <span class="tooltiptext">Click to See Sample</span>
                 </div>
                 Passport
-                <input type="checkbox" id="passport" name="passport" autocomplete="off">
+                <%= check_box_tag 'checklist[passport]', '1', false, id: 'passport', autocomplete: 'off' %>
                 <label for="passport"></label>
-            </div>  
+            </div>
             <div class="item">
                 <div class="tooltip">
-                    <img src="assets/2.svg.png" alt="Proof of Employment" name="employment" class="sample-image">
+                    <%= link_to image_tag('employment.jpg', alt: 'Employment', class: 'sample-image'), checklist_item_path('employment') %>
                     <span class="tooltiptext">Click to See Sample</span>
                 </div>
                 Proof of Employment
-                <input type="checkbox" id="employment" name="employment" autocomplete="off">
+                <%= check_box_tag 'checklist[employment]', '1', false, id: 'employment', autocomplete: 'off' %>
                 <label for="employment"></label>
             </div>
-
             <div class="item">
                 <div class="tooltip">
-                    <img src="assets/3.svg.png" alt="Proof of Residential Address" name="address" class="sample-image">
+                    <%= link_to image_tag('address.jpg', alt: 'Address', class: 'sample-image'), checklist_item_path('address') %>
                     <span class="tooltiptext">Click to See Sample</span>
                 </div>
                 Proof of Residential Address
-                <input type="checkbox" id="address" name="address" autocomplete="off">
+                <%= check_box_tag 'checklist[address]', '1', false, id: 'address', autocomplete: 'off' %>
                 <label for="address"></label>
             </div>
-
             <div class="item">
                 <div class="tooltip">
-                    <img src="assets/4.svg.png" alt="Proof of Tax Residency" name="tax" class="sample-image">
+                    <%= link_to image_tag('tax.jpg', alt: 'Tax', class: 'sample-image'), checklist_item_path('tax') %>
                     <span class="tooltiptext">Click to See Sample</span>
                 </div>
                 Proof of Tax Residency
-                <input type="checkbox" id="tax" name="tax" autocomplete="off">
+                <%= check_box_tag 'checklist[tax]', '1', false, id: 'tax', autocomplete: 'off' %>
                 <label for="tax"></label>
             </div>
-
             <div class="item">
                 <div class="tooltip">
-                    <img src="assets/5.jpeg" alt="Proof of Mobile Ownership" name="mobile" class="sample-image">
+                    <%= link_to image_tag('mobile.jpg', alt: 'Mobile', class: 'sample-image'), checklist_item_path('mobile') %>
                     <span class="tooltiptext">Click to See Sample</span>
                 </div>
                 Proof of Mobile Ownership
-                <input type="checkbox" id="mobile" name="mobile" autocomplete="off">
+                <%= check_box_tag 'checklist[mobile]', '1', false, id: 'mobile', autocomplete: 'off' %>
                 <label for="mobile"></label>
             </div>
 
-            <button type="submit" id="nextButton" disabled>Next</button>
-        </form>
+            <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
+        <% end %>
     </div>
+
 </body>
 </html>

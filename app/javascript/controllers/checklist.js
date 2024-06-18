@@ -15,15 +15,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Initial check to set the button state correctly on page load
     checkCheckboxes();
-
-    // Prevent form submission and provide feedback
-    document.getElementById('checklistForm').addEventListener('submit', function(event) {
-        event.preventDefault();
-        if (nextButton.disabled) {
-            alert('Please check all items before proceeding.');
-        } else {
-            alert('All items checked! Proceeding to the next step.');
-            // Here you can add code to actually proceed to the next step, e.g., submit the form
-        }
-    });
 });

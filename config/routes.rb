@@ -1,14 +1,22 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get 'about', to: 'home#about'
-  get 'contact', to: 'home#contact'
-  get 'checklist', to: 'checklist#checklist'
-  get 'checklist/passport', to: 'checklist#passport'
-  get 'checklist/proof_of_employment', to: 'checklist#proof_of_employment'
-  get 'checklist/proof_of_mobile_ownership', to: 'checklist#proof_of_mobile_ownership'
-  get 'checklist/proof_of_residential_address', to: 'checklist#proof_of_residential_address'
-  get 'checklist/proof_of_tax_residency', to: 'checklist#proof_of_tax_residency'
+  get '/about', to: 'home#about'
+  get '/contact', to: 'home#contact'
+  
+
+  get '/checklist', to: 'checklist#checklist'
+  get '/checklist/passport', to: 'checklist#passport'
+  get '/checklist/employment', to: 'checklist#proof_of_employment'
+  get '/checklist/mobile', to: 'checklist#proof_of_mobile_ownership'
+  get '/checklist/address', to: 'checklist#proof_of_residential_address'
+  get '/checklist/tax', to: 'checklist#proof_of_tax_residency'
+
+  get '/checklist/:item', to: 'checklist#show', as: 'checklist_item'
+  post '/submit_checklist', to: 'checklist#submit_checklist'
+
+  get '/upload', to: 'home#index'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
