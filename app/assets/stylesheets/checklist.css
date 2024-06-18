@@ -18,7 +18,7 @@ body {
     position: relative;
 }
 
-.topSection {
+.topSection{
     padding-bottom: 15px;
 }
 
@@ -43,6 +43,20 @@ h1 {
 
 input[type="checkbox"] {
     display: none;
+<<<<<<< HEAD
+=======
+}
+
+label {
+    flex-grow: 1;
+    text-align: left;
+    cursor: pointer;
+    color: #555;
+    position: relative;
+    padding-left: 35px; /* Space for the custom checkbox */
+    font-size: 16px;
+    line-height: 24px;
+>>>>>>> parent of 466cf60 (Added Sample Picture Icon)
 }
 
 label {
@@ -64,7 +78,7 @@ label:before {
     border: 2px solid #ff3333;
     border-radius: 4px;
     position: absolute;
-    right: 0;
+    left: 0;
     top: 50%;
     transform: translateY(-50%);
     background-color: #fff;
@@ -76,11 +90,25 @@ input[type="checkbox"]:checked + label:before {
     border-color: #ff3333;
 }
 
+<<<<<<< HEAD
 
 .item img {
     width: 30px;
     height: 30px;
     margin-right: 15px; /* Space between image and label */
+=======
+input[type="checkbox"]:checked + label:after {
+    content: "";
+    display: block;
+    width: 6px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+>>>>>>> parent of 466cf60 (Added Sample Picture Icon)
 }
 
 button {
@@ -128,4 +156,8 @@ button {
 
 button:focus {
     outline: none;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> parent of 466cf60 (Added Sample Picture Icon)
