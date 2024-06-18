@@ -1,5 +1,3 @@
-/* app/assets/stylesheets/checklist.css */
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
@@ -20,7 +18,7 @@ body {
     position: relative;
 }
 
-.topSection{
+.topSection {
     padding-bottom: 15px;
 }
 
@@ -52,10 +50,10 @@ label {
     text-align: left;
     cursor: pointer;
     color: #555;
-    position: relative;
-    padding-left: 35px; /* Space for the custom checkbox */
     font-size: 16px;
     line-height: 24px;
+    padding-left: 50px; /* Space for the image */
+    position: relative;
 }
 
 label:before {
@@ -66,7 +64,7 @@ label:before {
     border: 2px solid #ff3333;
     border-radius: 4px;
     position: absolute;
-    left: 0;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
     background-color: #fff;
@@ -78,17 +76,11 @@ input[type="checkbox"]:checked + label:before {
     border-color: #ff3333;
 }
 
-input[type="checkbox"]:checked + label:after {
-    content: "";
-    display: block;
-    width: 6px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+
+.item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px; /* Space between image and label */
 }
 
 button {
