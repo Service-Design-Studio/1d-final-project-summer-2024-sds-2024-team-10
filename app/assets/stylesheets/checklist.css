@@ -41,15 +41,19 @@ h1 {
     border-bottom: none;
 }
 
+input[type="checkbox"] {
+    display: none;
+}
+
 label {
-    display: flex;
-    align-items: center;
+    flex-grow: 1;
+    text-align: left;
     cursor: pointer;
     color: #555;
-    position: relative;
-    padding-left: 35px; /* Space for the custom checkbox */
     font-size: 16px;
     line-height: 24px;
+    padding-left: 50px; /* Space for the image */
+    position: relative;
 }
 
 label:before {
@@ -72,17 +76,11 @@ input[type="checkbox"]:checked + label:before {
     border-color: #ff3333;
 }
 
-input[type="checkbox"]:checked + label:after {
-    content: "";
-    display: block;
-    width: 6px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%) rotate(45deg);
+
+.item img {
+    width: 30px;
+    height: 30px;
+    margin-right: 15px; /* Space between image and label */
 }
 
 button {
@@ -94,26 +92,20 @@ button {
     font-size: 16px;
     transition: background-color 0.3s ease;
     margin-top: 20px;
-    font-weight: bold;
 }
 
 #nextButton {
     background-color: #ff3333;
-    border: 2px solid #ff3333;
     width: 100%;
 }
 
 #nextButton:disabled {
     background-color: grey;
-    border: 2px solid grey;
     cursor: not-allowed;
 }
 
-#nextButton:hover:not(:disabled) {
-    background-color: white;
-    color: #ff3333;
-    border: 2px solid #ff3333;
-    font-weight: bolder;
+#nextButton:hover {
+    background-color: #b71c1c;
 }
 
 #backButton {
