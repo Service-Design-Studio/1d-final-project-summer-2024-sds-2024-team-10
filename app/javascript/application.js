@@ -3,4 +3,4 @@ import "@hotwired/turbo-rails"
 import "controllers"
 
 // Custom Controllers
-import "controllers/feature1"
+import "controllers/checklist"
