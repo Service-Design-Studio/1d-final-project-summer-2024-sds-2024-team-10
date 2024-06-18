@@ -2,41 +2,79 @@
 <html>
 <head>
     <title>Feature1</title>
-    <%= stylesheet_link_tag 'checklist', media: 'all' %>
-    <%= javascript_include_tag 'controllers/checklist' %>
+    <%= stylesheet_link_tag 'checklist', media: 'all', crossorigin: 'anonymous' %>
+    <%= javascript_include_tag 'controllers/checklist', crossorigin: 'anonymous' %>
 </head>
 <body>
     <div class="container">
-        <div class="topSection">
-            <button type="button" id="backButton">&#9664;</button>
-            <h1>Document Checklist</h1>
-        </div>
+        <button type="button" id="backButton"><</button>
+        <h1>Document Checklist</h1>
         <form id="checklistForm">
             <div class="item">
                 <img src="path/to/image1.png" alt="Passport Image">
                 <input type="checkbox" id="passport" name="passport">
                 <label for="passport">Passport</label>
             </div>
+                <div class="tooltip">
+                    <img src="assets/1.svg.png" alt="passport" name="passport" class="sample-image">
+                    <span class="tooltiptext">Click to See Sample</span>
+                </div>
+                Passport
+                <input type="checkbox" id="passport" name="passport" autocomplete="off">
+                <label for="passport"></label>
+            </div>  
             <div class="item">
                 <img src="path/to/image2.png" alt="Employment Image">
                 <input type="checkbox" id="employment" name="employment">
                 <label for="employment">Proof of Employment</label>
+                <div class="tooltip">
+                    <img src="assets/2.svg.png" alt="Proof of Employment" name="employment" class="sample-image">
+                    <span class="tooltiptext">Click to See Sample</span>
+                </div>
+                Proof of Employment
+                <input type="checkbox" id="employment" name="employment" autocomplete="off">
+                <label for="employment"></label>
             </div>
+
             <div class="item">
                 <img src="path/to/image3.png" alt="Address Image">
                 <input type="checkbox" id="address" name="address">
                 <label for="address">Proof of Residential Address</label>
+                <div class="tooltip">
+                    <img src="assets/3.svg.png" alt="Proof of Residential Address" name="address" class="sample-image">
+                    <span class="tooltiptext">Click to See Sample</span>
+                </div>
+                Proof of Residential Address
+                <input type="checkbox" id="address" name="address" autocomplete="off">
+                <label for="address"></label>
             </div>
+
             <div class="item">
                 <img src="path/to/image4.png" alt="Tax Image">
                 <input type="checkbox" id="tax" name="tax">
                 <label for="tax">Proof of Tax Residency</label>
+                <div class="tooltip">
+                    <img src="assets/4.svg.png" alt="Proof of Tax Residency" name="tax" class="sample-image">
+                    <span class="tooltiptext">Click to See Sample</span>
+                </div>
+                Proof of Tax Residency
+                <input type="checkbox" id="tax" name="tax" autocomplete="off">
+                <label for="tax"></label>
             </div>
+
             <div class="item">
                 <img src="path/to/image5.png" alt="Mobile Image">
                 <input type="checkbox" id="mobile" name="mobile">
                 <label for="mobile">Proof of Mobile Ownership</label>
+                <div class="tooltip">
+                    <img src="assets/5.jpeg" alt="Proof of Mobile Ownership" name="mobile" class="sample-image">
+                    <span class="tooltiptext">Click to See Sample</span>
+                </div>
+                Proof of Mobile Ownership
+                <input type="checkbox" id="mobile" name="mobile" autocomplete="off">
+                <label for="mobile"></label>
             </div>
+
             <button type="submit" id="nextButton" disabled>Next</button>
         </form>
     </div>
