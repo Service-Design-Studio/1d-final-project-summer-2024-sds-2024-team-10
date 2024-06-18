@@ -3,12 +3,14 @@
 <head>
     <title>Feature1</title>
     <%= stylesheet_link_tag 'checklist', media: 'all' %>
-    <%= javascript_include_tag 'controllers/application' %>
+    <%= javascript_include_tag 'controllers/checklist' %>
 </head>
 <body>
     <div class="container">
-        <button type="button" id="backButton"><</button>
-        <h1>Document Checklist</h1>
+        <div class="topSection">
+            <button type="button" id="backButton">&#9664;</button>
+            <h1>Document Checklist</h1>
+        </div>
         <form id="checklistForm">
             <div class="item">
                 <input type="checkbox" id="passport" name="passport">
