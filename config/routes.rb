@@ -7,10 +7,10 @@ Rails.application.routes.draw do
 
   get '/checklist', to: 'checklist#checklist'
   get '/checklist/passport', to: 'checklist#passport'
-  get '/checklist/employment', to: 'checklist#proof_of_employment'
-  get '/checklist/mobile', to: 'checklist#proof_of_mobile_ownership'
-  get '/checklist/address', to: 'checklist#proof_of_residential_address'
-  get '/checklist/tax', to: 'checklist#proof_of_tax_residency'
+  get '/checklist/employment', to: 'checklist#employment'
+  get '/checklist/mobile', to: 'checklist#mobile'
+  get '/checklist/address', to: 'checklist#address'
+  get '/checklist/tax', to: 'checklist#tax'
 
   get '/checklist/:item', to: 'checklist#show', as: 'checklist_item'
   post '/submit_checklist', to: 'checklist#submit_checklist'

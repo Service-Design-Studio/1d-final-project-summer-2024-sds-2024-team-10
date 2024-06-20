@@ -4,32 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Passport</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            background-color: #f0f0f0;
-        }
-        .container {
-            text-align: center;
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 5px;
-        }
-    </style>
+    <%= stylesheet_link_tag 'sample_doc', media: 'all', crossorigin: 'anonymous' %>
 </head>
 <body>
     <div class="container">
+        <%= link_to '<', checklist_path, class: 'button', id: 'backButton' %>
         <h1>Sample Passport Image</h1>
         <%= image_tag 'passport.jpg', alt: 'Sample Passport' %>
     </div>
