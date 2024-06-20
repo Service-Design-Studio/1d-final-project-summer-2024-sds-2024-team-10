@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   get '/about', to: 'home#about'
   get '/contact', to: 'home#contact'
-  
+  get '/new', to: 'home#new'
+  get '/signup', to: 'home#signup'
 
   get '/checklist', to: 'checklist#checklist'
   get '/checklist/passport', to: 'checklist#passport'
