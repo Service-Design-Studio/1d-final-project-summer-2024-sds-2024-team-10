@@ -15,7 +15,6 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 800px;
     width: 500px;
     text-align: center;
     position: relative;
@@ -128,21 +127,7 @@ input[type="checkbox"]:checked + label:before {
 #nextButton {
     background-color: #ff3333;
     border: 2px solid #ff3333;
-    color: white; /* Ensures the text is visible */
-    padding: 10px; /* Adds padding for better appearance */
-    width: calc(100% - 40px); /* Adjust width to account for padding */
-    position: absolute; /* Position absolutely within the container */
-    bottom: 40px; /* Distance from the bottom of the container */
-    left: 50%; /* Center horizontally */
-    transform: translateX(-50%); /* Adjust to perfectly center */
-    text-align: center; /* Center text inside the button */
-    border-radius: 5px; /* Rounded corners */
-}
-
-/* Ensure the container has relative positioning */
-.container {
-    position: relative;
-    /* other styles */
+    width: 100%;
 }
 
 #nextButton:disabled {
