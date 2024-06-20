@@ -7,9 +7,9 @@
 </head>
 <body>
     <div class="container">
-        <%= link_to '<', root_path, class: 'button', id: 'backButton' %>
+        <%= link_to '<', new_path, class: 'button', id: 'backButton' %>
         <h1>Document Checklist</h1>
-        <p>Tick when you prepared the doc</p>
+        <p>Please tick when you have prepared each document:</p>
         <%= form_with url: submit_checklist_path, method: :post, id: 'checklistForm' do %>
             <div class="item">
                 <div class="tooltip">
