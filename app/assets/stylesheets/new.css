@@ -1,0 +1,87 @@
+/* app/assets/stylesheets/index.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.horizontal-red-line {
+    border: none;
+    height: 2px;
+    background-color: red;
+    margin: 20px 0;
+}
+
+.resized-image {
+    width: 400px; /* Set your desired width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 800px;
+    width: 500px;
+    text-align: center;
+    position: relative;
+}
+
+.button {
+    color: white;
+    border-radius: 5px;
+    padding: 12px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+#toChecklistButtonNoSingpass {
+    text-decoration: none;
+    background-color: white;
+    color: #9a8383;
+    padding: 0px;
+    cursor: pointer;
+    border-radius: 0px;
+    position: absolute; /* Use absolute positioning */
+    right: 20px; /* Align to the right */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+
+#toChecklistButtonSingpass {
+    text-decoration: none;
+    background-color: #ff3333;
+    border: 10px solid #ff3333;
+    color: #ffffff;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.center-align {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    bottom: 20px;
+}
+
+.button:hover {
+    background-color: #ff3333;
+    color: white;
+}
+
+.button:focus {
+    outline: none;
+}
