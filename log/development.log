@@ -158,3 +158,13 @@ Processing by HomeController#about as HTML
 Completed 200 OK in 164ms (Views: 161.9ms | ActiveRecord: 0.0ms | Allocations: 100083)
 
 
+Started GET "/" for 127.0.0.1 at 2024-07-04 15:17:59 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.3ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 73.5ms | Allocations: 45917)
+Completed 200 OK in 79ms (Views: 76.2ms | ActiveRecord: 0.0ms | Allocations: 48382)
+
+
