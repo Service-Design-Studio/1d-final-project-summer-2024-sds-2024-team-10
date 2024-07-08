@@ -63,7 +63,7 @@
     <div class="container">
         <%= link_to '<', root_path, class: 'button', id: 'backButton' %>
         <h1>Document Checklist</h1>
-        <p>Tick when you prepared the doc</p>
+        <p>Check the box when the document is ready.</p>
         <%= form_with url: checklist_path, method: :post, id: 'checklistForm' do %>
             <% checklist_items = { passport: 'Passport', employment: 'Proof of Employment', address: 'Proof of Residential Address', tax: 'Proof of Tax Residency', mobile: 'Proof of Mobile Ownership' } %>
             <% checklist_items.each do |key, label| %>
