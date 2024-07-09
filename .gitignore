@@ -1,0 +1,15 @@
+# OS generated files
+.DS_Store
+
+# Logs
+*.log
+
+# Temporary Files
+tmp
+
+# Environment variables
+.env
+
+# IDE specific files
+.vscode/
+.idea/
