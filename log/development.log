@@ -263,3 +263,21 @@ Processing by HomeController#test as HTML
 Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.0ms | Allocations: 1619)
 
 
+Started GET "/test" for 127.0.0.1 at 2024-07-09 14:28:02 +0800
+Processing by HomeController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/test.html.erb within layouts/application
+  Rendered home/test.html.erb within layouts/application (Duration: 0.7ms | Allocations: 98)
+  Rendered layout layouts/application.html.erb (Duration: 37.6ms | Allocations: 15446)
+Completed 200 OK in 41ms (Views: 40.5ms | ActiveRecord: 0.0ms | Allocations: 16146)
+
+
+Started GET "/test" for 127.0.0.1 at 2024-07-09 14:28:03 +0800
+Processing by HomeController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/test.html.erb within layouts/application
+  Rendered home/test.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 1283)
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 1521)
+
+
