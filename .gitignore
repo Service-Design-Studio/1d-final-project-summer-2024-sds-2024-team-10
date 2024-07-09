@@ -1,16 +1,15 @@
 # OS generated files
 *.DS_Store
 
-# Logs
-*.log
-log/
-
-# Temporary Files
-tmp/
-
-# Environment variables
-.env
+# Ignore all logfiles and temp files.
+/log/*
+/tmp/*
 
 # Google Cloud
-google-cloud-sdk/
+/google-cloud-sdk
 
+# Ignore node_modules if you use Webpacker
+/node_modules
+
+# Ignore node/yarn dependencies
+/node_modules
