@@ -8,8 +8,5 @@
 # Google Cloud
 /google-cloud-sdk
 
-# Ignore node_modules if you use Webpacker
-/node_modules
-
 # Ignore node/yarn dependencies
 /node_modules
