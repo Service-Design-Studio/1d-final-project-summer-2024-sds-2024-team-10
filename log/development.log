@@ -197,3 +197,31 @@ Processing by HomeController#about as HTML
 Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.0ms | Allocations: 1533)
 
 
+Started GET "/" for 127.0.0.1 at 2024-07-04 16:26:16 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.4ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 42.1ms | Allocations: 35051)
+Completed 200 OK in 47ms (Views: 44.8ms | ActiveRecord: 0.0ms | Allocations: 37517)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 16:28:10 +0800
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.5ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 13.8ms | Allocations: 1130)
+Completed 200 OK in 18ms (Views: 15.2ms | ActiveRecord: 0.0ms | Allocations: 1369)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-04 16:30:44 +0800
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.1ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 14.1ms | Allocations: 1246)
+Completed 200 OK in 15ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 1484)
+
+
