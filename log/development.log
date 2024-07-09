@@ -281,3 +281,282 @@ Processing by HomeController#test as HTML
 Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.0ms | Allocations: 1521)
 
 
+Started GET "/" for 127.0.0.1 at 2024-07-09 15:53:31 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.7ms | Allocations: 188)
+  Rendered layout layouts/application.html.erb (Duration: 62.3ms | Allocations: 36452)
+Completed 200 OK in 68ms (Views: 65.9ms | ActiveRecord: 0.0ms | Allocations: 38918)
+
+
+Started GET "/test" for 127.0.0.1 at 2024-07-09 15:53:34 +0800
+Processing by HomeController#test as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/test.html.erb within layouts/application
+  Rendered home/test.html.erb within layouts/application (Duration: 0.6ms | Allocations: 100)
+  Rendered layout layouts/application.html.erb (Duration: 3.8ms | Allocations: 1333)
+Completed 200 OK in 5ms (Views: 4.4ms | ActiveRecord: 0.0ms | Allocations: 1571)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-09 15:54:22 +0800
+Processing by HomeController#about as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (Duration: 0.2ms | Allocations: 7)
+  Rendered layout layouts/application.html.erb (Duration: 17.5ms | Allocations: 1230)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.0ms | Allocations: 1468)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:02:05 +0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 108.5ms | Allocations: 41269)
+  Rendered layout layouts/application.html.erb (Duration: 109.0ms | Allocations: 41357)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.0ms | Allocations: 42072)
+
+
+  
+ActionView::Template::Error (The asset "controllers/home.js" is not present in the asset pipeline.
+):
+    1: <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    2: <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+    3: 
+    4: <div class="container">
+    5:     <h1><%= @message %></h1>
+  
+app/views/home/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:02:40 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 41.2ms | Allocations: 25722)
+  Rendered layout layouts/application.html.erb (Duration: 41.3ms | Allocations: 25844)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 0.0ms | Allocations: 28273)
+
+
+  
+ActionView::Template::Error (The asset "controllers/home.js" is not present in the asset pipeline.
+):
+    1: <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    2: <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+    3: 
+    4: <div class="container">
+    5:     <h1><%= @message %></h1>
+  
+app/views/home/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:03:22 +0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2853)
+  Rendered layout layouts/application.html.erb (Duration: 3.4ms | Allocations: 2941)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3632)
+
+
+  
+ActionView::Template::Error (The asset "controllers/home.js" is not present in the asset pipeline.
+):
+    1: <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    2: <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+    3: 
+    4: <div class="container">
+    5:     <h1><%= @message %></h1>
+  
+app/views/home/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:03:29 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 38.3ms | Allocations: 25809)
+  Rendered layout layouts/application.html.erb (Duration: 38.5ms | Allocations: 25931)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms | Allocations: 28359)
+
+
+  
+ActionView::Template::Error (The asset "controllers/home.js" is not present in the asset pipeline.
+):
+    1: <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    2: <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+    3: 
+    4: <div class="container">
+    5:     <h1><%= @message %></h1>
+  
+app/views/home/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:04:14 +0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2851)
+  Rendered layout layouts/application.html.erb (Duration: 2.9ms | Allocations: 2939)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3630)
+
+
+  
+ActionView::Template::Error (The asset "controllers/home.js" is not present in the asset pipeline.
+):
+    1: <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    2: <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+    3: 
+    4: <div class="container">
+    5:     <h1><%= @message %></h1>
+  
+app/views/home/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:04:25 +0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 2.5ms | Allocations: 2908)
+  Rendered layout layouts/application.html.erb (Duration: 2.6ms | Allocations: 2996)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 3890)
+
+
+  
+ActionView::Template::Error (The asset "controllers/home.js" is not present in the asset pipeline.
+):
+    1: <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    2: <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+    3: 
+    4: <div class="container">
+    5:     <h1><%= @message %></h1>
+  
+app/views/home/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:04:29 +0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2908)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2996)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms | Allocations: 3890)
+
+
+  
+ActionView::Template::Error (The asset "controllers/home.js" is not present in the asset pipeline.
+):
+    1: <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    2: <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+    3: 
+    4: <div class="container">
+    5:     <h1><%= @message %></h1>
+  
+app/views/home/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:04:38 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 59.9ms | Allocations: 27387)
+  Rendered layout layouts/application.html.erb (Duration: 60.0ms | Allocations: 27509)
+Completed 500 Internal Server Error in 70ms (ActiveRecord: 0.0ms | Allocations: 31580)
+
+
+  
+ActionView::Template::Error (The asset "controllers/home.js" is not present in the asset pipeline.
+):
+    1: <%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+    2: <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+    3: 
+    4: <div class="container">
+    5:     <h1><%= @message %></h1>
+  
+app/views/home/index.html.erb:2
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:05:21 +0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 67.4ms | Allocations: 29544)
+  Rendered layout layouts/application.html.erb (Duration: 81.3ms | Allocations: 49965)
+Completed 200 OK in 83ms (Views: 82.1ms | ActiveRecord: 0.0ms | Allocations: 50269)
+
+
+Started GET "/signup" for 127.0.0.1 at 2024-07-09 16:05:22 +0800
+Processing by HomeController#signup as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/signup.html.erb within layouts/application
+  Rendered home/signup.html.erb within layouts/application (Duration: 4.5ms | Allocations: 2428)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3833)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 4077)
+
+
+Started GET "/new" for 127.0.0.1 at 2024-07-09 16:05:23 +0800
+Processing by HomeController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/new.html.erb within layouts/application
+  Rendered home/new.html.erb within layouts/application (Duration: 7.8ms | Allocations: 3067)
+  Rendered layout layouts/application.html.erb (Duration: 9.6ms | Allocations: 4633)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.0ms | Allocations: 4877)
+
+
+Started GET "/checklist" for 127.0.0.1 at 2024-07-09 16:05:24 +0800
+Processing by ChecklistController#checklist as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering checklist/checklist.html.erb within layouts/application
+  Rendered checklist/checklist.html.erb within layouts/application (Duration: 10.7ms | Allocations: 6288)
+  Rendered layout layouts/application.html.erb (Duration: 11.6ms | Allocations: 7604)
+Completed 200 OK in 13ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 8060)
+
+
+Started POST "/checklist" for 127.0.0.1 at 2024-07-09 16:05:27 +0800
+  
+ActionController::RoutingError (No route matches [POST] "/checklist"):
+  
+Started GET "/checklist" for 127.0.0.1 at 2024-07-09 16:05:27 +0800
+Processing by ChecklistController#checklist as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering checklist/checklist.html.erb within layouts/application
+  Rendered checklist/checklist.html.erb within layouts/application (Duration: 4.6ms | Allocations: 5728)
+  Rendered layout layouts/application.html.erb (Duration: 5.8ms | Allocations: 7043)
+Completed 200 OK in 6ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 7284)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:05:29 +0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.9ms | Allocations: 2019)
+  Rendered layout layouts/application.html.erb (Duration: 8.9ms | Allocations: 3573)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.0ms | Allocations: 3819)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:09:48 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 65.7ms | Allocations: 26646)
+  Rendered layout layouts/application.html.erb (Duration: 93.8ms | Allocations: 48356)
+Completed 200 OK in 104ms (Views: 96.8ms | ActiveRecord: 0.0ms | Allocations: 52469)
+
+
+Started GET "/signup" for 127.0.0.1 at 2024-07-09 16:09:49 +0800
+Processing by HomeController#signup as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/signup.html.erb within layouts/application
+  Rendered home/signup.html.erb within layouts/application (Duration: 10.6ms | Allocations: 2443)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3880)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.0ms | Allocations: 4126)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:13:23 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 67.5ms | Allocations: 26674)
+  Rendered layout layouts/application.html.erb (Duration: 92.2ms | Allocations: 48832)
+Completed 200 OK in 102ms (Views: 95.4ms | ActiveRecord: 0.0ms | Allocations: 52945)
+
+
+Started GET "/" for 127.0.0.1 at 2024-07-09 16:13:23 +0800
+Processing by HomeController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2005)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 3972)
+Completed 200 OK in 7ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4218)
+
+

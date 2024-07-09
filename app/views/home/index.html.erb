@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+
+<div class="container">
+    <h1><%= @message %></h1>
+    <p>Welcome to SDS Team 10:</p>
+    <div>
+        <h3>Members:</h3>
+        <p>Samuel - Ernest - Ryan - Moulik - Wan Wei - Sahitya</p>
+        <h3>Mentors:</h3>
+        <p>Jarene - Jie Ling</p>
+        <br>
+        <%= link_to 'Start', signup_path, class: 'button center-align', id: 'toChecklistButton' %>
+    </div>
+</div>
+

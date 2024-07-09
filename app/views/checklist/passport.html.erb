@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passport</title>
+    <%= stylesheet_link_tag 'sample_doc', media: 'all', crossorigin: 'anonymous' %>
+</head>
+<body>
+    <div class="container">
+        <%= link_to '<', checklist_path, class: 'button', id: 'backButton' %>
+        <h1>Sample Passport Image</h1>
+        <%= image_tag 'passport.jpg', alt: 'Sample Passport' %>
+    </div>
+</body>
+</html>
