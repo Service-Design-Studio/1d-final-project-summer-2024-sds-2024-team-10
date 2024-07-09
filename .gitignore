@@ -3,6 +3,7 @@
 
 # Logs
 *.log
+log/
 
 # Temporary Files
 tmp/
@@ -12,3 +13,4 @@ tmp/
 
 # Google Cloud
 google-cloud-sdk/
+
