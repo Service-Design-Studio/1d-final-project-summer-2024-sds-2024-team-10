@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag 'index', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+
+
+<body>
+    <div class="container">
+        <%= image_tag 'DBS.png', alt: 'DBS+Singpass' %>
+        <br>
+        <h3>Lets Make This Fast</h3>
+        <p>Login to your Singpass account so we can identify you instantly via MyInfo</p>
+        <%= image_tag 'DBS_1.png', alt: 'DBS+Singpass' %>
+        <br><br>
+        <%= link_to 'Sign Up with Singpass', checklist_path, class: 'button', id: 'toChecklistButton' %>
+        <%= link_to 'Sign Up without Singpass', checklist_path, class: 'button', id: 'toChecklistButton' %>
+    </div>
+</body>
