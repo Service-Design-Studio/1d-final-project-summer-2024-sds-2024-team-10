@@ -62,15 +62,19 @@
 <body>
     <div class="container">
         <%= link_to '<', root_path, class: 'button', id: 'backButton' %>
+
+        <!-- Progress bar -->
+        <progress id="file" value="14" max="100"> 32% </progress><br><br>
+
         <h1>Document Checklist</h1>
-        <p>Tick when you prepared the doc</p>
+        <p>Check the box when the document is ready.</p>
         <%= form_with url: checklist_path, method: :post, id: 'checklistForm' do %>
             <% checklist_items = { passport: 'Passport', employment: 'Proof of Employment', address: 'Proof of Residential Address', tax: 'Proof of Tax Residency', mobile: 'Proof of Mobile Ownership' } %>
             <% checklist_items.each do |key, label| %>
                 <div class="item">
                     <div class="tooltip">
                         <!-- Image tag with data attributes for modal handling -->
-                        <%= image_tag("#{key}.jpg", alt: label, class: 'sample-image', data: { target: "modal_#{key}" }) %>
+                        <%= image_tag("info.png", alt: label, class: 'sample-image', data: { target: "modal_#{key}" }) %>
                         <span class="tooltiptext">Click to See Sample</span>
                     </div>
                     <%= label %>
@@ -89,5 +93,7 @@
             <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
         <% end %>
     </div>
+
+ 
 </body>
 </html>

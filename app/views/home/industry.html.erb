@@ -1,0 +1,27 @@
+<%= stylesheet_link_tag 'industry', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work As Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <progress id="file" value="58" max="100"> 32% </progress><br><br>
+        <%= link_to '<', work_path, class: 'button', id: 'backButton' %><br>
+        <h1>And which of these industries do you work in?</h1>
+        <ul class="options-list">
+            <li>Banking & Finance</li>
+            <li>Food & Beverage</li>
+            <li>Supply and Production of Energy</li>
+            <li>Retain & Consumer Goods</li>
+            <li>Offshore Bank or Investment Company</li>
+            <li class="show-all">Show all</li>
+            <%= link_to 'Next', taxres_path, class: 'button', id: 'nextButton' %><br>
+        </ul>
+    </div>
+</body>
+</html>

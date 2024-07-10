@@ -2,7 +2,7 @@
 *.DS_Store
 
 # Ignore all logfiles and temp files.
-log/
+log/*
 /tmp/*
 tmp/
 !/log/.keep

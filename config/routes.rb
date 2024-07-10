@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   get '/contact', to: 'home#contact'
   get '/new', to: 'home#new'
   get '/signup', to: 'home#signup'
+  get '/address', to: 'home#addressform'
+  get '/work', to: 'home#work'
+  get '/industry', to: 'home#industry'
+  get '/taxres', to: 'home#taxres'
+
 
   get '/checklist', to: 'checklist#checklist'
   get '/checklist/passport', to: 'checklist#passport'
@@ -12,11 +17,15 @@ Rails.application.routes.draw do
   get '/checklist/mobile', to: 'checklist#mobile'
   get '/checklist/address', to: 'checklist#address'
   get '/checklist/tax', to: 'checklist#tax'
+  post '/checklist', to: 'home#address'
 
   get '/checklist/:item', to: 'checklist#show', as: 'checklist_item'
-  post '/submit_checklist', to: 'checklist#submit_checklist'
 
-  get '/upload', to: 'home#index'
+  get '/upload', to: 'upload#upload'
+  get '/upload/camera', to: 'upload#camera'
+  get '/upload/files', to: 'upload#files'
+
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
