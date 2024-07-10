@@ -5,6 +5,11 @@ Rails.application.routes.draw do
   get '/contact', to: 'home#contact'
   get '/new', to: 'home#new'
   get '/signup', to: 'home#signup'
+  get '/address', to: 'home#addressform'
+  get '/work', to: 'home#work'
+  get '/industry', to: 'home#industry'
+  get '/taxres', to: 'home#taxres'
+
 
   get '/checklist', to: 'checklist#checklist'
   get '/checklist/passport', to: 'checklist#passport'

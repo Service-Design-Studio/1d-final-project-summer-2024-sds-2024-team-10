@@ -1,0 +1,40 @@
+<%= stylesheet_link_tag 'taxres', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tax Residency Question</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <progress id="file" value="84" max="100"> 32% </progress><br><br>
+        <%= link_to '<', checklist_path, class: 'button', id: 'backButton' %><br>
+        <div class="content">
+            <br><br>
+            <h1>Are you a tax resident in Singapore only?</h1>
+            <form>
+                <div class="options">
+                    <label class="option">
+                        <input type="radio" name="tax_resident" value="yes"> Yes
+                    </label>
+                    <label class="option">
+                        <input type="radio" name="tax_resident" value="no"> No
+                    </label>
+                </div>
+            </form>
+            <div class="info">
+                <p>You're a tax resident if you stay or work in the country:</p>
+                <ul>
+                    <li>For at least 183 days in a calendar year</li>
+                    <li>Continually for 3 consecutive years</li>
+                </ul>
+                <a href="#">Find out more</a>
+            </div>
+            <%= link_to 'NEXT', work_path, class: 'btn', id: 'nextButton' %>
+        </div>
+    </div>
+</body>
+</html>

@@ -64,11 +64,11 @@
         <%= link_to '<', root_path, class: 'button', id: 'backButton' %>
 
         <!-- Progress bar -->
-        <progress id="file" value="0" max="100"> 32% </progress><br><br>
+        <progress id="file" value="16" max="100"> 32% </progress><br><br>
 
         <h1>Document Checklist</h1>
         <p>Check the box when the document is ready.</p>
-        <%= form_with url: checklist_path, method: :post, id: 'checklistForm' do %>
+        <%= form_with url: work_path, method: :post, id: 'checklistForm' do %>
             <% checklist_items = { passport: 'Passport', employment: 'Proof of Employment', address: 'Proof of Residential Address', tax: 'Proof of Tax Residency', mobile: 'Proof of Mobile Ownership' } %>
             <% checklist_items.each do |key, label| %>
                 <div class="item">
