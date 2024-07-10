@@ -10,6 +10,20 @@ Rails.application.routes.draw do
   get '/industry', to: 'home#industry'
   get '/taxres', to: 'home#taxres'
 
+# Handle language switch
+post 'switch_language', to: 'home#switch_language'
+
+# Routes for Chinese language
+get 'signup_chi', to: 'home#signup_chi', as: 'signup_chi'
+post 'signup_chi', to: 'home#signup_chi'
+get 'new_chi', to: 'home#new_chi', as: 'new_chi'
+get 'checklist_chi', to: 'checklist#checklist_chi', as: 'checklist_chi'
+
+# Routes for Tamil language
+get 'signup_ta', to: 'home#signup_ta', as: 'signup_ta'
+post 'signup_ta', to: 'home#signup_ta'
+get 'new_ta', to: 'home#new_ta', as: 'new_ta'
+get 'checklist_ta', to: 'checklist#checklist_ta', as: 'checklist_ta'
 
   get '/checklist', to: 'checklist#checklist'
   get '/checklist/passport', to: 'checklist#passport'
