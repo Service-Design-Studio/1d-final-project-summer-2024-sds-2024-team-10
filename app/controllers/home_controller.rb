@@ -8,4 +8,24 @@ class HomeController < ApplicationController
 
   def contact
   end
+
+  def new
+  end
+
+  def signup
+  end
+
+  def address
+    redirect_to '/address'
+  end
+
+  def work
+  end
+
+  def industry
+  end
+
+  def taxres
+  end
+
 end

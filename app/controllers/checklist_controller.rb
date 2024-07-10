@@ -14,7 +14,7 @@ class ChecklistController < ApplicationController
 
     if checked_items.values.all? { |v| v == '1' }
       flash[:notice] = "All items checked! Proceeding to the next step."
-      redirect_to upload_path
+      redirect_to upload_path()
     else
       flash[:alert] = "Please check all items before proceeding."
       #redirect_to checklist_path

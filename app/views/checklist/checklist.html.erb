@@ -64,17 +64,17 @@
         <%= link_to '<', root_path, class: 'button', id: 'backButton' %>
 
         <!-- Progress bar -->
-        <progress id="file" value="16" max="100"> 32% </progress><br><br>
+        <progress id="file" value="14" max="100"> 32% </progress><br><br>
 
         <h1>Document Checklist</h1>
         <p>Check the box when the document is ready.</p>
-        <%= form_with url: work_path, method: :post, id: 'checklistForm' do %>
+        <%= form_with url: checklist_path, method: :post, id: 'checklistForm' do %>
             <% checklist_items = { passport: 'Passport', employment: 'Proof of Employment', address: 'Proof of Residential Address', tax: 'Proof of Tax Residency', mobile: 'Proof of Mobile Ownership' } %>
             <% checklist_items.each do |key, label| %>
                 <div class="item">
                     <div class="tooltip">
                         <!-- Image tag with data attributes for modal handling -->
-                        <%= image_tag("#{key}.jpg", alt: label, class: 'sample-image', data: { target: "modal_#{key}" }) %>
+                        <%= image_tag("info.png", alt: label, class: 'sample-image', data: { target: "modal_#{key}" }) %>
                         <span class="tooltiptext">Click to See Sample</span>
                     </div>
                     <%= label %>
@@ -94,32 +94,6 @@
         <% end %>
     </div>
 
-    <!-- JavaScript to handle modals -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const modalImages = document.querySelectorAll('.sample-image');
-
-            modalImages.forEach(image => {
-                image.addEventListener('click', function() {
-                    const modalId = this.dataset.target;
-                    const modal = document.getElementById(modalId);
-
-                    // Display the modal
-                    modal.style.display = 'block';
-                    // Close modal when close button or outside modal area is clicked
-                    const closeBtn = modal.querySelector('.close');
-                    closeBtn.onclick = function() {
-                        modal.style.display = 'none';
-                    };
-
-                    window.onclick = function(event) {
-                        if (event.target === modal) {
-                            modal.style.display = 'none';
-                        }
-                    };
-                });
-            });
-        });
-    </script>
+ 
 </body>
 </html>

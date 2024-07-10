@@ -62,6 +62,7 @@ label {
     cursor: pointer;
     transition: transform 0.1s;
     position: relative;
+    color: #ff3333;
 }
 
 .sample-image:hover {
