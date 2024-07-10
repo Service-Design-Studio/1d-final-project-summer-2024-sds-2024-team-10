@@ -79,3 +79,16 @@ body {
 .button:focus {
     outline: none;
 }
+
+.language-dropdown select {
+    font-size: 1.2em; /* Slightly bigger font */
+    color: red; /* Text color */
+    background-color: white; /* Background color */
+    border: 2px solid red;
+}
+.language-dropdown {
+    position: relative; 
+    margin-top: 30px; 
+    top: 300px; 
+    right: 10px;
+}

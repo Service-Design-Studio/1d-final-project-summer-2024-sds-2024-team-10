@@ -3,6 +3,14 @@ class ChecklistController < ApplicationController
     # Any setup you need for the checklist view
   end
 
+  def checklist_chi
+  
+  end
+
+  def checklist_ta
+  
+  end
+
   def show
     @item = params[:item]
     # Logic to display the specific checklist item
