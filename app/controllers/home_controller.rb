@@ -3,6 +3,17 @@ class HomeController < ApplicationController
     @message = "SDS Team 10: DBS_DocCheck"
   end
 
+  def switch_language
+    if params[:language] == 'zh'
+      redirect_to signup_chi_path
+    elsif params[:language] == 'ta'
+      redirect_to signup_ta_path
+    else
+      redirect_to signup_path
+    end
+  end
+
+
   def about
   end
 

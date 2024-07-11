@@ -15,7 +15,6 @@ tmp/
 
 # Google Cloud
 /google-cloud-sdk
-google-cloud-sdk/
 
 # Ignore node/yarn dependencies
 /node_modules
