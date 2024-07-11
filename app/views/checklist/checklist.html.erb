@@ -78,7 +78,7 @@
                         <span class="tooltiptext">Click to See Sample</span>
                     </div>
                     <%= label %>
-                    <%= check_box_tag "checklist[#{key}]", '1', session[key.to_s] == '1', id: key, autocomplete: 'off' %>
+                    <%= check_box_tag "checklist[#{key}]", '1', session[key.to_s] == '1', id: key, autocomplete: 'off', data: { testid: "checkbox_#{key}" } %>
                     <label for="<%= key %>"></label>
                 </div>
 
@@ -93,7 +93,5 @@
             <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
         <% end %>
     </div>
-
- 
 </body>
 </html>
