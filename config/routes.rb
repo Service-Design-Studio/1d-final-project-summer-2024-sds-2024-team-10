@@ -1,3 +1,4 @@
+# config/routes.rb
 Rails.application.routes.draw do
   root 'home#index'
 
@@ -10,20 +11,20 @@ Rails.application.routes.draw do
   get '/industry', to: 'home#industry'
   get '/taxres', to: 'home#taxres'
 
-# Handle language switch
-post 'switch_language', to: 'home#switch_language'
+  # Handle language switch
+  post 'switch_language', to: 'home#switch_language'
 
-# Routes for Chinese language
-get 'signup_chi', to: 'home#signup_chi', as: 'signup_chi'
-post 'signup_chi', to: 'home#signup_chi'
-get 'new_chi', to: 'home#new_chi', as: 'new_chi'
-get 'checklist_chi', to: 'checklist#checklist_chi', as: 'checklist_chi'
+  # Routes for Chinese language
+  get 'signup_chi', to: 'home#signup_chi', as: 'signup_chi'
+  post 'signup_chi', to: 'home#signup_chi'
+  get 'new_chi', to: 'home#new_chi', as: 'new_chi'
+  get 'checklist_chi', to: 'checklist#checklist_chi', as: 'checklist_chi'
 
-# Routes for Tamil language
-get 'signup_ta', to: 'home#signup_ta', as: 'signup_ta'
-post 'signup_ta', to: 'home#signup_ta'
-get 'new_ta', to: 'home#new_ta', as: 'new_ta'
-get 'checklist_ta', to: 'checklist#checklist_ta', as: 'checklist_ta'
+  # Routes for Tamil language
+  get 'signup_ta', to: 'home#signup_ta', as: 'signup_ta'
+  post 'signup_ta', to: 'home#signup_ta'
+  get 'new_ta', to: 'home#new_ta', as: 'new_ta'
+  get 'checklist_ta', to: 'checklist#checklist_ta', as: 'checklist_ta'
 
   get '/checklist', to: 'checklist#checklist'
   get '/checklist/passport', to: 'checklist#passport'
@@ -39,13 +40,12 @@ get 'checklist_ta', to: 'checklist#checklist_ta', as: 'checklist_ta'
   get '/upload/camera', to: 'upload#camera'
   get '/upload/files', to: 'upload#files'
 
-
-
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
-  # Defines the root path route ("/")
+  # Routes for users
+  resources :users, only: [:index, :new, :create, :show]
 end
