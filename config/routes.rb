@@ -1,14 +1,14 @@
 Rails.application.routes.draw do
   root 'home#index'
 
-  get '/about', to: 'home#about'
-  get '/contact', to: 'home#contact'
   get '/new', to: 'home#new'
   get '/signup', to: 'home#signup'
   get '/address', to: 'home#addressform'
   get '/work', to: 'home#work'
   get '/industry', to: 'home#industry'
   get '/taxres', to: 'home#taxres'
+
+  get '/proof_of_identity', to: 'upload#proof_of_identity'
 
 # Handle language switch
 post 'switch_language', to: 'home#switch_language'
