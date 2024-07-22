@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Records</title>
+  <%= stylesheet_link_tag 'db', media: 'all', crossorigin: 'anonymous' %>
+</head>
+<body>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Identification</th>
+        <th>Name</th>
+        <th>Passport No</th>
+        <th>Nationality</th>
+        <th>FIN</th>
+        <th>DOD</th>
+        <th>Tel No</th>
+        <th>Address</th>
+        <th>Tax ID</th>
+        <th>Account Pin</th>
+        <th>Record Date</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= customer_record.Identification %></td>
+        <td><%= customer_record.Name %></td>
+        <td><%= customer_record.PassportNo %></td>
+        <td><%= customer_record.Nationality %></td>
+        <td><%= customer_record.FIN %></td>
+        <td><%= customer_record.DOD %></td>
+        <td><%= customer_record.TelNo %></td>
+        <td><%= customer_record.Address %></td>
+        <td><%= customer_record.TaxID %></td>
+        <td><%= customer_record.Accountpin %></td>
+        <td><%= customer_record.record_date %></td>
+        <td>
+          <%= link_to 'Show', customer_record %> |
+          <%= link_to 'Edit', edit_customer_record_path(customer_record) %> |
+          <%= link_to 'Destroy', customer_record, method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button>Add New Customer</button>
+
+</body>
+</html>

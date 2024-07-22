@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :customer_records
   root 'home#index'
 
   get '/about', to: 'home#about'
@@ -38,6 +39,14 @@ get 'checklist_ta', to: 'checklist#checklist_ta', as: 'checklist_ta'
   get '/upload', to: 'upload#upload'
   get '/upload/camera', to: 'upload#camera'
   get '/upload/files', to: 'upload#files'
+
+  Rails.application.routes.draw do
+    resources :customer_records
+    # other routes...
+  end
+  
+
+  
 
 
 
