@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/work', to: 'home#work'
   get '/industry', to: 'home#industry'
   get '/taxres', to: 'home#taxres'
+  get '/mobileno', to: 'home#mobileno'
 
   get '/proof_of_identity', to: 'upload#proof_of_identity'
 
