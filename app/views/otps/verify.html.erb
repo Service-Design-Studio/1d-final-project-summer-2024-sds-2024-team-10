@@ -1,0 +1,10 @@
+<h1>Verify OTP</h1>
+<%= form_with url: verify_otp_path, method: :post do %>
+  <div class="field">
+    <%= label_tag :otp %>
+    <%= text_field_tag :otp %>
+  </div>
+  <div class="actions">
+    <%= submit_tag "Verify OTP" %>
+  </div>
+<% end %>

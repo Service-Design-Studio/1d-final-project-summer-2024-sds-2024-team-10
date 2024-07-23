@@ -43,15 +43,9 @@ get 'checklist_ta', to: 'checklist#checklist_ta', as: 'checklist_ta'
   get '/upload/camera', to: 'upload#camera'
   get '/upload/files', to: 'upload#files'
 
-  Rails.application.routes.draw do
-    resources :customer_records
-    # other routes...
-  end
-  
-
-  
-
-
+  post 'otps/create', to: 'otps#create', as: 'create_otps'
+  get 'otps/verify', to: 'otps#verify', as: 'verify_otps'
+  post 'otps/verify_otp', to: 'otps#verify_otp', as: 'verify_otp'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
