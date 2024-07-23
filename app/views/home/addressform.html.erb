@@ -6,15 +6,16 @@
     <div class="container">
         <progress id="file" value="28" max="100"></progress>
         <br>
-        <%= link_to '←', checklist_path, class: 'button', id: 'backButton' %>
+        <%= link_to '<', checklist_path, class: 'button', id: 'backButton' %>
         <br>
         <h2>Where do you currently stay?</h2>
         <p>Enter your residential mailing address only. (Office, P.O. Box, V Box and C/O addresses will not be accepted.)</p>
         <form>
             <div class="form-group">
-                <label for="country">Select Your Country</label>
+                <label for="country">Country</label>
                 <select id="country" name="country">
-                    <option value="" disabled selected>Select Your Country</option>
+                    <option value="SG">Singapore</option>
+                    <option value="MY">Malaysia</option>
                     <option value="AF">Afghanistan</option>
                     <option value="AL">Albania</option>
                     <option value="DZ">Algeria</option>
@@ -130,7 +131,6 @@
                     <option value="MK">Macedonia, The Former Yugoslav Republic of</option>
                     <option value="MG">Madagascar</option>
                     <option value="MW">Malawi</option>
-                    <option value="MY">Malaysia</option>
                     <option value="MV">Maldives</option>
                     <option value="ML">Mali</option>
                     <option value="MT">Malta</option>
@@ -184,7 +184,6 @@
                     <option value="RS">Serbia</option>
                     <option value="SC">Seychelles</option>
                     <option value="SL">Sierra Leone</option>
-                    <option value="SG">Singapore</option>
                     <option value="SK">Slovakia</option>
                     <option value="SI">Slovenia</option>
                     <option value="SB">Solomon Islands</option>
