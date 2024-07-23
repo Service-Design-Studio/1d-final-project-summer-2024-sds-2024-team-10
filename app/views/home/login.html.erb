@@ -1,13 +1,6 @@
 <%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBS Log In</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <body>
     <div class="container">
         <div class="header">
@@ -15,40 +8,39 @@
         </div>
         <div class="form-container">
             <h1>Log In</h1>
-            <form>
+            <%= form_with url: create_otps_path, method: :post, local: true do |f| %>
                 <div class="input-group">
-                    <input type="text" placeholder="Name" required>
+                    <%= f.text_field :name, placeholder: "Name", required: true %>
                 </div>
                 <div class="input-group">
                     <div class="phone-input">
-                        <select required>
-                            <option value="+1">🇺🇸 +1 (USA)</option>
-                            <option value="+44">🇬🇧 +44 (UK)</option>
-                            <option value="+91">🇮🇳 +91 (India)</option>
-                            <option value="+61">🇦🇺 +61 (Australia)</option>
-                            <option value="+65">🇸🇬 +65 (Singapore)</option>
-                            <option value="+81">🇯🇵 +81 (Japan)</option>
-                            <option value="+86">🇨🇳 +86 (China)</option>
-                            <option value="+49">🇩🇪 +49 (Germany)</option>
-                            <option value="+33">🇫🇷 +33 (France)</option>
-                            <option value="+39">🇮🇹 +39 (Italy)</option>
-                            <option value="+7">🇷🇺 +7 (Russia)</option>
-                            <option value="+34">🇪🇸 +34 (Spain)</option>
-                            <option value="+55">🇧🇷 +55 (Brazil)</option>
-                            <option value="+27">🇿🇦 +27 (South Africa)</option>
-                            <option value="+82">🇰🇷 +82 (South Korea)</option>
-                        </select>
-
-                        <input type="tel" placeholder="Phone Number" required>
+                        <%= f.select :country_code, options_for_select([
+                            ['🇸🇬 +65', '+65'],
+                            ['🇲🇾 +60', '+60'],
+                            ['🇨🇳 +86', '+86'],
+                            ['🇺🇸 +1', '+1'],
+                            ['🇬🇧 +44', '+44'],
+                            ['🇮🇳 +91', '+91'],
+                            ['🇦🇺 +61', '+61'],
+                            ['🇯🇵 +81', '+81'],
+                            ['🇩🇪 +49', '+49'],
+                            ['🇫🇷 +33', '+33'],
+                            ['🇮🇹 +39', '+39'],
+                            ['🇷🇺 +7', '+7'],
+                            ['🇪🇸 +34', '+34'],
+                            ['🇧🇷 +55', '+55'],
+                            ['🇿🇦 +27', '+27'],
+                            ['🇰🇷 +82', '+82']
+                        ], '+65'), required: true %>
+                        <%= f.telephone_field :phone_number, placeholder: "Phone Number", required: true %>
                     </div>
                 </div>
                 <div class="input-group">
-                    <input type="text" placeholder="Enter Password" required>
+                    <%= f.password_field :password, placeholder: "Enter Password", required: true %>
                 </div>
-                <%= link_to 'Continue', new_path, class: 'button', id: 'ContinueButton' %>
+                <%= f.submit 'Continue', class: 'button', id: 'ContinueButton' %>
                 <p class="login">Don't have an account? <br><%= link_to 'Sign Up Instead', mobileno_path, class: 'btn', id: 'SignUpInsteadButton' %></p>
-                
-            </form>
+            <% end %>
         </div>
     </div>
 </body>
