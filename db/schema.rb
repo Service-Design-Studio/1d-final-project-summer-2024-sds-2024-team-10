@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_22_110315) do
+ActiveRecord::Schema[7.1].define(version: 2024_07_23_055758) do
   create_table "customer_records", force: :cascade do |t|
     t.string "Identification"
     t.string "Name"
@@ -25,34 +25,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_22_110315) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.date "record_date"
+    t.string "Password"
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.string "passport_number"
-    t.string "nationality"
-    t.string "fin"
-    t.date "date_of_birth"
-    t.string "tel_no"
-    t.string "address"
-    t.string "tax_id_no"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "documents", force: :cascade do |t|
-    t.string "doc_name"
-    t.string "location"
-    t.integer "customer_id", null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["customer_id"], name: "index_documents_on_customer_id"
-  end
-
-  create_table "mobilenos", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_foreign_key "documents", "customers"
 end

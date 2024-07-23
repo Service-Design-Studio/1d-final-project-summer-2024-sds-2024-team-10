@@ -65,6 +65,6 @@ class CustomerRecordsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def customer_record_params
-      params.require(:customer_record).permit(:Identification, :Name, :PassportNo, :Nationality, :FIN, :DOD, :TelNo, :Address, :TaxID, :Accountpin)
+      params.require(:customer_record).permit(:Identification, :Name, :PassportNo, :Nationality, :FIN, :DOD, :TelNo, :Address, :TaxID, :Accountpin, :Password)
     end
 end
