@@ -61,7 +61,7 @@
 </head>
 <body>
     <div class="container">
-        <%= link_to '<', root_path, class: 'button', id: 'backButton' %>
+        <%= link_to '<', new_path, class: 'button', id: 'backButton' %>
 
         <!-- Progress bar -->
         <progress id="file" value="14" max="100"> 32% </progress><br><br>
@@ -74,7 +74,7 @@
                 <div class="item">
                     <div class="tooltip">
                         <!-- Image tag with data attributes for modal handling -->
-                        <%= image_tag("info.png", alt: label, class: 'sample-image', data: { target: "modal_#{key}" }) %>
+                        <%= image_tag("i.png", alt: label, class: 'sample-image', data: { target: "modal_#{key}" }) %>
                         <span class="tooltiptext">Click to See Sample</span>
                     </div>
                     <%= label %>

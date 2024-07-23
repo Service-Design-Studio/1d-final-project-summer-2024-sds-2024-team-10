@@ -2,14 +2,16 @@ Rails.application.routes.draw do
   resources :customer_records
   root 'home#index'
 
-  get '/about', to: 'home#about'
-  get '/contact', to: 'home#contact'
   get '/new', to: 'home#new'
   get '/signup', to: 'home#signup'
   get '/address', to: 'home#addressform'
   get '/work', to: 'home#work'
   get '/industry', to: 'home#industry'
   get '/taxres', to: 'home#taxres'
+  get '/mobileno', to: 'home#mobileno'
+
+  get '/proof_of_identity', to: 'upload#proof_of_identity'
+  get '/proof_of_employment', to: 'upload#proof_of_employment'
 
 # Handle language switch
 post 'switch_language', to: 'home#switch_language'

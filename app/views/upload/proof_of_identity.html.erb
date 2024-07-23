@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proof of Identity</title>
+    <%= stylesheet_link_tag 'identity', media: 'all' %>
+</head>
+<body>
+    <div class="container">
+        <div class="upload-section">
+            <div class="upload-icon">
+                <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
+            </div>
+            <div class="upload-text">
+                <h1>Proof of Identity</h1>
+                <p>Identity Card (For Malaysians)</p>
+                <p>Passport (For other Nationalities)</p>
+            </div>
+        </div>
+        <div class="camera-icon">
+            <%= image_tag 'camera-upload.png', alt: 'Camera Icon' %>
+            <%= link_to 'Take Picture', proof_of_employment_path, class: 'btn', id: 'nextButton' %>
+        </div>
+    </div>
+</body>
+</html>
