@@ -1,6 +1,7 @@
 class OtpService
-  ACCOUNT_SID = 'AC56da4be39f369635cf7b77bed6a94d9c'
-  AUTH_TOKEN = '302fd0f0a589b9aab294107ab69d5861'
+  ACCOUNT_SID = 'AC110fb22facbd03185bad17fbec1ca367'
+  AUTH_TOKEN = 'b9ae2d7eb5c7c9c9e4db0ab3ab2768de'
+  SERVICE_SID = 'VA2ffb34d016bf56de2c93a054a17410f6'
 
   attr_reader :otp, :phone_number
 
@@ -14,7 +15,7 @@ class OtpService
     
     verification = @client.verify
                      .v2
-                     .services('VA24a08c55be3e1ea1a87aeef16fcff83b')
+                     .services(SERVICE_SID)
                      .verifications
                      .create(to: @phone_number, channel: 'sms')
     
@@ -22,11 +23,14 @@ class OtpService
   end
 
   def verify_otp(otp_code)
+    if otp_code.length != 6
+      return false
+    end
     @client = Twilio::REST::Client.new(ACCOUNT_SID, AUTH_TOKEN)
 
     verification_check = @client.verify
                                .v2
-                               .services('VA24a08c55be3e1ea1a87aeef16fcff83b')
+                               .services(SERVICE_SID)
                                .verification_checks
                                .create(to: @phone_number, code: otp_code)
 

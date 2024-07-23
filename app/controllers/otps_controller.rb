@@ -20,9 +20,9 @@ class OtpsController < ApplicationController
     otp_service = OtpService.new(phone_number)
 
     if otp_service.verify_otp(params[:otp])
-      redirect_to '/'
+      redirect_to '/singpass'
     else
-      redirect_to '/'
+      redirect_to '/otp'
     end
   end
 end
