@@ -43,6 +43,9 @@
                         <input type="tel" placeholder="Phone Number" required>
                     </div>
                 </div>
+                <div class="input-group">
+                    <input type="text" placeholder="Set Password" required>
+                </div>
                 <div class="checkbox-group">
                     <input type="checkbox" id="terms" required>
                     <label for="terms">I have read and agree to the relevant <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
@@ -52,7 +55,7 @@
                     <label for="promotions">Opt in to receive rewards, promotional offers and marketing communications.</label>
                 </div>
                 <%= link_to 'Get OTP', new_path, class: 'button', id: 'GetOTPButton' %>
-                <p class="login">Already have an account? <br> <a href="#">Log In instead</a></p>
+                <p class="login">Already have an account? <br><%= link_to 'Log In Instead', login_path, class: 'btn', id: 'LogInInsteadButton' %></p>
             </form>
         </div>
     </div>
