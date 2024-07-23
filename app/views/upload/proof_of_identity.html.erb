@@ -19,9 +19,9 @@
             </div>
         </div>
         <div class="camera-icon">
-            <%= link_to 'upload/camera', class: 'camera-button' do %>
+            <%= link_to upload_camera_path, class: 'camera-button' do %>
                 <%= image_tag 'camera-upload.png', alt: 'Camera Icon' %>
-                <p>Take Picture</p>
+            <p>Take Picture</p>
             <% end %>
             <%= link_to 'Next', proof_of_employment_path, class: 'btn', id: 'nextButton' %>
         </div>
