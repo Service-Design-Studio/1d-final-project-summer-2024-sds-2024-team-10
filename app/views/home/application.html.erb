@@ -1,0 +1,16 @@
+<%= stylesheet_link_tag 'mobileno', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image'%>
+        </div>
+        <div class="form-container">
+            <h1>Would you like to start a new application or continue the previous one?</h1>
+            <%= link_to 'New Application', new_path, class: 'button', id: 'NewApplicationButton' %>
+            <%= link_to 'Continue Application', new_path, class: 'button', id: 'ContinueApplicationButton' %>
+        </div>
+    </div>
+</body>
+</html>

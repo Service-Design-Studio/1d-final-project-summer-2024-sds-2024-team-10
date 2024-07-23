@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/mobileno', to: 'home#mobileno'
   get '/login', to: 'home#login'
   get '/otp', to: 'home#otp', as: 'verify_otps'
+  get '/application', to: 'home#application'
 
   get '/proof_of_identity', to: 'upload#proof_of_identity'
   get '/proof_of_employment', to: 'upload#proof_of_employment'
