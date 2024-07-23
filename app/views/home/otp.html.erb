@@ -1,0 +1,29 @@
+<%= stylesheet_link_tag 'mobileno', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DBS Sign Up</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image'%>
+        </div>
+        <div class="form-container">
+            <h1>One Time Password</h1>
+            <p>The OTP has been sent to your mobile number. </p>
+            <p>Please enter it below for verification.</p>
+            <form>
+                <div class="input-group">
+                    <input type="text" placeholder="Enter OTP" required>
+                </div>
+                <%= link_to 'Continue', new_path, class: 'button', id: 'GetOTPButton' %>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

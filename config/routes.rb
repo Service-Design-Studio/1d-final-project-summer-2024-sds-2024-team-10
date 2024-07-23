@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get '/taxres', to: 'home#taxres'
   get '/mobileno', to: 'home#mobileno'
   get '/login', to: 'home#login'
+  get '/otp', to: 'home#otp'
 
   get '/proof_of_identity', to: 'upload#proof_of_identity'
   get '/proof_of_employment', to: 'upload#proof_of_employment'
