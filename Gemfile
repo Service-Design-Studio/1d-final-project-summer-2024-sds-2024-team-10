@@ -73,5 +73,4 @@ group :test do
   gem 'rspec-rails'
   gem 'selenium-webdriver'
   gem 'cucumber', '~> 9.2.0'
-
 end
