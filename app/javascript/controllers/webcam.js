@@ -1,5 +1,4 @@
-(
-    function() {
+(function() {
 
     var width = 320; // We will scale the photo width to this
     var height = 0; // This will be computed based on the input stream
@@ -26,7 +25,7 @@
                 video.play();
             })
             .catch(function(err) {
-                console.log("An error occurred: " + err);
+                console.error("An error occurred: " + err);
             });
 
         video.addEventListener('canplay', function(ev) {
@@ -53,7 +52,6 @@
         clearphoto();
     }
 
-
     function clearphoto() {
         var context = canvas.getContext('2d');
         context.fillStyle = "#AAA";
@@ -70,9 +68,8 @@
             canvas.height = height;
             context.drawImage(video, 0, 0, width, height);
 
-            var data = canvas.toDataURL('image/jpg');
+            var data = canvas.toDataURL('image/png');
             photo.setAttribute('src', data);
-
             fetch('http://127.0.0.1:8080/camera/process', {
                 method: 'POST',
                 headers: {
@@ -83,15 +80,16 @@
             .then(response => response.json())
             .then(data => {
                 console.log('Success:', data);
+                document.getElementById('result').innerText = data.result;
             })
             .catch((error) => {
                 console.error('Error:', error);
             });
-
         } else {
             clearphoto();
         }
     }
 
-    window.addEventListener('load', startup, false);
+    document.addEventListener('DOMContentLoaded', startup, false);
+
 })();

@@ -47,7 +47,9 @@ Rails.application.routes.draw do
   get '/upload', to: 'upload#upload'
   get '/upload/camera', to: 'upload#camera'
   get '/upload/files', to: 'upload#files'
-
+  
+  post '/camera/process', to: 'camera#process'
+  
   post 'otps/create', to: 'otps#create', as: 'create_otps'
   post 'otps/verify_otp', to: 'otps#verify_otp', as: 'verify_otp'
 
