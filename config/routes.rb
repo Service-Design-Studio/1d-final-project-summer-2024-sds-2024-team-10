@@ -42,7 +42,7 @@ get 'checklist_ta', to: 'checklist#checklist_ta', as: 'checklist_ta'
   get '/upload', to: 'upload#upload'
   get '/upload/camera', to: 'upload#camera'
   get '/upload/files', to: 'upload#files'
-  post '/camera/process', to: 'upload#process'
+  post '/camera/process', to: 'camera#process'
   
   Rails.application.routes.draw do
     resources :customer_records
