@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/otp', to: 'home#otp', as: 'verify_otps'
   get '/application', to: 'home#application'
 
+  post '/application/reload', to: 'home#reload_application_draft', as: 'reload_application_draft'
+
   get '/proof_of_identity', to: 'upload#proof_of_identity'
   get '/proof_of_employment', to: 'upload#proof_of_employment'
   get '/extracted_data', to: 'home#extracted_data'
@@ -45,7 +47,9 @@ Rails.application.routes.draw do
   get '/upload', to: 'upload#upload'
   get '/upload/camera', to: 'upload#camera'
   get '/upload/files', to: 'upload#files'
-
+  
+  post '/camera/process', to: 'camera#process'
+  
   post 'otps/create', to: 'otps#create', as: 'create_otps'
   post 'otps/verify_otp', to: 'otps#verify_otp', as: 'verify_otp'
 
