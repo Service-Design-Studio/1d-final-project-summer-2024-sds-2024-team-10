@@ -28,8 +28,8 @@ def generate_content(image_data, prompt_text)
 
   req_uri = URI(uri_string)
   res = Net::HTTP.post(req_uri, body_request, "Content-Type" => "application/json")
-  puts JSON.parse(res.body)
+  return JSON.parse(res.body)
   # puts JSON.parse(res.body)["candidates"][0]["content"]["parts"][0]["text"].split()[1]
 end
 
-# generate_content("../assets/images/mobile.jpg", "Extract the phone number from this image and return it in as a key-value pair but not json")
+# generate_content("../assets/images/mobile.jpg", "If the image is blurry, let me know, otherwise, Extract the phone number from this image and return it in as a key-value pair but not json")
