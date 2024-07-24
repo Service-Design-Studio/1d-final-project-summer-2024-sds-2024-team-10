@@ -1,6 +1,22 @@
-
+require 'simplecov'
+SimpleCov.start do
+  add_filter '/spec/'  # Exclude test directory from coverage metrics
+  # You can add other filters or groups here
+end
 require 'spec_helper'
 require_relative '../app/services/gemini_service'
+
+#webcam spec
+
+# spec/spec_helper.rb or spec/support/capybara.rb
+
+require 'capybara/rspec'
+
+Capybara.configure do |config|
+  config.default_driver = :selenium_chrome_headless  # or :selenium_chrome to see the browser
+  config.app_host = 'http://127.0.0.1:8080'          # Local server URL
+end
+
 
 # Your test code here
 
