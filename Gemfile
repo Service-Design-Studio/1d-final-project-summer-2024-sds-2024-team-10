@@ -20,6 +20,12 @@ gem "rotp"
 # Send OTP to phone via SMS
 gem 'twilio-ruby'
 
+gem 'sinatra'
+gem 'uri'
+gem 'net-http'
+gem 'json'
+gem 'base64'
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 

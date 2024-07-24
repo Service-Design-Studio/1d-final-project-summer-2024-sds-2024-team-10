@@ -44,7 +44,6 @@ Rails.application.routes.draw do
 
   get '/checklist/:item', to: 'checklist#show', as: 'checklist_item'
 
-  get '/upload', to: 'upload#upload'
   get '/upload/camera', to: 'upload#camera'
   get '/upload/files', to: 'upload#files'
   
