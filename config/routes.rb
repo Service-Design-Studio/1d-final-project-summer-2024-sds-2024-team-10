@@ -15,6 +15,7 @@ Rails.application.routes.draw do
 
   get '/proof_of_identity', to: 'upload#proof_of_identity'
   get '/proof_of_employment', to: 'upload#proof_of_employment'
+  get '/extracted_data', to: 'home#extracted_data'
 
   # Handle language switch
   post 'switch_language', to: 'home#switch_language'
