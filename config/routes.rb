@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   get '/otp', to: 'home#otp', as: 'verify_otps'
   get '/application', to: 'home#application'
 
+  post '/application/reload', to: 'home#reload_application_draft', as: 'reload_application_draft'
+
   get '/proof_of_identity', to: 'upload#proof_of_identity'
   get '/proof_of_employment', to: 'upload#proof_of_employment'
 
