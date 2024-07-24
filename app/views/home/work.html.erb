@@ -1,27 +1,40 @@
 <%= stylesheet_link_tag 'work', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
 
-<html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Work As Page</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+
 <body>
     <div class="container">
-        <progress id="file" value="43" max="100"> 32% </progress><br><br>
-        <%= link_to '<', address_path, class: 'button', id: 'backButton' %><br>
-        <h1>Next, what do you work as?</h1>
-        <ul class="options-list">
-            <li>Customer Service</li>
-            <li>Professional Services</li>
-            <li>IT Professional</li>
-            <li>Managerial/Senior Management</li>
-            <li>Student</li>
-            <li class="show-all">Show all</li>
-            <%= link_to 'Next', industry_path, class: 'button', id: 'nextButton' %><br>
-        </ul>
+        <progress id="file" value="43" max="100"></progress>
+        <%= link_to '<', address_path, class: 'button', id: 'backButton' %>
+        <h2>Next, about your work</h2>
+        <br>
+        <form>
+            <div class="form-group">
+                <label for="work">What do you work as?</label>
+                <select id="work" name="work">
+                    <option value="" disabled selected>Select your work</option>
+                    <option value="Customer Service">Customer Service</option>
+                    <option value="Professional Service">Professional Service</option>
+                    <option value="IT Professional">IT Professional</option>
+                    <option value="Management">Management</option>
+                    <option value="Student">Student</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <br>
+            <div class="form-group">
+                <label for="industry">And which of these industries do you work in?</label>
+                <select id="industry" name="industry">
+                    <option value="" disabled selected>Select your industry</option>
+                    <option value="Banking & Finance">Banking and Finance</option>
+                    <option value="Food and Beverage">Food and Beverage</option>
+                    <option value="Supply and Energy">Supply and Energy</option>
+                    <option value="Retail and Consumer goods">Retail and Consumer Goods</option>
+                    <option value="Others">Others</option>
+                </select>
+            </div>
+            <%= link_to 'Next', taxres_path, class: 'btn', id: 'nextButton' %>
+        </form>
     </div>
 </body>
 </html>

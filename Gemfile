@@ -14,6 +14,12 @@ gem "sqlite3", "~> 1.4"
 # Use the Puma web server [https://github.com/puma/puma]
 gem "puma", ">= 5.0"
 
+# Generate OTP
+gem "rotp"
+
+# Send OTP to phone via SMS
+gem 'twilio-ruby'
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 
@@ -61,7 +67,11 @@ group :development do
 end
 
 group :test do
-  # Use system testing [https://guides.rubyonrails.org/testing.html#system-testing]
-  gem "capybara"
-  gem "selenium-webdriver"
+  gem 'cucumber-rails', require: false
+  gem 'database_cleaner-active_record'
+  gem 'capybara'
+  gem 'rspec-rails'
+  gem 'selenium-webdriver'
+  gem 'cucumber', '~> 9.2.0'
+  gem 'webmock'
 end

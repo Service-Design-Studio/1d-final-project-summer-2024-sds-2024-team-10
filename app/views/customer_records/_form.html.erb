@@ -1,0 +1,72 @@
+<%= form_with(model: customer_record) do |form| %>
+  <% if customer_record.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(customer_record.errors.count, "error") %> prohibited this customer_record from being saved:</h2>
+
+      <ul>
+        <% customer_record.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :Identification, style: "display: block" %>
+    <%= form.text_field :Identification %>
+  </div>
+
+  <div>
+    <%= form.label :Name, style: "display: block" %>
+    <%= form.text_field :Name %>
+  </div>
+
+  <div>
+    <%= form.label :PassportNo, style: "display: block" %>
+    <%= form.text_field :PassportNo %>
+  </div>
+
+  <div>
+    <%= form.label :Nationality, style: "display: block" %>
+    <%= form.text_field :Nationality %>
+  </div>
+
+  <div>
+    <%= form.label :FIN, style: "display: block" %>
+    <%= form.text_field :FIN %>
+  </div>
+
+  <div>
+    <%= form.label :DOD, style: "display: block" %>
+    <%= form.text_field :DOD %>
+  </div>
+
+  <div>
+    <%= form.label :TelNo, style: "display: block" %>
+    <%= form.text_field :TelNo %>
+  </div>
+
+  <div>
+    <%= form.label :Address, style: "display: block" %>
+    <%= form.text_field :Address %>
+  </div>
+
+  <div>
+    <%= form.label :TaxID, style: "display: block" %>
+    <%= form.text_field :TaxID %>
+  </div>
+
+  <div>
+    <%= form.label :Accountpin, style: "display: block" %>
+    <%= form.text_field :Accountpin %>
+  </div>
+
+  <div>
+    <%= form.label :Password, style: "display: block" %>
+    <%= form.text_field :Password %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

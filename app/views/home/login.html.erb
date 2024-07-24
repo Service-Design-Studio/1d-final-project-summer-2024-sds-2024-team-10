@@ -1,0 +1,47 @@
+<%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image'%>
+        </div>
+        <div class="form-container">
+            <h1>Log In</h1>
+            <%= form_with url: create_otps_path, method: :post, local: true do |f| %>
+                <div class="input-group">
+                    <%= f.text_field :name, placeholder: "Name", required: true %>
+                </div>
+                <div class="input-group">
+                    <div class="phone-input">
+                        <%= f.select :country_code, options_for_select([
+                            ['🇸🇬 +65', '+65'],
+                            ['🇲🇾 +60', '+60'],
+                            ['🇨🇳 +86', '+86'],
+                            ['🇺🇸 +1', '+1'],
+                            ['🇬🇧 +44', '+44'],
+                            ['🇮🇳 +91', '+91'],
+                            ['🇦🇺 +61', '+61'],
+                            ['🇯🇵 +81', '+81'],
+                            ['🇩🇪 +49', '+49'],
+                            ['🇫🇷 +33', '+33'],
+                            ['🇮🇹 +39', '+39'],
+                            ['🇷🇺 +7', '+7'],
+                            ['🇪🇸 +34', '+34'],
+                            ['🇧🇷 +55', '+55'],
+                            ['🇿🇦 +27', '+27'],
+                            ['🇰🇷 +82', '+82']
+                        ], '+65'), required: true %>
+                        <%= f.telephone_field :phone_number, placeholder: "Phone Number", required: true %>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <%= f.password_field :password, placeholder: "Enter Password", required: true %>
+                </div>
+                <%= f.submit 'Continue', class: 'button', id: 'ContinueButton' %>
+                <p class="login">Don't have an account? <br><%= link_to 'Sign Up Instead', mobileno_path, class: 'btn', id: 'SignUpInsteadButton' %></p>
+            <% end %>
+        </div>
+    </div>
+</body>
+</html>

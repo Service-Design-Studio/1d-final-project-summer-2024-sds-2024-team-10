@@ -13,7 +13,6 @@ class HomeController < ApplicationController
     end
   end
 
-
   def about
   end
 
@@ -39,4 +38,11 @@ class HomeController < ApplicationController
   def taxres
   end
 
+  def application
+  end
+
+  def reload_application_draft
+    reload = true
+    redirect_to address_path
+  end
 end
