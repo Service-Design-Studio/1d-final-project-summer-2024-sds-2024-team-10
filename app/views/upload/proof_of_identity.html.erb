@@ -9,6 +9,7 @@
 </head>
 <body>
     <div class="container">
+        <progress id="file" value="72" max="100"> 32% </progress><br><br>
         <div class="upload-section">
             <div class="upload-icon">
                 <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
@@ -22,7 +23,6 @@
         <div class="camera-icon">
             <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
             <p>Take Picture</p>
-            <%= link_to 'Next', proof_of_employment_path, class: 'btn', id: 'nextButton' %>
         </div>
     </div>
 </body>
