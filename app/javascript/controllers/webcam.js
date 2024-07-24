@@ -70,7 +70,7 @@
 
             var data = canvas.toDataURL('image/png');
             photo.setAttribute('src', data);
-            fetch('http://127.0.0.1:8080/camera/process', {
+            fetch('dbs3-tqs6erweea-as.a.run.app/camera/process', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
