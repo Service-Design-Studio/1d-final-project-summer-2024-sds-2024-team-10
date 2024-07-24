@@ -1,13 +1,6 @@
 <%= stylesheet_link_tag 'mobileno', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DBS Sign Up</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <body>
     <div class="container">
         <div class="header">
@@ -15,48 +8,49 @@
         </div>
         <div class="form-container">
             <h1>Sign Up</h1>
-            <form>
+            <%= form_with url: create_otps_path, method: :post, local: true do |f| %>
                 <div class="input-group">
-                    <input type="text" placeholder="Name" required>
+                    <%= f.text_field :name, placeholder: "Name", required: true %>
                 </div>
                 <div class="input-group">
                     <div class="phone-input">
-                        <select required>
-    <option value="+65">🇸🇬 +65 </option>
-    <option value="+60">🇲🇾 +60 </option>
-    <option value="+86">🇨🇳 +86 </option>
-    <option value="+1">🇺🇸 +1 </option>
-    <option value="+44">🇬🇧 +44 </option>
-    <option value="+91">🇮🇳 +91 </option>
-    <option value="+61">🇦🇺 +61 </option>
-    <option value="+81">🇯🇵 +81 </option>
-    <option value="+49">🇩🇪 +49 </option>
-    <option value="+33">🇫🇷 +33 </option>
-    <option value="+39">🇮🇹 +39 </option>
-    <option value="+7">🇷🇺 +7 </option>
-    <option value="+34">🇪🇸 +34 </option>
-    <option value="+55">🇧🇷 +55 </option>
-    <option value="+27">🇿🇦 +27 </option>
-    <option value="+82">🇰🇷 +82 </option>
-</select>
-
-                        <input type="tel" placeholder="Phone Number" required>
+                        <%= f.select :country_code, options_for_select([
+                            ['🇸🇬 +65', '+65'],
+                            ['🇲🇾 +60', '+60'],
+                            ['🇨🇳 +86', '+86'],
+                            ['🇺🇸 +1', '+1'],
+                            ['🇬🇧 +44', '+44'],
+                            ['🇮🇳 +91', '+91'],
+                            ['🇦🇺 +61', '+61'],
+                            ['🇯🇵 +81', '+81'],
+                            ['🇩🇪 +49', '+49'],
+                            ['🇫🇷 +33', '+33'],
+                            ['🇮🇹 +39', '+39'],
+                            ['🇷🇺 +7', '+7'],
+                            ['🇪🇸 +34', '+34'],
+                            ['🇧🇷 +55', '+55'],
+                            ['🇿🇦 +27', '+27'],
+                            ['🇰🇷 +82', '+82']
+                        ], '+65'), required: true %>
+                        <%= f.telephone_field :phone_number, placeholder: "Phone Number", required: true %>
                     </div>
                 </div>
                 <div class="input-group">
-                    <input type="text" placeholder="Set Password" required>
+                    <%= f.password_field :password, placeholder: "Set Password", required: true %>
                 </div>
                 <div class="checkbox-group">
-                    <input type="checkbox" id="terms" required>
+                    <%= f.check_box :terms, required: true %>
                     <label for="terms">I have read and agree to the relevant <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
                 </div>
                 <div class="checkbox-group">
-                    <input type="checkbox" id="promotions">
+                    <%= f.check_box :promotions %>
                     <label for="promotions">Opt in to receive rewards, promotional offers and marketing communications.</label>
                 </div>
-                <%= link_to 'Get OTP', new_path, class: 'button', id: 'GetOTPButton' %>
+
+                <%= f.submit 'Get OTP', class: 'button', id: 'GetOTPButton' %>
+
                 <p class="login">Already have an account? <br><%= link_to 'Log In Instead', login_path, class: 'btn', id: 'LogInInsteadButton' %></p>
-            </form>
+            <% end %>
         </div>
     </div>
 </body>
