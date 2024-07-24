@@ -70,6 +70,21 @@
 
             var data = canvas.toDataURL('image/png');
             photo.setAttribute('src', data);
+            fetch('http://127.0.0.1:8080/camera/process', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ image_data: data })
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Success:', data);
+                document.getElementById('result').innerText = data.result;
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+            });
         } else {
             clearphoto();
         }

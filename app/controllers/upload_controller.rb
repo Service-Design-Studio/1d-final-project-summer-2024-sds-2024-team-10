@@ -8,5 +8,4 @@ class UploadController < ApplicationController
     def camera
     end
   
-    
   end
