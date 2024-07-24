@@ -13,7 +13,11 @@
             <button id="startbutton">Take photo</button>
         <canvas id="canvas"></canvas>
         <img id="photo" alt="The screen capture will appear in this box.">
-        <p id = "result"></p>
+        <div class="boxed">
+            <p id = "result">
+                1. Click 'Take photo' <br>
+                2. Please Wait .......
+            </p>
         </div>
         <%= link_to 'Next', proof_of_employment_path, class: 'btn', id: 'nextButton' %>
     </div>

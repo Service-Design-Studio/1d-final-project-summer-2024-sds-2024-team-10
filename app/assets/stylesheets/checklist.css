@@ -112,6 +112,7 @@ label:before {
 
 input[type="checkbox"]:checked + label:before {
     background-color: #33ffaa;
+    content: "✔"
 }
 
 .button {

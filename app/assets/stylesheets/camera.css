@@ -1,11 +1,12 @@
 #video {
-    border: 1px solid black;
+    margin-top: 20px;
+    border: 2px solid #ff3333;
     width: 320px;
     height: 240px;
 }
 
 #photo {
-    border: 1px solid black;
+    border: 2px solid #ff3333;
     width: 320px;
     height: 240px;
 }
@@ -87,4 +88,13 @@ body {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     height: 100%;
     width: 100%;
+}
+
+.boxed {
+    border-radius: 10px;
+    border: 2px solid #000;
+    padding: 10px;
+    margin: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
 }
