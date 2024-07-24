@@ -1,5 +1,4 @@
 (function() {
-
     var width = 320; // We will scale the photo width to this
     var height = 0; // This will be computed based on the input stream
 
@@ -11,11 +10,12 @@
     var startbutton = null;
 
     function startup() {
+        nextButton = document.getElementById('nextButton');
         video = document.getElementById('video');
         canvas = document.getElementById('canvas');
         photo = document.getElementById('photo');
         startbutton = document.getElementById('startbutton');
-
+        nextButton.disabled = true;
         navigator.mediaDevices.getUserMedia({
                 video: true,
                 audio: false
@@ -27,7 +27,6 @@
             .catch(function(err) {
                 console.error("An error occurred: " + err);
             });
-
         video.addEventListener('canplay', function(ev) {
             if (!streaming) {
                 height = video.videoHeight / (video.videoWidth / width);
@@ -47,8 +46,7 @@
         startbutton.addEventListener('click', function(ev) {
             takepicture();
             ev.preventDefault();
-        }, false);
-
+        }, false); 
         clearphoto();
     }
 
@@ -81,6 +79,7 @@
             .then(data => {
                 console.log('Success:', data);
                 document.getElementById('result').innerText = data.result;
+                nextButton.disabled = !data.enable;
             })
             .catch((error) => {
                 console.error('Error:', error);
