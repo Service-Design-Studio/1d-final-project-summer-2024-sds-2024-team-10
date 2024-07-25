@@ -30,7 +30,7 @@ class CameraController < ApplicationController
       @result = "Please take an image of your phone bill please."
       @enable = false
     else
-      @result = hash[:phone_number]
+      @result = "Phone number: #{hash[:phone_number]}"
       @enable = true
     end
     respond_to do |format|

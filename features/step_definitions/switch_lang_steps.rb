@@ -217,3 +217,102 @@ Given ('I am on the checklist page displayed in Tamil according to my language p
   visit '/checklist_ta'
   sleep 2
 end
+
+
+#signup
+And ("I land on the Sign up with Phone number page") do
+  visit '/login'
+end
+When ("I enter a valid Name") do
+  fill_in 'name', with: 'Moulik Pare'
+  sleep 2
+end
+And ("I enter a valid Phone Number and set a password") do
+  fill_in 'phone_number', with: '84285208'
+  sleep 2
+  fill_in 'password', with: '1234'
+  sleep 2
+end
+And ("I click the Continue button") do
+  sleep 1
+end
+And ("I visit the OTP page") do
+  visit '/otp'
+  sleep 2
+end
+Then ('I enter the OTP and press continue') do
+  puts "Please enter the OTP: "
+  sleep 3
+  otp = STDIN.gets.chomp  # Use STDIN.gets to ensure it reads from the terminal
+  sleep 2
+  fill_in 'otp', with: otp
+  sleep 4
+end
+And ("I proceed to the next page") do
+  visit '/singpass'
+  sleep 2
+end
+Then ('I land on the address page') do
+  visit '/address'
+end
+And ('I fill in my particulars and press next') do
+  fill_in 'postal-code', with: '471774'
+  sleep 1
+  fill_in 'block-no', with: '774'
+  sleep 1
+  fill_in 'floor', with: '08'
+  sleep 1
+  fill_in 'unit-no', with: '203'
+  sleep 1
+  fill_in 'address-line-1', with: 'Bedok Reservoir View'
+  sleep 1
+  fill_in 'address-line-2', with: 'Bedok Reservoir road'
+  sleep 1
+end
+Then ("I entered the wrong OTP and press continue") do
+  puts "Please enter the OTP: "
+  sleep 3
+  otp = STDIN.gets.chomp  # Use STDIN.gets to ensure it reads from the terminal
+  sleep 2
+  fill_in 'otp', with: otp
+  sleep 4
+  click_button 'Authenticate'
+  sleep 4
+end
+
+Given ("I am on the Mobile Ownership document upload page") do
+  visit '/proof_of_identity'
+  sleep 2
+  visit current_path
+  sleep 2
+end
+
+And ("I click on the camera button to take a picture of the document") do
+  click_button 'toCameraUpload'
+  sleep 1
+end
+
+Then ("I click on Take picture") do
+  sleep 2
+  visit current_path
+  sleep 5
+  click_button 'startbutton'
+  sleep 5
+end
+
+
+And ("I get an error") do
+  sleep 4
+end
+
+And ("I can see the information extracted") do
+  sleep 4
+end
+
+And ("I am unable to proceed to the next step") do
+  sleep 2
+end
+
+And ("I can proceed to the next step") do
+  click_button 'nextButton'
+end

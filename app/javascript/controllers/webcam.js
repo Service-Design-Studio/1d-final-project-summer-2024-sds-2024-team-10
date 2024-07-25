@@ -68,7 +68,10 @@
 
             var data = canvas.toDataURL('image/png');
             photo.setAttribute('src', data);
-            fetch('http://127.0.0.1:8080/camera/process', {
+            // Dynamically get the current URL
+            var baseURL = window.location.origin;
+
+            fetch(baseURL+'/camera/process', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
