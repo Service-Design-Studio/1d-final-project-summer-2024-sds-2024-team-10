@@ -19,8 +19,9 @@
                 2. Please Wait .......
             </p>
         </div>
-        <%= link_to 'Next', proof_of_employment_path, class: 'btn', id: 'nextButton' %>
-    </div>
+        <%= form_with url: proof_of_employment_path, method: :get, id: 'checklistForm' do %>
+            <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
+        <% end %>    </div>
 </body>
 
 </html> 

@@ -10,10 +10,12 @@
     var startbutton = null;
 
     function startup() {
+        nextButton = document.getElementById('nextButton');
         video = document.getElementById('video');
         canvas = document.getElementById('canvas');
         photo = document.getElementById('photo');
         startbutton = document.getElementById('startbutton');
+        nextButton.disabled = true;
 
         navigator.mediaDevices.getUserMedia({
                 video: true,
@@ -84,6 +86,7 @@
             .then(data => {
                 console.log('Success:', data);
                 document.getElementById('result').innerText = data.result;
+                nextButton.disabled = !data.enable;
             })
             .catch((error) => {
                 console.error('Error:', error);

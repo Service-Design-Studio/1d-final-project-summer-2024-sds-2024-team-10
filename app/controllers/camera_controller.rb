@@ -24,15 +24,18 @@ class CameraController < ApplicationController
       hash[key] = value
     end
     puts hash
-    if hash[:blurry] === 1
+    if hash[:blurry] == 1
       @result = "Image too blurry please retake."
-    elsif hash[:legitimate] === 0
+      @enable = false
+    elsif hash[:legitimate] == 0
       @result = "Please take an image of your phone bill please."
+      @enable = false
     else
       @result = hash[:phone_number]
+      @enable = true
     end
     respond_to do |format|
-      format.json { render json: { result: @result } }
+      format.json { render json: { result: @result ,enable:@enable} }
     end
   end
 end
