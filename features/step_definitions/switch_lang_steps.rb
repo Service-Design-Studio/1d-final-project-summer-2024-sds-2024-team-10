@@ -316,3 +316,45 @@ end
 And ("I can proceed to the next step") do
   click_button 'nextButton'
 end
+
+# Given step to navigate to the work selection page
+Given('I am on the work selection page') do
+  visit '/work' # Replace with the actual path
+  sleep 2
+end
+
+# Step to select an option from the work dropdown
+When('I select {string} from the work dropdown') do |work_option|
+  select work_option, from: 'work'
+  sleep 2
+end
+
+# Step to select an option from the industry dropdown
+When('I select {string} from the industry dropdown') do |industry_option|
+  select industry_option, from: 'industry'
+  sleep 2
+end
+
+# Step to verify the selected option from the work dropdown
+Then('I should see {string} selected from the work dropdown') do |expected_work|
+  selected_option = page.find('#work').find('option[selected]').text
+  sleep 2
+  expect(selected_option).to eq(expected_work)
+end
+
+# Step to verify the selected option from the industry dropdown
+Then('I should see {string} selected from the industry dropdown') do |expected_industry|
+  selected_option = page.find('#industry').find('option[selected]').text
+  sleep 2
+  expect(selected_option).to eq(expected_industry)
+end
+
+
+And ("I click the Next Button") do
+  click_button 'nextButton'
+end
+
+And  ("I am unable to proceed to the next page") do
+  sleep 2
+end
+
