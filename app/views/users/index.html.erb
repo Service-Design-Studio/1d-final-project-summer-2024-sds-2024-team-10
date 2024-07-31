@@ -8,7 +8,32 @@
       <th>Full Name</th>
       <th>Display Name</th>
       <th>Phone Number</th>
+      <th>DOB</th>
+      <th>FIN</th>
+      <th>Country of Residence</th>
+      <th>Postal Code</th>
+      <th>Block</th>
+      <th>Floor</th>
+      <th>Unit</th>
+      <th>Address Line 1</th>
+      <th>Address Line 2</th>
+      <th>Work</th>
+      <th>Industry</th>
+      <th>Tax Resident Country</th>
+      <th>Gender</th>
       <th>Email</th>
+      <th>Application Status</th>
+      <th>Identity Type</th>
+      <th>Passport Number</th>
+      <th>NRIC Number</th>
+      <th>Nationality</th>
+      <th>Passport Expiry Date</th>
+      <th>Application Date</th>
+      <th>Proof of Identity</th>
+      <th>Proof of Residential Address</th>
+      <th>Employment Pass</th>
+      <th>Proof of Mobile Phone Ownership</th>
+      <th>Proof of Tax Residency</th>
       <th>Actions</th>
     </tr>
   </thead>
@@ -19,7 +44,32 @@
         <td><%= user.full_name %></td>
         <td><%= user.display_name %></td>
         <td><%= user.phone_number %></td>
+        <td><%= user.dob %></td>
+        <td><%= user.fin %></td>
+        <td><%= user.country_of_residence %></td>
+        <td><%= user.postal_code %></td>
+        <td><%= user.block %></td>
+        <td><%= user.floor %></td>
+        <td><%= user.unit %></td>
+        <td><%= user.address_line_1 %></td>
+        <td><%= user.address_line_2 %></td>
+        <td><%= user.work %></td>
+        <td><%= user.industry %></td>
+        <td><%= user.tax_resident_country %></td>
+        <td><%= user.gender %></td>
         <td><%= user.email %></td>
+        <td><%= user.application_status %></td>
+        <td><%= user.identity_type %></td>
+        <td><%= user.passport_number %></td>
+        <td><%= user.nric_number %></td>
+        <td><%= user.nationality %></td>
+        <td><%= user.passport_expiry_date %></td>
+        <td><%= user.application_date %></td>
+        <td><%= user.proof_of_identity %></td>
+        <td><%= user.proof_of_residential_address %></td>
+        <td><%= user.employment_pass %></td>
+        <td><%= user.proof_of_mobile_phone_ownership %></td>
+        <td><%= user.proof_of_tax_residency %></td>
         <td>
           <%= link_to 'Show', user %>
           <%= link_to 'Edit', edit_user_path(user) %>
