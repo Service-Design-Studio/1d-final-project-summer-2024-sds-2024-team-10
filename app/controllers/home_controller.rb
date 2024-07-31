@@ -13,12 +13,6 @@ class HomeController < ApplicationController
     end
   end
 
-  def about
-  end
-
-  def contact
-  end
-
   def new
   end
 

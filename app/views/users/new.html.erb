@@ -1,0 +1,142 @@
+<h1><%= action_name.capitalize %> User</h1>
+
+<%= form_with(model: @user, local: true) do |form| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+        <% @user.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :full_name %>
+    <%= form.text_field :full_name %>
+  </div>
+  <div class="field">
+    <%= form.label :display_name %>
+    <%= form.text_field :display_name %>
+  </div>
+  <div class="field">
+    <%= form.label :phone_number %>
+    <%= form.text_field :phone_number %>
+  </div>
+  <div class="field">
+    <%= form.label :password %>
+    <%= form.password_field :password %>
+  </div>
+  <div class="field">
+    <%= form.label :dob %>
+    <%= form.date_select :dob %>
+  </div>
+  <div class="field">
+    <%= form.label :fin %>
+    <%= form.text_field :fin %>
+  </div>
+  <div class="field">
+    <%= form.label :country_of_residence %>
+    <%= form.text_field :country_of_residence %>
+  </div>
+  <div class="field">
+    <%= form.label :postal_code %>
+    <%= form.text_field :postal_code %>
+  </div>
+  <div class="field">
+    <%= form.label :block %>
+    <%= form.text_field :block %>
+  </div>
+  <div class="field">
+    <%= form.label :floor %>
+    <%= form.text_field :floor %>
+  </div>
+  <div class="field">
+    <%= form.label :unit %>
+    <%= form.text_field :unit %>
+  </div>
+  <div class="field">
+    <%= form.label :address_line_1 %>
+    <%= form.text_field :address_line_1 %>
+  </div>
+  <div class="field">
+    <%= form.label :address_line_2 %>
+    <%= form.text_field :address_line_2 %>
+  </div>
+  <div class="field">
+    <%= form.label :work %>
+    <%= form.text_field :work %>
+  </div>
+  <div class="field">
+    <%= form.label :industry %>
+    <%= form.text_field :industry %>
+  </div>
+  <div class="field">
+    <%= form.label :tax_resident_country %>
+    <%= form.text_field :tax_resident_country %>
+  </div>
+  <div class="field">
+    <%= form.label :gender %>
+    <%= form.text_field :gender %>
+  </div>
+  <div class="field">
+    <%= form.label :email %>
+    <%= form.email_field :email %>
+  </div>
+  <div class="field">
+    <%= form.label :application_status %>
+    <%= form.text_field :application_status %>
+  </div>
+  <div class="field">
+    <%= form.label :identity_type %>
+    <%= form.text_field :identity_type %>
+  </div>
+  <div class="field">
+    <%= form.label :passport_number %>
+    <%= form.text_field :passport_number %>
+  </div>
+  <div class="field">
+    <%= form.label :nric_number %>
+    <%= form.text_field :nric_number %>
+  </div>
+  <div class="field">
+    <%= form.label :nationality %>
+    <%= form.text_field :nationality %>
+  </div>
+  <div class="field">
+    <%= form.label :passport_expiry_date %>
+    <%= form.date_select :passport_expiry_date %>
+  </div>
+  <div class="field">
+    <%= form.label :application_date %>
+    <%= form.date_select :application_date %>
+  </div>
+  <div class="field">
+    <%= form.label :proof_of_identity %>
+    <%= form.text_field :proof_of_identity %>
+  </div>
+  <div class="field">
+    <%= form.label :proof_of_residential_address %>
+    <%= form.text_field :proof_of_residential_address %>
+  </div>
+  <div class="field">
+    <%= form.label :employment_pass %>
+    <%= form.text_field :employment_pass %>
+  </div>
+  <div class="field">
+    <%= form.label :proof_of_mobile_phone_ownership %>
+    <%= form.text_field :proof_of_mobile_phone_ownership %>
+  </div>
+  <div class="field">
+    <%= form.label :proof_of_tax_residency %>
+    <%= form.text_field :proof_of_tax_residency %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<%= link_to 'Back', users_path %>

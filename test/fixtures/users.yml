@@ -1,0 +1,65 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  full_name: MyString
+  display_name: MyString
+  phone_number: MyString
+  password_digest: MyString
+  dob: 2024-07-30
+  fin: MyString
+  country_of_residence: MyString
+  postal_code: MyString
+  block: MyString
+  floor: MyString
+  unit: MyString
+  address_line_1: MyString
+  address_line_2: MyString
+  work: MyString
+  industry: MyString
+  tax_resident_country: MyString
+  gender: MyString
+  email: MyString
+  application_status: MyString
+  identity_type: MyString
+  passport_number: MyString
+  nric_number: MyString
+  nationality: MyString
+  passport_expiry_date: 2024-07-30
+  application_date: 2024-07-30
+  proof_of_identity: MyString
+  proof_of_residential_address: MyString
+  employment_pass: MyString
+  proof_of_mobile_phone_ownership: MyString
+  proof_of_tax_residency: MyString
+
+two:
+  full_name: MyString
+  display_name: MyString
+  phone_number: MyString
+  password_digest: MyString
+  dob: 2024-07-30
+  fin: MyString
+  country_of_residence: MyString
+  postal_code: MyString
+  block: MyString
+  floor: MyString
+  unit: MyString
+  address_line_1: MyString
+  address_line_2: MyString
+  work: MyString
+  industry: MyString
+  tax_resident_country: MyString
+  gender: MyString
+  email: MyString
+  application_status: MyString
+  identity_type: MyString
+  passport_number: MyString
+  nric_number: MyString
+  nationality: MyString
+  passport_expiry_date: 2024-07-30
+  application_date: 2024-07-30
+  proof_of_identity: MyString
+  proof_of_residential_address: MyString
+  employment_pass: MyString
+  proof_of_mobile_phone_ownership: MyString
+  proof_of_tax_residency: MyString

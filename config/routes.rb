@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'users/index'
+  get 'users/show'
+  get 'users/new'
+  get 'users/edit'
   resources :customer_records
   root 'home#index'
 
@@ -58,5 +62,6 @@ Rails.application.routes.draw do
   # Can be used by load balancers and uptime monitors to verify that the app is live.
   get "up" => "rails/health#show", as: :rails_health_check
 
+  resources :users
   # Defines the root path route ("/")
 end
