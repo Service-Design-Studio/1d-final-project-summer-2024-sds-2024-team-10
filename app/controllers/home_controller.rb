@@ -1,6 +1,16 @@
 class HomeController < ApplicationController
   def index
     @message = "SDS Team 10: DBS_DocCheck"
+    @greeting = case I18n.locale
+    when :es
+      "¡Hola Mundo!"
+    when :"zh-TW"
+      "你好，世界！"
+    when :ta
+      "வணக்கம் உலகம்!"
+    else
+      "Hello World!"
+    end
   end
 
   def switch_language

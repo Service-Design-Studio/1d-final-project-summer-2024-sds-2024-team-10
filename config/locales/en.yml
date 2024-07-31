@@ -26,6 +26,10 @@
 #     en:
 #       "yes": yup
 #       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  language:
+    english: "English"
+    chinese: "Chinese"
+    tamil: "Tamil"
+  signup_button: "Sign Up"
+  login_button: "Log In"

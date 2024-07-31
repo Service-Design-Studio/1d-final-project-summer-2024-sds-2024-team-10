@@ -26,6 +26,9 @@ gem 'net-http'
 gem 'json'
 gem 'base64'
 
+gem 'i18n' #for translate
+
+
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
 

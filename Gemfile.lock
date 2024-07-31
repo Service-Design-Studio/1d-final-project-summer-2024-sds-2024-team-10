@@ -340,6 +340,7 @@ DEPENDENCIES
   cucumber-rails
   database_cleaner-active_record
   debug
+  i18n
   importmap-rails
   jbuilder
   json

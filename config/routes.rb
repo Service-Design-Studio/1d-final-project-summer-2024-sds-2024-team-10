@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   get '/extracted_data', to: 'home#extracted_data'
 
   # Handle language switch
-  post 'switch_language', to: 'home#switch_language'
+  post 'switch_language', to: 'sessions#switch_language'
 
   # Routes for Chinese language
   get 'signup_chi', to: 'home#signup_chi', as: 'signup_chi'
@@ -51,6 +51,9 @@ Rails.application.routes.draw do
   
   post 'otps/create', to: 'otps#create', as: 'create_otps'
   post 'otps/verify_otp', to: 'otps#verify_otp', as: 'verify_otp'
+
+  get 'locale/:locale', to: 'application#set_locale', as: :set_locale
+
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
