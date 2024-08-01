@@ -25,7 +25,7 @@ module GlcoudTest
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Set available locales for the application
-    config.i18n.available_locales = [:en, :'zh-CN',:ta]
+    config.i18n.available_locales = [:en,:zh-CN,:ta]
 
     # Set the default locale (optional, if you want a default other than :en)
     config.i18n.default_locale = :en
