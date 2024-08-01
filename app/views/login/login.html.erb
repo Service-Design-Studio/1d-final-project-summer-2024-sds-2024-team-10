@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'login', media: 'all', 'data-turbolinks-track': 'reload' %>
+<%= stylesheet_link_tag 'mobileno', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
 
 <body>
@@ -7,8 +7,8 @@
             <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image'%>
         </div>
         <div class="form-container">
-            <h1>Log In</h1>
-            <%= form_with url: create_otps_path, method: :post, local: true do |f| %>
+            <h1>Sign Up</h1>
+            <%= form_with url: create_otp_path, method: :post, local: true do |f| %>
                 <div class="input-group">
                     <%= f.text_field :name, placeholder: "Name", required: true %>
                 </div>
@@ -36,10 +36,20 @@
                     </div>
                 </div>
                 <div class="input-group">
-                    <%= f.password_field :password, placeholder: "Enter Password", required: true %>
+                    <%= f.password_field :password, placeholder: "Set Password", required: true %>
                 </div>
-                <%= f.submit 'Continue', class: 'button', id: 'ContinueButton' %>
-                <p class="login">Don't have an account? <br><%= link_to 'Sign Up Instead', mobileno_path, class: 'btn', id: 'SignUpInsteadButton' %></p>
+                <div class="checkbox-group">
+                    <%= f.check_box :terms, required: true %>
+                    <label for="terms">I have read and agree to the relevant <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                </div>
+                <div class="checkbox-group">
+                    <%= f.check_box :promotions %>
+                    <label for="promotions">Opt in to receive rewards, promotional offers and marketing communications.</label>
+                </div>
+
+                <%= f.submit 'Get OTP', class: 'button', id: 'GetOTPButton' %>
+
+                <p class="login">Already have an account? <br><%= link_to 'Log In Instead', login_path, class: 'btn', id: 'LogInInsteadButton' %></p>
             <% end %>
         </div>
     </div>

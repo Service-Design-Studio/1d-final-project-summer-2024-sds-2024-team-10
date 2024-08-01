@@ -46,6 +46,7 @@ body {
 
 #toChecklistButtonNoSingpass {
     text-decoration: none;
+    /* text-decoration: underline; */
     background-color: white;
     color: #9a8383;
     padding: 0px;

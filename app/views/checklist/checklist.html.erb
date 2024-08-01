@@ -1,0 +1,39 @@
+<%= stylesheet_link_tag 'checklist', media: 'all', crossorigin: 'anonymous' %>
+<%= javascript_include_tag 'controllers/checklist', crossorigin: 'anonymous' %>
+
+<body>
+    <div class="container">
+        <%= link_to '<', singpass_path, class: 'button', id: 'backButton' %>
+
+        <!-- Progress bar -->
+        <progress id="file" value="14" max="100"> 20% </progress><br><br>
+
+        <h1>Document Checklist</h1>
+        <p>Check the box when the document is ready.</p>
+        <%= form_with url: checklist_path, method: :post, id: 'checklistForm' do %>
+            <% checklist_items = { passport: 'Proof of Identity', employment: 'Proof of Employment', address: 'Proof of Residential Address', tax: 'Proof of Tax Residency', mobile: 'Proof of Mobile Ownership' } %>
+            <% checklist_items.each do |key, label| %>
+                <div class="item">
+                    <div class="tooltip">
+                        <!-- Image tag with data attributes for modal handling -->
+                        <%= image_tag("i.png", alt: label, class: 'sample-image', data: { target: "modal_#{key}" }) %>
+                        <span class="tooltiptext">Click to See Sample</span>
+                    </div>
+                    <%= label %>
+                    <%= check_box_tag "checklist[#{key}]", '1', session[key.to_s] == '1', id: key, autocomplete: 'off', data: { testid: "checkbox_#{key}" } %>
+                    <label for="<%= key %>"></label>
+                </div>
+
+                <!-- Modal for each image -->
+                <div id="modal_<%= key %>" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <%= image_tag("#{key}.jpg", alt: label, class: 'modal-image') %>
+                    </div>
+                </div>
+            <% end %>
+            <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
+        <% end %>
+    </div>
+</body>
+</html>
