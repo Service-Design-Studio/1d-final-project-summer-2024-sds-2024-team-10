@@ -4,7 +4,7 @@ function onReady() {
     }
 
 function goToCameraUpload(){
-    window.location.assign('/upload/camera');
+    window.location.assign('/upload');
 }
 
 if (document.readyState !== "loading") {

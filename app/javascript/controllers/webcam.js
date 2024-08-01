@@ -70,15 +70,17 @@
             photo.setAttribute('src', data);
             // Dynamically get the current URL
             var baseURL = window.location.origin;
-
-            fetch(baseURL+'/camera/process', {
+            var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            fetch(baseURL+'/camera/identification', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'X-CSRF-Token': csrfToken // Include CSRF token here
                 },
                 body: JSON.stringify({ image_data: data })
             })
-            .then(response => response.json())
+            .then(response => response.json()
+            )
             .then(data => {
                 console.log('Success:', data);
                 document.getElementById('result').innerText = data.result;

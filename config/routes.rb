@@ -44,11 +44,9 @@ Rails.application.routes.draw do
 
   get '/checklist/:item', to: 'checklist#show', as: 'checklist_item'
 
-  get '/upload', to: 'upload#upload'
-  get '/upload/camera', to: 'upload#camera'
-  get '/upload/files', to: 'upload#files'
+  get '/upload', to: 'upload#camera'
   
-  post '/camera/process', to: 'camera#process'
+  post '/camera/identification', to: 'camera#mobile'
   
   post 'otps/create', to: 'otps#create', as: 'create_otps'
   post 'otps/verify_otp', to: 'otps#verify_otp', as: 'verify_otp'

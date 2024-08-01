@@ -2,7 +2,6 @@ require 'uri'
 require 'net/http'
 require 'json'
 require 'base64'
-
 def generate_content(image_data, prompt_text)
   api_key = "AIzaSyBV5Mn_j1U2DMTvK-s2jvmgpbpxlteOhwg"
   uri_string = "https://generativelanguage.googleapis.com/v1/models/gemini-1.5-flash:generateContent?key=#{api_key}"
