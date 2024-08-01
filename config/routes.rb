@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/work', to: 'home#work'
   get '/industry', to: 'home#industry'
   get '/taxres', to: 'home#taxres'
-  get '/mobileno', to: 'home#mobileno'
+  get '/mobileno', to: 'users#mobileno'
   get '/login', to: 'home#login'
   get '/otp', to: 'home#otp', as: 'verify_otps'
   get '/application', to: 'home#application'

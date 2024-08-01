@@ -47,4 +47,9 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:full_name, :display_name, :phone_number, :dob, :fin, :country_of_residence, :postal_code, :block, :floor, :unit, :address_line_1, :address_line_2, :work, :industry, :tax_resident_country, :gender, :email, :application_status, :identity_type, :passport_number, :nric_number, :nationality, :passport_expiry_date, :application_date, :proof_of_identity, :proof_of_residential_address, :employment_pass, :proof_of_mobile_phone_ownership, :proof_of_tax_residency)
   end
+
+  def update_db
+
+  end
+
 end
