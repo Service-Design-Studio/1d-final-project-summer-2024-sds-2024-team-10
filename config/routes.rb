@@ -2,7 +2,6 @@ Rails.application.routes.draw do
   root 'login#login'
 
   get '/login', to: 'login#login', as: 'login'
-  post '/login', to: 'login#login'
 
   get '/otp', to: 'otp#otp', as: 'otp_verification'
 

@@ -9,9 +9,9 @@
         <h3 style="color:white">TODO: refine, ask them input, remember me, biometric</h3>
         <div class="form-container">
             <h1>Sign Up</h1>
-            <%= form_with url: login_path, method: :post, local: true do |f| %>
+            <%= form_with url: create_otp_path, method: :post, local: true do |f| %>
                 <div class="input-group">
-                    <%= f.text_field :name, placeholder: "Name", required: true %>
+                    <%= f.text_field :full_name, placeholder: "Full Name", required: true %>
                 </div>
                 <div class="input-group">
                     <div class="phone-input">
@@ -50,7 +50,7 @@
 
                 <%= f.submit 'Get OTP', class: 'button', id: 'GetOTPButton' %>
 
-                <p class="login">Already have an account? <br><%= link_to 'Log In Instead', login_path, class: 'btn', id: 'LogInInsteadButton' %></p>
+                <%# <p class="login">Already have an account? <br><%= link_to 'Log In Instead', login_path, class: 'btn', id: 'LogInInsteadButton'</p> %>
             <% end %>
         </div>
     </div>
