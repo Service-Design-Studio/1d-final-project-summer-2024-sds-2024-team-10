@@ -11,10 +11,10 @@ Rails.application.routes.draw do
   get '/singpass', to: 'singpass#singpass', as: 'singpass'
 
   get '/checklist', to: 'checklist#checklist', as: 'checklist'
-  post '/checklist', to: 'checklist#next'
+  post 'checklist', to: 'checklist#next'
 
   get '/general_info', to: 'customer_info#general_info', as: 'general_info'
-  post '/create_db', to: 'users#update', as: 'update_db'
+  post 'customer_info/update_db', to: 'customer_info#update_db', as: 'update_db'
 
   get '/taxres', to: 'customer_info#taxres', as: 'taxres'
 

@@ -1,4 +1,3 @@
-# app/controllers/users_controller.rb
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
@@ -26,11 +25,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to @user, notice: 'User was successfully updated.'
+    updates_hash = user_params.to_h.slice(*params[:list_of_updates])
+    if UserUpdaterService.update_user(@user.id, updates_hash)
+      redirect_to params[:next_path], notice: 'User was successfully updated.'
     else
-      render :edit
+      render :edit, alert: 'Update failed.'
     end
   end
 
@@ -48,9 +47,4 @@ class UsersController < ApplicationController
   def user_params
     params.require(:user).permit(:full_name, :display_name, :phone_number, :password, :dob, :fin, :country_of_residence, :postal_code, :block, :floor, :unit, :address_line_1, :address_line_2, :work, :industry, :tax_resident_country, :tin, :gender, :email, :application_status, :identity_type, :passport_number, :nric_number, :nationality, :passport_expiry_date, :application_date, :proof_of_identity, :proof_of_residential_address, :employment_pass, :proof_of_mobile_phone_ownership, :proof_of_tax_residency)
   end
-
-  def update_db
-
-  end
-
 end
