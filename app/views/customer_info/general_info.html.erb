@@ -3,68 +3,37 @@
 
 <body>
     <div class="container">
-        <h1>TODO: Add Display Name, Email, Work, Industry</h1>
+        <h1>TODO: Add Display Name, Email</h1>
         <progress id="file" value="43" max="100"></progress>
         <%= link_to '<', checklist_path, class: 'button', id: 'backButton' %>
-        <h2>Next, about your work</h2>
-        <br>
-        <form>
+        <h2>Tell More About Yourself</h2>
+
+        <%= form_with url: update_db_path, method: :post, local: true do |f| %>
+            <%= f.hidden_field :id, value: session[:user_id] %>
+            <%= f.text_field :display_name, placeholder: "Display Name", required: true %>
+            <%= f.text_field :email, placeholder: "Email", required: true %>
+            
             <div class="form-group">
                 <label for="work">What do you work as?</label>
-                <select id="work" name="work">
-                    <option value="" disabled selected>Select your work</option>
-                    <option value="Customer Service">Customer Service</option>
-                    <option value="Professional Service">Professional Service</option>
-                    <option value="IT Professional">IT Professional</option>
-                    <option value="Management">Management</option>
-                    <option value="Student">Student</option>
-                    <option value="Engineer">Engineer</option>
-                    <option value="Healthcare Professional">Healthcare Professional</option>
-                    <option value="Teacher">Teacher</option>
-                    <option value="Sales">Sales</option>
-                    <option value="Marketing">Marketing</option>
-                    <option value="Human Resources">Human Resources</option>
-                    <option value="Researcher">Researcher</option>
-                    <option value="Designer">Designer</option>
-                    <option value="Entrepreneur">Entrepreneur</option>
-                    <option value="Freelancer">Freelancer</option>
-                    <option value="Consultant">Consultant</option>
-                    <option value="Administrative">Administrative</option>
-                    <option value="Finance">Finance</option>
-                    <option value="Legal">Legal</option>
-                    <option value="Others">Others</option>
-                </select>
+                <%= f.select :work, [
+                    'Customer Service', 'Professional Service', 'IT Professional', 'Management', 'Student', 
+                    'Engineer', 'Healthcare Professional', 'Teacher', 'Sales', 'Marketing', 'Human Resources', 
+                    'Researcher', 'Designer', 'Entrepreneur', 'Freelancer', 'Consultant', 'Administrative', 
+                    'Finance', 'Legal', 'Others'
+                ], { include_blank: 'Select your work' }, { required: true } %>
             </div>
-            <br>
             <div class="form-group">
                 <label for="industry">And which of these industries do you work in?</label>
-                <select id="industry" name="industry">
-                    <option value="" disabled selected>Select your industry</option>
-                    <option value="Banking & Finance">Banking and Finance</option>
-                    <option value="Food and Beverage">Food and Beverage</option>
-                    <option value="Supply and Energy">Supply and Energy</option>
-                    <option value="Retail and Consumer goods">Retail and Consumer Goods</option>
-                    <option value="Healthcare">Healthcare</option>
-                    <option value="Technology">Technology</option>
-                    <option value="Education">Education</option>
-                    <option value="Manufacturing">Manufacturing</option>
-                    <option value="Transportation and Logistics">Transportation and Logistics</option>
-                    <option value="Construction">Construction</option>
-                    <option value="Telecommunications">Telecommunications</option>
-                    <option value="Real Estate">Real Estate</option>
-                    <option value="Entertainment">Entertainment</option>
-                    <option value="Media and Advertising">Media and Advertising</option>
-                    <option value="Government">Government</option>
-                    <option value="Non-Profit">Non-Profit</option>
-                    <option value="Automotive">Automotive</option>
-                    <option value="Agriculture">Agriculture</option>
-                    <option value="Hospitality and Tourism">Hospitality and Tourism</option>
-                    <option value="Fashion">Fashion</option>
-                    <option value="Others">Others</option>
-                </select>
+                <%= f.select :industry, [
+                    'Banking & Finance', 'Food and Beverage', 'Supply and Energy', 'Retail and Consumer Goods', 
+                    'Healthcare', 'Technology', 'Education', 'Manufacturing', 'Transportation and Logistics', 
+                    'Construction', 'Telecommunications', 'Real Estate', 'Entertainment', 'Media and Advertising', 
+                    'Government', 'Non-Profit', 'Automotive', 'Agriculture', 'Hospitality and Tourism', 
+                    'Fashion', 'Others'
+                ], { include_blank: 'Select your industry' }, { required: true } %>
             </div>
-            <%= link_to 'Next', taxres_path, class: 'btn', id: 'nextButton' %>
-        </form>
+            
+            <%= f.submit 'Next', class: 'btn', id: 'nextButton' %>
+        <% end %>
     </div>
 </body>
-</html>

@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'login#login'
 
   get '/login', to: 'login#login', as: 'login'
+  post '/login', to: 'login#login'
 
   get '/otp', to: 'otp#otp', as: 'otp_verification'
 
@@ -14,6 +15,7 @@ Rails.application.routes.draw do
   post '/checklist', to: 'checklist#next'
 
   get '/general_info', to: 'customer_info#general_info', as: 'general_info'
+  post '/create_db', to: 'users#update', as: 'update_db'
 
   get '/taxres', to: 'customer_info#taxres', as: 'taxres'
 

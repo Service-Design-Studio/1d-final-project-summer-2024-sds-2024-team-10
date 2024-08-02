@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_07_30_135856) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_02_091548) do
   create_table "users", force: :cascade do |t|
     t.string "full_name"
     t.string "display_name"
@@ -44,6 +44,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_07_30_135856) do
     t.string "proof_of_tax_residency"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "tin"
   end
 
 end

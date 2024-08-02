@@ -17,7 +17,6 @@ class CreateUsers < ActiveRecord::Migration[6.1]
       t.string :work
       t.string :industry
       t.string :tax_resident_country
-      t.string :tin
       t.string :gender
       t.string :email
       t.string :application_status
