@@ -1,0 +1,24 @@
+<%= stylesheet_link_tag 'identity', media: 'all' %>
+<%= javascript_include_tag 'controllers/upload_option', crossorigin: 'anonymous' %>
+
+<body>
+    <div class="container">
+        <progress id="file" value="72" max="100"> 32% </progress><br><br>
+        <h1 style="color: white">TODO Change to Residential</h1>
+        <div class="upload-section">
+            <div class="upload-icon">
+                <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
+            </div>
+            <div class="upload-text">
+                <h1>Proof of Identity</h1>
+                <p>Telco Bill</p>
+                <p>Telco Confirmation Letter</p>
+            </div>
+        </div>
+        <div class="camera-icon">
+            <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
+            <p>Take Picture</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -4,7 +4,10 @@ function onReady() {
     }
 
 function goToCameraUpload(){
-    window.location.assign('/upload/camera');
+    const currentPath = window.location.pathname;
+    const newPath = `/upload${currentPath}`;
+    
+    window.location.assign(newPath);
 }
 
 if (document.readyState !== "loading") {

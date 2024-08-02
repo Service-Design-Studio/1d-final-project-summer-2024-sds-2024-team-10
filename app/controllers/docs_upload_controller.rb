@@ -1,0 +1,2 @@
+class DocsUploadController < ApplicationController
+end
