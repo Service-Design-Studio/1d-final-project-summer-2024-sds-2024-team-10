@@ -71,7 +71,7 @@
             // Dynamically get the current URL
             var baseURL = window.location.origin;
             var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
-            fetch(baseURL+'/camera/identification', {
+            fetch(baseURL+'/camera/employment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -84,7 +84,7 @@
             .then(data => {
                 console.log('Success:', data);
                 document.getElementById('result').innerText = data.result;
-                nextButton.disabled = !data.enable;
+                nextButton.disabled = data.enable;
             })
             .catch((error) => {
                 console.error('Error:', error);

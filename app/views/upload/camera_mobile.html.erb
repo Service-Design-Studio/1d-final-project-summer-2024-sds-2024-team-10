@@ -1,0 +1,28 @@
+<!doctype html>
+
+<head>
+    <title>Camera</title>
+    <%= stylesheet_link_tag 'camera', media: 'all', crossorigin: 'anonymous' %>
+    <%= javascript_include_tag 'controllers/webcam_mobile', crossorigin: 'anonymous' %>
+</head>
+
+<body>
+    <div class="container">
+        <div class="camera">
+            <video id="video">Video stream not available.</video>
+            <button id="startbutton">Take photo</button>
+        <canvas id="canvas"></canvas>
+        <img id="photo" alt="The screen capture will appear in this box.">
+        <div class="boxed">
+            <p id = "result">
+                1. Click "Take Photo" <br>
+                2. Please Wait .......
+            </p>
+        </div>
+        <%= form_with url: summary_path, method: :get, id: 'checklistForm' do %>
+            <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
+        <% end %>
+    </div>
+</body>
+
+</html> 

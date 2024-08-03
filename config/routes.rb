@@ -15,8 +15,6 @@ Rails.application.routes.draw do
 
   post '/application/reload', to: 'home#reload_application_draft', as: 'reload_application_draft'
 
-  get '/proof_of_identity', to: 'upload#proof_of_identity'
-  get '/proof_of_employment', to: 'upload#proof_of_employment'
   get '/extracted_data', to: 'home#extracted_data'
 
   # Handle language switch
@@ -40,13 +38,32 @@ Rails.application.routes.draw do
   get '/checklist/mobile', to: 'checklist#mobile'
   get '/checklist/address', to: 'checklist#address'
   get '/checklist/tax', to: 'checklist#tax'
-  post '/checklist', to: 'home#address'
+  post '/checklist', to: 'hsome#address'
 
   get '/checklist/:item', to: 'checklist#show', as: 'checklist_item'
-
-  get '/upload', to: 'upload#camera'
   
-  post '/camera/identification', to: 'camera#mobile'
+  # Routes for Document upload
+  get '/proof_of_identity', to: 'upload#proof_of_identity'
+  get '/camera/identity', to: 'upload#camera_identity'
+  post '/camera/identity', to: 'camera#identity'
+
+  get '/proof_of_employment', to: 'upload#proof_of_employment'
+  get '/camera/employment', to: 'upload#camera_employment'
+  post '/camera/employment', to: 'camera#employment'
+
+  get '/proof_of_address', to: 'upload#proof_of_address'
+  get '/camera/address', to: 'upload#camera_address'
+  post '/camera/address', to: 'camera#address'
+
+  get '/proof_of_tax', to: 'upload#proof_of_tax'
+  get '/camera/tax', to: 'upload#camera_tax'
+  post '/camera/tax', to: 'camera#tax'
+
+  get '/proof_of_mobile', to: 'upload#proof_of_mobile'
+  get '/camera/mobile', to: 'upload#camera_mobile'
+  post '/camera/mobile', to: 'camera#mobile'
+
+  get '/summary', to: 'summary#summary', as: 'summary'
   
   post 'otps/create', to: 'otps#create', as: 'create_otps'
   post 'otps/verify_otp', to: 'otps#verify_otp', as: 'verify_otp'
