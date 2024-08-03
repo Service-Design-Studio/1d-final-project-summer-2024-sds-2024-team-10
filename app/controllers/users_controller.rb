@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :set_user, only: [:show, :edit, :update, :update_db, :destroy]
 
   def index
     @users = User.all
@@ -24,12 +24,20 @@ class UsersController < ApplicationController
     end
   end
 
-  def update
+  def update_db
     updates_hash = user_params.to_h.slice(*params[:list_of_updates])
     if UserUpdaterService.update_user(@user.id, updates_hash)
       redirect_to params[:next_path], notice: 'User was successfully updated.'
     else
       render :edit, alert: 'Update failed.'
+    end
+  end
+
+  def update
+    if @user.update(user_params)
+      redirect_to @user, notice: 'Item was successfully updated.'
+    else
+      render :edit
     end
   end
 

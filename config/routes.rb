@@ -2,11 +2,18 @@ Rails.application.routes.draw do
   root 'login#login'
 
   get '/login', to: 'login#login', as: 'login'
+  post 'login', to: 'login#login', as: 'login_authentication'
 
+  get '/existing_customer', to: 'existing_customer#home', as: 'existing_customer_home'
+
+  # Route for generating OTP
+  get '/otp', to: 'otp#create', as: 'generate_otp'
+
+  # Route for displaying the OTP verification form
   get '/otp', to: 'otp#otp', as: 'otp_verification'
 
-  post 'otp/create', to: 'otp#create', as: 'create_otp'
-  post 'otp/verify_otp', to: 'otp#verify_otp', as: 'verify_otp'
+  # Route for verifying the OTP
+  post '/otp/verify_otp', to: 'otp#verify_otp', as: 'verify_otp'
 
   get '/singpass', to: 'singpass#singpass', as: 'singpass'
 

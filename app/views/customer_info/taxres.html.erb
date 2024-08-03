@@ -12,10 +12,10 @@
     <div class="container">
         <progress id="file" value="58" max="100"> 32% </progress><br><br>
         <%= link_to '<', general_info_path, class: 'button', id: 'backButton' %><br>
-        <div class="content">
-            <br><br>
-            <h1>Are you a tax resident in Singapore only?</h1>
-            <form>
+        <%= form_with url: update_db_path, method: :post, local: true do |f| %>
+            <div class="content">
+                <br><br>
+                <h1>Are you a tax resident in Singapore only?</h1>
                 <div class="options">
                     <label class="option">
                         <input type="radio" name="tax_resident" value="yes"> Yes
@@ -24,18 +24,21 @@
                         <input type="radio" name="tax_resident" value="no"> No
                     </label>
                 </div>
-            </form>
-            <div class="info-box">
-                <p>You're a tax resident if you stay or work in the country:</p>
-                <ul>
-                    <li>For at least 183 days in a calendar year</li>
-                    <li>Continually for 3 consecutive years</li>
-                </ul>
-                <a href="#">Find out more</a>
+                <div class="info-box">
+                    <p>You're a tax resident if you stay or work in the country:</p>
+                    <ul>
+                        <li>For at least 183 days in a calendar year</li>
+                        <li>Continually for 3 consecutive years</li>
+                    </ul>
+                    <a target=”_blank” href="https://www.iras.gov.sg/taxes/individual-income-tax/basics-of-individual-income-tax/tax-residency-and-tax-rates/working-out-my-tax-residency">Find out more</a>
+                </div>
+                <%= f.hidden_field :id, value: session[:user_id] %>
+                <%= f.text_field :tax_resident_country, placeholder: "Tax Resident Country", required: true %>
+                <%= f.text_field :tin, placeholder: "TIN", required: true %>
             </div>
-            <%= link_to 'Next', proof_of_identity_path, class: 'btn', id: 'nextButton' %>
-        </div>
-        <h1>TODO: ask for country input if no selected, ask for TIN num</h1>
+            <h1>TODO: ask for country input if no selected, ask for TIN num</h1>
+            <%= f.submit 'Next', class: 'btn', id: 'nextButton' %>
+        <% end %>
     </div>
 </body>
 </html>

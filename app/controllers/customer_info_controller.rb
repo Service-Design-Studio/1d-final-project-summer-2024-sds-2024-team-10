@@ -1,15 +1,30 @@
 class CustomerInfoController < ApplicationController
   def update_db
     id = params[:id]
-    list_of_updates = ['display_name', 'email', 'work', 'industry']
-    list_of_values = [params[:display_name], params[:email], params[:work], params[:industry]]
+    updates_hash = customer_info_params.to_h
 
-    updates_hash = Hash[list_of_updates.zip(list_of_values)]
+    # Determine next_path based on the referring URL
+    referer = request.referer
 
-    if UserUpdaterService.update_user(id, updates_hash)
-      redirect_to taxres_path, notice: 'Customer info was successfully updated.'
-    else
-      redirect_to taxres_path, alert: 'Update failed.'
+    if referer.include?(general_info_path)
+      next_path = taxres_path
+    elsif referer.include?(taxres_path)
+      next_path = proof_of_identity_path
     end
+    
+    if UserUpdaterService.update_user(id, updates_hash)
+      redirect_to next_path, notice: 'Customer info was successfully updated.'
+    else
+      redirect_to next_path, alert: 'Update failed.'
+    end
+  end
+
+  private
+
+  def customer_info_params
+    params.permit(
+      :display_name, :email, :work, :industry, 
+      :tax_resident_country, :tin
+    )
   end
 end
