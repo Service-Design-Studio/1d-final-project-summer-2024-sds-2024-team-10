@@ -1,18 +1,23 @@
 <%= stylesheet_link_tag 'identity', media: 'all' %>
-<%= javascript_include_tag 'controllers/upload_option', crossorigin: 'anonymous' %>
+<%= javascript_include_tag 'controllers/address', crossorigin: 'anonymous' %>
 
 <body>
     <div class="container">
         <progress id="file" value="72" max="100"> 32% </progress><br><br>
-        <h1 style="color: white">TODO Change to Residential</h1>
         <div class="upload-section">
             <div class="upload-icon">
                 <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
             </div>
             <div class="upload-text">
-                <h1>Proof of Identity</h1>
-                <p>Telco Bill</p>
-                <p>Telco Confirmation Letter</p>
+                <h1>Proof of Residential Address</h1>
+                <p>Certification letter of employment</p>
+                <p>Certification letter from school</p>
+                <p>Certificate of stamp duty</p>
+                <p>Singapore utility/telecommunication bill</p>
+                <p>Singapore bank statement/credit card statement</p>
+                <p>In-Principle Approval issued by Ministry of Manpower</p>
+                <p>In-Principle Approval from ICA</p>
+                <p>Work permit of foreign domestic worker issue by Ministry of Manpower</p>
             </div>
         </div>
         <div class="camera-icon">

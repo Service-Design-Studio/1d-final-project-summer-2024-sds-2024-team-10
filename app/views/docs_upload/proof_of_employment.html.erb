@@ -1,8 +1,9 @@
 <%= stylesheet_link_tag 'identity', media: 'all' %>
-<%= javascript_include_tag 'controllers/upload_option', crossorigin: 'anonymous' %>
+<%= javascript_include_tag 'controllers/employment', crossorigin: 'anonymous' %>
 
 <body>
     <div class="container">
+        <progress id="file" value="72" max="100"> 32% </progress><br><br>
         <div class="upload-section">
             <div class="upload-icon">
                 <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>

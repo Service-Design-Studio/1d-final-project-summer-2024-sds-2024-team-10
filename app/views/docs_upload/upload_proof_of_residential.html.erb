@@ -1,5 +1,10 @@
-<%= stylesheet_link_tag 'camera', media: 'all', crossorigin: 'anonymous' %>
-<%= javascript_include_tag 'controllers/webcam', crossorigin: 'anonymous' %>
+<!doctype html>
+
+<head>
+    <title>Camera</title>
+    <%= stylesheet_link_tag 'camera', media: 'all', crossorigin: 'anonymous' %>
+    <%= javascript_include_tag 'controllers/webcam_address', crossorigin: 'anonymous' %>
+</head>
 
 <body>
     <div class="container">
@@ -10,13 +15,14 @@
         <img id="photo" alt="The screen capture will appear in this box.">
         <div class="boxed">
             <p id = "result">
-                1. Click 'Take photo' <br>
+                1. Click "Take Photo" <br>
                 2. Please Wait .......
             </p>
         </div>
-        <%= form_with url: proof_of_employment_path, method: :get, id: 'checklistForm' do %>
+        <%= form_with url: proof_of_taxres_path, method: :get, id: 'checklistForm' do %>
             <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
-        <% end %>    </div>
+        <% end %>
+    </div>
 </body>
 
 </html> 

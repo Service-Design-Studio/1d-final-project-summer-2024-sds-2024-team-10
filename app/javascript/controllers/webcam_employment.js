@@ -16,7 +16,6 @@
         photo = document.getElementById('photo');
         startbutton = document.getElementById('startbutton');
         nextButton.disabled = true;
-
         navigator.mediaDevices.getUserMedia({
                 video: true,
                 audio: false
@@ -28,7 +27,6 @@
             .catch(function(err) {
                 console.error("An error occurred: " + err);
             });
-
         video.addEventListener('canplay', function(ev) {
             if (!streaming) {
                 height = video.videoHeight / (video.videoWidth / width);
@@ -48,8 +46,7 @@
         startbutton.addEventListener('click', function(ev) {
             takepicture();
             ev.preventDefault();
-        }, false);
-
+        }, false); 
         clearphoto();
     }
 
@@ -71,22 +68,23 @@
 
             var data = canvas.toDataURL('image/png');
             photo.setAttribute('src', data);
-
             // Dynamically get the current URL
             var baseURL = window.location.origin;
-
-            fetch(`${baseURL}/camera/process`, {
+            var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+            fetch(baseURL+'/camera/employment', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'X-CSRF-Token': csrfToken // Include CSRF token here
                 },
                 body: JSON.stringify({ image_data: data })
             })
-            .then(response => response.json())
+            .then(response => response.json()
+            )
             .then(data => {
                 console.log('Success:', data);
                 document.getElementById('result').innerText = data.result;
-                nextButton.disabled = !data.enable;
+                nextButton.disabled = data.enable;
             })
             .catch((error) => {
                 console.error('Error:', error);

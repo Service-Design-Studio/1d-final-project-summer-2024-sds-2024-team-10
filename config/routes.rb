@@ -23,20 +23,29 @@ Rails.application.routes.draw do
   get '/general_info', to: 'customer_info#general_info', as: 'general_info'
   post 'customer_info/update_db', to: 'customer_info#update_db', as: 'update_db'
 
-  get '/taxres', to: 'customer_info#taxres', as: 'taxres'
+  get '/taxres', to: 'customer_info#taxres', as: 'taxres' #???
 
-  get '/proof_of_identity', to: 'docs_upload#proof_of_identity', as: 'proof_of_identity'
-  get '/proof_of_residential', to: 'docs_upload#proof_of_residential', as: 'proof_of_residential'
-  get '/proof_of_employment', to: 'docs_upload#proof_of_employment', as: 'proof_of_employment'
-  get '/proof_of_mobile', to: 'docs_upload#proof_of_mobile', as: 'proof_of_mobile'
-  get '/proof_of_taxres', to: 'docs_upload#proof_of_taxres', as: 'proof_of_taxres'
+   # Routes for Document upload
+   get '/proof_of_identity', to: 'docs_upload#proof_of_identity'
+   get '/camera/identity', to: 'docs_upload#upload_proof_of_identity'
+   post '/camera/identity', to: 'camera#identity'
+ 
+   get '/proof_of_employment', to: 'docs_upload#proof_of_employment'
+   get '/camera/employment', to: 'docs_upload#upload_proof_of_employment'
+   post '/camera/employment', to: 'camera#employment'
+ 
+   get '/proof_of_residential', to: 'docs_upload#proof_of_residential'
+   get '/camera/address', to: 'docs_upload#upload_proof_of_residential'
+   post '/camera/address', to: 'camera#address'
+ 
+   get '/proof_of_taxres', to: 'docs_upload#proof_of_taxres'
+   get '/camera/tax', to: 'docs_upload#upload_proof_of_taxres'
+   post '/camera/tax', to: 'camera#tax'
+ 
+   get '/proof_of_mobile', to: 'docs_upload#proof_of_mobile'
+   get '/camera/mobile', to: 'docs_upload#upload_proof_of_mobile'
+   post '/camera/mobile', to: 'camera#mobile'
 
-  get '/upload/proof_of_identity', to: 'docs_upload#upload_proof_of_identity', as: 'upload_proof_of_identity'
-  get '/upload/proof_of_residential', to: 'docs_upload#upload_proof_of_residential', as: 'upload_proof_of_residential'
-  get '/upload/proof_of_employment', to: 'docs_upload#upload_proof_of_employment', as: 'upload_proof_of_employment'
-  get '/upload/proof_of_mobile', to: 'docs_upload#upload_proof_of_mobile', as: 'upload_proof_of_mobile'
-  get '/upload/proof_of_taxres', to: 'docs_upload#upload_proof_of_taxres', as: 'upload_proof_of_taxres'
-  post '/camera/process', to: 'ocr#process'
 
   get '/summary_page', to: 'summary_page#summary_page', as: 'summary_page'
   get '/end_of_application', to: 'summary_page#end_of_application', as: 'end_of_application'

@@ -4,10 +4,7 @@ function onReady() {
     }
 
 function goToCameraUpload(){
-    const currentPath = window.location.pathname;
-    const newPath = `/upload${currentPath}`;
-    
-    window.location.assign(newPath);
+    window.location.assign('/camera/tax');
 }
 
 if (document.readyState !== "loading") {
