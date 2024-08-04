@@ -148,7 +148,8 @@ class CameraController < ApplicationController
 
   def mobile
     image_data = params[:image_data].split(",")[1]
-    result = generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the phone number and name from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name and phone number with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
+    result = generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate letter, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the phone number and name from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name and phone number with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
+    puts result
     result = result["candidates"][0]["content"]["parts"][0]["text"].split("\n")
     result = result[0,result.length]
     hash = {}
