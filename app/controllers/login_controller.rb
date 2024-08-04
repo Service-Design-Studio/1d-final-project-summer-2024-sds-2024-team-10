@@ -6,7 +6,7 @@ class LoginController < ApplicationController
     if user
       session[:user_id] = user.id
       session[:phone_number] = params[:phone_number]
-      puts "user authenticated"
+      puts "user authenticated, session[:user_id] set to #{session[:user_id]}"
       if user.application_status == "approved"
         puts "existing customer"
         redirect_to existing_customer_home_path
@@ -20,7 +20,7 @@ class LoginController < ApplicationController
       if new_user.persisted?
         session[:user_id] = new_user.id
         session[:phone_number] = params[:phone_number]
-        puts "existing customer"
+        puts "new user created and authenticated, session[:user_id] set to #{session[:user_id]}"
         redirect_to generate_otp_path
       else
         puts "Failed to create new user"

@@ -8,12 +8,12 @@
         <h2>Tell More About Yourself</h2>
 
         <div class="input-group">
-            <%= form_with url: update_db_path, method: :post, local: true do |f| %>
+            <%= form_with model: @user, url: update_db_path, method: :post, local: true do |f| %>
                 <%= f.hidden_field :id, value: session[:user_id] %>
-                <%= f.text_field :display_name, placeholder: "Display Name", required: true %>
-                <%= f.text_field :email, placeholder: "Email", required: true %>
+                <%= f.text_field :display_name, placeholder: "Display Name", required: true, value: @user.display_name %>
+                <%= f.text_field :email, placeholder: "Email", required: true, value: @user.email %>
         </div>
-        
+            
             <div class="form-group">
                 <label for="work">What do you work as?</label>
                 <%= f.select :work, [
@@ -21,7 +21,7 @@
                     'Engineer', 'Healthcare Professional', 'Teacher', 'Sales', 'Marketing', 'Human Resources', 
                     'Researcher', 'Designer', 'Entrepreneur', 'Freelancer', 'Consultant', 'Administrative', 
                     'Finance', 'Legal', 'Others'
-                ], { include_blank: 'Select your work' }, { required: true } %>
+                ], { include_blank: 'Select your work' }, { required: true, selected: @user.work } %>
             </div>
             <div class="form-group">
                 <label for="industry">And which of these industries do you work in?</label>
@@ -31,7 +31,7 @@
                     'Construction', 'Telecommunications', 'Real Estate', 'Entertainment', 'Media and Advertising', 
                     'Government', 'Non-Profit', 'Automotive', 'Agriculture', 'Hospitality and Tourism', 
                     'Fashion', 'Others'
-                ], { include_blank: 'Select your industry' }, { required: true } %>
+                ], { include_blank: 'Select your industry' }, { required: true, selected: @user.industry } %>
             </div>
             
             <%= f.submit 'Next', class: 'btn', id: 'nextButton' %>
