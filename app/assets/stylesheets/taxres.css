@@ -75,6 +75,20 @@ body {
     text-decoration: underline;
 }
 
+#tax-resident-fields {
+    margin-top: 20px !important;
+    width: 100% !important;
+}
+
+.tax-resident-fields input, .tax-resident-fields select {
+    width: calc(100%) !important;
+    padding: 15px !important;
+    border: 1px solid #ff3333 !important;
+    border-radius: 5px !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+}
 
 .button {
     text-decoration: none;
@@ -208,3 +222,6 @@ progress::-moz-progress-bar {
     color: white;
     font-weight: bold;
 }
+
+
+

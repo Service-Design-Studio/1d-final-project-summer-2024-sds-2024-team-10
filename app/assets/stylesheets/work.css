@@ -154,3 +154,19 @@ progress::-moz-progress-bar {
     line-height: 30px; /* Align text vertically */
     color: white;
     font-weight: bold;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.input-group input, .input-group select {
+    width: calc(100%);
+    padding: 15px;
+    border: 1px solid #ff3333;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-top: 10px;
+}

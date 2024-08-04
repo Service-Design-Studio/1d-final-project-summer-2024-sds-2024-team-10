@@ -95,10 +95,6 @@ body {
 .checkbox-group {
     display: flex;
     justify-content: flex-start;
-    margin-top: 30px;
-    margin-bottom: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
 }
 
 .checkbox-group input {
@@ -130,17 +126,34 @@ body {
     bottom: 20px;
 }
 
-#ContinueButton {
+#GetOTPButton {
     text-decoration: none;
-    background-color: #ff3333;
-    border: 10px solid #ff3333;
-    color: #ffffff;
-    padding: 8px;
+    background-color: #ffffff;
+    border: 2px solid #ff3333;
+    color: #ff3333;
+    padding: 12px;
     cursor: pointer;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
     position: absolute;
-    bottom: 20px;
+    bottom: 100px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#Biometrics {
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 2px solid #ff3333;
+    color: #ff3333;
+    padding: 12px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: absolute;
+    bottom: 30px;
     width: 80%;
     left: 50%;
     transform: translateX(-50%);

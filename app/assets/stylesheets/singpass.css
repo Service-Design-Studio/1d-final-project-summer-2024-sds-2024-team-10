@@ -127,7 +127,8 @@ body {
 }
 
 .benefits-list {
-    text-align: left;
+    margin-top: 20px;
+    margin-left: 60px;
 }
 
 .benefit-item {
