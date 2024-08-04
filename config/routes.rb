@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get '/general_info', to: 'customer_info#general_info', as: 'general_info'
   post 'customer_info/update_db', to: 'customer_info#update_db', as: 'update_db'
 
-  get '/taxres', to: 'customer_info#taxres', as: 'taxres' #???
+  get '/taxres', to: 'customer_info#taxres', as: 'taxres'
 
   # Routes for Document upload
   get '/proof_of_identity', to: 'docs_upload#proof_of_identity'
@@ -45,7 +45,6 @@ Rails.application.routes.draw do
   get '/proof_of_mobile', to: 'docs_upload#proof_of_mobile'
   get '/camera/mobile', to: 'docs_upload#upload_proof_of_mobile'
   post '/camera/mobile', to: 'camera#mobile'
-
 
   get '/summary_page', to: 'summary_page#summary_page', as: 'summary_page'
   get '/end_of_application', to: 'summary_page#end_of_application', as: 'end_of_application'
