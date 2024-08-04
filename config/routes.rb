@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   root 'login#login'
 
   get '/login', to: 'login#login', as: 'login'
-  post 'login', to: 'login#login', as: 'login_authentication'
+  post 'login', to: 'login#login_authentication', as: 'login_authentication'
 
   get '/existing_customer', to: 'existing_customer#home', as: 'existing_customer_home'
 
@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get '/otp', to: 'otp#create', as: 'generate_otp'
 
   # Route for displaying the OTP verification form
-  get '/otp', to: 'otp#otp', as: 'otp_verification'
+  get '/otp/verify', to: 'otp#otp', as: 'otp_verification'
 
   # Route for verifying the OTP
   post '/otp/verify_otp', to: 'otp#verify_otp', as: 'verify_otp'
@@ -25,26 +25,26 @@ Rails.application.routes.draw do
 
   get '/taxres', to: 'customer_info#taxres', as: 'taxres' #???
 
-   # Routes for Document upload
-   get '/proof_of_identity', to: 'docs_upload#proof_of_identity'
-   get '/camera/identity', to: 'docs_upload#upload_proof_of_identity'
-   post '/camera/identity', to: 'camera#identity'
- 
-   get '/proof_of_employment', to: 'docs_upload#proof_of_employment'
-   get '/camera/employment', to: 'docs_upload#upload_proof_of_employment'
-   post '/camera/employment', to: 'camera#employment'
- 
-   get '/proof_of_residential', to: 'docs_upload#proof_of_residential'
-   get '/camera/address', to: 'docs_upload#upload_proof_of_residential'
-   post '/camera/address', to: 'camera#address'
- 
-   get '/proof_of_taxres', to: 'docs_upload#proof_of_taxres'
-   get '/camera/tax', to: 'docs_upload#upload_proof_of_taxres'
-   post '/camera/tax', to: 'camera#tax'
- 
-   get '/proof_of_mobile', to: 'docs_upload#proof_of_mobile'
-   get '/camera/mobile', to: 'docs_upload#upload_proof_of_mobile'
-   post '/camera/mobile', to: 'camera#mobile'
+  # Routes for Document upload
+  get '/proof_of_identity', to: 'docs_upload#proof_of_identity'
+  get '/camera/identity', to: 'docs_upload#upload_proof_of_identity'
+  post '/camera/identity', to: 'camera#identity'
+
+  get '/proof_of_employment', to: 'docs_upload#proof_of_employment'
+  get '/camera/employment', to: 'docs_upload#upload_proof_of_employment'
+  post '/camera/employment', to: 'camera#employment'
+
+  get '/proof_of_residential', to: 'docs_upload#proof_of_residential'
+  get '/camera/address', to: 'docs_upload#upload_proof_of_residential'
+  post '/camera/address', to: 'camera#address'
+
+  get '/proof_of_taxres', to: 'docs_upload#proof_of_taxres'
+  get '/camera/tax', to: 'docs_upload#upload_proof_of_taxres'
+  post '/camera/tax', to: 'camera#tax'
+
+  get '/proof_of_mobile', to: 'docs_upload#proof_of_mobile'
+  get '/camera/mobile', to: 'docs_upload#upload_proof_of_mobile'
+  post '/camera/mobile', to: 'camera#mobile'
 
 
   get '/summary_page', to: 'summary_page#summary_page', as: 'summary_page'
