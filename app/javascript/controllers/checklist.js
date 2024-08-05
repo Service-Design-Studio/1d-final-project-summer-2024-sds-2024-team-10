@@ -2,6 +2,21 @@ function onReady() {
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     const nextButton = document.getElementById('nextButton');
     const modalImages = document.querySelectorAll('.sample-image');
+    const accordions = document.querySelectorAll('.accordion');
+
+    accordions.forEach(acc => {
+        acc.addEventListener('click', function() {
+            // Get the panel associated with this button
+            const panel = document.getElementById('panel_' + this.id.split('_')[1]);
+            
+            // Toggle the panel display
+            if (panel.style.display === 'block') {
+                panel.style.display = 'none';
+            } else {
+                panel.style.display = 'block';
+            }
+        });
+    });
 
     modalImages.forEach(image => {
         image.addEventListener('click', function() {
@@ -23,6 +38,7 @@ function onReady() {
             };
         });
     });
+    
 
     // Function to check if all checkboxes are checked
     const checkCheckboxes = () => {
