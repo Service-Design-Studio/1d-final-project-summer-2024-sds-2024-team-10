@@ -1,0 +1,62 @@
+# [START cloudrun_rails_cloudbuild]
+steps:
+  - id: "build image"
+    name: "gcr.io/cloud-builders/docker"
+    entrypoint: 'bash'
+    args: ["-c", "docker build --build-arg MASTER_KEY=$$RAILS_MASTER_KEY -t gcr.io/${_PROJECT_ID}/${_SERVICE_NAME} . "]
+    secretEnv: ["RAILS_MASTER_KEY"]
+
+  - id: "push image"
+    name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/${_PROJECT_ID}/${_SERVICE_NAME}"]
+
+
+  - id: "apply migrations"
+    name: "gcr.io/google-appengine/exec-wrapper"
+    entrypoint: "bash"
+    args:
+      [
+        "-c",
+        "/buildstep/execute.sh -i gcr.io/${_PROJECT_ID}/${_SERVICE_NAME} -s ${_PROJECT_ID}:${_REGION}:${_INSTANCE_NAME} -e RAILS_MASTER_KEY=$$RAILS_MASTER_KEY -- bundle exec rails db:migrate"
+      ]
+    secretEnv: ["RAILS_MASTER_KEY"]
+  
+  # - id: "seed database"
+  #   name: "gcr.io/google-appengine/exec-wrapper"
+  #   entrypoint: "bash"
+  #   args:
+  #     [
+  #       "-c",
+  #       "/buildstep/execute.sh -i gcr.io/${_PROJECT_ID}/${_SERVICE_NAME} -s ${_PROJECT_ID}:${_REGION}:${_INSTANCE_NAME} -- bundle exec rails db:seed"
+  #     ]
+  #   secretEnv: ["RAILS_MASTER_KEY"]
+
+  - id: "run deploy"
+    name: "gcr.io/google.com/cloudsdktool/cloud-sdk"
+    entrypoint: gcloud
+    args:
+      [
+        "run", "deploy",
+        "${_SERVICE_NAME}",
+        "--platform", "managed",
+        "--region", "${_REGION}",
+        "--image", "gcr.io/${_PROJECT_ID}/${_SERVICE_NAME}",
+        "--add-cloudsql-instances", "${_PROJECT_ID}:${_REGION}:${_INSTANCE_NAME}",
+        "--update-secrets=RAILS_MASTER_KEY=${_SECRET_NAME}:latest"
+      ]
+
+substitutions:
+  _PROJECT_ID: "dbs-document-check"
+  _REGION: "asia-southeast1"
+  _SERVICE_NAME: "dbs5"
+  _INSTANCE_NAME: "dbs"
+  _SECRET_NAME: 'dbs-secret-key'
+
+availableSecrets:
+  secretManager:
+  - versionName: projects/${_PROJECT_ID}/secrets/${_SECRET_NAME}/versions/latest
+    env: RAILS_MASTER_KEY
+
+images:
+  - "gcr.io/${_PROJECT_ID}/${_SERVICE_NAME}"
+# [END cloudrun_rails_cloudbuild]

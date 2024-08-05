@@ -1,0 +1,16 @@
+# app.yaml
+runtime: ruby
+env: flex
+
+entrypoint: bundle exec puma -C config/puma.rb
+
+env_variables:
+  DB_USERNAME: db_user
+  DB_PASSWORD: secure_password
+  DB_HOST: /cloudsql/dbs-document-check:asia-southeast1:dbs
+
+instance_class: F2
+
+automatic_scaling:
+  min_num_instances: 1
+  max_num_instances: 2

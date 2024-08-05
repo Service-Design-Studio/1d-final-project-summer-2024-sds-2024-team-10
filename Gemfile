@@ -25,6 +25,8 @@ gem 'uri'
 gem 'net-http'
 gem 'json'
 gem 'base64'
+gem 'pg'
+gem 'dotenv-rails', groups: [:development, :test]
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
