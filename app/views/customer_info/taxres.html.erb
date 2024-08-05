@@ -1,13 +1,6 @@
 <%= stylesheet_link_tag 'taxres', media: 'all', 'data-turbolinks-track': 'reload' %>
-<%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
+<%= javascript_include_tag 'controllers/taxres', crossorigin: 'anonymous' %>
 
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tax Residency Question</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
 <body> 
     <div class="container">
         <progress id="file" value="58" max="100"> 32% </progress><br><br>
@@ -18,10 +11,10 @@
                 <h1>Are you a tax resident in Singapore only?</h1>
                 <div class="options">
                     <label class="option">
-                        <input type="radio" name="user[tax_resident]" value="yes" onchange="toggleTaxResidentFields()" <%= @user.tax_resident_country == 'Singapore' ? 'checked' : '' %>> Yes
+                        <input type="radio" name="user[tax_resident]" value="yes" onchange="toggleTaxResidentFields()" > Yes
                     </label>
                     <label class="option">
-                        <input type="radio" name="user[tax_resident]" value="no" onchange="toggleTaxResidentFields()" <%= @user.tax_resident_country != 'Singapore' ? 'checked' : '' %>> No
+                        <input type="radio" name="user[tax_resident]" value="no" onchange="toggleTaxResidentFields()"> No
                     </label>
                 </div>
                 <div class="info-box">
@@ -42,23 +35,6 @@
             <%= f.submit 'Next', class: 'btn', id: 'nextButton' %>
         <% end %>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            document.querySelectorAll('input[name="tax_resident"]').forEach(function(el) {
-                el.addEventListener('change', toggleTaxResidentFields);
-            });
-
-            function toggleTaxResidentFields() {
-                var taxResidentFields = document.getElementById('tax-resident-fields');
-                var isTaxResident = document.querySelector('input[name="tax_resident"]:checked').value;
-                if (isTaxResident === 'no') {
-                    taxResidentFields.style.display = 'block';
-                } else {
-                    taxResidentFields.style.display = 'none';
-                }
-            }
-        });
-    </script>
 </body>
-</html>
+
+
