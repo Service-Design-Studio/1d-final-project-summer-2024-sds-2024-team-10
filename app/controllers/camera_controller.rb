@@ -1,9 +1,11 @@
 require_relative '../services/gemini_service'
 require 'base64'
 class CameraController < ApplicationController
+  
   def identity
     image_data = params[:image_data].split(",")[1]
-    result = generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not an legitimate document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the document type, Nationality,  Passport number, passport expiry date, name , gender, date of birth or the equivalent of these values from the  passport and return it as a separate key-value pair, the key values should be blurry,legitimate, document type, Nationality, passport_expiry_date, name , gender, date_of_birth,fill in empty slots with null. Do not use JSON/python format for the output and all key values should be lowercase")
+    service = GeminiService.new
+    result = service.generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not an legitimate document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the document type, Nationality,  Passport number, passport expiry date, name , gender, date of birth or the equivalent of these values from the  passport and return it as a separate key-value pair, the key values should be blurry,legitimate, document type, Nationality, passport_expiry_date, name , gender, date_of_birth,fill in empty slots with null. Do not use JSON/python format for the output and all key values should be lowercase")
     result = result["candidates"][0]["content"]["parts"][0]["text"].split("\n")
     result = result[0,result.length]
     hash = {}
@@ -39,7 +41,8 @@ class CameraController < ApplicationController
 
   def employment
     image_data = params[:image_data].split(",")[1]
-    result = generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate employment document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the name and return it as a separate key-value pair. The key values should be blurry, legitimate and name with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
+    service = GeminiService.new
+    result = service.generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate employment document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the name and return it as a separate key-value pair. The key values should be blurry, legitimate and name with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
     result = result["candidates"][0]["content"]["parts"][0]["text"].split("\n")
     result = result[0,result.length]
     hash = {}
@@ -75,7 +78,8 @@ class CameraController < ApplicationController
 
   def address
     image_data = params[:image_data].split(",")[1]
-    result = generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate document containing residential address, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the name, postal code, floor and unit number or the equivalent of these values from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name, postal_code, floor and unit_number with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
+    service = GeminiService.new
+    result = service.generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate document containing residential address, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the name, postal code, floor and unit number or the equivalent of these values from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name, postal_code, floor and unit_number with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
     result = result["candidates"][0]["content"]["parts"][0]["text"].split("\n")
     result = result[0,result.length]
     hash = {}
@@ -111,7 +115,8 @@ class CameraController < ApplicationController
 
   def tax
     image_data = params[:image_data].split(",")[1]
-    result = generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the name and the tax residency identification number or the equivalent of these values from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name and tax_residency with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
+    service = GeminiService.new
+    result = service.generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the name and the tax residency identification number or the equivalent of these values from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name and tax_residency with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
     result = result["candidates"][0]["content"]["parts"][0]["text"].split("\n")
     result = result[0,result.length]
     hash = {}
@@ -147,7 +152,8 @@ class CameraController < ApplicationController
 
   def mobile
     image_data = params[:image_data].split(",")[1]
-    result = generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the phone number and name from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name and phone number with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
+    service = GeminiService.new
+    result = service.generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the phone number and name from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name and phone number with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
     puts result
     result = result["candidates"][0]["content"]["parts"][0]["text"].split("\n")
     result = result[0,result.length]
