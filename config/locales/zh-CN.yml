@@ -1,11 +1,11 @@
 zh-CN:
-  login:
-    title: "登录"
-    full_name_placeholder: "全名"
-    phone_number_placeholder: "电话号码"
-    password_placeholder: "设置密码"
-    terms_label: "我已阅读并同意相关的条款和隐私政策"
-    promotions_label: "选择接收奖励、促销优惠和营销通信。"
-    remember_label: "记住我"
-    submit_otp: "获取 OTP"
-    submit_biometrics: "使用生物识别"
+#   login:
+#     title: "登录"
+#     full_name_placeholder: "全名"
+#     phone_number_placeholder: "电话号码"
+#     password_placeholder: "设置密码"
+#     terms_label: "我已阅读并同意相关的条款和隐私政策"
+#     promotions_label: "选择接收奖励、促销优惠和营销通信。"
+#     remember_label: "记住我"
+#     submit_otp: "获取 OTP"
+#     submit_biometrics: "使用生物识别"
