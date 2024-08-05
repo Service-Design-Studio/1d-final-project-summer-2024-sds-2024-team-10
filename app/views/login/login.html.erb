@@ -2,16 +2,22 @@
 <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
 
 <body>
+    
     <div class="container">
+        <div class="language-selector">
+            <div class="dropdown-menu">
+              <%= link_to "English", change_locale_path(:en), class: "dropdown-item" %>
+              <%= link_to "தமிழ்", change_locale_path(:ta), class: "dropdown-item" %>
+              <%= link_to "简体中文", change_locale_path(:'zh-CN'), class: "dropdown-item" %>
+            </div>
+        </div>
+
+
         <div class="header">
             <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image' %>
         </div>
         <!-- Language Selector Buttons -->
-        <div class="language-selector">
-            <%= link_to "English", change_locale_path(:en), class: "btn btn-primary" %>
-            <%= link_to "தமிழ்", change_locale_path(:ta), class: "btn btn-primary" %>
-            <%= link_to "简体中文", change_locale_path(:'zh-CN'), class: "btn btn-primary" %>
-        </div>
+        
         <div class="form-container">
             <h1><%= t('login.title') %></h1>
             <%= form_with url: login_authentication_path, method: :post, local: true do |f| %>
