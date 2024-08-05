@@ -14,7 +14,6 @@ tmp/
 # Ignore node/yarn dependencies
 /node_modules
 .DS_Store
-.DS_Store
 storage/development.sqlite3
 storage/development.sqlite3-shm
 storage/development.sqlite3-wal

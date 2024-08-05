@@ -73,7 +73,6 @@ class CameraController < ApplicationController
     end
   end
 
-
   def address
     image_data = params[:image_data].split(",")[1]
     result = generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate document containing residential address, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the name, postal code, floor and unit number or the equivalent of these values from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name, postal_code, floor and unit_number with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
