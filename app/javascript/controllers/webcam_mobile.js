@@ -1,9 +1,13 @@
 (function() {
+    window.myGlobalData = {
+        key1: 'value1',
+        key2: 'value2'
+    };
+    console.log(window.myGlobalData)
     var width = 320; // We will scale the photo width to this
     var height = 0; // This will be computed based on the input stream
 
     var streaming = false;
-
     var video = null;
     var canvas = null;
     var photo = null;
@@ -89,6 +93,7 @@
             .catch((error) => {
                 console.error('Error:', error);
             });
+            return testvalue;
         } else {
             clearphoto();
         }
