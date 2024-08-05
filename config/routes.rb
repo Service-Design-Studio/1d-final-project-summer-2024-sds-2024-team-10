@@ -54,8 +54,9 @@ Rails.application.routes.draw do
   post '/camera/mobile', to: 'camera#mobile'
 
   get '/summary_page', to: 'summary_page#summary_page', as: 'summary_page'
-  post '/end_of_application', to: 'summary_page#end_of_application', as: 'end_of_application'
+  post 'summary_page/update_db', to: 'summary_page#update_db', as: 'summary_update_db'
 
+  get '/end_of_application', to: 'summary_page#end_of_application', as: 'end_of_application'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
