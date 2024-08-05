@@ -5,9 +5,9 @@ class OtpService
   SERVICE_SID = 'VA2ffb34d016bf56de2c93a054a17410f6'
 
   # Genee
-  # ACCOUNT_SID = 'ACed085f22fdfebe937d7cd5d5dc3b5a59'
-  # AUTH_TOKEN = 'fc5daf42242c552e0d3f262de6f5c4bb'
-  # SERVICE_SID = 'VA3f754ed3ff1cb0a1a7daeab5bda2cbd8'
+  ACCOUNT_SID = 'ACed085f22fdfebe937d7cd5d5dc3b5a59'
+  AUTH_TOKEN = 'fc5daf42242c552e0d3f262de6f5c4bb'
+  SERVICE_SID = 'VA3f754ed3ff1cb0a1a7daeab5bda2cbd8'
 
   attr_reader :otp, :phone_number
 

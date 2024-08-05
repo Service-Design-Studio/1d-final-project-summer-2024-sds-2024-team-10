@@ -8,6 +8,11 @@
         </div>
         <div class="form-container">
             <h1>Sign Up/Cont Sign Up</h1>
+            <% if flash[:alert] %>
+                <div class="alert alert-danger">
+                    <%= flash[:alert] %>
+                </div>
+            <% end %>
             <%= form_with url: signup_authentication_path, method: :post, local: true do |f| %>
                 <div class="input-group">
                     <%= f.text_field :full_name, placeholder: "Full Name", required: true %>
@@ -36,7 +41,7 @@
                     </div>
                 </div>
                 <div class="checkbox-group">
-                    <%= f.check_box :terms, required: true %>
+                    <%= f.check_box :terms, required: false %>
                     <label for="terms">I have read and agree to the relevant <a target="_blank" href="https://www.dbs.com.sg/iwov-resources/pdf/deposits/DBS_deposit_guide.pdf">Terms & Conditions</a> and <a target="_blank" href="https://www.dbs.com/privacy/default.page#:~:text=We%20do%20not%20sell%20your,governs%20our%20relationship%20with%20you.">Privacy Policy</a></label>
                 </div>
                 <div class="checkbox-group">

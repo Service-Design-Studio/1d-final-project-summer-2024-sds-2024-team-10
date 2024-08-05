@@ -1,8 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
-  def self.find_record(display_name)
-    user = find_by(display_name: display_name)
+  def self.find_record(params)
+    user = find_by(params)
     if user
       puts "User db record found"
       return user
@@ -22,14 +22,3 @@ class User < ApplicationRecord
     end
   end
 end
-
-# def self.authenticate(display_name, password, phone_number)
-#   user = find_by(full_name: full_name, phone_number: phone_number)
-#   if user && user.authenticate(password)
-#     puts "User db record found"
-#     return user
-#   else
-#     puts "User db record not found"
-#     return nil
-#   end
-# end
