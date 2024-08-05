@@ -1,24 +1,22 @@
-<%= stylesheet_link_tag 'identity', media: 'all' %>
+<%= stylesheet_link_tag 'camera', media: 'all' %>
 <%= javascript_include_tag 'controllers/test', crossorigin: 'anonymous' %>
 <%= javascript_include_tag 'controllers/webcam_mobile', crossorigin: 'anonymous' %>
+
 <body>
     <div class="container">
-        <progress id="file" value="72" max="100"> 32% </progress><br><br>
-        <div class="upload-section">
-            <div class="upload-icon">
-                <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
-            </div>
+        <progress id="file" value="72" max="100"> 32% </progress>
+        <h3>Uploaded Document</h3>
+        <canvas id="canvas"></canvas>
+        <img id="photo" alt="The screen capture will appear in this box.">
         <div class="boxed">
+            <h3>Extracted Info</h3>
             <p id = "result">
                 1. Click "Take Photo" <br>
                 2. Please Wait .......
             </p>
         </div>
-        </div>
-        <div class="camera-icon">
-            <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
-            <p>Take Picture</p>
-        </div>
+        <%= form_with url: summary_page_path, method: :get, id: 'checklistForm' do %>
+            <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
+        <% end %>
     </div>
 </body>
-</html>

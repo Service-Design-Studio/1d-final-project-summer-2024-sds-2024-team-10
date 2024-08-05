@@ -8,6 +8,7 @@
 
 <body>
     <div class="container">
+        <progress id="file" value="72" max="100"> 32% </progress>
         <div class="info">
                 <h1>Proof of Identity</h1>
                 <p>Please take picture of the document.</p>
@@ -16,17 +17,19 @@
             <video id="video">Video stream not available.</video>
             <button id="startbutton">Take photo</button>
         <canvas id="canvas"></canvas>
-        <img id="photo" alt="The screen capture will appear in this box.">
-        <div class="boxed">
-            <p id = "result">
-                1. Click "Take Photo" <br>
-                2. Please Wait .......
-            </p>
-        </div>
+
         <%= form_with url: proof_of_employment_path, method: :get, id: 'checklistForm' do %>
             <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
         <% end %>
     </div>
 </body>
 
-</html>  
+<!-- </html>  
+
+        
+        <div class="boxed">
+            <p id = "result">
+                1. Click "Take Photo" <br>
+                2. Please Wait .......
+            </p>
+        </div>> --.
