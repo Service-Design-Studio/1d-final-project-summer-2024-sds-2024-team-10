@@ -5,6 +5,7 @@
     <div class="container">
         <progress id="file" value="58" max="100"> 32% </progress><br><br>
         <%= link_to '<', general_info_path, class: 'button', id: 'backButton' %><br>
+        
         <%= form_with model: @user, url: update_db_path, method: :post, local: true do |f| %>
             <div class="content">
                 <br><br>

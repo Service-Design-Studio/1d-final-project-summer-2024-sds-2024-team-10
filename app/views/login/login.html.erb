@@ -8,52 +8,26 @@
         </div>
         <div class="form-container">
             <h1>Log In</h1>
+            <% if flash[:alert] %>
+                <div class="alert alert-danger">
+                    <%= flash[:alert] %>
+                </div>
+            <% end %>
             <%= form_with url: login_authentication_path, method: :post, local: true do |f| %>
                 <div class="input-group">
-                    <%= f.text_field :full_name, placeholder: "Full Name", required: true %>
+                    <%= f.text_field :display_name, placeholder: "User ID", required: true %>
                 </div>
                 <div class="input-group">
-                    <div class="phone-input">
-                        <%= f.select :country_code, options_for_select([
-                            ['🇸🇬 +65', '+65'],
-                            ['🇲🇾 +60', '+60'],
-                            ['🇨🇳 +86', '+86'],
-                            ['🇺🇸 +1', '+1'],
-                            ['🇬🇧 +44', '+44'],
-                            ['🇮🇳 +91', '+91'],
-                            ['🇦🇺 +61', '+61'],
-                            ['🇯🇵 +81', '+81'],
-                            ['🇩🇪 +49', '+49'],
-                            ['🇫🇷 +33', '+33'],
-                            ['🇮🇹 +39', '+39'],
-                            ['🇷🇺 +7', '+7'],
-                            ['🇪🇸 +34', '+34'],
-                            ['🇧🇷 +55', '+55'],
-                            ['🇿🇦 +27', '+27'],
-                            ['🇰🇷 +82', '+82']
-                        ], '+65'), required: true %>
-                        <%= f.telephone_field :phone_number, placeholder: "Phone Number", required: true %>
-                    </div>
-                </div>
-                <div class="input-group">
-                    <%= f.password_field :password, placeholder: "Set Password", required: true %>
-                </div>
-                <div class="checkbox-group">
-                    <%= f.check_box :terms, required: true %>
-                    <label for="terms">I have read and agree to the relevant <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
-                </div>
-                <div class="checkbox-group">
-                    <%= f.check_box :promotions %>
-                    <label for="promotions">Opt in to receive rewards, promotional offers and marketing communications.</label>
+                    <%= f.password_field :password, placeholder: "Enter PIN", required: true %>
                 </div>
                 <div class="checkbox-group">
                     <%= f.check_box :remember %>
                     <label for="promotions">Remember Me</label>
                 </div>
-                <%= f.submit 'Get OTP', class: 'button', id: 'GetOTPButton' %>
                 <%= f.submit 'Use Biometrics', class: 'button', id: 'Biometrics' %>
+                <%= f.submit 'Get OTP', class: 'button', id: 'GetOTPButton' %>
 
-                <%# <p class="login">Already have an account? <br><%= link_to 'Log In Instead', login_path, class: 'btn', id: 'LogInInsteadButton'</p> %>
+                <p class="login">Don't have an account?<br><%= link_to 'Sign Up Now', signup_path, class: 'btn', id: 'SignUpforDigibankButton' %></p>
             <% end %>
         </div>
     </div>
