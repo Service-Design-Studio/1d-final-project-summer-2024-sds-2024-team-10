@@ -7,6 +7,12 @@ class ApplicationController < ActionController::Base
     redirect_to request.referrer || root_path
   end
 
+  def change_locale
+    session[:locale] = params[:locale] if params[:locale].present?
+    redirect_to request.referer || root_path, notice: t('language_changed')
+  end
+
+
   private
 
   def set_locale

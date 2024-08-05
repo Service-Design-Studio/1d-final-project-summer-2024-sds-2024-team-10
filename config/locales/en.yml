@@ -28,4 +28,14 @@
 #       enabled: "ON"
 
 en:
-  hello: "Hello world"
+  login:
+    title: "Log In"
+    full_name_placeholder: "Full Name"
+    phone_number_placeholder: "Phone Number"
+    password_placeholder: "Set Password"
+    terms_label: "I have read and agree to the relevant Terms & Conditions and Privacy Policy"
+    promotions_label: "Opt in to receive rewards, promotional offers and marketing communications."
+    remember_label: "Remember Me"
+    submit_otp: "Get OTP"
+    submit_biometrics: "Use Biometrics"
+

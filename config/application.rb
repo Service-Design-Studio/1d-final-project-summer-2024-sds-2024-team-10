@@ -1,6 +1,14 @@
 require_relative "boot"
 
 require "rails/all"
+#I18n.load_path += Dir[Rails.root.join('lib', 'locale', '*.{rb,yml}')]
+#I18n.load_path += Dir[Rails.root.join('config', 'locales', '*.{rb,yml}')]
+
+# Permitted locales available for the application
+I18n.available_locales = [:en, :ta, :'zh-CN']
+
+# Set the default locale to English
+I18n.default_locale = :en
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.

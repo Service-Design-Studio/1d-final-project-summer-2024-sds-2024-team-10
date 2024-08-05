@@ -6,11 +6,17 @@
         <div class="header">
             <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image' %>
         </div>
+        <!-- Language Selector Buttons -->
+        <div class="language-selector">
+            <%= link_to "English", change_locale_path(:en), class: "btn btn-primary" %>
+            <%= link_to "தமிழ்", change_locale_path(:ta), class: "btn btn-primary" %>
+            <%= link_to "简体中文", change_locale_path(:'zh-CN'), class: "btn btn-primary" %>
+        </div>
         <div class="form-container">
-            <h1>Log In</h1>
+            <h1><%= t('login.title') %></h1>
             <%= form_with url: login_authentication_path, method: :post, local: true do |f| %>
                 <div class="input-group">
-                    <%= f.text_field :full_name, placeholder: "Full Name", required: true %>
+                    <%= f.text_field :full_name, placeholder: t('login.full_name_placeholder'), required: true %>
                 </div>
                 <div class="input-group">
                     <div class="phone-input">
@@ -32,28 +38,26 @@
                             ['🇿🇦 +27', '+27'],
                             ['🇰🇷 +82', '+82']
                         ], '+65'), required: true %>
-                        <%= f.telephone_field :phone_number, placeholder: "Phone Number", required: true %>
+                        <%= f.telephone_field :phone_number, placeholder: t('login.phone_number_placeholder'), required: true %>
                     </div>
                 </div>
                 <div class="input-group">
-                    <%= f.password_field :password, placeholder: "Set Password", required: true %>
+                    <%= f.password_field :password, placeholder: t('login.password_placeholder'), required: true %>
                 </div>
                 <div class="checkbox-group">
                     <%= f.check_box :terms, required: true %>
-                    <label for="terms">I have read and agree to the relevant <a href="#">Terms & Conditions</a> and <a href="#">Privacy Policy</a></label>
+                    <label for="terms"><%= t('login.terms_label') %></label>
                 </div>
                 <div class="checkbox-group">
                     <%= f.check_box :promotions %>
-                    <label for="promotions">Opt in to receive rewards, promotional offers and marketing communications.</label>
+                    <label for="promotions"><%= t('login.promotions_label') %></label>
                 </div>
                 <div class="checkbox-group">
                     <%= f.check_box :remember %>
-                    <label for="promotions">Remember Me</label>
+                    <label for="remember"><%= t('login.remember_label') %></label>
                 </div>
-                <%= f.submit 'Get OTP', class: 'button', id: 'GetOTPButton' %>
-                <%= f.submit 'Use Biometrics', class: 'button', id: 'Biometrics' %>
-
-                <%# <p class="login">Already have an account? <br><%= link_to 'Log In Instead', login_path, class: 'btn', id: 'LogInInsteadButton'</p> %>
+                <%= f.submit t('login.submit_otp'), class: 'button', id: 'GetOTPButton' %>
+                <%= f.submit t('login.submit_biometrics'), class: 'button', id: 'Biometrics' %>
             <% end %>
         </div>
     </div>

@@ -1,0 +1,11 @@
+ta:
+  login:
+    title: "உள்நுழைய"
+    full_name_placeholder: "முழு பெயர்"
+    phone_number_placeholder: "தொலைபேசி எண்"
+    password_placeholder: "கடவுச்சொல்லை அமைக்கவும்"
+    terms_label: "தகுந்த நிபந்தனைகள் மற்றும் தனியுரிமைக் கொள்கையை நான் படித்தேன் மற்றும் ஒப்புக்கொள்கிறேன்"
+    promotions_label: "விருதுகள், விளம்பர சலுகைகள் மற்றும் சந்தைப்படுத்தல் தகவல்களைப் பெறச் சேர்க்கவும்."
+    remember_label: "என்னை நினைவில் கொள்க"
+    submit_otp: "OTP பெற"
+    submit_biometrics: "உடல் விபரங்களைப் பயன்படுத்தவும்"
