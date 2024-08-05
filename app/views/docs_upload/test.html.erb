@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag 'camera', media: 'all' %>
-<script type="module" src="<%= asset_path 'controllers/test.js' %>" crossorigin="anonymous"></script>
+<%= javascript_include_tag 'controllers/test', crossorigin: 'anonymous' %>
 <body>
     <div class="container">
         <progress id="file" value="72" max="100"> 32% </progress>
