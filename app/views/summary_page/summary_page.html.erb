@@ -1,2 +1,59 @@
-<h1>TODO: Summary Page</h1>
-<%= link_to 'Submit', end_of_application_path, class: 'button', id: 'nextButton' %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= stylesheet_link_tag 'summary', media: 'all', crossorigin: 'anonymous' %>
+    <title>Summary Page</title>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <button onclick="window.history.back()">&#x2190; Back</button>
+        <h1>Summary Page</h1>
+        <button onclick="editForm()">&#x270E; Edit</button>
+    </div>
+    <form>
+        <div class="input-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="John Doe">
+        </div>
+        <div class="input-group">
+            <label for="phone">Phone Number:</label>
+            <input type="text" id="phone" name="phone" value="+65 12345678">
+        </div>
+        <div class="input-group">
+            <label for="nric">NRIC:</label>
+            <input type="text" id="nric" name="nric" value="ABCDEFH">
+        </div>
+        <div class="input-group">
+            <label for="passport">Passport No:</label>
+            <input type="text" id="passport" name="passport" value="ABDJKSKS">
+        </div>
+        <div class="input-group">
+            <label for="dob">Date of Birth:</label>
+            <input type="text" id="dob" name="dob" value="01/01/2001">
+        </div>
+        <div class="input-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" value="Abc street, 10-10, xyz place, 123456, Singapore">
+        </div>
+        <div class="input-group">
+            <label for="tax">Tax Residency:</label>
+            <input type="text" id="tax" name="tax" value="Singapore">
+        </div>
+        <div class="input-group">
+            <label for="work">Work:</label>
+            <input type="text" id="work" name="work" value="Student">
+        </div>
+        <div class="input-group">
+            <label for="industry">Industry:</label>
+            <input type="text" id="industry" name="industry" value="None">
+        </div>
+        <button type="submit" class="submit-btn">Submit Application</button>
+    </form>
+</div>
+</body>
+</html>
+
