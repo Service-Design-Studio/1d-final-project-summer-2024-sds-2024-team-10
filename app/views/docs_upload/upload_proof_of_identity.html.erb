@@ -3,7 +3,7 @@
 <head>
     <title>Camera</title>
     <%= stylesheet_link_tag 'camera', media: 'all', crossorigin: 'anonymous' %>
-    <%= javascript_include_tag 'controllers/webcam_identity', crossorigin: 'anonymous' %>
+    <script type="module" src="<%= asset_path 'controllers/webcam_identity.js' %>" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -18,18 +18,17 @@
             <button id="startbutton">Take photo</button>
         <canvas id="canvas"></canvas>
 
+        <div class="boxed">
+            <p id = "result">
+                1. Click "Take Photo" <br>
+                2. Please Wait .......
+            </p>
+        </div>
+
         <%= form_with url: proof_of_employment_path, method: :get, id: 'checklistForm' do %>
             <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
         <% end %>
     </div>
 </body>
 
-<!-- </html>  
-
-        
-        <div class="boxed">
-            <p id = "result">
-                1. Click "Take Photo" <br>
-                2. Please Wait .......
-            </p>
-        </div>> --.
+</html>  
