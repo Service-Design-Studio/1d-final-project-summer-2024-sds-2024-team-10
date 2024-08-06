@@ -115,15 +115,17 @@
                 </div>
 
                 <!-- Tax Information -->
-                <div class="input-group">
-                    <label for="tax_resident_country">Tax Resident Country</label>
-                    <%= f.text_field :tax_resident_country, placeholder: "Tax Resident Country", required: true, value: @user.tax_resident_country %>
-                </div>
+                <% if @user.tax_resident_country.present? || @user.tin.present? %>
+                  <div class="input-group">
+                      <label for="tax_resident_country">Tax Resident Country</label>
+                      <%= f.text_field :tax_resident_country, placeholder: "Tax Resident Country", value: @user.tax_resident_country %>
+                  </div>
 
-                <div class="input-group">
-                    <label for="tin">TIN</label>
-                    <%= f.text_field :tin, placeholder: "TIN", value: @user.tin %>
-                </div>
+                  <div class="input-group">
+                      <label for="tin">TIN</label>
+                      <%= f.text_field :tin, placeholder: "TIN", value: @user.tin %>
+                  </div>
+                <% end %>
             </div>
 
             <%= f.submit 'Submit', class: 'btn', id: 'submitButton' %>
