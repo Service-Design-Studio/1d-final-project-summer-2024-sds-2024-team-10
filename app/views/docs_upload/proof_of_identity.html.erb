@@ -2,29 +2,50 @@
 <%= javascript_include_tag 'controllers/identity', crossorigin: 'anonymous' %>
 <body>
     <div class="container">
-        <progress id="file" value="72" max="100"> 32% </progress>
-        <h3>Uploaded Document</h3>
+        <div class="info">
+            <h4>Uploaded Document</h4>
+        </div>
         <canvas id="canvas"></canvas>
-        <img id="photo" alt="The screen capture will appear in this box.">
+        <div class="image-container">
+            <img id="photo" alt="The screen capture will appear in this box.">
+        </div>
         <%= link_to 'Retake Image', proof_of_identity_path, class: 'button', id: 'RetakeButton' %>
         <div class="boxed">
-            <h3>Extracted Info</h3>
+            <h4>Extracted Info</h4>
             <form id="textForm">
-                <label for="result">Document Type</label><br>
-                <input type="text" id="docutype" name="result" placeholder="Enter text here"><br>
-                <label for="result">Nationality</label><br>
-                <input type="text" id="nationality" name="result" placeholder="Enter text here"><br>
-                <label for="result">Passport Expiry Date</label><br>
-                <input type="text" id="passport_expiry_date" name="result" placeholder="Enter text here"><br>
-                <label for="result">Name</label><br>
-                <input type="text" id="name" name="result" placeholder="Enter text here"><br>
-                <label for="result">Gender</label><br>
-                <input type="text" id="gender" name="result" placeholder="Enter text here"><br>
-                <label for="result">Date Of Birth</label><br>
-                <input type="text" id="date_of_birth" name="result" placeholder="Enter text here"><br>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="docutype">Document Type</label>
+                        <input type="text" id="docutype" name="result" placeholder="Enter text here">
+                    </div>
+                    <div class="form-group">
+                        <label for="nationality">Nationality</label>
+                        <input type="text" id="nationality" name="result" placeholder="Enter text here">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="passport_expiry_date">Passport Expiry Date</label>
+                        <input type="text" id="passport_expiry_date" name="result" placeholder="Enter text here">
+                    </div>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="result" placeholder="Enter text here">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <input type="text" id="gender" name="result" placeholder="Enter text here">
+                    </div>
+                    <div class="form-group">
+                        <label for="date_of_birth">Date Of Birth</label>
+                        <input type="text" id="date_of_birth" name="result" placeholder="Enter text here">
+                    </div>
+                </div>
             </form>
         </div>
-            </div>
+        <div>
         <button id="nextButton" class="button">Next</button>
     </div>
 </body>
