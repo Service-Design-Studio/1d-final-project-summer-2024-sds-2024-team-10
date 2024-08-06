@@ -1,56 +1,73 @@
 require 'rails_helper'
-require 'twilio-ruby'
 
-RSpec.describe OtpService, type: :service do
+RSpec.describe OtpController, type: :controller do
   let(:phone_number) { '84285208' }
-  let(:formatted_phone_number) { '+6584285208' }
-  let(:otp_service) { OtpService.new(phone_number) }
-  let(:twilio_client) { instance_double(Twilio::REST::Client) }
-  let(:verify_service) { double }
-  let(:verifications) { double }
-  let(:verification_checks) { double }
+  let(:otp_code) { '123456' }
+  let(:otp_service) { instance_double(OtpService) }
 
   before do
-    allow(Twilio::REST::Client).to receive(:new).and_return(twilio_client)
-    allow(twilio_client).to receive(:verify).and_return(verify_service)
-    allow(verify_service).to receive(:v2).and_return(verify_service)
-    allow(verify_service).to receive(:services).with(OtpService::SERVICE_SID).and_return(verify_service)
-    allow(verify_service).to receive(:verifications).and_return(verifications)
-    allow(verify_service).to receive(:verification_checks).and_return(verification_checks)
+    session[:phone_number] = phone_number
+    allow(OtpService).to receive(:new).with(phone_number).and_return(otp_service)
   end
 
-  describe '#initialize' do
-    it 'formats the phone number correctly' do
-      expect(otp_service.phone_number).to eq(formatted_phone_number)
+  describe 'POST #create' do
+    context 'when OTP generation is successful' do
+      before do
+        allow(otp_service).to receive(:send_otp)
+        post :create
+      end
+
+      it 'calls the OtpService to send the OTP' do
+        expect(OtpService).to have_received(:new).with(phone_number)
+        expect(otp_service).to have_received(:send_otp)
+      end
+
+      it 'redirects to the OTP verification path' do
+        expect(response).to redirect_to(otp_verification_path)
+      end
     end
 
-    it 'generates an OTP' do
-      expect(otp_service.otp.length).to eq(6)
+    context 'when OTP generation raises an ArgumentError' do
+      before do
+        allow(otp_service).to receive(:send_otp).and_raise(ArgumentError.new('Invalid phone number'))
+        post :create
+      end
+
+      it 'sets a flash alert with the error message' do
+        expect(flash[:alert]).to eq('Invalid phone number')
+      end
+
+      it 'redirects to the login path' do
+        expect(response).to redirect_to(login_path)
+      end
     end
   end
 
-  describe '#send_otp' do
-    it 'sends an OTP to the phone number' do
-      expect(verifications).to receive(:create).with(to: formatted_phone_number, channel: 'sms').and_return(double(sid: '12345'))
-      otp_service.send_otp
-    end
-  end
-
-  describe '#verify_otp' do
-    let(:otp_code) { '123456' }
-
-    it 'returns false if the OTP code is not 6 digits' do
-      expect(otp_service.verify_otp('123')).to be false
+  describe 'POST #verify_otp' do
+    before do
+      allow(otp_service).to receive(:verify_otp).with(otp_code).and_return(otp_verified)
+      post :verify_otp, params: { otp: otp_code }
     end
 
-    it 'verifies the OTP code with Twilio' do
-      expect(verification_checks).to receive(:create).with(to: formatted_phone_number, code: otp_code).and_return(double(status: 'approved'))
-      expect(otp_service.verify_otp(otp_code)).to be true
+    context 'when OTP verification is successful' do
+      let(:otp_verified) { true }
+
+      it 'calls the OtpService to verify the OTP' do
+        expect(OtpService).to have_received(:new).with(phone_number)
+        expect(otp_service).to have_received(:verify_otp).with(otp_code)
+      end
+
+      it 'redirects to the singpass path' do
+        expect(response).to redirect_to(singpass_path)
+      end
     end
 
-    it 'returns false if the verification is not approved' do
-      expect(verification_checks).to receive(:create).with(to: formatted_phone_number, code: otp_code).and_return(double(status: 'pending'))
-      expect(otp_service.verify_otp(otp_code)).to be false
+    context 'when OTP verification fails' do
+      let(:otp_verified) { false }
+
+      it 'redirects to the OTP verification path' do
+        expect(response).to redirect_to(otp_verification_path)
+      end
     end
   end
 end
