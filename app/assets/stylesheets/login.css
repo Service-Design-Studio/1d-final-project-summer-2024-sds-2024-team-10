@@ -14,11 +14,18 @@ body {
     height: auto; /* Maintain aspect ratio */
 }
 
+.biometrics {
+    width: 60px; /* Set your desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 30px
+
+}
+
 .container {
-    background-color: #111;
+    background-color: #162333;
     padding: 0px;
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px #162333);
     height: 860px;
     width: 560px;
     text-align: center;
@@ -26,7 +33,7 @@ body {
 }
 
 .header {
-    background-color: #111;
+    background-color: #162333;
     padding: 20px;
     text-align: center;
 }
@@ -62,7 +69,7 @@ body {
     box-sizing: border-box;
     font-size: 20px;
     height: 60px;
-    border-color: #ff3333;
+    border-color: #162333;
 }
 
 .phone-input {
@@ -78,7 +85,7 @@ body {
     border-radius: 4px;
     font-size: 20px;
     height: 60px;
-    border-color: #ff3333;
+    border-color: #162333;
 }
 
 .phone-input input[type="tel"] {
@@ -89,21 +96,22 @@ body {
     box-sizing: border-box;
     font-size: 20px;
     height: 60px;
-    border-color: #ff3333;
+    border-color: #162333;
 }
 
 .checkbox-group {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center; /* Center align the content horizontally */
+    align-items: center;
 }
 
 .checkbox-group input {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .checkbox-group label {
-    font-size: 14px;
-    color: grey
+    font-size: 12px;
+    color: grey;
 }
 
 .checkbox-group a {
@@ -126,7 +134,7 @@ body {
     bottom: 20px;
 }
 
-#GetOTPButton {
+#GetOTPButton, #biometrics {
     text-decoration: none;
     background-color: #ffffff;
     border: 2px solid #ff3333;
@@ -153,7 +161,7 @@ body {
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
     position: absolute;
-    bottom: 30px;
+    bottom: 100px;
     width: 80%;
     left: 50%;
     transform: translateX(-50%);

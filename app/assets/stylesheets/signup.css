@@ -19,7 +19,7 @@ body {
     height: 800px;
     width: 500px;
     text-align: center;
-    position: relative;
+    position: relative; 
 }
  
 .button {
