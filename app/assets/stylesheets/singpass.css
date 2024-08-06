@@ -34,7 +34,9 @@ body {
 }
 
 .button {
+    text-decoration: none;
     color: white;
+    border: none;
     border-radius: 5px;
     padding: 12px 20px;
     cursor: pointer;
@@ -42,6 +44,41 @@ body {
     transition: background-color 0.3s ease;
     margin-top: 20px;
     font-weight: bold;
+    padding: 8px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#toChecklistButtonSingpass {
+    text-decoration: none;
+    background-color: #ff3333;
+    border: 2px solid #ff3333;
+    color: #ffffff;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: absolute;
+    bottom: 40px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+#toChecklistButtonSingpass:hover {
+    text-decoration: none;
+    background-color: white;
+    border: 2px solid #ff3333;
+    color: #ff3333;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: absolute;
+    bottom: 40px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 #toChecklistButtonNoSingpass {
@@ -55,24 +92,6 @@ body {
     position: absolute; /* Use absolute positioning */
     right: 20px; /* Align to the right */
     transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-
-#toChecklistButtonSingpass {
-    text-decoration: none;
-    background-color: #ff3333;
-    border: 10px solid #ff3333;
-    color: #ffffff;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    position: absolute;
-    bottom: 40px;
-    width: 80%;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
 }
 
 .center-align {
