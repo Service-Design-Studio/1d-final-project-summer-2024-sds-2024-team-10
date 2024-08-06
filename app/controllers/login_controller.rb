@@ -31,8 +31,8 @@ class LoginController < ApplicationController
     session[:phone_number] = phone_number
 
     if user      
+      session[:user_id] = user.id
       if user.full_name == full_name
-        session[:user_id] = user.id
         puts "user db record found, session[:user_id] set to #{session[:user_id]}"
 
         if user.application_status == "approved"

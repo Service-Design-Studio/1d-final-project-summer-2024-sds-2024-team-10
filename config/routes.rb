@@ -32,7 +32,7 @@ Rails.application.routes.draw do
 
   # Routes for Document upload
   get '/proof_of_identity', to: 'docs_upload#proof_of_identity', as: 'proof_of_identity_path'
-  get '/test', to: 'docs_upload#test'
+  get '/test', to: 'docs_upload#test', as: 'test'
   get '/camera/identity', to: 'docs_upload#upload_proof_of_identity', as: 'proof_of_identity'
   post '/camera/identity', to: 'camera#identity'
 
