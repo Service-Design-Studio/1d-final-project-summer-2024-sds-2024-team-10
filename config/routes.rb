@@ -34,7 +34,7 @@ Rails.application.routes.draw do
   get '/camera/identity', to: 'docs_upload#upload_proof_of_identity', as: 'proof_of_identity'
   post '/camera/identity', to: 'camera#identity'
   get '/proof_of_identity', to: 'docs_upload#proof_of_identity', as: 'proof_of_identity_display'
-  post '/proof_of_identity', to: 'camera#update_db', as: 'identity_update_db'
+  # post '/proof_of_identity', to: 'camera#update_db', as: 'identity_update_db'
 
   get '/camera/employment', to: 'docs_upload#upload_proof_of_employment', as: 'proof_of_employment'
   post '/camera/employment', to: 'camera#employment'
