@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   root 'login#home'
 
+  get 'change_locale/:locale', to: 'application#change_locale', as: :change_locale
+
   get '/signup', to: 'login#signup', as: 'signup'
   post 'signup', to: 'login#signup_authentication', as: 'signup_authentication'
 
   get '/login', to: 'login#login', as: 'login'
   post 'login', to: 'login#login_authentication', as: 'login_authentication'
-
-  # Handle language switch
-  post 'switch_language', to: 'language#switch_language'
 
   get '/existing_customer', to: 'existing_customer#home', as: 'existing_customer_home'
 
