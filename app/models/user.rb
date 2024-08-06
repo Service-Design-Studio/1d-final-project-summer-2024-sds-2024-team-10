@@ -25,4 +25,8 @@ class User < ApplicationRecord
   def self.duplicate()
     
   end
+
+  def self.find_all_names_same_phone(phone_number)
+    where(phone_number: phone_number).select(:id, :full_name)
+  end
 end
