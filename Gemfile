@@ -27,7 +27,6 @@ gem 'json'
 gem 'base64'
 gem 'pg'
 gem 'dotenv-rails', groups: [:development, :test]
-gem 'rails-i18n' 
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"

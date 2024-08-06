@@ -7,7 +7,7 @@
             <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image' %>
         </div>
         <div class="form-container">
-            <h1><%= t('login.title') %></h1>
+            <h1>Log In</h1>
             <% if flash[:alert] %>
                 <div class="alert alert-danger">
                     <%= flash[:alert] %>
@@ -15,19 +15,19 @@
             <% end %>
             <%= form_with url: login_authentication_path, method: :post, local: true do |f| %>
                 <div class="input-group">
-                    <%= f.text_field :display_name, placeholder: t('login.user_id'), required: true %>
+                    <%= f.text_field :display_name, placeholder: "User ID", required: true %>
                 </div>
                 <div class="input-group">
-                    <%= f.password_field :password, placeholder: t('login.enter_pin'), required: true %>
+                    <%= f.password_field :password, placeholder: "Enter PIN", required: true %>
                 </div>
                 <div class="checkbox-group">
                     <%= f.check_box :remember %>
-                    <label for="remember"><%= t('login.remember_me') %></label>
+                    <label for="remember">Remember Me</label>
                 </div>
-                <%= f.submit t('login.use_biometrics'), class: 'button', id: 'Biometrics' %>
-                <%= f.submit t('login.get_otp'), class: 'button', id: 'GetOTPButton' %>
+                <%= f.submit 'Use Biometrics', class: 'button', id: 'Biometrics' %>
+                <%= f.submit 'Get OTP', class: 'button', id: 'GetOTPButton' %>
 
-                <p class="login"><%= t('login.no_account') %><br><%= link_to t('login.signup_now'), signup_path, class: 'btn', id: 'SignUpforDigibankButton' %></p>
+                <p class="login">Don't have an account?<br><%= link_to 'Sign Up Now', signup_path, class: 'btn', id: 'SignUpforDigibankButton' %></p>
             <% end %>
         </div>
     </div>
