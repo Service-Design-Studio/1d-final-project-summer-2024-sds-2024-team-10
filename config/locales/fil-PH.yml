@@ -1,0 +1,22 @@
+fil:
+  buttons:
+    signup_digibank: "Mag-sign Up para sa Digibank"
+    login: "Mag-log In"
+  login:
+    title: "Mag-log In"
+    user_id: "User ID"
+    enter_pin: "Ilagay ang PIN"
+    remember_me: "Tandaan Ako"
+    use_biometrics: "Gamitin ang Biometrics"
+    get_otp: "Kumuha ng OTP"
+    no_account: "Wala pang account?"
+    signup_now: "Mag-sign Up Ngayon"
+  signup:
+    title: "Mag-sign Up/Ipagpatuloy ang Pag-sign Up"
+    full_name: "Buong Pangalan"
+    phone_number: "Numero ng Telepono"
+    terms_and_conditions: "Nabasa ko at pumapayag sa mga kaugnay na Tuntunin at Kundisyon at Patakaran sa Pagkapribado"
+    opt_in_promotions: "Mag-opt in para makatanggap ng mga gantimpala, promotional offers, at marketing communications."
+    get_otp: "Kumuha ng OTP"
+    already_have_account: "May account na?"
+    login_instead: "Mag-log In Imbes"
