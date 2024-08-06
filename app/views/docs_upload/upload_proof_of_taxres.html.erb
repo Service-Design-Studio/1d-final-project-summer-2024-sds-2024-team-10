@@ -1,5 +1,4 @@
-<!doctype html>
-
+<html>
 <head>
     <title>Camera</title>
     <%= stylesheet_link_tag 'camera', media: 'all', crossorigin: 'anonymous' %>
@@ -8,21 +7,15 @@
 
 <body>
     <div class="container">
+        <h3>Proof of Tax Residency</h3>
+        <p> Click Here to view the list of acceptable documents <p>
         <div class="camera">
             <video id="video">Video stream not available.</video>
+            <div class="box">
+            </div>
             <button id="startbutton">Take photo</button>
         <canvas id="canvas"></canvas>
-        <img id="photo" alt="The screen capture will appear in this box.">
-        <div class="boxed">
-            <p id = "result">
-                1. Click "Take Photo" <br>
-                2. Please Wait .......
-            </p>
-        </div>
-        <%= form_with url: proof_of_mobile_path, method: :get, id: 'checklistForm' do %>
-            <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
-        <% end %>
     </div>
 </body>
 
-</html> 
+</html>  

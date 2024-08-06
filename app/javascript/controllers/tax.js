@@ -1,14 +1,30 @@
-function onReady() {
-    const camerabutton = document.getElementById('toCameraUpload');
-    camerabutton.addEventListener("click",goToCameraUpload);
+document.addEventListener('DOMContentLoaded', function() {
+    // Retrieve the base64 image data and text content from sessionStorage
+    let data = sessionStorage.getItem("tax");
+    let extracted_identity = sessionStorage.getItem("extracted_tax");
+    var button = document.getElementById('nextButton');
+    if (button) {
+      button.addEventListener('click', function() {
+        window.location.href = '/summary_page';
+      });
+    }
+    // Check if image data exists
+    if (data) {
+        // Select the photo element
+        let photo = document.getElementById('photo');
+        // Set the src attribute of the photo element with the base64 data
+        photo.setAttribute('src', data);
+    } else {
+        console.log('No image data found in sessionStorage');
     }
 
-function goToCameraUpload(){
-    window.location.assign('/camera/tax');
-}
-
-if (document.readyState !== "loading") {
-    onReady(); // Or setTimeout(onReady, 0); if you want it consistently async
-} else {
-    document.addEventListener("DOMContentLoaded", onReady);
-}
+    // Check if text content exists
+    if (extracted_identity) {
+        // Select the result element
+        let text = document.getElementById('result');
+        // Set the text content of the result element
+        text.innerText = extracted_identity;
+    } else {
+        console.log('No extracted identity data found in sessionStorage');
+    }
+});
