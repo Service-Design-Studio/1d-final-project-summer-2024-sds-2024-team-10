@@ -34,4 +34,8 @@ class DocsUploadController < ApplicationController
 
   def upload_proof_of_mobile
   end
+
+  def test
+  end
+  
 end

@@ -7,8 +7,10 @@ document.addEventListener('DOMContentLoaded', function() {
     if (data) {
         // Select the photo element
         let photo = document.getElementById('photo');
+        console.log('hi wjjsjs')
         // Set the src attribute of the photo element with the base64 data
         photo.setAttribute('src', data);
+        console.log('hi jdjddjjd')
     } else {
         console.log('No image data found in sessionStorage');
     }
@@ -24,6 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Optional: Log the data to the console for debugging
-    console.log('Image data:', data);
-    console.log('Extracted identity:', extracted_identity);
+    // console.log('Image data:', data);
+    // console.log('Extracted identity:', extracted_identity);
 });

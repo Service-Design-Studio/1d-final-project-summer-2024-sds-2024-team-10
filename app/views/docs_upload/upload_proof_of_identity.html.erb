@@ -8,15 +8,13 @@
 <body>
     <div class="container">
         <h3>Proof of Identity</h3>
+        <p> Click Here to view the list of acceptable documents <p>
         <div class="camera">
             <video id="video">Video stream not available.</video>
             <div class="box">
             </div>
             <button id="startbutton">Take photo</button>
         <canvas id="canvas"></canvas>
-        <%= form_with url: summary_page_path, method: :get, id: 'checklistForm' do %>
-            <%= submit_tag '', class: 'button', id: 'nextButton' %>
-        <% end %>
     </div>
 </body>
 
