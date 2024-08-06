@@ -29,13 +29,15 @@
                 <div id="tax-resident-fields" class="tax-resident-fields" style="display: none;">
 
                     <%= f.hidden_field :id, value: session[:user_id] %>
-                    <div class="input-group">
-                        <label for="display_name">Set User ID</label>   
-                        <%= f.text_field :tax_resident_country, placeholder: "Tax Resident Country", required: true, value: @user.tax_resident_country %>
-                    <div class="input-group">
-                    </div>
-                        <label for="display_name">Set User ID</label>  
-                        <%= f.text_field :tin, placeholder: "TIN", required: true, value: @user.tin %>
+                    <div class="form-group">
+                        <div class="input-group">
+                            <label for="display_name">Tax Residency Country</label>   
+                            <%= f.text_field :tax_resident_country, placeholder: "Tax Resident Country", required: true, value: @user.tax_resident_country %>
+                        </div>
+                        <div class="input-group">
+                            <label for="display_name">Tax Identification Number (TIN)</label>  
+                            <%= f.text_field :tin, placeholder: "TIN", required: true, value: @user.tin %>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -62,7 +62,7 @@ h2 {
     transform: translateX(-50%);
 }
 
-#nextButton {
+#submitButton {
     text-decoration: none;
     color: #ffffff;
     cursor: pointer;
@@ -70,7 +70,7 @@ h2 {
     text-align: center;
 }
 
-#nextButton:hover {
+#submitButton:hover {
     background-color: #e60000;
 }
 
@@ -168,10 +168,9 @@ progress::-moz-progress-bar {
     border-radius: 5px;
     box-sizing: border-box;
     font-size: 16px;
-    margin-top: 10px;
 }
 
-.input-group {
+.form-group {
     max-height: 600px; /* Adjust this value as needed */
     overflow-y: auto;
     padding: 10px;
