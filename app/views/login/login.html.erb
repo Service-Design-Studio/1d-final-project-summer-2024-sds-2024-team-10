@@ -9,7 +9,7 @@
         <div class="form-container">
             <h1>Log In</h1>
             <% if flash[:alert] %>
-                <div class="alert alert-danger">
+                <div class="alert alert-danger" style="color: red">
                     <%= flash[:alert] %>
                 </div>
             <% end %>
@@ -24,8 +24,7 @@
                     <%= f.check_box :remember %>
                     <label for="remember">Remember Me</label>
                 </div>
-                <%= f.submit 'Use Biometrics', class: 'button', id: 'Biometrics' %>
-                <%= f.submit 'Get OTP', class: 'button', id: 'GetOTPButton' %>
+                <%= f.submit 'Sign In ', class: 'button', id: 'Biometrics' %>
 
                 <p class="login">Don't have an account?<br><%= link_to 'Sign Up Now', signup_path, class: 'btn', id: 'SignUpforDigibankButton' %></p>
             <% end %>
