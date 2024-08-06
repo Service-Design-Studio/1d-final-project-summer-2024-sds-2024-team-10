@@ -6,23 +6,23 @@
         <progress id="file" value="72" max="100"> 32% </progress><br><br>
         <div class="upload-section">
             <div class="upload-icon">
-                <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
+                <%= image_tag 'upload-icon.png', alt: t('proof.upload_icon_alt') %>
             </div>
             <div class="upload-text">
-                <h1>Proof of Residential Address</h1>
-                <p>Certification letter of employment</p>
-                <p>Certification letter from school</p>
-                <p>Certificate of stamp duty</p>
-                <p>Singapore utility/telecommunication bill</p>
-                <p>Singapore bank statement/credit card statement</p>
-                <p>In-Principle Approval issued by Ministry of Manpower</p>
-                <p>In-Principle Approval from ICA</p>
-                <p>Work permit of foreign domestic worker issue by Ministry of Manpower</p>
+                <h1><%= t('proof.proof_of_residential_address_title') %></h1>
+                <p><%= t('proof.certification_letter_of_employment') %></p>
+                <p><%= t('proof.certification_letter_from_school') %></p>
+                <p><%= t('proof.certificate_of_stamp_duty') %></p>
+                <p><%= t('proof.singapore_utility_bill') %></p>
+                <p><%= t('proof.singapore_bank_statement') %></p>
+                <p><%= t('proof.in_principle_approval_mom') %></p>
+                <p><%= t('proof.in_principle_approval_ica') %></p>
+                <p><%= t('proof.work_permit_fdw_mom') %></p>
             </div>
         </div>
         <div class="camera-icon">
             <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
-            <p>Take Picture</p>
+            <p><%= t('proof.take_picture') %></p>
         </div>
     </div>
 </body>
