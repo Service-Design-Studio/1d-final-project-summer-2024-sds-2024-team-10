@@ -3,37 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accordion in Modal Example</title>
+    <title><%= t('summary.title') %></title>
+    <%= stylesheet_link_tag 'summary', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'controllers/summary', crossorigin: 'anonymous' %>
 </head>
 <body>
 
-<h2>Accordion in Modal Example</h2>
+<h2><%= t('summary.heading') %></h2>
 
 <!-- Trigger button -->
-<button id="openModal">Open Modal</button>
+<button id="openModal"><%= t('summary.open_modal') %></button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <h2>Accordion within Modal</h2>
+        <h2><%= t('summary.modal_heading') %></h2>
 
-        <button class="accordion">Section 1</button>
+        <button class="accordion"><%= t('summary.section_1') %></button>
         <div class="panel">
-            <img src="https://via.placeholder.com/400x200" alt="Image 1">
-            <p>This is the content of Section 1.</p>
+            <img src="https://via.placeholder.com/400x200" alt="<%= t('summary.image_1') %>">
+            <p><%= t('summary.content_1') %></p>
         </div>
 
-        <button class="accordion">Section 2</button>
+        <button class="accordion"><%= t('summary.section_2') %></button>
         <div class="panel">
-            <img src="https://via.placeholder.com/400x200" alt="Image 2">
-            <p>This is the content of Section 2.</p>
+            <img src="https://via.placeholder.com/400x200" alt="<%= t('summary.image_2') %>">
+            <p><%= t('summary.content_2') %></p>
         </div>
 
-        <button class="accordion">Section 3</button>
+        <button class="accordion"><%= t('summary.section_3') %></button>
         <div class="panel">
-            <img src="https://via.placeholder.com/400x200" alt="Image 3">
-            <p>This is the content of Section 3.</p>
+            <img src="https://via.placeholder.com/400x200" alt="<%= t('summary.image_3') %>">
+            <p><%= t('summary.content_3') %></p>
         </div>
     </div>
 </div>

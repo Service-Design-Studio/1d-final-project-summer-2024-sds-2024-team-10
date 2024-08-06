@@ -3,23 +3,24 @@
 
 <body>
     <div class="container">
-        <progress id="file" value="72" max="100"> 32% </progress><br><br>
+        <progress id="file" value="72" max="100"> <%= 32%  </progress><br><br>
         <div class="upload-section">
             <div class="upload-icon">
-                <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
+                <%= image_tag 'upload-icon.png', alt: t('proof.upload_icon_alt') %>
             </div>
             <div class="upload-text">
-                <h1>Proof of Tax Residency</h1>
-                <p>Passport</p>
-                <p>National Identity Card</p>
-                <p>Residence Permit</p>
-                <p>Work Pass</p>
-                <p>Student Pass</p>
-                <p>Birth Certificate</p>
+                <h1><%= t('proof.proof_of_tax_residency_title') %></h1>
+                <p><%= t('proof.passport') %></p>
+                <p><%= t('proof.national_identity_card') %></p>
+                <p><%= t('proof.residence_permit') %></p>
+                <p><%= t('proof.work_pass') %></p>
+                <p><%= t('proof.student_pass') %></p>
+                <p><%= t('proof.birth_certificate') %></p>
+            </div>
         </div>
         <div class="camera-icon">
             <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
-            <p>Take Picture</p>
+            <p><%= t('proof.take_picture') %></p>
         </div>
     </div>
 </body>

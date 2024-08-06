@@ -6,20 +6,20 @@
         <progress id="file" value="72" max="100"> 32% </progress><br><br>
         <div class="upload-section">
             <div class="upload-icon">
-                <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
+                <%= image_tag 'upload-icon.png', alt: t('proof.upload_icon_alt') %>
             </div>
             <div class="upload-text">
-                <h1>Proof of Employment</h1>
-                <p>Employment or S Pass</p>
-                <p>Student Pass</p>
-                <p>Dependent/Long Term Visit Pass</p>
-                <p>In-Principal Approval (IPA)</p>
-                <p>Certification Letter from School</p>
+                <h1><%= t('proof.proof_of_employment_title') %></h1>
+                <p><%= t('proof.employment_or_s_pass') %></p>
+                <p><%= t('proof.student_pass') %></p>
+                <p><%= t('proof.dependent_long_term_visit_pass') %></p>
+                <p><%= t('proof.in_principal_approval') %></p>
+                <p><%= t('proof.certification_letter_from_school') %></p>
             </div>
         </div>
         <div class="camera-icon">
             <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
-            <p>Take Picture</p>
+            <p><%= t('proof.take_picture') %></p>
         </div>
     </div>
 </body>

@@ -18,6 +18,3 @@ storage/development.sqlite3
 storage/development.sqlite3-shm
 storage/development.sqlite3-wal
 dbs_test
-dbs_development-shm
-dbs_development-wal
-dbs_development

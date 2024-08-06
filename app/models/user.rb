@@ -21,8 +21,4 @@ class User < ApplicationRecord
       return false
     end
   end
-
-  def self.duplicate()
-    
-  end
 end

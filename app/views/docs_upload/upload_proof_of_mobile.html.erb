@@ -1,7 +1,7 @@
 <!doctype html>
 
 <head>
-    <title>Camera</title>
+    <title><%= t('upload.camera_title') %></title>
     <%= stylesheet_link_tag 'camera', media: 'all', crossorigin: 'anonymous' %>
     <%= javascript_include_tag 'controllers/webcam_mobile', crossorigin: 'anonymous' %>
 </head>
@@ -9,20 +9,20 @@
 <body>
     <div class="container">
         <div class="camera">
-            <video id="video">Video stream not available.</video>
-            <button id="startbutton">Take photo</button>
-        <canvas id="canvas"></canvas>
-        <img id="photo" alt="The screen capture will appear in this box.">
-        <div class="boxed">
-            <p id = "result">
-                1. Click "Take Photo" <br>
-                2. Please Wait .......
-            </p>
+            <video id="video"><%= t('upload.video_stream_not_available') %></video>
+            <button id="startbutton"><%= t('upload.take_photo') %></button>
+            <canvas id="canvas"></canvas>
+            <img id="photo" alt="<%= t('upload.screen_capture_alt') %>">
+            <div class="boxed">
+                <p id="result">
+                    <%= t('upload.result_instructions') %>
+                </p>
+            </div>
+            <%= form_with url: summary_page_path, method: :get, id: 'checklistForm' do %>
+                <%= submit_tag t('upload.next'), class: 'button', id: 'nextButton' %>
+            <% end %>
         </div>
-        <%= form_with url: summary_page_path, method: :get, id: 'checklistForm' do %>
-            <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
-        <% end %>
     </div>
 </body>
 
-</html> 
+</html>
