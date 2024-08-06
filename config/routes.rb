@@ -1,14 +1,13 @@
 Rails.application.routes.draw do
   root 'login#home'
 
+  # post 'change_locale/:locale', to: 'application#change_locale', as: 'change_locale'
+
   get '/signup', to: 'login#signup', as: 'signup'
   post 'signup', to: 'login#signup_authentication', as: 'signup_authentication'
 
   get '/login', to: 'login#login', as: 'login'
   post 'login', to: 'login#login_authentication', as: 'login_authentication'
-
-  # Handle language switch
-  post 'switch_language', to: 'language#switch_language'
 
   get '/existing_customer', to: 'existing_customer#home', as: 'existing_customer_home'
 
@@ -32,9 +31,9 @@ Rails.application.routes.draw do
   get '/taxres', to: 'customer_info#taxres', as: 'taxres'
 
   # Routes for Document upload
-  get '/proof_of_identity', to: 'docs_upload#proof_of_identity'
-  get '/test', to: 'docs_upload#test'
-  get '/camera/identity', to: 'docs_upload#upload_proof_of_identity'
+  get '/proof_of_identity', to: 'docs_upload#proof_of_identity', as: 'proof_of_identity_path'
+  get '/test', to: 'docs_upload#test', as: 'test'
+  get '/camera/identity', to: 'docs_upload#upload_proof_of_identity', as: 'proof_of_identity'
   post '/camera/identity', to: 'camera#identity'
 
   get '/proof_of_employment', to: 'docs_upload#proof_of_employment'

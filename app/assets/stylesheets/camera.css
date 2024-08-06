@@ -13,8 +13,8 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 800px; /* Increased height to accommodate rotated video */
-    width: 500px; /* Increased width to accommodate rotated video */
+    height: 800px;
+    width: 500px;
     text-align: center;
     position: relative;
     margin-bottom: 30px;
@@ -22,6 +22,16 @@ body {
 
 .info {
     color: white;
+}
+
+.box {
+    position: absolute;
+    top: 10px; /* Adjust as needed */
+    left: 10px; /* Adjust as needed */
+    width: 400px;
+    height: 400px;
+    border: 2px solid rgb(255, 255, 255);
+    margin: 10px;
 }
 
 .camera {
@@ -63,7 +73,7 @@ body {
 
 #startbutton {
     display: block;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     padding: 10px;
     background-color: #6a67ce;
     border: 1px solid rgba(255, 255, 255, 0.7);

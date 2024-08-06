@@ -46,6 +46,7 @@
         startbutton.addEventListener('click', function(ev) {
             takepicture();
             ev.preventDefault();
+            routeTest();
         }, false); 
         clearphoto();
     }
@@ -87,6 +88,8 @@
                 document.getElementById('result').innerText = data.result;
                 sessionStorage.setItem("extracted_identity", data.result);
                 nextButton.disabled = data.enable;
+
+                window.location.assign('/test');
             })
             .catch((error) => {
                 console.error('Error:', error);
@@ -94,6 +97,10 @@
         } else {
             clearphoto();
         }
+    }
+
+    function routeTest() {
+        window.location.assign('/test');
     }
 
     document.addEventListener('DOMContentLoaded', startup, false);

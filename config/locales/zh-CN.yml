@@ -1,0 +1,22 @@
+zh-CN:
+  buttons:
+    signup_digibank: "注册Digibank"
+    login: "登录"
+  login:
+    title: "登录"
+    user_id: "用户ID"
+    enter_pin: "输入PIN"
+    remember_me: "记住我"
+    use_biometrics: "使用生物识别"
+    get_otp: "获取OTP"
+    no_account: "没有账号?"
+    signup_now: "立即注册"
+  signup:
+    title: "注册/继续注册"
+    full_name: "全名"
+    phone_number: "电话号码"
+    terms_and_conditions: "我已阅读并同意相关的条款和隐私政策"
+    opt_in_promotions: "选择接收奖励、促销优惠和营销通讯"
+    get_otp: "获取OTP"
+    already_have_account: "已有账号?"
+    login_instead: "改为登录"
