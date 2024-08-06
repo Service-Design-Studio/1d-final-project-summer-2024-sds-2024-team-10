@@ -27,6 +27,7 @@ gem 'json'
 gem 'base64'
 gem 'pg'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'simplecov'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -81,4 +82,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'cucumber', '~> 9.2.0'
   gem 'webmock'
+  gem 'rails-controller-testing'
 end
