@@ -95,9 +95,6 @@ en:
       - 'Fashion'
       - 'Others'
     next_button: "Next"
-   buttons:
-    back: "<"
-    next: "Next"
   taxres:
     tax_resident_question: "Are you a tax resident in Singapore only?"
     yes: "Yes"
@@ -108,8 +105,6 @@ en:
     find_out_more: "Find out more"
     tax_resident_country_placeholder: "Tax Resident Country"
     tin_placeholder: "TIN"
-  buttons:
-    authenticate: "Authenticate"
   otp:
     title: "One Time Password"
     sent_message: "The OTP has been sent to your mobile number."
@@ -126,7 +121,7 @@ en:
       retrieve: "Retrieve and use your particulars securely"
       faster: "Helps you sign up faster"
     signup_with_singpass: "Sign Up with Singpass"
-   summary:
+  summary:
     title: "Accordion in Modal Example"
     heading: "Accordion in Modal Example"
     open_modal: "Open Modal"
@@ -137,9 +132,9 @@ en:
     section_2: "Section 2"
     image_2: "Image 2"
     content_2: "This is the content of Section 2."
-    section_3: "Section 3"
-    image_3: "Image 3"
-    content_3: "This is the content of Section 3."
+    section_3:
+      image_3: "Image 3"
+      content_3: "This is the content of Section 3."
   proof:
     proof_of_employment_title: "Proof of Employment"
     employment_or_s_pass: "Employment or S Pass"
@@ -181,4 +176,3 @@ en:
       2. <%= t('upload.please_wait') %>
     please_wait: "Please Wait ......."
     next: "Next"
-
