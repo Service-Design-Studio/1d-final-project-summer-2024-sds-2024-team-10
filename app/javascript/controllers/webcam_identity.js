@@ -10,12 +10,10 @@
     var startbutton = null;
 
     function startup() {
-        nextButton = document.getElementById('nextButton');
         video = document.getElementById('video');
         canvas = document.getElementById('canvas');
         photo = document.getElementById('photo');
         startbutton = document.getElementById('startbutton');
-        nextButton.disabled = true;
         navigator.mediaDevices.getUserMedia({
                 video: true,
                 audio: false
@@ -68,7 +66,7 @@
 
             var data = canvas.toDataURL('image/png');
             sessionStorage.setItem("identity", data);
-            photo.setAttribute('src', data);
+            // photo.setAttribute('src', data); remove if no need for image on same page
             // Dynamically get the current URL
             var baseURL = window.location.origin;
             var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -84,9 +82,8 @@
             )
             .then(data => {
                 console.log('Success:', data);
-                document.getElementById('result').innerText = data.result;
                 sessionStorage.setItem("extracted_identity", data.result);
-                nextButton.disabled = data.enable;
+                window.location.href = '/proof_of_identity';
             })
             .catch((error) => {
                 console.error('Error:', error);

@@ -12,6 +12,7 @@ class SummaryPageController < ApplicationController
 
     @user = User.find(id)
     if @user.update(updates_hash)
+      @user.update(application_status: 'approved')
       puts "Customer info was successfully updated"
       redirect_to end_of_application_path
     else

@@ -1,23 +1,30 @@
-<%= stylesheet_link_tag 'identity', media: 'all' %>
+<%= stylesheet_link_tag 'document', media: 'all' %>
 <%= javascript_include_tag 'controllers/identity', crossorigin: 'anonymous' %>
-
 <body>
     <div class="container">
-        <progress id="file" value="72" max="100"> 32% </progress><br><br>
-        <div class="upload-section">
-            <div class="upload-icon">
-                <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
-            </div>
-            <div class="upload-text">
-                <h1>Proof of Identity</h1>
-                <p>Identity Card (For Malaysians)</p>
-                <p>Passport (For other Nationalities)</p>
-            </div>
+        <progress id="file" value="72" max="100"> 32% </progress>
+        <h3>Uploaded Document</h3>
+        <canvas id="canvas"></canvas>
+        <img id="photo" alt="The screen capture will appear in this box.">
+        <%= link_to 'Retake Image', proof_of_identity_path, class: 'button', id: 'RetakeButton' %>
+        <div class="boxed">
+            <h3>Extracted Info</h3>
+            <form id="textForm">
+                <label for="result" id="text"></label><br>
+                <label for="result">Name</label><br>
+                <input type="text" id="name" name="result" placeholder="Enter text here"><br>
+                <label for="result">Document Type</label><br>
+                <input type="text" id="docutype" name="result" placeholder="Enter text here"><br>
+                <label for="result">Nationality</label><br>
+                <input type="text" id="nationality" name="result" placeholder="Enter text here"><br>
+                <label for="result">Passport Expiry Date</label><br>
+                <input type="text" id="passport_expiry_date" name="result" placeholder="Enter text here"><br>
+                <label for="result">Gender</label><br>
+                <input type="text" id="gender" name="result" placeholder="Enter text here"><br>
+                <label for="result">Date Of Birth</label><br>
+                <input type="text" id="date_of_birth" name="result" placeholder="Enter text here"><br>
+            </form>
         </div>
-        <div class="camera-icon">
-            <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
-            <p>Take Picture</p>
-        </div>
+        <button id="nextButton" class="button">Next</button>
     </div>
 </body>
-</html>

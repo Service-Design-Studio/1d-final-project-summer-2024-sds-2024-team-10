@@ -27,8 +27,15 @@ class DocsUploadController < ApplicationController
   end
 
   def upload_proof_of_taxres
+    if !session[:recovery_phone_number]
+      redirect_to summary_page_path
+    end
   end
 
   def upload_proof_of_mobile
   end
+
+  def test
+  end
+  
 end
