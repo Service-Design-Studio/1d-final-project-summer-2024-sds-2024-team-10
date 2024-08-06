@@ -37,7 +37,7 @@ class LoginController < ApplicationController
 
         if user.application_status == "approved"
           puts "existing customer, route to login"
-          flash[:alert] = 'Account Application Complete, click Log In to proceed'
+          flash[:alert] = 'Account Application Completed, click Log In to proceed'
           redirect_to signup_path
         else
           puts "old application record"
