@@ -4,29 +4,29 @@
 <body>
     <div class="container">
         <%= link_to '<', login_path, class: 'button', id: 'backButton' %>
-        <%= link_to 'Continue without Singpass >', checklist_path, class: 'button', id: 'toChecklistButtonNoSingpass' %>
+        <%= link_to t('singpass.continue_without_singpass'), checklist_path, class: 'button', id: 'toChecklistButtonNoSingpass' %>
         <br><br>
         <hr class="horizontal-red-line">
         <%= image_tag 'DBSSingpass.png', alt: 'DBS+Singpass', class: 'resized-image'%>
-        <h3>Lets Make This Fast</h3>
-        <p>Sign up with your Singpass so we can Identify your Identity instantly. Do note that <b>manual sign ups may take longer.</b> <br><a target=“_blank” href="https://www.singpass.gov.sg/main/security/">Learn More</a></p>
+        <h3><%= t('singpass.header')%></h3>
+        <p><%= t('singpass.signup_with_singpass')%> <b><%= t('singpass.signup_with_singpass2')%></b> <br><a target=“_blank” href="https://www.singpass.gov.sg/main/security/"><%= t('singpass.learn_more')%></a></p>
         <br>
-        <p>With <b>MyInfo</b>, we can </p>
+        <p><%= t('singpass.with_myinfo1')%><b><%= t('singpass.with_myinfo2')%></b><%= t('singpass.with_myinfo3')%></p>
         <div class="benefits-list">
             <div class="benefit-item">
                 <div class="checkmark">✓</div>
-                <p>Verify your identity</p>
+                <p><%= t('singpass.verify_identity')%></p>
             </div>
             <div class="benefit-item">
                 <div class="checkmark">✓</div>
-                <p>Retrieve and use your particulars securely</p>
+                <p><%= t('singpass.retrieve_particulars')%></p>
             </div>
             <div class="benefit-item">
                 <div class="checkmark">✓</div>
-                <p>Helps you sign up faster</p>
+                <p><%= t('singpass.sign_up_faster')%></p>
             </div>
         </div>
         <br><br><br><br><br><br><br><br><br><br>
-        <%= link_to 'Sign Up with Singpass', checklist_path, class: 'button', id: 'toChecklistButtonSingpass' %>
+        <%= link_to  t('singpass.sign_up_with_singpass'), checklist_path, class: 'button', id: 'toChecklistButtonSingpass' %>
     </div>
 </body>
