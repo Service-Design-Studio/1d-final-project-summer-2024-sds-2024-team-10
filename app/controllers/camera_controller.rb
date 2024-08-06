@@ -86,7 +86,6 @@ class CameraController < ApplicationController
     hash = {}
     result.each do |line|
       key, value = line.strip.split(':') 
-      key = key.to_sym
       value = case value
               when 1 , '1' , "True" , "true", ' 1', '1 '
                 1
