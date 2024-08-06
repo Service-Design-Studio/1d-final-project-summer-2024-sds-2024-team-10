@@ -9,10 +9,10 @@
                     <%= t("languages.#{I18n.locale}") %>
                 </button>
                 <div class="dropdown-content">
-                    <%= link_to t("languages.en_name"), change_locale_path(:en), class: "dropdown-item" %>
-                    <%= link_to t("languages.ta_name"), change_locale_path(:ta), class: "dropdown-item" %>
-                    <%= link_to t("languages.zh-CN_name"), change_locale_path(:'zh-CN'), class: "dropdown-item" %>
-                    <%= link_to t("languages.ms_name"), change_locale_path(:ms), class: "dropdown-item" %>
+                    <%= link_to "English", change_locale_path(:en), class: "dropdown-item" %>
+                    <%= link_to "தமிழ்", change_locale_path(:ta), class: "dropdown-item" %>
+                    <%= link_to "简体中文", change_locale_path(:'zh-CN'), class: "dropdown-item" %>
+                    <%= link_to "Bahasa Melayu", change_locale_path(:ms), class: "dropdown-item" %>
                 </div>
             </div>
         </div>

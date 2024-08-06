@@ -3,8 +3,19 @@ zh-CN:
     en: "English"
     ta: "தமிழ்"
     zh-CN: "简体中文"
-    ms: "Malay"
+    ms: "Bahasa Melayu"
   buttons:
-    signup_digibank: "注册数字银行"
+    signup_digibank: "注册 Digibank"
     login: "登录"
-
+  signup:
+    title: "注册"
+    full_name_placeholder: "全名"
+    phone_number_placeholder: "电话号码"
+    terms_label1: "我已阅读并同意相关的"
+    terms_label2: "条款与条件"
+    and: "和"
+    terms_label3: "隐私政策"
+    promotions_label: "选择接收奖励、促销优惠和市场通讯。"
+    get_otp_button: "获取 OTP"
+    already_have_account: "已经有账户？"
+    login_instead: "改为登录"

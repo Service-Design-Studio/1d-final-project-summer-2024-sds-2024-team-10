@@ -3,8 +3,19 @@ ta:
     en: "English"
     ta: "தமிழ்"
     zh-CN: "简体中文"
-    ms: "Malay"
+    ms: "Bahasa Melayu"
   buttons:
-    signup_digibank: "டிஜிபாங்கிற்கு பதிவு செய்யவும்"
-    login: "உள்நுழைய"
-
+    signup_digibank: "டிகிபாங்கிற்குப் பதிவு செய்யவும்"
+    login: "உள்நுழைக"
+  signup:
+    title: "பதிவு செய்க"
+    full_name_placeholder: "முழு பெயர்"
+    phone_number_placeholder: "தொலைபேசி எண்"
+    terms_label1: "தகுந்தவை அனைத்தையும் நான் படித்தும் ஒப்புக்கொள்கிறேன்"
+    terms_label2: "விதிமுறைகள் மற்றும் நிபந்தனைகள்"
+    and: "மற்றும்"
+    terms_label3: "தனியுரிமை கொள்கை"
+    promotions_label: "பரிசுகள், விளம்பர சலுகைகள் மற்றும் சந்தை தொடர்புகளைப் பெற விரும்புகிறேன்."
+    get_otp_button: "OTP பெறுக"
+    already_have_account: "ஏற்கனவே கணக்கு உள்ளதா?"
+    login_instead: "மாற்றாக உள்நுழையவும்"
