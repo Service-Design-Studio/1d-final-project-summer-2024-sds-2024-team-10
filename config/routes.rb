@@ -57,6 +57,8 @@ Rails.application.routes.draw do
 
   get '/end_of_application', to: 'summary_page#end_of_application', as: 'end_of_application'
 
+  resources :existing_customer, only: [:index, :show, :new, :edit, :create, :update, :destroy]
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

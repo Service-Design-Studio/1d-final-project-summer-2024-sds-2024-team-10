@@ -1,6 +1,7 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 require 'spec_helper'
 require 'simplecov'
+require 'webmock/rspec'
 SimpleCov.start 'rails' do
   add_filter '/bin/'
   add_filter '/db/'
@@ -50,6 +51,13 @@ RSpec.configure do |config|
   # examples within a transaction, remove the following line or assign false
   # instead of true.
   config.use_transactional_fixtures = true
+
+  RSpec.configure do |config|
+    # other configurations...
+  
+    # Enable WebMock
+    WebMock.disable_net_connect!(allow_localhost: true)
+  end
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false
