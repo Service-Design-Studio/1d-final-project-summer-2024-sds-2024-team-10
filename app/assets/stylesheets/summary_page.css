@@ -177,3 +177,18 @@ progress::-moz-progress-bar {
     margin: 10px 0;
     margin-top: 35px;
 }
+
+#thanks {
+    margin-top: 40%;
+}
+
+footer {
+    position: absolute;
+    bottom: 5%;
+    left: 20%;
+    transform: translateX(-10%);
+}
+.resized-image {
+    width: 200px; /* Set your desired width */
+    height: auto; /* Maintain aspect ratio */
+}

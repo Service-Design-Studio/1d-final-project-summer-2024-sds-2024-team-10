@@ -9,11 +9,11 @@ class OtpController < ApplicationController
       redirect_to otp_verification_path
     else
       flash[:alert] = otp_service.error_message
-      redirect_to login_path
+      redirect_to signup_path
     end
   rescue ArgumentError => e
     flash[:alert] = e.message
-    redirect_to login_path
+    redirect_to signup_path
   end
 
   def verify_otp
