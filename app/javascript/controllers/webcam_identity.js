@@ -83,7 +83,7 @@
             .then(data => {
                 console.log('Success:', data);
                 sessionStorage.setItem("extracted_identity", data.result);
-                window.location.href = '/test';
+                window.location.href = '/proof_of_identity';
             })
             .catch((error) => {
                 console.error('Error:', error);

@@ -1,26 +1,18 @@
-<%= stylesheet_link_tag 'identity', media: 'all' %>
+<%= stylesheet_link_tag 'camera', media: 'all' %>
 <%= javascript_include_tag 'controllers/employment', crossorigin: 'anonymous' %>
-
 <body>
     <div class="container">
-        <progress id="file" value="72" max="100"> 32% </progress><br><br>
-        <div class="upload-section">
-            <div class="upload-icon">
-                <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
-            </div>
-            <div class="upload-text">
-                <h1>Proof of Employment</h1>
-                <p>Employment or S Pass</p>
-                <p>Student Pass</p>
-                <p>Dependent/Long Term Visit Pass</p>
-                <p>In-Principal Approval (IPA)</p>
-                <p>Certification Letter from School</p>
-            </div>
+        <progress id="file" value="72" max="100"> 32% </progress>
+        <h3>Uploaded Document</h3>
+        <canvas id="canvas"></canvas>
+        <img id="photo" alt="The screen capture will appear in this box.">
+        <div class="boxed">
+            <h3>Extracted Info</h3>
+            <p id = "result">
+                1. Click "Take Photo" <br>
+                2. Please Wait .......
+            </p>
         </div>
-        <div class="camera-icon">
-            <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
-            <p>Take Picture</p>
-        </div>
+        <button id="nextButton" class="button">Next</button>
     </div>
 </body>
-</html>

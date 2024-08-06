@@ -46,6 +46,7 @@ class CameraController < ApplicationController
     result = result["candidates"][0]["content"]["parts"][0]["text"].split("\n")
     result = result[0,result.length]
     hash = {}
+    puts hash
     result.each do |line|
       key, value = line.strip.split(':') 
       key = key.to_sym
