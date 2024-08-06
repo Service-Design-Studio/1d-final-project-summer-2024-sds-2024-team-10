@@ -6,9 +6,14 @@
         <progress id="file" value="72" max="100"> 32% </progress><br><br>
         <div class="upload-section">
             <div class="upload-icon">
+                <%= image_tag 'upload-icon.png', alt: t('proof.upload_icon_alt') %>
                 <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
             </div>
             <div class="upload-text">
+                <h1><%= t('proof.proof_of_mobile_ownership_title') %></h1>
+                <p><%= t('proof.telco_bill') %></p>
+                <p><%= t('proof.telco_confirmation_letter') %></p>
+                <p><%= t('proof.must_be_dated_within_3_months') %></p>
                 <h1>Proof of Mobile Ownership</h1>
                 <p>Telco Bill</p>
                 <p>Telco Confirmation Letter</p>
@@ -17,8 +22,10 @@
         </div>
         <div class="camera-icon">
             <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
+            <p><%= t('proof.take_picture') %></p>
             <p>Take Picture</p>
         </div>
     </div>
 </body>
+</html>
 </html>

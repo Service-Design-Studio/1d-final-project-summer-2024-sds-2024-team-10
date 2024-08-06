@@ -3,30 +3,39 @@
 
 <body>
     <div class="container">
+        <%= link_to t('singpass.back'), login_path, class: 'button', id: 'backButton' %>
+        <%= link_to t('singpass.continue_without'), checklist_path, class: 'button', id: 'toChecklistButtonNoSingpass' %>
         <%= link_to '<', login_path, class: 'button', id: 'backButton' %>
         <%= link_to 'Continue without Singpass >', checklist_path, class: 'button', id: 'toChecklistButtonNoSingpass' %>
         <br><br>
         <hr class="horizontal-red-line">
         <%= image_tag 'DBSSingpass.png', alt: 'DBS+Singpass', class: 'resized-image'%>
+        <h3><%= t('singpass.title') %></h3>
+        <p><%= t('singpass.description_html') %></p>
         <h3>Lets Make This Fast</h3>
         <p>Sign up with your Singpass so we can Identify your Identity instantly. Do note that <b>manual sign ups may take longer.</b> <br><a target=“_blank” href="https://www.singpass.gov.sg/main/security/">Learn More</a></p>
         <br>
+        <p><%= t('singpass.myinfo') %></p>
         <p>With <b>MyInfo</b>, we can </p>
         <div class="benefits-list">
             <div class="benefit-item">
                 <div class="checkmark">✓</div>
+                <p><%= t('singpass.benefits.verify') %></p>
                 <p>Verify your identity</p>
             </div>
             <div class="benefit-item">
                 <div class="checkmark">✓</div>
+                <p><%= t('singpass.benefits.retrieve') %></p>
                 <p>Retrieve and use your particulars securely</p>
             </div>
             <div class="benefit-item">
                 <div class="checkmark">✓</div>
+                <p><%= t('singpass.benefits.faster') %></p>
                 <p>Helps you sign up faster</p>
             </div>
         </div>
         <br><br><br><br><br><br><br><br><br><br>
+        <%= link_to t('singpass.signup_with_singpass'), checklist_path, class: 'button', id: 'toChecklistButtonSingpass' %>
         <%= link_to 'Sign Up with Singpass', checklist_path, class: 'button', id: 'toChecklistButtonSingpass' %>
     </div>
 </body>

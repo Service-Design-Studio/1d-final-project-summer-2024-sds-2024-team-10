@@ -1,12 +1,14 @@
-<%= stylesheet_link_tag 'checklist', media: 'all', crossorigin: 'anonymous' %>
-<%= javascript_include_tag 'controllers/checklist', crossorigin: 'anonymous' %>
 
 <body>
     <div class="container">
+        <%= link_to t('checklist.back_button'), singpass_path, class: 'button', id: 'backButton' %>
         <%= link_to '<', singpass_path, class: 'button', id: 'backButton' %>
         <!-- Progress bar -->
+        <progress id="file" value="14" max="100"> <%= t('checklist.progress') %> </progress><br><br>
         <progress id="file" value="14" max="100"> 20% </progress><br><br>
 
+        <h1><%= t('checklist.title') %></h1>
+        <p><%= t('checklist.instructions') %></p>
         <h1>Document Checklist</h1>
         <p>Check the box when the document is ready.</p>
         
@@ -15,30 +17,34 @@
                     <div class="tooltip">
                         <!-- Image tag with data attributes for modal handling -->
                         <%= image_tag("i.png", alt: label, class: 'sample-image', data: { target: "modal_#{key}" }) %>
+                        <span class="tooltiptext"><%= t('checklist.tooltip') %></span>
                         <span class="tooltiptext">Click to See Sample</span>
                     </div>
+                    <%= t("checklist.items.#{key}.label") %>
                     <%= label[0] %>
                     <%= check_box_tag "checklist[#{key}]", '1', session[key.to_s] == '1', id: key, autocomplete: 'off', data: { testid: "checkbox_#{key}" } %>
                     <label for="<%= key %>"></label>
                 </div>
 
-                <!-- Modal for each image -->
+@@ -26,9 +26,9 @@
                 <div id="modal_<%= key %>" class="modal">
                     <div class="modal-content">
                         <span class="close">&times;</span>
+                        <h2><%= t("checklist.items.#{key}.label") %></h2>
                         <h2><%= label[0] %></h2>
                         <% label[1].each do |document, image| %>
+                            <button id="button_<%= document %>" class="accordion"><%= t("checklist.items.#{key}.documents.#{document}") %></button>
                             <button id="button_<%= document %>" class="accordion"><%= document %></button>
                             <div id="panel_<%= document %>" class="panel" style="display: none;">
                                 <%= image_tag(image, alt: document, class: 'modal-image') %>
                             </div>
-                        <% end %>
-                    </div>
+
+@@ -37,7 +37,7 @@
                 </div>
             <% end %>
             <%= form_with url: checklist_path, method: :post, id: 'checklistForm' do %>
+        <%= submit_tag t('checklist.next_button'), class: 'button', id: 'nextButton' %>
         <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
         <% end %>
     </div>
 </body>
-</html>

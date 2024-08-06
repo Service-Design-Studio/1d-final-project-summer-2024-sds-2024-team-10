@@ -10,6 +10,9 @@
             <h1>One Time Password</h1>
             <p>The OTP has been sent to your mobile number. </p>
             <p>Please enter it below for verification.</p>
+            <h1><%= t('otp.title') %></h1>
+            <p><%= t('otp.sent_message') %></p>
+            <p><%= t('otp.enter_message') %></p>
             <%= form_with url: verify_otp_path, method: :post, local: true do |f| %>
                 <div class="input-group">
                     <%= f.text_field :otp, placeholder: "Enter OTP", required: true %>
