@@ -22,7 +22,6 @@ gem 'twilio-ruby'
 
 gem 'sinatra'
 gem 'uri'
-gem 'net-http'
 gem 'json'
 gem 'base64'
 gem 'pg'

@@ -1,9 +1,7 @@
 # features/step_definitions/launch_and_select_steps.rb
 
-Given("I visit the homepage and click on start" ) do
+Given("I am on the homepage" ) do
   visit '/'
-  sleep 2
-  visit '/signup'
   sleep 2
 end
 
@@ -112,7 +110,6 @@ When("I print the attributes of all checkboxes") do
 end
 
 
-
 Then('the Next button should be clickable and red') do
   # Check if the button is present
   unless has_selector?('#nextButton')
@@ -195,6 +192,8 @@ Given('I check all the checkboxes') do
       #puts checkbox['outerHTML']
     end
     sleep 2
+    click_button 'nextButton'
+    sleep 2
   rescue Capybara::ElementNotFound
     raise "Some checkboxes were not found on the page"
   rescue StandardError => e
@@ -203,7 +202,6 @@ Given('I check all the checkboxes') do
 end
 
 Given("I am on the checklist page") do
-  visit '/checklist'
   puts "Navigated to: #{page.current_url}"
   sleep 2
 end
@@ -219,25 +217,44 @@ Given ('I am on the checklist page displayed in Tamil according to my language p
 end
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #signup
-And ("I land on the Sign up with Phone number page") do
-  visit '/login'
+And ("I land on the Sign up page") do
+  visit '/signup'
 end
 When ("I enter a valid Name") do
-  fill_in 'name', with: 'Moulik Pare'
+  fill_in 'full_name', with: 'Moulik Pare'
   sleep 2
 end
-And ("I enter a valid Phone Number and set a password") do
+And ("I enter a valid Phone Number") do
   fill_in 'phone_number', with: '84285208'
   sleep 2
-  fill_in 'password', with: '1234'
+end
+And ("I click the Get OTP button") do
+  find('#GetOTPButton').click
   sleep 2
 end
-And ("I click the Continue button") do
-  sleep 1
-end
 And ("I visit the OTP page") do
-  visit '/otp'
   sleep 2
 end
 Then ('I enter the OTP and press continue') do
@@ -247,15 +264,18 @@ Then ('I enter the OTP and press continue') do
   sleep 2
   fill_in 'otp', with: otp
   sleep 4
+  click_button 'Authenticate'
+
 end
 And ("I proceed to the next page") do
-  visit '/singpass'
+  sleep 2
+  find('#toChecklistButtonNoSingpass').click
   sleep 2
 end
-Then ('I land on the address page') do
-  visit '/address'
+Then ('I land on the info page') do
+  sleep 2
 end
-And ('I fill in my particulars and press next') do
+And ('I fill in my address particulars and press next') do
   fill_in 'postal-code', with: '471774'
   sleep 1
   fill_in 'block-no', with: '774'
@@ -269,6 +289,45 @@ And ('I fill in my particulars and press next') do
   fill_in 'address-line-2', with: 'Bedok Reservoir road'
   sleep 1
 end
+
+And ('I fill in my particulars') do
+  fill_in 'user_display_name', with: 'Pare Moulik'
+  sleep 1
+  fill_in 'user_password', with: '654321'
+  sleep 1
+  fill_in 'user_email', with: 'moulikpare@gmail.com'
+  sleep 1
+  sleep 1
+end
+
+Given('I am on the user form page') do
+  visit new_user_path # Adjust the path to your actual form page
+end
+
+When('I select {string} from the {string} dropdown') do |option, dropdown|
+  select(option, from: dropdown)
+end
+
+When('I click the {string} button') do |button|
+  click_button(button)
+  sleep 4
+end
+
+And ("I click the Next button") do
+  click_button('nextButton')
+  sleep 4
+
+end
+Given('I am not a Tax resident , I choose no') do
+  choose(option: 'no')
+end
+
+When('I fill in {string} with {string}') do |field, value|
+  sleep 1
+  fill_in(field, with: value)
+  sleep 2
+end
+
 Then ("I entered the wrong OTP and press continue") do
   puts "Please enter the OTP: "
   sleep 3
@@ -279,15 +338,21 @@ Then ("I entered the wrong OTP and press continue") do
   click_button 'Authenticate'
   sleep 4
 end
+And ('I realize I do not know my TIN number and close the app') do
+  sleep 1
+end
 
-Given ("I am on the Mobile Ownership document upload page") do
+
+
+#DOC UPLOAD
+Given ("I am on the document upload page") do
   visit '/proof_of_identity'
   sleep 2
   visit current_path
   sleep 2
 end
 
-And ("I click on the camera button to take a picture of the document") do
+And ("I click on the camera button22 to take a picture of the document") do
   click_button 'toCameraUpload'
   sleep 1
 end
@@ -357,4 +422,3 @@ end
 And  ("I am unable to proceed to the next page") do
   sleep 2
 end
-

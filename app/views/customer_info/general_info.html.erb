@@ -26,7 +26,7 @@
                     'Engineer', 'Healthcare Professional', 'Teacher', 'Sales', 'Marketing', 'Human Resources', 
                     'Researcher', 'Designer', 'Entrepreneur', 'Freelancer', 'Consultant', 'Administrative', 
                     'Finance', 'Legal', 'Others'
-                ], { include_blank: 'Select your work' }, { required: true, selected: @user.work } %>
+                ], { include_blank: 'Select your work' }, { required: true, id:'work', selected: @user.work } %>
             </div>
             <div class="form-group">
                 <label for="industry">And which of these industries do you work in?</label>
@@ -36,7 +36,7 @@
                     'Construction', 'Telecommunications', 'Real Estate', 'Entertainment', 'Media and Advertising', 
                     'Government', 'Non-Profit', 'Automotive', 'Agriculture', 'Hospitality and Tourism', 
                     'Fashion', 'Others'
-                ], { include_blank: 'Select your industry' }, { required: true, selected: @user.industry } %>
+                ], { include_blank: 'Select your industry' }, { required: true, id:'industry', selected: @user.industry } %>
             </div>
             
             <%= f.submit 'Next', class: 'btn', id: 'nextButton' %>
