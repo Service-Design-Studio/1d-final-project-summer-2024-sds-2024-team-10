@@ -1,4 +1,3 @@
-# spec/controllers/login_controller_spec.rb
 require 'rails_helper'
 
 RSpec.describe LoginController, type: :controller do
@@ -60,6 +59,17 @@ RSpec.describe LoginController, type: :controller do
         end
       end
     end
+
+    context 'when user is not found' do
+      before do
+        allow(User).to receive(:find_record).with(display_name: "JohnDoe").and_return(nil)
+      end
+
+      it 'does not set the session user_id' do
+        post :login_authentication, params: { display_name: "JohnDoe", password: "password" }
+        expect(session[:user_id]).to be_nil
+      end
+    end
   end
 
   describe 'POST #signup_authentication' do
@@ -105,6 +115,39 @@ RSpec.describe LoginController, type: :controller do
         expect(session[:user_id]).to eq(new_user.id)
         expect(response).to redirect_to(generate_otp_path)
       end
+    end
+
+    context 'when user creation fails' do
+      before do
+        allow(User).to receive(:create).and_return(double(persisted?: false))
+      end
+
+      it 'sets a flash alert and redirects to signup path' do
+        post :signup_authentication, params: { phone_number: "0987654321", full_name: "Jane Doe" }
+        expect(flash[:alert]).to eq('Failed to create new user, please try again later')
+        expect(response).to redirect_to(signup_path)
+      end
+    end
+  end
+
+  describe 'private #create_new_record' do
+    before do
+      # Simulate a request to provide a response object
+      allow(controller).to receive(:response).and_return(ActionDispatch::TestResponse.new)
+    end
+
+    it 'creates a new user and redirects to generate OTP path' do
+      allow(User).to receive(:create).and_return(double(persisted?: true, id: 1))
+      controller.send(:create_new_record)
+      expect(session[:user_id]).to eq(1)
+      expect(response).to redirect_to(generate_otp_path)
+    end
+
+    it 'sets a flash alert and redirects to signup path when user creation fails' do
+      allow(User).to receive(:create).and_return(double(persisted?: false))
+      controller.send(:create_new_record)
+      expect(flash[:alert]).to eq('Failed to create new user, please try again later')
+      expect(response).to redirect_to(signup_path)
     end
   end
 end
