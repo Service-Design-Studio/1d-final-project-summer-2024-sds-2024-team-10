@@ -2,23 +2,19 @@ require_relative '../services/gemini_service'
 require 'base64'
 class CameraController < ApplicationController
 
-   def update_db
-    id = params[:user][:id]
-    updates_hash = customer_info_params
+  # def update_db
+  #   id = params[:user][:id]
+  #   updates_hash = customer_info_params
 
-    # Determine next_path based on the referring URL
-    referer = request.referer
-
-    next_path = proof_of_employment_path
-    
-    @user = User.find(id)
-    if @user.update(updates_hash)
-      redirect_to next_path, notice: 'Customer info was successfully updated.'
-    else
-      flash[:alert] = 'Update failed.'
-      render :general_info
-    end
-  end
+  #   @user = User.find(id)
+  #   if @user.update(updates_hash)
+  #     puts "Customer info was successfully updated"
+  #     redirect_to proof_of_employment_path
+  #   else
+  #     puts "Update failed"
+  #     render :proof_of_identity
+  #   end
+  # end
   
   def identity
     image_data = params[:image_data].split(",")[1]
@@ -206,7 +202,10 @@ class CameraController < ApplicationController
     end
   end
 
-  def customer_info_params
-    params.require(:user).permit(:full_name, :display_name, :phone_number, :password, :dob, :fin, :country_of_residence, :postal_code, :block, :floor, :unit, :address_line_1, :address_line_2, :work, :industry, :tax_resident_country, :tin, :gender, :email, :application_status, :identity_type, :passport_number, :nric_number, :nationality, :passport_expiry_date, :application_date, :proof_of_identity, :proof_of_residential_address, :employment_pass, :proof_of_mobile_phone_ownership, :proof_of_tax_residency)
-  end
+  # def customer_info_params
+  #   params.require(:user).permit(
+  #     :identity_type, :nationality, :passport_number, :nationality, :passport_expiry_date,
+  #     :gender, :dob
+  #   )
+  # end
 end

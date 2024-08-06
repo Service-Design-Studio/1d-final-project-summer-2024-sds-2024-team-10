@@ -1,6 +1,6 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f9f9f9;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,11 +10,11 @@ body {
 
 .container {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 800px;
-    width: 500px;
+    height: 780px;
+    width: 480px;
     text-align: center;
     position: relative;
 }
@@ -90,7 +90,9 @@ body {
     margin-top: 10px !important;
 }
 
-.button {
+
+
+.btn {
     text-decoration: none;
     color: white;
     border: none;
@@ -99,27 +101,24 @@ body {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    margin-top: 15px;
+    margin-top: 20px;
     font-weight: bold;
-    position: absolute;
 }
 
 #nextButton {
-    text-decoration: none;
     background-color: #ff3333;
-    border: 10px solid #ff3333;
-    color: #ffffff;
-    padding: 8px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    border: 2px solid #ff3333;
+    width: 90%;
     position: absolute;
-    bottom: 20px;
-    width: 80%;
+    bottom: 30px; 
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
 }
+
+#nextButton:hover {
+    background-color: #e60000;
+}
+
 
 #backButton {
     background-color: transparent;

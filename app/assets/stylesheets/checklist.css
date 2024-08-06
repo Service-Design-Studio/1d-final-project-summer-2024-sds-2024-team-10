@@ -12,11 +12,11 @@ body {
 
 .container {
     background-color: #ffffff;
-    padding: 30px;
+    padding: 40px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 800px;
-    width: 500px;
+    height: 780px;
+    width: 480px;
     text-align: center;
     position: relative;
 }
@@ -131,7 +131,7 @@ input[type="checkbox"]:checked + label:before {
 #nextButton {
     background-color: #ff3333;
     border: 2px solid #ff3333;
-    width: 80%;
+    width: 90%;
     position: absolute;
     bottom: 30px; 
     left: 50%;
@@ -142,7 +142,7 @@ input[type="checkbox"]:checked + label:before {
     background-color: grey;
     border: 2px solid grey;
     cursor: not-allowed;
-    width: 80%;
+    width: 90%;
     position: absolute;
     bottom: 30px; 
     left: 50%;
@@ -154,7 +154,7 @@ input[type="checkbox"]:checked + label:before {
     color: #ff3333;
     border: 2px solid #ff3333;
     font-weight: bolder;
-    width: 80%;
+    width: 90%;
     position: absolute;
     bottom: 30px; 
     left: 50%;
