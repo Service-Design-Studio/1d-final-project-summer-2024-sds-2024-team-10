@@ -22,15 +22,21 @@ class OtpService
   end
 
   def send_otp
-    @client = Twilio::REST::Client.new(ACCOUNT_SID, AUTH_TOKEN)
+    begin
+      @client = Twilio::REST::Client.new(ACCOUNT_SID, AUTH_TOKEN)
 
-    verification = @client.verify
-                     .v2
-                     .services(SERVICE_SID)
-                     .verifications
-                     .create(to: @phone_number, channel: 'sms')
+      verification = @client.verify
+                           .v2
+                           .services(SERVICE_SID)
+                           .verifications
+                           .create(to: @phone_number, channel: 'sms')
 
-    puts verification.sid
+      puts verification.sid
+      return true
+    rescue StandardError => e
+      @error_message = e.message
+      return false
+    end
   end
 
   def verify_otp(otp_code)
@@ -46,6 +52,10 @@ class OtpService
                                .create(to: @phone_number, code: otp_code)
 
     verification_check.status == 'approved'
+  end
+
+  def error_message
+    @error_message
   end
 
   private
