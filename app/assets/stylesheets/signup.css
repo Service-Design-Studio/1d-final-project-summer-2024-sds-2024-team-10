@@ -25,28 +25,29 @@ body {
 .button {
     text-decoration: none;
     color: white;
-    height: 40px;
+    height: 30px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 20px;
     transition: background-color 0.3s ease;
     font-weight: bold;
 }
 
 #SignUpforDigibankButton {
     padding: 5px 30px;
-    width : 50%;
+    width : 60%;
     background-color: #ff3333;
     border: 2px solid #ff3333;
     position: absolute;
     bottom: 30px; 
     transform: translateX(-50%);
+    align-items: center;
 }
 
 #LogInButton {
     padding: 5px 30px;
-    width : 50%;
+    width : 60%;
     background-color: white;
     color: #ff3333;
     border: 2px solid #ff3333;
@@ -59,7 +60,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 20px; 
 }
 
 
