@@ -1,183 +1,22 @@
-zh:
+zh-CN:
   buttons:
-    signup_digibank: "注册数码银行"
+    signup_digibank: "注册Digibank"
     login: "登录"
   login:
     title: "登录"
-    user_id: "用户 ID"
-    enter_pin: "输入 PIN"
+    user_id: "用户ID"
+    enter_pin: "输入PIN"
     remember_me: "记住我"
     use_biometrics: "使用生物识别"
-    get_otp: "获取 OTP"
-    no_account: "没有账户？"
+    get_otp: "获取OTP"
+    no_account: "没有账号?"
     signup_now: "立即注册"
   signup:
     title: "注册/继续注册"
     full_name: "全名"
     phone_number: "电话号码"
-    terms_and_conditions: "我已阅读并同意相关条款和隐私政策"
-    opt_in_promotions: "选择接收奖励、促销优惠和营销信息。"
-    get_otp: "获取 OTP"
-    already_have_account: "已经有账户？"
+    terms_and_conditions: "我已阅读并同意相关的条款和隐私政策"
+    opt_in_promotions: "选择接收奖励、促销优惠和营销通讯"
+    get_otp: "获取OTP"
+    already_have_account: "已有账号?"
     login_instead: "改为登录"
-  checklist:
-    back_button: "<"
-    progress: "14%"
-    title: "文件清单"
-    instructions: "文件准备好后请勾选。"
-    tooltip: "点击查看示例"
-    next_button: "下一步"
-    items:
-      item1:
-        label: "文件 1"
-        documents:
-          doc1: "文件 1 示例"
-          doc2: "文件 2 示例"
-      item2:
-        label: "文件 2"
-        documents:
-          doc1: "文件 1 示例"
-          doc2: "文件 2 示例"
-  general_info:
-    title: "告诉我们更多关于你的信息"
-    set_user_id: "设置用户 ID"
-    user_id_placeholder: "例如：JohnDoe"
-    set_pin: "设置 6 位数 PIN"
-    pin_placeholder: "例如：123456"
-    enter_email: "输入你的电子邮箱"
-    email_placeholder: "电子邮箱"
-    work_title: "告诉我们更多关于你的工作"
-    work_label: "你从事什么工作？"
-    select_work: "选择你的工作"
-    work_options:
-      - '客户服务'
-      - '专业服务'
-      - 'IT 专业人士'
-      - '管理'
-      - '学生'
-      - '工程师'
-      - '医疗专业人士'
-      - '教师'
-      - '销售'
-      - '营销'
-      - '人力资源'
-      - '研究人员'
-      - '设计师'
-      - '企业家'
-      - '自由职业者'
-      - '顾问'
-      - '行政'
-      - '金融'
-      - '法律'
-      - '其他'
-    industry_label: "你在哪个行业工作？"
-    select_industry: "选择你的行业"
-    industry_options:
-      - '银行与金融'
-      - '食品与饮料'
-      - '供应与能源'
-      - '零售与消费品'
-      - '医疗保健'
-      - '技术'
-      - '教育'
-      - '制造业'
-      - '运输与物流'
-      - '建筑'
-      - '电信'
-      - '房地产'
-      - '娱乐'
-      - '媒体与广告'
-      - '政府'
-      - '非营利组织'
-      - '汽车'
-      - '农业'
-      - '酒店与旅游'
-      - '时尚'
-      - '其他'
-    next_button: "下一步"
-   buttons:
-    back: "<"
-    next: "下一步"
-  taxres:
-    tax_resident_question: "你只在新加坡是税务居民吗？"
-    yes: "是"
-    no: "否"
-    tax_resident_definition: "如果你在国家中居住或工作，以下情况之一成立则为税务居民："
-    definition_183_days: "一年内至少 183 天"
-    definition_3_years: "连续 3 年"
-    find_out_more: "了解更多"
-    tax_resident_country_placeholder: "税务居民国家"
-    tin_placeholder: "纳税人识别号"
-  buttons:
-    authenticate: "认证"
-  otp:
-    title: "一次性密码"
-    sent_message: "一次性密码已发送至你的手机号码。"
-    enter_message: "请在下方输入以进行验证。"
-    placeholder: "输入 OTP"
-  singpass:
-    back: "<"
-    continue_without: "继续而不使用 Singpass >"
-    title: "让我们更快完成"
-    description_html: "通过 Singpass 注册，我们可以立即识别你的身份。请注意，<b>手动注册可能需要更长时间。</b> <br><a target='_blank' href='https://www.singpass.gov.sg/main/security/'>了解更多</a>"
-    myinfo: "通过 MyInfo，我们可以"
-    benefits:
-      verify: "验证你的身份"
-      retrieve: "安全检索和使用你的个人信息"
-      faster: "帮助你更快注册"
-    signup_with_singpass: "使用 Singpass 注册"
-   summary:
-    title: "模态框中的折叠示例"
-    heading: "模态框中的折叠示例"
-    open_modal: "打开模态框"
-    modal_heading: "模态框中的折叠内容"
-    section_1: "部分 1"
-    image_1: "图像 1"
-    content_1: "这是部分 1 的内容。"
-    section_2: "部分 2"
-    image_2: "图像 2"
-    content_2: "这是部分 2 的内容。"
-    section_3: "部分 3"
-    image_3: "图像 3"
-    content_3: "这是部分 3 的内容。"
-  proof:
-    proof_of_employment_title: "就业证明"
-    employment_or_s_pass: "就业准证或 S Pass"
-    student_pass: "学生证"
-    dependent_long_term_visit_pass: "家属/长期访问准证"
-    in_principal_approval: "原则性批准 (IPA)"
-    certification_letter_from_school: "学校证明信"
-    take_picture: "拍照"
-    upload_icon_alt: "上传图标"
-    proof_of_identity_title: "身份证明"
-    identity_card_for_malaysians: "马来西亚人的身份证"
-    passport_for_other_nationalities: "其他国籍的护照"
-    proof_of_mobile_ownership_title: "手机所有权证明"
-    telco_bill: "电信账单"
-    telco_confirmation_letter: "电信确认函"
-    must_be_dated_within_3_months: "*必须在申请日期前 3 个月内"
-    proof_of_residential_address_title: "住址证明"
-    certification_letter_of_employment: "就业证明信"
-    certification_letter_from_school: "学校证明信"
-    certificate_of_stamp_duty: "印花税证书"
-    singapore_utility_bill: "新加坡水电/电信账单"
-    singapore_bank_statement: "新加坡银行账单/信用卡账单"
-    in_principle_approval_mom: "由人力部颁发的原则性批准"
-    in_principle_approval_ica: "由移民与关卡局颁发的原则性批准"
-    work_permit_fdw_mom: "由人力部颁发的外籍家庭佣工工作准证"
-    proof_of_tax_residency_title: "税务居民证明"
-    passport: "护照"
-    national_identity_card: "国民身份证"
-    residence_permit: "居住证"
-    work_pass: "工作准证"
-    birth_certificate: "出生证明"
-  upload:
-    camera_title: "相机"
-    video_stream_not_available: "视频流不可用。"
-    take_photo: "拍照"
-    screen_capture_alt: "屏幕截图将显示在此框中。"
-    result_instructions: |
-      1. <%= t('upload.take_photo') %> <br>
-      2. <%= t('upload.please_wait') %>
-    please_wait: "请稍候......"
-    next: "下一步"
