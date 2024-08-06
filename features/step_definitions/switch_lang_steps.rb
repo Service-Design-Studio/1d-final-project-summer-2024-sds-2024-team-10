@@ -259,7 +259,7 @@ end
 
 And ("I click the Get OTP button") do
   find('#GetOTPButton').click
-  sleep 2
+  sleep 10
 end
 And ("I visit the OTP page") do
   expect(current_path).to eq('/otp/verify')
@@ -276,7 +276,6 @@ Then ('I enter the OTP and press continue') do
 
 end
 And ("I proceed to the next page") do
-  sleep 2
   find('#toChecklistButtonNoSingpass').click
   sleep 2
 end
@@ -316,9 +315,8 @@ When('I select {string} from the {string} dropdown') do |option, dropdown|
   select(option, from: dropdown)
 end
 
-When('I click the {string} button') do |button|
-  click_button(button)
-  sleep 4
+And ('wait') do
+  sleep 13
 end
 
 And ("I click the Next button") do
