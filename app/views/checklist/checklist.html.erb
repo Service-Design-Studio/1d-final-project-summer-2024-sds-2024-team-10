@@ -15,7 +15,8 @@
                     <div class="tooltip">
                         <!-- Image tag with data attributes for modal handling -->
                         <%= image_tag("i.png", alt: label, class: 'sample-image', data: { target: "modal_#{key}" }) %>
-                        <span class="tooltiptext">t('checklist.tooltip')</span>
+                        <span class="tooltiptext"><%= t('checklist.tooltip') %></span>
+
                     </div>
                     <%= label[0] %>
                     <%= check_box_tag "checklist[#{key}]", '1', session[key.to_s] == '1', id: key, autocomplete: 'off', data: { testid: "checkbox_#{key}" } %>
