@@ -1,18 +1,13 @@
-
-<head>
-    <title>Camera</title>
-    <%= stylesheet_link_tag 'camera', media: 'all', crossorigin: 'anonymous' %>
-    <%= javascript_include_tag 'controllers/webcam_identity', crossorigin: 'anonymous' %>
-</head>
-
+<%= stylesheet_link_tag 'camera', media: 'all' %>
+<%= javascript_include_tag 'controllers/test', crossorigin: 'anonymous' %>
 <body>
     <div class="container">
-        <div class="camera">
-            <video id="video">Video stream not available.</video>
-            <button id="startbutton">Take photo</button>
+        <progress id="file" value="72" max="100"> 32% </progress>
+        <h3>Uploaded Document</h3>
         <canvas id="canvas"></canvas>
         <img id="photo" alt="The screen capture will appear in this box.">
         <div class="boxed">
+            <h3>Extracted Info</h3>
             <p id = "result">
                 1. Click "Take Photo" <br>
                 2. Please Wait .......
@@ -23,5 +18,3 @@
         <% end %>
     </div>
 </body>
-
-</html>  

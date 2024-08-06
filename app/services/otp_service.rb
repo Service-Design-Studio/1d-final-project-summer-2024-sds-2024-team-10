@@ -4,15 +4,10 @@ class OtpService
   AUTH_TOKEN = 'b9ae2d7eb5c7c9c9e4db0ab3ab2768de'
   SERVICE_SID = 'VA2ffb34d016bf56de2c93a054a17410f6'
 
-  #Genee
-  #ACCOUNT_SID = 'ACed085f22fdfebe937d7cd5d5dc3b5a59'
-  #AUTH_TOKEN = 'fc5daf42242c552e0d3f262de6f5c4bb'
-  #SERVICE_SID = 'VA3f754ed3ff1cb0a1a7daeab5bda2cbd8'
-
-  #Sahitya
-  # ACCOUNT_SID = 'AC7dceef9ae05b09e56cba20df269c2137'
-  # AUTH_TOKEN = '771079e7f426d60d7f706224306388fe'
-  # SERVICE_SID = 'VA820364bd514880809acb4257c8471029'
+  # Genee
+  # ACCOUNT_SID = 'ACed085f22fdfebe937d7cd5d5dc3b5a59'
+  # AUTH_TOKEN = 'fc5daf42242c552e0d3f262de6f5c4bb'
+  # SERVICE_SID = 'VA3f754ed3ff1cb0a1a7daeab5bda2cbd8'
 
   attr_reader :otp, :phone_number
 
@@ -22,21 +17,15 @@ class OtpService
   end
 
   def send_otp
-    begin
-      @client = Twilio::REST::Client.new(ACCOUNT_SID, AUTH_TOKEN)
-
-      verification = @client.verify
-                           .v2
-                           .services(SERVICE_SID)
-                           .verifications
-                           .create(to: @phone_number, channel: 'sms')
-
-      puts verification.sid
-      return true
-    rescue StandardError => e
-      @error_message = e.message
-      return false
-    end
+    @client = Twilio::REST::Client.new(ACCOUNT_SID, AUTH_TOKEN)
+    
+    verification = @client.verify
+                     .v2
+                     .services(SERVICE_SID)
+                     .verifications
+                     .create(to: @phone_number, channel: 'sms')
+    
+    puts verification.sid
   end
 
   def verify_otp(otp_code)
@@ -52,10 +41,6 @@ class OtpService
                                .create(to: @phone_number, code: otp_code)
 
     verification_check.status == 'approved'
-  end
-
-  def error_message
-    @error_message
   end
 
   private

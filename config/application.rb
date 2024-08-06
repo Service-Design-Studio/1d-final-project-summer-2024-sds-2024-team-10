@@ -2,11 +2,6 @@ require_relative "boot"
 
 require "rails/all"
 
-# I18n.available_locales = [:en, :ta, :'zh-CN',:'fil-PH',:my,:ms] #tamil,chi,fil,burmese,malay
-
-# # Set the default locale to English
-# I18n.default_locale = :en
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)

@@ -21,8 +21,4 @@ class User < ApplicationRecord
       return false
     end
   end
-
-  def self.find_all_names_same_phone(phone_number)
-    where(phone_number: phone_number).select(:id, :full_name)
-  end
 end

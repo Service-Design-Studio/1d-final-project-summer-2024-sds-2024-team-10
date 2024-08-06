@@ -1,21 +1,26 @@
-<%= stylesheet_link_tag 'camera', media: 'all' %>
+<%= stylesheet_link_tag 'identity', media: 'all' %>
 <%= javascript_include_tag 'controllers/tax', crossorigin: 'anonymous' %>
+
 <body>
     <div class="container">
-        <progress id="file" value="72" max="100"> 32% </progress>
-        <h3>Uploaded Document</h3>
-        <canvas id="canvas"></canvas>
-        <img id="photo" alt="The screen capture will appear in this box.">
-        <div class="boxed">
-            <h3>Extracted Info</h3>
-            <form id="textForm">
-                <label for="result" id="text"></label><br>
-                <label for="result">Name</label><br>
-                <input type="text" id="name" name="result" placeholder="Enter text here"><br>
-                <label for="result">TIN Number</label><br>
-                <input type="text" id="tin" name="result" placeholder="Enter text here"><br>
-            </form>
+        <progress id="file" value="72" max="100"> 32% </progress><br><br>
+        <div class="upload-section">
+            <div class="upload-icon">
+                <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
+            </div>
+            <div class="upload-text">
+                <h1>Proof of Tax Residency</h1>
+                <p>Passport</p>
+                <p>National Identity Card</p>
+                <p>Residence Permit</p>
+                <p>Work Pass</p>
+                <p>Student Pass</p>
+                <p>Birth Certificate</p>
         </div>
-        <button id="nextButton" class="button">Next</button>
+        <div class="camera-icon">
+            <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
+            <p>Take Picture</p>
+        </div>
     </div>
 </body>
+</html>

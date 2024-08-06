@@ -10,10 +10,12 @@
     var startbutton = null;
 
     function startup() {
+        nextButton = document.getElementById('nextButton');
         video = document.getElementById('video');
         canvas = document.getElementById('canvas');
         photo = document.getElementById('photo');
         startbutton = document.getElementById('startbutton');
+        nextButton.disabled = true;
         navigator.mediaDevices.getUserMedia({
                 video: true,
                 audio: false
@@ -65,8 +67,7 @@
             context.drawImage(video, 0, 0, width, height);
 
             var data = canvas.toDataURL('image/png');
-            sessionStorage.setItem("tax", data);
-            // photo.setAttribute('src', data); remove if no need for image on same page
+            photo.setAttribute('src', data);
             // Dynamically get the current URL
             var baseURL = window.location.origin;
             var csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
@@ -82,8 +83,8 @@
             )
             .then(data => {
                 console.log('Success:', data);
-                sessionStorage.setItem("extracted_tax", data.result);
-                window.location.href = '/proof_of_taxres';
+                document.getElementById('result').innerText = data.result;
+                nextButton.disabled = data.enable;
             })
             .catch((error) => {
                 console.error('Error:', error);
