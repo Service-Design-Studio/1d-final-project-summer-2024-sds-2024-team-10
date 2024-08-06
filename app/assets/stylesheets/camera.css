@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f0f2f5;
     display: flex;
     justify-content: center;
@@ -14,44 +16,48 @@ body {
     padding: 30px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 800px;
+    height: auto;
     width: 500px;
     text-align: center;
     position: relative;
     margin-bottom: 30px;
 }
 
-.info {
-    color: white;
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.box {
-    position: absolute;
-    top: 10px; /* Adjust as needed */
-    left: 10px; /* Adjust as needed */
-    width: 400px;
-    height: 400px;
-    border: 2px solid rgb(255, 255, 255);
-    margin: 10px;
+p {
+    font-size: 14px;
+    margin: 5px 0;
 }
 
 .camera {
     border-radius: 20px;
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     position: relative;
     overflow: hidden;
+    margin-top: 20px;
+}
+
+.video-wrapper {
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #000; /* Background color for video wrapper */
+    position: relative;
 }
 
 #video {
     display: block;
-    width: auto;
-    height: 100%;
-    transform-origin: center center;
+    width: 100%;
+    height: auto;
 }
 
 #canvas {
@@ -69,19 +75,24 @@ body {
     transition: background-color 0.3s ease;
     margin-top: 15px;
     font-weight: bold;
-    position: relative;
+    background-color: #6a67ce;
 }
 
 #startbutton {
-    display: block;
-    margin-bottom: 10px;
-    padding: 10px;
     background-color: #6a67ce;
-    border: 1px solid rgba(255, 255, 255, 0.7);
+    border: none;
+    padding: 12px 20px;
     font-size: 14px;
-    color: rgba(255, 255, 255, 1.0);
+    color: #fff;
     cursor: pointer;
-    position: relative;
+    margin-top: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+#startbutton:hover {
+    background-color: #5a57be;
 }
 
 .progress-container {
@@ -89,14 +100,14 @@ body {
     background-color: #f3f3f3;
     border-radius: 25px;
     overflow: hidden;
-    height: 30px; /* Height of the progress bar */
+    height: 20px; /* Height of the progress bar */
     margin-bottom: 20px; /* Margin from the bottom */
     position: relative;
 }
 
 progress {
     width: 100%;
-    height: 2%;
+    height: 100%;
     -webkit-appearance: none;
     appearance: none;
 }
@@ -125,7 +136,7 @@ progress::-moz-progress-bar {
     top: 0;
     left: 0;
     text-align: center;
-    line-height: 30px; /* Align text vertically */
+    line-height: 20px; /* Align text vertically */
     color: white;
     font-weight: bold;
 }

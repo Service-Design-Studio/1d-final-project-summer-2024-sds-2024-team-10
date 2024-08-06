@@ -1,0 +1,160 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: white;
+    color: #162333;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 800px;
+    width: 500px;
+    text-align: center;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.info {
+    color: #162333;
+    margin: 0;
+    padding: 10px;
+}
+
+#canvas {
+    display: none;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    width: 100%; /* Ensure it takes full width of parent */
+    padding: 10px;
+}
+
+
+#photo {
+    border: 2px solid #000; /* Black border */
+    width: 80%;  /* Match the canvas width */
+    height: auto; /* Maintain aspect ratio */
+    margin-top: 5px;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+h4 {
+    margin: 5px 0; /* Reduce margin around h4 */
+    padding: 0; /* Ensure no padding */
+    color: #162333;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 14px; /* Slightly larger font for better readability */
+}
+
+.form-row {
+    display: flex;
+    width: 100%;
+    gap: 10px; /* Space between columns */
+}
+
+.form-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px; /* Reduced margin for compactness */
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px; /* Increase padding for better input field size */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-bottom: 10px; /* Add a bit of margin between inputs */
+}
+
+
+.button {
+    text-decoration: none;
+    display: flex;
+    justify-content: center; /* Center text horizontally */
+    align-items: center; /* Center text vertically */
+    padding: 10px;
+    background-color: #ff3333;
+    border: 2px;
+    border-color: #ff3333;
+    border-radius: 4px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80%;
+}
+#nextButton {
+    width: 100%;
+    bottom: 40px;
+}
+
+#RetakeButton {
+    width: 98%;
+    background-color: #f0f2f5;
+    color: #ff3333;
+}
+.progress-container {
+    width: 100%;
+    background-color: #f3f3f3;
+    border-radius: 25px;
+    overflow: hidden;
+    height: 30px; /* Height of the progress bar */
+    margin-bottom: 20px; /* Margin from the bottom */
+    position: relative;
+}
+
+progress {
+    width: 100%;
+    height: 2%;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+progress::-webkit-progress-bar {
+    background-color: #f3f3f3;
+    border-radius: 25px;
+}
+
+progress::-webkit-progress-value {
+    background-color: #ff3333;
+    border-radius: 25px;
+    transition: width 0.3s ease;
+}
+
+progress::-moz-progress-bar {
+    background-color: #ff3333;
+    border-radius: 25px;
+    transition: width 0.3s ease;
+}
+
+.progress-value {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    text-align: center;
+    line-height: 30px; /* Align text vertically */
+    color: white;
+    font-weight: bold;
+}

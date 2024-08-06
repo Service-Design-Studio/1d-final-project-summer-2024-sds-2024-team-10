@@ -20,10 +20,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Check if text content exists
     if (extracted_identity) {
-        // Select the result element
-        let text = document.getElementById('result');
+        let text = document.getElementById('text');
+        let name = document.getElementById('name');
+        if (extracted_identity.includes('{')){
+        temp = JSON.parse(convertRubyToJsonString(extracted_identity));
+        // Set the text content of the result element
+        name.value = temp["name"];
+    }else {
         // Set the text content of the result element
         text.innerText = extracted_identity;
+      }
     } else {
         console.log('No extracted identity data found in sessionStorage');
     }
