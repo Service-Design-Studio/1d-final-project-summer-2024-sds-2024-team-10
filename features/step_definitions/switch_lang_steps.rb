@@ -243,18 +243,26 @@ And ("I land on the Sign up page") do
   visit '/signup'
 end
 When ("I enter a valid Name") do
-  fill_in 'full_name', with: 'Moulik Pare'
+  fill_in 'full_name', with: 'Sahityaa P'
   sleep 2
 end
 And ("I enter a valid Phone Number") do
-  fill_in 'phone_number', with: '84285208'
+  fill_in 'phone_number', with: '82163240'
   sleep 2
 end
+
+And('I check all checkboxes') do
+  all('input[type="checkbox"]').each do |checkbox|
+    check(checkbox[:id]) unless checkbox.checked?
+  end
+end
+
 And ("I click the Get OTP button") do
   find('#GetOTPButton').click
   sleep 2
 end
 And ("I visit the OTP page") do
+  expect(current_path).to eq('/otp/verify')
   sleep 2
 end
 Then ('I enter the OTP and press continue') do
@@ -291,11 +299,11 @@ And ('I fill in my address particulars and press next') do
 end
 
 And ('I fill in my particulars') do
-  fill_in 'user_display_name', with: 'Pare Moulik'
+  fill_in 'user_display_name', with: 'Sahitya P'
   sleep 1
   fill_in 'user_password', with: '654321'
   sleep 1
-  fill_in 'user_email', with: 'moulikpare@gmail.com'
+  fill_in 'user_email', with: 'Sahityaa@gmail.com'
   sleep 1
   sleep 1
 end
@@ -340,13 +348,14 @@ Then ("I entered the wrong OTP and press continue") do
 end
 And ('I realize I do not know my TIN number and close the app') do
   sleep 1
+  visit '/users'
+  sleep 5
 end
 
 
 
 #DOC UPLOAD
 Given ("I am on the document upload page") do
-  visit '/proof_of_identity'
   sleep 2
   visit current_path
   sleep 2
