@@ -17,3 +17,4 @@ tmp/
 storage/development.sqlite3
 storage/development.sqlite3-shm
 storage/development.sqlite3-wal
+dbs_test
