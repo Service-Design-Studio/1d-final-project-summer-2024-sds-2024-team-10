@@ -30,13 +30,13 @@ document.addEventListener('DOMContentLoaded', function() {
     // Check if text content exists
     if (extracted_identity) {
         // Select the result element
-        let text = document.getElementById('result');
+        let text = document.getElementById('text');
         let docutype = document.getElementById('docutype');
         let nationality = document.getElementById('nationality');
         let passport_expiry_date = document.getElementById('passport_expiry_date');
         let name = document.getElementById('name');
         let date_of_birth = document.getElementById('docutype');
-        console.log(extracted_identity);
+        if (extracted_identity.includes('{')){
         temp = JSON.parse(convertRubyToJsonString(extracted_identity));
         // Set the text content of the result element
         docutype.value = temp["document_type"];
@@ -45,6 +45,10 @@ document.addEventListener('DOMContentLoaded', function() {
         name.value = temp["name"];
         gender.value = temp["gender"];
         date_of_birth.value = temp["date_of_birth"];
+      }else {
+        // Set the text content of the result element
+        text.innerText = extracted_identity;
+      }
     } else {
         console.log('No extracted identity data found in sessionStorage');
     }

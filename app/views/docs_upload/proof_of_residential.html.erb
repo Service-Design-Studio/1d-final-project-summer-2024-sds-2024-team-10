@@ -8,12 +8,17 @@
         <img id="photo" alt="The screen capture will appear in this box.">
         <div class="boxed">
             <h3>Extracted Info</h3>
-            <p id = "result">
-                1. Click "Take Photo" <br>
-                2. Please Wait .......
-            </p>
-            <p id = "result2">
-            </p>
+            <form id="textForm">
+                <label for="result" id="text"></label><br>
+                <label for="result">Name</label><br>
+                <input type="text" id="name" name="result" placeholder="Enter text here"><br>
+                <label for="result">Postal Code</label><br>
+                <input type="text" id="postal" name="result" placeholder="Enter text here"><br>
+                <label for="result">Floor</label><br>
+                <input type="text" id="floor" name="result" placeholder="Enter text here"><br>
+                <label for="result">Unit Number</label><br>
+                <input type="text" id="unit" name="result" placeholder="Enter text here"><br>
+            </form>
         </div>
         <button id="nextButton" class="button">Next</button>
     </div>
