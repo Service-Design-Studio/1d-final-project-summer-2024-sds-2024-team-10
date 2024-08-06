@@ -35,21 +35,23 @@ body {
 }
 
 #SignUpforDigibankButton {
+    padding: 5px 30px;
+    width : 50%;
     background-color: #ff3333;
     border: 2px solid #ff3333;
-    width: 80%;
     position: absolute;
     bottom: 30px; 
     transform: translateX(-50%);
 }
 
 #LogInButton {
+    padding: 5px 30px;
+    width : 50%;
     background-color: white;
     color: #ff3333;
     border: 2px solid #ff3333;
-    width: 80%;
     position: absolute;
-    bottom: 90px; 
+    bottom: 100px; 
     transform: translateX(-50%);
 }
 
