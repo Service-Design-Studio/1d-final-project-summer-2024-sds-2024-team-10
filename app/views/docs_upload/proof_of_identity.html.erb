@@ -10,7 +10,7 @@
         <div class="boxed">
             <h3>Extracted Info</h3>
             <form id="textForm">
-                <label for="result" id="text"></label><br>
+                <%# <label for="result" id="text"></label><br>
                 <label for="result">Name</label><br>
                 <input type="text" id="name" name="result" placeholder="Enter text here"><br>
                 <label for="result">Document Type</label><br>
@@ -22,7 +22,22 @@
                 <label for="result">Gender</label><br>
                 <input type="text" id="gender" name="result" placeholder="Enter text here"><br>
                 <label for="result">Date Of Birth</label><br>
-                <input type="text" id="date_of_birth" name="result" placeholder="Enter text here"><br>
+                <input type="text" id="date_of_birth" name="result" placeholder="Enter text here"><br> %>
+
+                <label for="result" id="text"></label><br>
+
+                <label for="result">Name</label><br>
+                <p id="name" ></p>
+                <label for="result">Document Type</label><br>
+                <p id="docutype" ></p>                
+                <label for="result">Nationality</label><br>
+                <p id="nationality" ></p>
+                <label for="result">Passport Expiry Date</label><br>
+                <p id="passport_expiry_date" ></p>
+                <label for="result">Gender</label><br>
+                <p id="gender" ></p>
+                <label for="result">Date Of Birth</label><br>
+                <p id="date_of_birth" ></p>
             </form>
         </div>
         <button id="nextButton" class="button">Next</button>
