@@ -31,7 +31,7 @@ Rails.application.routes.draw do
   get '/taxres', to: 'customer_info#taxres', as: 'taxres'
 
   # Routes for Document upload
-  get '/proof_of_identity', to: 'docs_upload#proof_of_identity'
+  get '/proof_of_identity', to: 'docs_upload#proof_of_identity', as: 'proof_of_identity_path'
   get '/test', to: 'docs_upload#test'
   get '/camera/identity', to: 'docs_upload#upload_proof_of_identity', as: 'proof_of_identity'
   post '/camera/identity', to: 'camera#identity'
