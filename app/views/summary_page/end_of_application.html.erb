@@ -1,58 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= t('summary.title') %></title>
-    <%= stylesheet_link_tag 'summary', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'controllers/summary', crossorigin: 'anonymous' %>
     <title>Accordion in Modal Example</title>
 </head>
 <body>
 
-<h2><%= t('summary.heading') %></h2>
 <h2>Accordion in Modal Example</h2>
 
 <!-- Trigger button -->
-<button id="openModal"><%= t('summary.open_modal') %></button>
 <button id="openModal">Open Modal</button>
 
 <!-- The Modal -->
 <div id="myModal" class="modal">
     <div class="modal-content">
         <span class="close">&times;</span>
-        <h2><%= t('summary.modal_heading') %></h2>
         <h2>Accordion within Modal</h2>
 
-        <button class="accordion"><%= t('summary.section_1') %></button>
         <button class="accordion">Section 1</button>
         <div class="panel">
-            <img src="https://via.placeholder.com/400x200" alt="<%= t('summary.image_1') %>">
-            <p><%= t('summary.content_1') %></p>
             <img src="https://via.placeholder.com/400x200" alt="Image 1">
             <p>This is the content of Section 1.</p>
         </div>
 
-        <button class="accordion"><%= t('summary.section_2') %></button>
         <button class="accordion">Section 2</button>
         <div class="panel">
-            <img src="https://via.placeholder.com/400x200" alt="<%= t('summary.image_2') %>">
-            <p><%= t('summary.content_2') %></p>
             <img src="https://via.placeholder.com/400x200" alt="Image 2">
             <p>This is the content of Section 2.</p>
         </div>
 
-        <button class="accordion"><%= t('summary.section_3') %></button>
         <button class="accordion">Section 3</button>
         <div class="panel">
-            <img src="https://via.placeholder.com/400x200" alt="<%= t('summary.image_3') %>">
-            <p><%= t('summary.content_3') %></p>
             <img src="https://via.placeholder.com/400x200" alt="Image 3">
             <p>This is the content of Section 3.</p>
         </div>
     </div>
 </div>
 
+<script>
+    // Get modal element
+    var modal = document.getElementById("myModal");
+    var btn = document.getElementById("openModal");
+    var span = document.getElementsByClassName("close")[0];
 
-@@ -81,4 +79,4 @@
+    // Open the modal
+    btn.onclick = function() {
+        modal.style.display = "block";
+    }
+
+    // Close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // Close the modal if clicked outside of the modal content
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // Accordion functionality
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+
+    for (i = 0; i < acc.length; i++) {
+        acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.display === "block") {
+                panel.style.display = "none";
+            } else {
+                panel.style.display = "block";
+            }
+        });
+    }
 </script>
 
 </body>

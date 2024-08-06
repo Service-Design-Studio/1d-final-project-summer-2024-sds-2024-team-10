@@ -1,9 +1,14 @@
+<%= stylesheet_link_tag 'identity', media: 'all' %>
+<%= javascript_include_tag 'controllers/identity', crossorigin: 'anonymous' %>
+
+<body>
+    <div class="container">
+        <progress id="file" value="72" max="100"> 32% </progress><br><br>
+        <div class="upload-section">
+            <div class="upload-icon">
                 <%= image_tag 'upload-icon.png', alt: 'Upload Icon' %>
             </div>
             <div class="upload-text">
-                <h1><%= t('proof.proof_of_identity_title') %></h1>
-                <p><%= t('proof.identity_card_for_malaysians') %></p>
-                <p><%= t('proof.passport_for_other_nationalities') %></p>
                 <h1>Proof of Identity</h1>
                 <p>Identity Card (For Malaysians)</p>
                 <p>Passport (For other Nationalities)</p>
@@ -11,10 +16,8 @@
         </div>
         <div class="camera-icon">
             <%= button_tag image_tag('camera-upload.png'), class: 'camera-button', id: 'toCameraUpload' %>
-            <p><%= t('proof.take_picture') %></p>
             <p>Take Picture</p>
         </div>
     </div>
 </body>
-</html>
 </html>

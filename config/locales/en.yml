@@ -1,34 +1,31 @@
-    take_picture: "Take Picture"
-    upload_icon_alt: "Upload Icon"
-    proof_of_identity_title: "Proof of Identity"
-    identity_card_for_malaysians: "Identity Card (For Malaysians)"
-    passport_for_other_nationalities: "Passport (For other Nationalities)"
-    proof_of_mobile_ownership_title: "Proof of Mobile Ownership"
-    telco_bill: "Telco Bill"
-    telco_confirmation_letter: "Telco Confirmation Letter"
-    must_be_dated_within_3_months: "*must be dated within 3 months of date of application"
-    proof_of_residential_address_title: "Proof of Residential Address"
-    certification_letter_of_employment: "Certification letter of employment"
-    certification_letter_from_school: "Certification letter from school"
-    certificate_of_stamp_duty: "Certificate of stamp duty"
-    singapore_utility_bill: "Singapore utility/telecommunication bill"
-    singapore_bank_statement: "Singapore bank statement/credit card statement"
-    in_principle_approval_mom: "In-Principle Approval issued by Ministry of Manpower"
-    in_principle_approval_ica: "In-Principle Approval from ICA"
-    work_permit_fdw_mom: "Work permit of foreign domestic worker issued by Ministry of Manpower"
-    proof_of_tax_residency_title: "Proof of Tax Residency"
-    passport: "Passport"
-    national_identity_card: "National Identity Card"
-    residence_permit: "Residence Permit"
-    work_pass: "Work Pass"
-    birth_certificate: "Birth Certificate"
-  upload:
-    camera_title: "Camera"
-    video_stream_not_available: "Video stream not available."
-    take_photo: "Take photo"
-    screen_capture_alt: "The screen capture will appear in this box."
-    result_instructions: |
-      1. <%= t('upload.take_photo') %> <br>
-      2. <%= t('upload.please_wait') %>
-    please_wait: "Please Wait ......."
-    next: "Next"
+# Files in the config/locales directory are used for internationalization and
+# are automatically loaded by Rails. If you want to use locales other than
+# English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more about the API, please read the Rails Internationalization guide
+# at https://guides.rubyonrails.org/i18n.html.
+#
+# Be aware that YAML interprets the following case-insensitive strings as
+# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
+# must be quoted to be interpreted as strings. For example:
+#
+#     en:
+#       "yes": yup
+#       enabled: "ON"
+
+en:
+  hello: "Hello world"

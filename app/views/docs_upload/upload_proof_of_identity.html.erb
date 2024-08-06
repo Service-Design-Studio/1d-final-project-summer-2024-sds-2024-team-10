@@ -1,26 +1,13 @@
+
 <head>
-    <title><%= t('upload.camera_title') %></title>
     <title>Camera</title>
     <%= stylesheet_link_tag 'camera', media: 'all', crossorigin: 'anonymous' %>
     <%= javascript_include_tag 'controllers/webcam_identity', crossorigin: 'anonymous' %>
 </head>
 
-@@ -7,20 +8,20 @@
 <body>
     <div class="container">
         <div class="camera">
-            <video id="video"><%= t('upload.video_stream_not_available') %></video>
-            <button id="startbutton"><%= t('upload.take_photo') %></button>
-            <canvas id="canvas"></canvas>
-            <img id="photo" alt="<%= t('upload.screen_capture_alt') %>">
-            <div class="boxed">
-                <p id="result">
-                    <%= t('upload.result_instructions') %>
-                </p>
-            </div>
-            <%= form_with url: summary_page_path, method: :get, id: 'checklistForm' do %>
-                <%= submit_tag t('upload.next'), class: 'button', id: 'nextButton' %>
-            <% end %>
             <video id="video">Video stream not available.</video>
             <button id="startbutton">Take photo</button>
         <canvas id="canvas"></canvas>
@@ -37,5 +24,4 @@
     </div>
 </body>
 
-</html>
-</html>
+</html>  
