@@ -4,10 +4,10 @@ class OtpService
   # AUTH_TOKEN = 'b9ae2d7eb5c7c9c9e4db0ab3ab2768de'
   # SERVICE_SID = 'VA2ffb34d016bf56de2c93a054a17410f6'
 
-  Genee
-  ACCOUNT_SID = 'ACed085f22fdfebe937d7cd5d5dc3b5a59'
-  AUTH_TOKEN = 'fc5daf42242c552e0d3f262de6f5c4bb'
-  SERVICE_SID = 'VA3f754ed3ff1cb0a1a7daeab5bda2cbd8'
+  # Genee
+  # ACCOUNT_SID = 'ACed085f22fdfebe937d7cd5d5dc3b5a59'
+  # AUTH_TOKEN = 'fc5daf42242c552e0d3f262de6f5c4bb'
+  # SERVICE_SID = 'VA3f754ed3ff1cb0a1a7daeab5bda2cbd8'
 
   #Sahitya
   ACCOUNT_SID = 'AC7dceef9ae05b09e56cba20df269c2137'
