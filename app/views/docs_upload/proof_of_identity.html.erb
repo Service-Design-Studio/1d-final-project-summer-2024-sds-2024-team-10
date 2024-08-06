@@ -1,6 +1,34 @@
 <%= stylesheet_link_tag 'document', media: 'all' %>
 <%= javascript_include_tag 'controllers/identity', crossorigin: 'anonymous' %>
 <body>
+    <!--<%# <%= form_with(url: identity_update_db_path, method: :post, id: "textForm") do %>
+        <div class="container">
+            <progress id="file" value="72" max="100"> 32% </progress>
+            <h3>Uploaded Document</h3>
+            <canvas id="canvas"></canvas>
+            <img id="photo" alt="The screen capture will appear in this box.">
+            <%= link_to 'Retake Image', proof_of_identity_path, class: 'button', id: 'RetakeButton' %>
+            <div class="boxed">
+                <h3>Extracted Info</h3>
+                <%= hidden_field_tag :id, session[:user_id] %>
+                
+                <label for="docutype">Document Type</label><br>
+                <%= select :user, :identity_type, options_for_select(['Singapore NRIC', 'Passport', 'Malaysia NRIC']), { prompt: 'Select Document Type' }, { id: 'docutype', required: true } %><br>
+                <label for="nationality">Nationality</label><br>
+                <%= text_field_tag :nationality, '', id: 'nationality', placeholder: 'Enter text here' %><br>
+                <label for="passport_expiry_date">Passport Expiry Date</label><br>
+                <%= date_field_tag :passport_expiry_date, '', id: 'passport_expiry_date', placeholder: 'Enter text here' %><br>
+                <label for="name">Name</label><br>
+                <%= text_field_tag :full_name, '', id: 'name', placeholder: 'Enter text here' %><br>
+                <label for="gender">Gender</label><br>
+                <%= text_field_tag :gender, '', id: 'gender', placeholder: 'Enter text here' %><br>
+                <label for="date_of_birth">Date Of Birth</label><br>
+                <%= date_field_tag :dob, '', id: 'date_of_birth', placeholder: 'Enter text here' %><br>
+            </div>
+            <button type="submit" class="button">Next</button>
+        </div>
+    <% end %> !-->
+</body>
     <div class="container">
         <div class="info">
             <h4>Uploaded Document</h4>
@@ -13,6 +41,7 @@
         <div class="boxed">
             <h4>Extracted Info</h4>
             <form id="textForm">
+<<<<<<< HEAD
                 <div class="form-row">
                     <div class="form-group">
                         <label for="docutype">Document Type</label>
@@ -46,6 +75,23 @@
             </form>
         </div>
         <div>
+=======
+                <label for="result" id="text"></label><br>
+                <label for="result">Name</label><br>
+                <input type="text" id="name" name="result" placeholder="Enter text here"><br>
+                <label for="result">Document Type</label><br>
+                <input type="text" id="docutype" name="result" placeholder="Enter text here"><br>
+                <label for="result">Nationality</label><br>
+                <input type="text" id="nationality" name="result" placeholder="Enter text here"><br>
+                <label for="result">Passport Expiry Date</label><br>
+                <input type="text" id="passport_expiry_date" name="result" placeholder="Enter text here"><br>
+                <label for="result">Gender</label><br>
+                <input type="text" id="gender" name="result" placeholder="Enter text here"><br>
+                <label for="result">Date Of Birth</label><br>
+                <input type="text" id="date_of_birth" name="result" placeholder="Enter text here"><br>
+            </form>
+        </div>
+>>>>>>> a74279571d18046dd40db1b07b74dc04f1d7d759
         <button id="nextButton" class="button">Next</button>
     </div>
 </body>

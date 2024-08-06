@@ -1,6 +1,24 @@
 require_relative '../services/gemini_service'
 require 'base64'
 class CameraController < ApplicationController
+
+   def update_db
+    id = params[:user][:id]
+    updates_hash = customer_info_params
+
+    # Determine next_path based on the referring URL
+    referer = request.referer
+
+    next_path = proof_of_employment_path
+    
+    @user = User.find(id)
+    if @user.update(updates_hash)
+      redirect_to next_path, notice: 'Customer info was successfully updated.'
+    else
+      flash[:alert] = 'Update failed.'
+      render :general_info
+    end
+  end
   
   def identity
     image_data = params[:image_data].split(",")[1]
@@ -150,7 +168,7 @@ class CameraController < ApplicationController
   def mobile
     image_data = params[:image_data].split(",")[1]
     service = GeminiService.new
-    result = service.generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the phone number and name from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name and phone number with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
+    result = service.generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the phone number and name from the document and return it as a separate key-value pair. The key values should be blurry, legitimate, name and mobile with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
     puts result
     result = result["candidates"][0]["content"]["parts"][0]["text"].split("\n")
     result = result[0,result.length]
@@ -182,5 +200,9 @@ class CameraController < ApplicationController
     respond_to do |format|
       format.json { render json: { result: @result ,enable:@enable} }
     end
+  end
+
+  def customer_info_params
+    params.require(:user).permit(:full_name, :display_name, :phone_number, :password, :dob, :fin, :country_of_residence, :postal_code, :block, :floor, :unit, :address_line_1, :address_line_2, :work, :industry, :tax_resident_country, :tin, :gender, :email, :application_status, :identity_type, :passport_number, :nric_number, :nationality, :passport_expiry_date, :application_date, :proof_of_identity, :proof_of_residential_address, :employment_pass, :proof_of_mobile_phone_ownership, :proof_of_tax_residency)
   end
 end
