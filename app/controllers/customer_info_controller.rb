@@ -24,7 +24,8 @@ class CustomerInfoController < ApplicationController
     
     @user = User.find(id)
     if @user.update(updates_hash)
-      redirect_to next_path, notice: 'Customer info was successfully updated.'
+      puts "Customer info was successfully updated."
+      redirect_to next_path
     else
       flash[:alert] = 'Update failed.'
       render :general_info
