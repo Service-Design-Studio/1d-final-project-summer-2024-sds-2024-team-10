@@ -7,11 +7,18 @@ class ApplicationController < ActionController::Base
     redirect_to request.referrer || root_path
   end
 
-  private
+  def change_locale
+    redirect_to request.referer || root_path, notice: t('language_changed')
+  end
 
   def set_locale
-    I18n.locale = session[:locale] || I18n.default_locale
+    I18n.locale = params[:locale] || session[:locale] || I18n.default_locale
+    session[:locale] = I18n.locale
   end
+
+  private
+
+
 
   def log_session
     Rails.logger.debug "Session ID: #{session[:user_id]}"

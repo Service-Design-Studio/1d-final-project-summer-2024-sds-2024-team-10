@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   root 'login#home'
+  # config/routes.rb
+
+
 
   get 'change_locale/:locale', to: 'application#change_locale', as: :change_locale
 

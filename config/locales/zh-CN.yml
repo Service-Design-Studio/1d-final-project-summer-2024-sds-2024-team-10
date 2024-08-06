@@ -1,9 +1,10 @@
-en:
+zh-CN:
   languages:
     en: "English"
     ta: "தமிழ்"
     zh-CN: "简体中文"
     ms: "Malay"
   buttons:
-    signup_digibank: "Sign Up for Digibank"
-    login: "Log In"
+    signup_digibank: "注册数字银行"
+    login: "登录"
+

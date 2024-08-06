@@ -1,0 +1,10 @@
+ta:
+  languages:
+    en: "English"
+    ta: "தமிழ்"
+    zh-CN: "简体中文"
+    ms: "Malay"
+  buttons:
+    signup_digibank: "டிஜிபாங்கிற்கு பதிவு செய்யவும்"
+    login: "உள்நுழைய"
+

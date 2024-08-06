@@ -1,9 +1,10 @@
-en:
+ms:
   languages:
     en: "English"
     ta: "தமிழ்"
     zh-CN: "简体中文"
     ms: "Malay"
   buttons:
-    signup_digibank: "Sign Up for Digibank"
-    login: "Log In"
+    signup_digibank: "Daftar untuk Digibank"
+    login: "Log Masuk"
+ 
