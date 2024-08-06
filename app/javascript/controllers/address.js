@@ -1,3 +1,12 @@
+function convertRubyToJsonString(rubyString) {
+    // Replace Ruby hash rocket => with colon :
+    let jsonString = rubyString.replace(/=>/g, ':');
+    
+    // Replace single quotes with double quotes (if necessary)
+    jsonString = jsonString.replace(/'/g, '"');
+  
+    return jsonString;
+  }
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve the base64 image data and text content from sessionStorage
     let data = sessionStorage.getItem("address");
@@ -22,8 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (extracted_identity) {
         // Select the result element
         let text = document.getElementById('result');
+        let text2 = document.getElementById('result2');
+        console.log(extracted_identity);
+        temp = JSON.parse(convertRubyToJsonString(extracted_identity));
         // Set the text content of the result element
-        text.innerText = extracted_identity;
+        text.innerText = temp["blurry"];
+        text2.innerText = temp["unit_number"];
     } else {
         console.log('No extracted identity data found in sessionStorage');
     }
