@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    background-image: url('MBS.jpg');
+    background-image: url('marinaa.jpg');
     background-size: cover;
     padding: 30px;
     border-radius: 12px;
@@ -20,6 +20,11 @@ body {
     width: 500px;
     text-align: center;
     position: relative; 
+}
+
+.resized-image {
+    width: 300px; /* Set your desired width */
+    height: auto; /* Maintain aspect ratio */
 }
  
 .button {

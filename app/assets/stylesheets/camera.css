@@ -23,13 +23,13 @@ body {
 
 h3 {
     color: #162333;
-    margin: 0;
+    margin: 20px;
     padding: 10px;
 }
 
 p {
     font-size: 14px;
-    margin: 5px 0;
+    margin: 10px;
 }
 
 .camera {
@@ -42,7 +42,7 @@ p {
     justify-content: center;
     position: relative;
     overflow: hidden;
-    margin-top: 20px;
+    margin-top: 40px;
 }
 
 .video-wrapper {
@@ -110,14 +110,14 @@ p {
     background-color: #f3f3f3;
     border-radius: 25px;
     overflow: hidden;
-    height: 20px; /* Height of the progress bar */
+    height: 30px; /* Height of the progress bar */
     margin-bottom: 20px; /* Margin from the bottom */
     position: relative;
 }
 
 progress {
     width: 100%;
-    height: 100%;
+    height: 2%;
     -webkit-appearance: none;
     appearance: none;
 }
@@ -146,7 +146,7 @@ progress::-moz-progress-bar {
     top: 0;
     left: 0;
     text-align: center;
-    line-height: 20px; /* Align text vertically */
+    line-height: 30px; /* Align text vertically */
     color: white;
     font-weight: bold;
 }
