@@ -10,21 +10,10 @@ body {
     margin: 0;
 }
 
-.container {
-    background-color: #ffffff;
-    padding: 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    height: 780px;
-    width: 480px;
-    text-align: center;
-    position: relative;
-}
-
 .horizontal-red-line {
     border: none;
     height: 2px;
-    background-color: #ff3333;
+    background-color: red;
     margin: 20px 0;
 }
 
@@ -33,24 +22,18 @@ body {
     height: auto; /* Maintain aspect ratio */
 }
 
+.container {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 800px;
+    width: 500px;
+    text-align: center;
+    position: relative;
+}
+
 .button {
-    text-decoration: none;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    margin-top: 20px;
-    font-weight: bold;
-    padding: 8px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-}
-
-#toChecklistButtonSingpass {
-    text-decoration: none;
     color: white;
     border-radius: 5px;
     padding: 12px 20px;
@@ -59,18 +42,6 @@ body {
     transition: background-color 0.3s ease;
     margin-top: 20px;
     font-weight: bold;
-    background-color: #ff3333;
-    border: 2px solid #ff3333;
-    width: 80%;
-    position: absolute;
-    bottom: 30px; 
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#toChecklistButtonSingpass:hover {
-    background-color: #e60000;
-
 }
 
 #toChecklistButtonNoSingpass {
@@ -85,8 +56,23 @@ body {
     right: 20px; /* Align to the right */
     transition: background-color 0.3s ease, color 0.3s ease;
 }
-#toChecklistButtonNoSingpass:hover {
-    color: #e60000;
+
+
+#toChecklistButtonSingpass {
+    text-decoration: none;
+    background-color: #ff3333;
+    border: 10px solid #ff3333;
+    color: #ffffff;
+    padding: 8px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: absolute;
+    bottom: 20px;
+    width: 80%;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
 .center-align {

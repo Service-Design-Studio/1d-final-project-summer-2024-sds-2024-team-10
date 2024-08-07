@@ -1,18 +1,17 @@
-<%= stylesheet_link_tag 'signup', media: 'all', crossorigin: 'anonymous' %>
+<%= stylesheet_link_tag 'signup', media: 'all', 'data-turbolinks-track': 'reload' %>
 <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
 
 <body>
    <div class="container">
-    <%= image_tag 'DBS-Bank-logo.png', alt: 'DigiBank App Home Page', class: 'resized-image' %>
-        <%# <div class="language-dropdown" style="position: absolute; top: 10px; right: 10px;">
-            <%= form_with url: change_locale_path, method: :post, data: { turbolinks: false } do 
+        <div class="language-dropdown" style="position: absolute; top: 10px; right: 10px;">
+            <%= form_with url: switch_language_path, method: :post, data: { turbolinks: false } do %>
                 <select name="language" onchange="this.form.submit()">
                     <option value="en">English</option>
                     <option value="zh">中文</option>
                     <option value="ta">தமிழ்</option>
                 </select>
-            <% end 
-        </div>%>
+            <% end %>
+        </div>    
 
         <br>
         <%= link_to 'Sign Up for Digibank', signup_path, class: 'button', id: 'SignUpforDigibankButton' %>

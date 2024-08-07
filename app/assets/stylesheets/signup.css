@@ -1,4 +1,4 @@
-/* app/assets/stylesheets/signup.css */
+/* app/assets/stylesheets/index.css */
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -11,7 +11,7 @@ body {
 }
 
 .container {
-    background-image: url('marinaa.jpg');
+    background-image: url('MBS.jpg');
     background-size: cover;
     padding: 30px;
     border-radius: 12px;
@@ -19,36 +19,19 @@ body {
     height: 800px;
     width: 500px;
     text-align: center;
-    position: relative; 
-}
-
-.resized-image {
-    width: 300px; /* Set your desired width */
-    height: auto; /* Maintain aspect ratio */
+    position: relative;
 }
  
 .button {
     text-decoration: none;
     color: white;
+    height: 40px;
     border: none;
     border-radius: 5px;
-    padding: 12px 20px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
-    margin-top: 20px;
     font-weight: bold;
-}
-
-#LogInButton{
-    background-color: white;
-    color: #ff3333;
-    border: 2px solid #ff3333;
-    width: 80%;
-    position: absolute;
-    bottom: 90px; 
-    left: 50%;
-    transform: translateX(-50%);
 }
 
 #SignUpforDigibankButton {
@@ -57,41 +40,16 @@ body {
     width: 80%;
     position: absolute;
     bottom: 30px; 
-    left: 50%;
     transform: translateX(-50%);
 }
 
-/* #LogInButton:hover{
-    background-color: ff3333;
-    color: whi;
+#LogInButton {
+    background-color: white;
+    color: #ff3333;
     border: 2px solid #ff3333;
-    font-weight: bolder;
     width: 80%;
     position: absolute;
     bottom: 90px; 
-    left: 50%;
-    transform: translateX(-50%);
-}
-
-#SignUpforDigibankButton:hover {
-    background-color: #ff3333;
-    color: white;
-    border: 2px solid #ff3333;
-    font-weight: bolder;
-    width: 80%;
-    position: absolute;
-    bottom: 30px; 
-    left: 50%;
-    transform: translateX(-50%);
-} */
-
-#nextButton {
-    background-color: #ff3333;
-    border: 2px solid #ff3333;
-    width: 80%;
-    position: absolute;
-    bottom: 30px; 
-    left: 50%;
     transform: translateX(-50%);
 }
 
@@ -99,11 +57,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px; 
 }
 
 
 .button:hover {
-    background-color: black;
+    background-color: #ff3333;
     color: white;
 }
 

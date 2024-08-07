@@ -1,11 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
     console.log("DOM fully loaded and parsed");
-    var button = document.getElementById('nextButton');
-    if (button) {
-      button.addEventListener('click', function() {
-        window.location.href = '/camera/identity';
-      });
-    }
     document.querySelectorAll('input[name="user[tax_resident]"]').forEach(function(el) {
         el.addEventListener('change', toggleTaxResidentFields);
     });

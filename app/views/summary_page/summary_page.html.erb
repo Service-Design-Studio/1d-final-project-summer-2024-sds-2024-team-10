@@ -2,131 +2,84 @@
 
 <body>
     <div class="container">
-        <progress id="file" value="100" max="100"></progress>
         <%= link_to '<', proof_of_taxres_path, class: 'button', id: 'backButton' %>
 
         <h1>Summary Page</h1>
 
         <%= form_with model: @user, url: summary_update_db_path, method: :post, local: true do |f| %>
-            <div class="form-group">
+            <div class="input-group">
                 <%= f.hidden_field :id, value: session[:user_id] %>
 
                 <!-- Personal Information -->
-                <div class="input-group">
-                    <label for="full_name">Full Name</label>
-                    <%= f.text_field :full_name, placeholder: "Full Name", required: true, value: @user.full_name %>
-                </div>
+                <label for="full_name">Full Name</label>
+                <%= f.text_field :full_name, placeholder: "Full Name", required: true, value: @user.full_name %>
 
-                <div class="input-group">
-                    <label for="display_name">User ID</label>
-                    <%= f.text_field :display_name, placeholder: "User ID", required: true, value: @user.display_name %>
-                </div>
+                <label for="display_name">User ID</label>
+                <%= f.text_field :display_name, placeholder: "User ID", required: true, value: @user.display_name %>
 
-                <div class="input-group">
-                    <label for="dob">Date of Birth</label>
-                    <%= f.date_field :dob, required: true, value: @user.dob %>
-                </div>
+                <label for="dob">Date of Birth</label>
+                <%= f.date_field :dob, required: true, value: @user.dob %>
 
-                <div class="input-group">
-                    <label for="gender">Gender</label>
-                    <%= f.text_field :gender, placeholder: "Gender", required: true, value: @user.gender %>
-                </div>
+                <label for="gender">Gender</label>
+                <%= f.text_field :gender, placeholder: "Gender", required: true, value: @user.gender %>
 
-                <div class="input-group">
-                    <label for="nationality">Nationality</label>
-                    <%= f.text_field :nationality, placeholder: "Nationality", required: true, value: @user.nationality %>
-                </div>
+                <label for="nationality">Nationality</label>
+                <%= f.text_field :nationality, placeholder: "Nationality", required: true, value: @user.nationality %>
 
-                <div class="input-group">
-                    <label for="email">Email</label>
-                    <%= f.email_field :email, placeholder: "Email", required: true, value: @user.email %>
-                </div>
+                <label for="email">Email</label>
+                <%= f.email_field :email, placeholder: "Email", required: true, value: @user.email %>
 
-                <div class="input-group">
-                    <label for="phone_number">Phone Number</label>
-                    <%= f.telephone_field :phone_number, placeholder: "Phone Number", required: true, value: @user.phone_number %>
-                </div>
+                <label for="phone_number">Phone Number</label>
+                <%= f.telephone_field :phone_number, placeholder: "Phone Number", required: true, value: @user.phone_number %>
 
                 <!-- Identification -->
-                <div class="input-group">
-                    <label for="passport_number">Passport Number</label>
-                    <%= f.text_field :passport_number, placeholder: "Passport Number", required: true, value: @user.passport_number %>
-                </div>
+                <label for="passport_number">Passport Number</label>
+                <%= f.text_field :passport_number, placeholder: "Passport Number", required: true, value: @user.passport_number %>
 
-                <%# <div class="input-group">
-                    <label for="nric_number">NRIC Number</label>
-                    <%= f.text_field :nric_number, placeholder: "NRIC Number", required: true, value: @user.nric_number
-                </div> %>
+                <%# <label for="nric_number">NRIC Number</label>
+                <%= f.text_field :nric_number, placeholder: "NRIC Number", required: true, value: @user.nric_number %>
 
-                <div class="input-group">
-                    <label for="fin">FIN</label>
-                    <%= f.text_field :fin, placeholder: "FIN", required: true, value: @user.fin %>
-                </div>
+                <label for="fin">FIN</label>
+                <%= f.text_field :fin, placeholder: "FIN", required: true, value: @user.fin %>
 
-                <div class="input-group">
-                    <label for="passport_expiry_date">Passport Expiry Date</label>
-                    <%= f.date_field :passport_expiry_date, required: true, value: @user.passport_expiry_date %>
-                </div>
+                <label for="passport_expiry_date">Passport Expiry Date</label>
+                <%= f.date_field :passport_expiry_date, required: true, value: @user.passport_expiry_date %>
 
                 <!-- Address -->
-                <div class="input-group">
-                    <label for="country_of_residence">Country of Residence</label>
-                    <%= f.text_field :country_of_residence, placeholder: "Country of Residence", required: true, value: @user.country_of_residence %>
-                </div>
+                <label for="country_of_residence">Country of Residence</label>
+                <%= f.text_field :country_of_residence, placeholder: "Country of Residence", required: true, value: @user.country_of_residence %>
+                
+                <label for="block">Block</label>
+                <%= f.text_field :block, placeholder: "Block", value: @user.block %>
 
-                <div class="input-group">
-                    <label for="block">Block</label>
-                    <%= f.text_field :block, placeholder: "Block", value: @user.block %>
-                </div>
+                <label for="floor">Floor</label>
+                <%= f.text_field :floor, placeholder: "Floor", value: @user.floor %>
 
-                <div class="input-group">
-                    <label for="floor">Floor</label>
-                    <%= f.text_field :floor, placeholder: "Floor", value: @user.floor %>
-                </div>
+                <label for="unit">Unit</label>
+                <%= f.text_field :unit, placeholder: "Unit", required: true, value: @user.unit %>
+                
+                <label for="address_line_1">Address Line 1</label>
+                <%= f.text_field :address_line_1, placeholder: "Address Line 1", required: true, value: @user.address_line_1 %>
 
-                <div class="input-group">
-                    <label for="unit">Unit</label>
-                    <%= f.text_field :unit, placeholder: "Unit", required: true, value: @user.unit %>
-                </div>
+                <label for="address_line_2">Address Line 2</label>
+                <%= f.text_field :address_line_2, placeholder: "Address Line 2", value: @user.address_line_2 %>
 
-                <div class="input-group">
-                    <label for="address_line_1">Address Line 1</label>
-                    <%= f.text_field :address_line_1, placeholder: "Address Line 1", required: true, value: @user.address_line_1 %>
-                </div>
-
-                <div class="input-group">
-                    <label for="address_line_2">Address Line 2</label>
-                    <%= f.text_field :address_line_2, placeholder: "Address Line 2", value: @user.address_line_2 %>
-                </div>
-
-                <div class="input-group">
-                    <label for="postal_code">Postal Code</label>
-                    <%= f.text_field :postal_code, placeholder: "Postal Code", required: true, value: @user.postal_code %>
-                </div>
+                <label for="postal_code">Postal Code</label>
+                <%= f.text_field :postal_code, placeholder: "Postal Code", required: true, value: @user.postal_code %>
 
                 <!-- Employment -->
-                <div class="input-group">
-                    <label for="work">Work</label>
-                    <%= f.text_field :work, placeholder: "Work", required: true, value: @user.work %>
-                </div>
+                <label for="work">Work</label>
+                <%= f.text_field :work, placeholder: "Work", required: true, value: @user.work %>
 
-                <div class="input-group">
-                    <label for="industry">Industry</label>
-                    <%= f.text_field :industry, placeholder: "Industry", required: true, value: @user.industry %>
-                </div>
+                <label for="industry">Industry</label>
+                <%= f.text_field :industry, placeholder: "Industry", required: true, value: @user.industry %>
 
                 <!-- Tax Information -->
-                <% if @user.tax_resident_country.present? || @user.tin.present? %>
-                  <div class="input-group">
-                      <label for="tax_resident_country">Tax Resident Country</label>
-                      <%= f.text_field :tax_resident_country, placeholder: "Tax Resident Country", value: @user.tax_resident_country %>
-                  </div>
+                <label for="tax_resident_country">Tax Resident Country</label>
+                <%= f.text_field :tax_resident_country, placeholder: "Tax Resident Country", required: true, value: @user.tax_resident_country %>
 
-                  <div class="input-group">
-                      <label for="tin">TIN</label>
-                      <%= f.text_field :tin, placeholder: "TIN", value: @user.tin %>
-                  </div>
-                <% end %>
+                <label for="tin">TIN</label>
+                <%= f.text_field :tin, placeholder: "TIN", value: @user.tin %>
             </div>
 
             <%= f.submit 'Submit', class: 'btn', id: 'submitButton' %>

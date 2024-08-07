@@ -11,19 +11,19 @@
             <div class="form-group">
                 <%= f.hidden_field :id, value: session[:user_id] %>
                 <div class="input-group">
-                    <label for="display_name">Set User ID</label>
-                    <%= f.text_field :display_name, placeholder: "Eg: JohnDoe", required: true, value: @user.display_name %>
+                    <label for="display_name">t('general_info.set_user_id')</label>
+                    <%= f.text_field :display_name, placeholder: t('general_info.user_id_placeholder'), required: true, value: @user.display_name %>
                 </div>
                 <div class="input-group">
-                    <label for="password">Set 6 Digit PIN</label>
-                    <%= f.password_field :password, placeholder: "Eg: 123456", required: true, value: @user.password %>
+                    <label for="password"><%= t('general_info.set_pin') %></label>
+                    <%= f.text_field :password, placeholder: t('general_info.pin_placeholder'), required: true, value: @user.password %>
                 </div>
-                
                 <div class="input-group">
-                    <label for="email">Enter your email</label>
-                    <%= f.text_field :email, placeholder: "Email", required: true, value: @user.email %>
+                    <label for="email"><%= t('general_info.enter_email') %></label>
+                    <%= f.text_field :email, placeholder: t('general_info.email_placeholder'), required: true, value: @user.email %>
                 </div>
             </div>
+        
             
         <h2>Tell More About Your Work</h2>    
             <div class="form-group">
@@ -33,7 +33,7 @@
                     'Engineer', 'Healthcare Professional', 'Teacher', 'Sales', 'Marketing', 'Human Resources', 
                     'Researcher', 'Designer', 'Entrepreneur', 'Freelancer', 'Consultant', 'Administrative', 
                     'Finance', 'Legal', 'Others'
-                ], { include_blank: 'Select your work' }, { required: true, id:'work', selected: @user.work } %>
+                ], { include_blank: 'Select your work' }, { required: true, selected: @user.work } %>
             </div>
             <div class="form-group">
                 <label for="industry">And which of these industries do you work in?</label>
@@ -43,7 +43,7 @@
                     'Construction', 'Telecommunications', 'Real Estate', 'Entertainment', 'Media and Advertising', 
                     'Government', 'Non-Profit', 'Automotive', 'Agriculture', 'Hospitality and Tourism', 
                     'Fashion', 'Others'
-                ], { include_blank: 'Select your industry' }, { required: true, id:'industry', selected: @user.industry } %>
+                ], { include_blank: 'Select your industry' }, { required: true, selected: @user.industry } %>
             </div>
             
             <%= f.submit 'Next', class: 'btn', id: 'nextButton' %>

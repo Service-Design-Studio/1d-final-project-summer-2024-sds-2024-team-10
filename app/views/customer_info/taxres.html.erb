@@ -3,7 +3,7 @@
 
 <body> 
     <div class="container">
-        <progress id="file" value="21.42" max="100"></progress><br><br>
+        <progress id="file" value="58" max="100"> 32% </progress><br><br>
         <%= link_to '<', general_info_path, class: 'button', id: 'backButton' %><br>
         
         <%= form_with model: @user, url: update_db_path, method: :post, local: true do |f| %>
@@ -12,10 +12,10 @@
                 <h1>Are you a tax resident in Singapore only?</h1>
                 <div class="options">
                     <label class="option">
-                        <input type="radio" name="user[tax_resident]" id="yes" value="yes" onchange="toggleTaxResidentFields()" > Yes
+                        <input type="radio" name="user[tax_resident]" value="yes" onchange="toggleTaxResidentFields()" > Yes
                     </label>
                     <label class="option">
-                        <input type="radio" name="user[tax_resident]" id="no" value="no" onchange="toggleTaxResidentFields()"> No
+                        <input type="radio" name="user[tax_resident]" value="no" onchange="toggleTaxResidentFields()"> No
                     </label>
                 </div>
                 <div class="info-box">
@@ -29,20 +29,18 @@
                 <div id="tax-resident-fields" class="tax-resident-fields" style="display: none;">
 
                     <%= f.hidden_field :id, value: session[:user_id] %>
-                    <div class="form-group">
-                        <div class="input-group">
-                            <label for="display_name">Tax Residency Country</label>   
-                            <%= f.text_field :tax_resident_country, placeholder: "Tax Resident Country", value: @user.tax_resident_country %>
-                        </div>
-                        <div class="input-group">
-                            <label for="display_name">Tax Identification Number (TIN)</label>  
-                            <%= f.text_field :tin, placeholder: "TIN", value: @user.tin %>
-                        </div>
+                    <div class="input-group">
+                        <label for="tax_residential_country">Tax Residential Country</label>   
+                        <%= f.text_field :tax_resident_country, placeholder: t('taxres.tax_resident_country_placeholder'), required: true, value: @user.tax_resident_country %>
+                    <div class="input-group">
+                    </div>
+                        <label for="tin">Tax Identification Number (TIN)</label>  
+                        <%= f.text_field :tin, placeholder: t('taxres.tin_placeholder'), required: true, value: @user.tin %>
                     </div>
                 </div>
             </div>
-            <button id="nextButton" class="btn">Next</button>
-            <%end%>
+            <%= f.submit 'Next', class: 'btn', id: 'nextButton' %>
+        <% end %>
     </div>
 </body>
 

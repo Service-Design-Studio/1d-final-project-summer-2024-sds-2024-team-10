@@ -1,178 +1,31 @@
+# Files in the config/locales directory are used for internationalization and
+# are automatically loaded by Rails. If you want to use locales other than
+# English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t "hello"
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t("hello") %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more about the API, please read the Rails Internationalization guide
+# at https://guides.rubyonrails.org/i18n.html.
+#
+# Be aware that YAML interprets the following case-insensitive strings as
+# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
+# must be quoted to be interpreted as strings. For example:
+#
+#     en:
+#       "yes": yup
+#       enabled: "ON"
+
 en:
-  buttons:
-    signup_digibank: "Sign Up for Digibank"
-    login: "Log In"
-  login:
-    title: "Log In"
-    user_id: "User ID"
-    enter_pin: "Enter PIN"
-    remember_me: "Remember Me"
-    use_biometrics: "Use Biometrics"
-    get_otp: "Get OTP"
-    no_account: "Don't have an account?"
-    signup_now: "Sign Up Now"
-  signup:
-    title: "Sign Up/Cont Sign Up"
-    full_name: "Full Name"
-    phone_number: "Phone Number"
-    terms_and_conditions: "I have read and agree to the relevant Terms & Conditions and Privacy Policy"
-    opt_in_promotions: "Opt in to receive rewards, promotional offers and marketing communications."
-    get_otp: "Get OTP"
-    already_have_account: "Already have an account?"
-    login_instead: "Log In Instead"
-  checklist:
-    back_button: "<"
-    progress: "14%"
-    title: "Document Checklist"
-    instructions: "Check the box when the document is ready."
-    tooltip: "Click to See Sample"
-    next_button: "Next"
-    items:
-      item1:
-        label: "Document 1"
-        documents:
-          doc1: "Document 1 Sample"
-          doc2: "Document 2 Sample"
-      item2:
-        label: "Document 2"
-        documents:
-          doc1: "Document 1 Sample"
-          doc2: "Document 2 Sample"
-  general_info:
-    title: "Tell More About Yourself"
-    set_user_id: "Set User ID"
-    user_id_placeholder: "Eg: JohnDoe"
-    set_pin: "Set 6 Digit PIN"
-    pin_placeholder: "Eg: 123456"
-    enter_email: "Enter your email"
-    email_placeholder: "Email"
-    work_title: "Tell More About Your Work"
-    work_label: "What do you work as?"
-    select_work: "Select your work"
-    work_options:
-      - 'Customer Service'
-      - 'Professional Service'
-      - 'IT Professional'
-      - 'Management'
-      - 'Student'
-      - 'Engineer'
-      - 'Healthcare Professional'
-      - 'Teacher'
-      - 'Sales'
-      - 'Marketing'
-      - 'Human Resources'
-      - 'Researcher'
-      - 'Designer'
-      - 'Entrepreneur'
-      - 'Freelancer'
-      - 'Consultant'
-      - 'Administrative'
-      - 'Finance'
-      - 'Legal'
-      - 'Others'
-    industry_label: "And which of these industries do you work in?"
-    select_industry: "Select your industry"
-    industry_options:
-      - 'Banking & Finance'
-      - 'Food and Beverage'
-      - 'Supply and Energy'
-      - 'Retail and Consumer Goods'
-      - 'Healthcare'
-      - 'Technology'
-      - 'Education'
-      - 'Manufacturing'
-      - 'Transportation and Logistics'
-      - 'Construction'
-      - 'Telecommunications'
-      - 'Real Estate'
-      - 'Entertainment'
-      - 'Media and Advertising'
-      - 'Government'
-      - 'Non-Profit'
-      - 'Automotive'
-      - 'Agriculture'
-      - 'Hospitality and Tourism'
-      - 'Fashion'
-      - 'Others'
-    next_button: "Next"
-  taxres:
-    tax_resident_question: "Are you a tax resident in Singapore only?"
-    yes: "Yes"
-    no: "No"
-    tax_resident_definition: "You're a tax resident if you stay or work in the country:"
-    definition_183_days: "For at least 183 days in a calendar year"
-    definition_3_years: "Continually for 3 consecutive years"
-    find_out_more: "Find out more"
-    tax_resident_country_placeholder: "Tax Resident Country"
-    tin_placeholder: "TIN"
-  otp:
-    title: "One Time Password"
-    sent_message: "The OTP has been sent to your mobile number."
-    enter_message: "Please enter it below for verification."
-    placeholder: "Enter OTP"
-  singpass:
-    back: "<"
-    continue_without: "Continue without Singpass >"
-    title: "Let's Make This Fast"
-    description_html: "Sign up with your Singpass so we can Identify your Identity instantly. Do note that <b>manual sign ups may take longer.</b> <br><a target='_blank' href='https://www.singpass.gov.sg/main/security/'>Learn More</a>"
-    myinfo: "With MyInfo, we can"
-    benefits:
-      verify: "Verify your identity"
-      retrieve: "Retrieve and use your particulars securely"
-      faster: "Helps you sign up faster"
-    signup_with_singpass: "Sign Up with Singpass"
-  summary:
-    title: "Accordion in Modal Example"
-    heading: "Accordion in Modal Example"
-    open_modal: "Open Modal"
-    modal_heading: "Accordion within Modal"
-    section_1: "Section 1"
-    image_1: "Image 1"
-    content_1: "This is the content of Section 1."
-    section_2: "Section 2"
-    image_2: "Image 2"
-    content_2: "This is the content of Section 2."
-    section_3:
-      image_3: "Image 3"
-      content_3: "This is the content of Section 3."
-  proof:
-    proof_of_employment_title: "Proof of Employment"
-    employment_or_s_pass: "Employment or S Pass"
-    student_pass: "Student Pass"
-    dependent_long_term_visit_pass: "Dependent/Long Term Visit Pass"
-    in_principal_approval: "In-Principal Approval (IPA)"
-    certification_letter_from_school: "Certification Letter from School"
-    take_picture: "Take Picture"
-    upload_icon_alt: "Upload Icon"
-    proof_of_identity_title: "Proof of Identity"
-    identity_card_for_malaysians: "Identity Card (For Malaysians)"
-    passport_for_other_nationalities: "Passport (For other Nationalities)"
-    proof_of_mobile_ownership_title: "Proof of Mobile Ownership"
-    telco_bill: "Telco Bill"
-    telco_confirmation_letter: "Telco Confirmation Letter"
-    must_be_dated_within_3_months: "*must be dated within 3 months of date of application"
-    proof_of_residential_address_title: "Proof of Residential Address"
-    certification_letter_of_employment: "Certification letter of employment"
-    certification_letter_from_school: "Certification letter from school"
-    certificate_of_stamp_duty: "Certificate of stamp duty"
-    singapore_utility_bill: "Singapore utility/telecommunication bill"
-    singapore_bank_statement: "Singapore bank statement/credit card statement"
-    in_principle_approval_mom: "In-Principle Approval issued by Ministry of Manpower"
-    in_principle_approval_ica: "In-Principle Approval from ICA"
-    work_permit_fdw_mom: "Work permit of foreign domestic worker issued by Ministry of Manpower"
-    proof_of_tax_residency_title: "Proof of Tax Residency"
-    passport: "Passport"
-    national_identity_card: "National Identity Card"
-    residence_permit: "Residence Permit"
-    work_pass: "Work Pass"
-    birth_certificate: "Birth Certificate"
-  upload:
-    camera_title: "Camera"
-    video_stream_not_available: "Video stream not available."
-    take_photo: "Take photo"
-    screen_capture_alt: "The screen capture will appear in this box."
-    result_instructions: |
-      1. <%= t('upload.take_photo') %> <br>
-      2. <%= t('upload.please_wait') %>
-    please_wait: "Please Wait ......."
-    next: "Next"
+  hello: "Hello world"
