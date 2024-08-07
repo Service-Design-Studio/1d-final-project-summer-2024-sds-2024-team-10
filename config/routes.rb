@@ -61,6 +61,11 @@ Rails.application.routes.draw do
   get '/general_info_copy', to: 'customer_info#general_info_copy', as: 'general_info_copy'
   get '/taxres_copy', to: 'customer_info#taxres_copy', as: 'taxres_copy'
 
+  get '/general_information', to: 'customer_info#general_information'
+
+
+  get '/general_information', to: 'customer_info#general_information'
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.

@@ -247,7 +247,7 @@ When ("I enter a valid Name") do
   sleep 2
 end
 And ("I enter a valid Phone Number") do
-  fill_in 'phone_number', with: '82163240'
+  fill_in 'phone_number', with: '84285208'
   sleep 2
 end
 
