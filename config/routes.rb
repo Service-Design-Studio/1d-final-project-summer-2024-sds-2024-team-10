@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   get '/camera/employment', to: 'docs_upload#upload_proof_of_employment', as: 'proof_of_employment'
   post '/camera/employment', to: 'camera#employment'
   get '/proof_of_employment', to: 'docs_upload#proof_of_employment', as: 'proof_of_employment_display'
-  # post '/proof_of_employment', to: 'camera#employment_update_db', as: 'employment_update_db'
+  post '/proof_of_employment', to: 'camera#employment_update_db', as: 'employment_update_db'
 
   get '/camera/address', to: 'docs_upload#upload_proof_of_residential', as: 'proof_of_residential'
   post '/camera/address', to: 'camera#address'
