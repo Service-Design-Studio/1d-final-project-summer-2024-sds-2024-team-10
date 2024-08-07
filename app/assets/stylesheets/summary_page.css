@@ -188,7 +188,9 @@ footer {
     left: 20%;
     transform: translateX(-10%);
 }
+
 .resized-image {
     width: 200px; /* Set your desired width */
     height: auto; /* Maintain aspect ratio */
+    padding: 20px;
 }
