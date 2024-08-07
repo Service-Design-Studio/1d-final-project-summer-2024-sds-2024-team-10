@@ -16,16 +16,19 @@ gem "puma", ">= 5.0"
 
 # Generate OTP
 gem "rotp"
+gem 'rails-i18n'
 
 # Send OTP to phone via SMS
 gem 'twilio-ruby'
 
 gem 'sinatra'
 gem 'uri'
+gem 'net-http'
 gem 'json'
 gem 'base64'
 gem 'pg'
 gem 'dotenv-rails', groups: [:development, :test]
+gem 'simplecov'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"
@@ -80,4 +83,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'cucumber', '~> 9.2.0'
   gem 'webmock'
+  gem 'rails-controller-testing'
 end

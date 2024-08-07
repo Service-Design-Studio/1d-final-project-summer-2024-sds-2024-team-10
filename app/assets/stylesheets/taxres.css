@@ -241,29 +241,4 @@ progress::-moz-progress-bar {
 }
 
 
-.form-group {
-    max-height: 600px; /* Adjust this value as needed */
-    overflow-y: auto;
-    padding: 10px;
-    margin: 10px 0;
-    margin-top: 35px;
-}
 
-.form-group {
-    margin-bottom: 20px;
-    text-align: left;
-}
-
-.input-group {
-    margin-bottom: 20px;
-    width: 100%;
-}
-
-.input-group input, .input-group select {
-    width: calc(100%);
-    padding: 15px;
-    border: 1px solid black;
-    border-radius: 5px;
-    box-sizing: border-box;
-    font-size: 16px;
-}

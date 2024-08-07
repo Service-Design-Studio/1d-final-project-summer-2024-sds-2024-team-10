@@ -2,11 +2,6 @@ require_relative "boot"
 
 require "rails/all"
 
-# I18n.available_locales = [:en, :ta, :'zh-CN',:'fil-PH',:my,:ms] #tamil,chi,fil,burmese,malay
-
-# # Set the default locale to English
-# I18n.default_locale = :en
-
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
@@ -29,7 +24,11 @@ module GlcoudTest
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
-    # Ensure these lines are included:
+    # Set the available locales
+    config.i18n.available_locales = [:en, :ta, :'zh-CN', :ms]
+    config.i18n.default_locale = :en
+
+    # Middleware settings
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, key: 'DBS_Doc_Check'
   end
