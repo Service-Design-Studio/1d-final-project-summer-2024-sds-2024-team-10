@@ -15,36 +15,35 @@
             <%= f.hidden_field :id, value: session[:user_id] %>
             <div class="form-row">
                 <div class="form-group">
-                <label for="docutype">Document Type</label>
-                <%= f.select :document_type, options_for_select(['Passport', 'Singapore NRIC', 'Malaysia NRIC']), { include_blank: 'Select Document Type' }, id: 'docutype' %>
+                    <label for="docutype">Document Type</label>
+                    <%= f.select :document_type, options_for_select(['Passport', 'Singapore NRIC', 'Malaysia NRIC']), { include_blank: 'Select Document Type' }, id: 'docutype' %>
                 </div>
                 <div class="form-group">
-                <label for="nationality">Nationality</label>
-                <%= f.text_field :nationality, id: 'nationality', placeholder: 'Enter text here' %>
+                    <label for="nationality">Nationality</label>
+                    <%= f.text_field :nationality, id: 'nationality', placeholder: 'Enter text here' %>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                <label for="passport_expiry_date">Passport Expiry Date</label>
-                <%= f.text_field :passport_expiry_date, id: 'passport_expiry_date', placeholder: 'Enter text here' %>
+                    <label for="passport_expiry_date">Passport Expiry Date</label>
+                    <%= f.text_field :passport_expiry_date, id: 'passport_expiry_date', placeholder: 'Enter text here' %>
                 </div>
                 <div class="form-group">
-                <label for="name">Name</label>
-                <%= f.text_field :name, id: 'name', placeholder: 'Enter text here' %>
+                    <label for="name">Name</label>
+                    <%= f.text_field :name, id: 'name', placeholder: 'Enter text here' %>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group">
-                <label for="gender">Gender</label>
-                <%= f.text_field :gender, id: 'gender', placeholder: 'Enter text here' %>
+                    <label for="gender">Gender</label>
+                    <%= f.text_field :gender, id: 'gender', placeholder: 'Enter text here' %>
                 </div>
                 <div class="form-group">
-                <label for="date_of_birth">Date Of Birth</label>
-                <%= f.text_field :date_of_birth, id: 'date_of_birth', placeholder: 'Enter text here' %>
+                    <label for="date_of_birth">Date Of Birth</label>
+                    <%= f.text_field :date_of_birth, id: 'date_of_birth', placeholder: 'Enter text here' %>
                 </div>
             </div>
-            <%= f.submit 'Next', class: 'button' %>
+            <button id="nextButton" class="button">Next</button>
         <% end %>
-        <%# <button id="nextButton" class="button">Next</button> %>
     </div>
 </body>
