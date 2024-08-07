@@ -15,7 +15,7 @@
             <% end %>
             <%= form_with url: signup_authentication_path, method: :post, local: true do |f| %>
                 <div class="input-group">
-                    <%= f.text_field :full_name, placeholder: t('signup.full_name_placeholder'), required: true, id:'user_full_name'%>
+                    <%= f.text_field :full_name, placeholder: t('signup.full_name_placeholder'), required: true %>
                 </div>
                 <div class="input-group">
                     <div class="phone-input">
@@ -37,7 +37,7 @@
                             ['🇿🇦 +27', '+27'],
                             ['🇰🇷 +82', '+82']
                         ], '+65'), required: true %>
-                        <%= f.telephone_field :phone_number, placeholder: t('signup.phone_number_placeholder'), required: true , id:'user_phone_number' %>
+                        <%= f.telephone_field :phone_number, placeholder: t('signup.phone_number_placeholder'), required: true %>
                     </div>
                 </div>
                 <div class="checkbox-group">

@@ -47,7 +47,7 @@ Rails.application.routes.draw do
   get '/camera/mobile', to: 'docs_upload#upload_proof_of_mobile', as: 'proof_of_mobile'
   post '/camera/mobile', to: 'camera#mobile'
   get '/proof_of_mobile', to: 'docs_upload#proof_of_mobile', as: 'proof_of_mobile_display'
-
+  
   get '/camera/tax', to: 'docs_upload#upload_proof_of_taxres', as: 'proof_of_taxres'
   post '/camera/tax', to: 'camera#tax'
   get '/proof_of_taxres', to: 'docs_upload#proof_of_taxres', as: 'proof_of_taxres_display'
