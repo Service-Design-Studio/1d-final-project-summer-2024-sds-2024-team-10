@@ -6,16 +6,43 @@ Given("I visit the homepage and click on start" ) do
   visit '/signup'
   sleep 2
 end
-
-When('I click on the language dropdown') do
-  find('select[name="language"]').click
+And ('I click next') do
   sleep 2
+  find('#SignUpforDigibankButton').click
+  sleep 2
+end
+# features/step_definitions/language_steps.rb
+
+Given('I am on the homepage') do
+  visit root_path
 end
 
 When('I select {string} from the language dropdown') do |language|
-  select language, from: 'language'
+  sleep 2
+  find('.dropbtn').click
+  sleep 2
+  find('.dropdown-content').click_link(language)
   sleep 2
 end
+
+Then('I should see the page in {string}') do |language|
+  # Here you would put whatever checks are appropriate for your application
+  # to verify that the language has changed. This might be checking text on
+  # the page, or checking the presence of certain elements.
+  case language
+  when "English"
+    expect(page).to have_content("Sign Up for Digibank")
+  when "தமிழ்"
+    expect(page).to have_content("டிஜிபாங்குக்கு பதிவு செய்க")
+  when "简体中文"
+    expect(page).to have_content("注册数字银行")
+  when "Bahasa Melayu"
+    expect(page).to have_content("Daftar untuk Digibank")
+  else
+    raise "Language not recognized"
+  end
+end
+
 
 Then("I should see the page content in Chinese") do
   expect(page).to have_content('中文')
@@ -110,6 +137,14 @@ When("I print the attributes of all checkboxes") do
 
   puts "Current URL after action: #{page.current_url}"
 end
+
+
+And ('I sign up without Singpass') do
+  find('#toChecklistButtonNoSingpass').click
+  sleep 4
+end
+
+
 
 
 
@@ -219,25 +254,37 @@ Given ('I am on the checklist page displayed in Tamil according to my language p
 end
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 #signup
 And ("I land on the Sign up with Phone number page") do
   visit '/login'
 end
-When ("I enter a valid Name") do
-  fill_in 'name', with: 'Moulik Pare'
+
+And ("I enter a valid Name,Phone Number and set a password") do
+  fill_in 'user_full_name', with: 'Moulik Pare'
+  sleep 2
+  fill_in 'user_phone_number', with: '84285208'
+  sleep 2
   sleep 2
 end
-And ("I enter a valid Phone Number and set a password") do
-  fill_in 'phone_number', with: '84285208'
-  sleep 2
-  fill_in 'password', with: '1234'
-  sleep 2
-end
-And ("I click the Continue button") do
-  sleep 1
+And ("I click the button to get OTP") do
+  sleep 3
 end
 And ("I visit the OTP page") do
-  visit '/otp'
+  visit '/otp/verify'
   sleep 2
 end
 Then ('I enter the OTP and press continue') do
@@ -249,6 +296,7 @@ Then ('I enter the OTP and press continue') do
   sleep 4
 end
 And ("I proceed to the next page") do
+  sleep 1
   visit '/singpass'
   sleep 2
 end
@@ -357,4 +405,3 @@ end
 And  ("I am unable to proceed to the next page") do
   sleep 2
 end
-
