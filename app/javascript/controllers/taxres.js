@@ -1,6 +1,14 @@
+if (!sessionStorage.getItem('reloaded')) {
+    // Mark the page as reloaded
+    sessionStorage.setItem('reloaded', 'true');
+    
+    // Reload the page
+    window.location.reload();
+} else {
+    // Remove the reload flag for future reloads
+    sessionStorage.removeItem('reloaded');
+}
 document.addEventListener("DOMContentLoaded", function() {
-    console.log("DOM fully loaded and parsed");
-
     var button = document.getElementById('nextButton');
     var taxResidentFields = document.getElementById('tax-resident-fields');
     var taxResidentCountryField = document.getElementById('tax-resident-country');
@@ -12,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function() {
     // Add click event listener to the button
     if (button) {
         button.addEventListener('click', function() {
-            window.location.href = '/camera/address';
+            window.location.href = '/camera/identity';
         });
     }
 
