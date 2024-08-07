@@ -5,6 +5,9 @@ class CustomerInfoController < ApplicationController
     # The @user instance variable will be used in the view to pre-fill the form
   end
 
+  def general_information
+  end
+
   def taxres
     # The @user instance variable will be used in the view to pre-fill the form
   end
@@ -21,10 +24,11 @@ class CustomerInfoController < ApplicationController
     elsif referer.include?(taxres_path)
       next_path = proof_of_identity_path
     end
-    
+
     @user = User.find(id)
     if @user.update(updates_hash)
-      redirect_to next_path, notice: 'Customer info was successfully updated.'
+      puts "Customer info was successfully updated."
+      redirect_to next_path
     else
       flash[:alert] = 'Update failed.'
       render :general_info
@@ -51,7 +55,7 @@ class CustomerInfoController < ApplicationController
 
   def customer_info_params
     params.require(:user).permit(
-      :display_name, :email, :work, :industry, 
+      :display_name, :email, :work, :industry,
       :tax_resident_country, :tin
     )
   end
