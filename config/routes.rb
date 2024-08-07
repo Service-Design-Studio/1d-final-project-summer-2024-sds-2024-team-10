@@ -57,7 +57,11 @@ Rails.application.routes.draw do
 
   get '/end_of_application', to: 'summary_page#end_of_application', as: 'end_of_application'
 
+  get '/summary_page_copy', to: 'summary_page#summary_page_copy', as: 'summary_page_copy'
+  get '/general_info_copy', to: 'customer_info#general_info_copy', as: 'general_info_copy'
+  get '/taxres_copy', to: 'customer_info#taxres_copy', as: 'taxres_copy'
 
+  get '/general_information', to: 'customer_info#general_information'
 
 
   get '/general_information', to: 'customer_info#general_information'
