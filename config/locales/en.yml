@@ -1,31 +1,47 @@
-# Files in the config/locales directory are used for internationalization and
-# are automatically loaded by Rails. If you want to use locales other than
-# English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# To learn more about the API, please read the Rails Internationalization guide
-# at https://guides.rubyonrails.org/i18n.html.
-#
-# Be aware that YAML interprets the following case-insensitive strings as
-# booleans: `true`, `false`, `on`, `off`, `yes`, `no`. Therefore, these strings
-# must be quoted to be interpreted as strings. For example:
-#
-#     en:
-#       "yes": yup
-#       enabled: "ON"
-
 en:
-  hello: "Hello world"
+  languages:
+    en: "English"
+    ta: "தமிழ்"
+    zh-CN: "简体中文"
+    ms: "Bahasa Melayu"
+  buttons:
+    signup_digibank: "Sign Up for Digibank"
+    login: "Log In"
+  signup:
+    title: "Sign Up"
+    full_name_placeholder: "Full Name"
+    phone_number_placeholder: "Phone Number"
+    terms_label1: "I have read and agree to the relevant"
+    terms_label2: "Terms & Conditions"
+    and: "and"
+    terms_label3: "Privacy Policy"
+    promotions_label: "Opt in to receive rewards, promotional offers and marketing communications."
+    get_otp_button: "Get OTP"
+    already_have_account: "Already have an account?"
+    login_instead: "Log In Instead"
+  otp:
+    title: "One Time Password"
+    message: "The OTP has been sent to your mobile number."
+    instruction: "Please enter it below for verification."
+    placeholder: "Enter OTP"
+    authenticate_button: "Authenticate"
+  singpass:
+    back_button: "<"
+    continue_without_singpass: "Continue without Singpass >"
+    header: "Let's Make This Fast"
+    signup_with_singpass: "Sign up with your Singpass so we can Identify your Identity instantly. Do note that "
+    signup_with_singpass2: "manual sign ups may take longer."
+    learn_more: "Learn More"
+    with_myinfo1: "With" 
+    with_myinfo2: "MyInfo"
+    with_myinfo3: ", we can"
+    verify_identity: "Verify your identity"
+    retrieve_particulars: "Retrieve and use your particulars securely"
+    sign_up_faster: "Helps you sign up faster"
+    sign_up_with_singpass: "Sign Up with Singpass"
+  checklist:
+    back_button: "<"
+    title: "Document Checklist"
+    description: "Check the box when the document is ready."
+    tooltip: "Click to See Sample"
+    next_button: "Next"

@@ -16,6 +16,7 @@ gem "puma", ">= 5.0"
 
 # Generate OTP
 gem "rotp"
+gem 'rails-i18n'
 
 # Send OTP to phone via SMS
 gem 'twilio-ruby'

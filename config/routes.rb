@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'login#home'
 
-  get 'change_locale/:locale', to: 'application#change_locale', as: :change_locale
+  get 'change_locale/:locale', to: 'application#change_locale', as: 'change_locale'
 
   get '/signup', to: 'login#signup', as: 'signup'
   post 'signup', to: 'login#signup_authentication', as: 'signup_authentication'
@@ -31,33 +31,31 @@ Rails.application.routes.draw do
   get '/taxres', to: 'customer_info#taxres', as: 'taxres'
 
   # Routes for Document upload
-  get '/proof_of_identity', to: 'docs_upload#proof_of_identity'
-  get '/test', to: 'docs_upload#test'
-  get '/camera/identity', to: 'docs_upload#upload_proof_of_identity'
+  get '/camera/identity', to: 'docs_upload#upload_proof_of_identity', as: 'proof_of_identity'
   post '/camera/identity', to: 'camera#identity'
+  get '/proof_of_identity', to: 'docs_upload#proof_of_identity', as: 'proof_of_identity_display'
+  # post '/proof_of_identity', to: 'camera#update_db', as: 'identity_update_db'
 
-  get '/proof_of_employment', to: 'docs_upload#proof_of_employment'
-  get '/camera/employment', to: 'docs_upload#upload_proof_of_employment'
+  get '/camera/employment', to: 'docs_upload#upload_proof_of_employment', as: 'proof_of_employment'
   post '/camera/employment', to: 'camera#employment'
+  get '/proof_of_employment', to: 'docs_upload#proof_of_employment', as: 'proof_of_employment_display'
 
-  get '/proof_of_residential', to: 'docs_upload#proof_of_residential'
-  get '/camera/address', to: 'docs_upload#upload_proof_of_residential'
+  get '/camera/address', to: 'docs_upload#upload_proof_of_residential', as: 'proof_of_residential'
   post '/camera/address', to: 'camera#address'
+  get '/proof_of_residential', to: 'docs_upload#proof_of_residential', as: 'proof_of_residential_display'
 
-  get '/proof_of_taxres', to: 'docs_upload#proof_of_taxres'
-  get '/camera/tax', to: 'docs_upload#upload_proof_of_taxres'
-  post '/camera/tax', to: 'camera#tax'
-
-  get '/proof_of_mobile', to: 'docs_upload#proof_of_mobile'
-  get '/camera/mobile', to: 'docs_upload#upload_proof_of_mobile'
+  get '/camera/mobile', to: 'docs_upload#upload_proof_of_mobile', as: 'proof_of_mobile'
   post '/camera/mobile', to: 'camera#mobile'
+  get '/proof_of_mobile', to: 'docs_upload#proof_of_mobile', as: 'proof_of_mobile_display'
+  
+  get '/camera/tax', to: 'docs_upload#upload_proof_of_taxres', as: 'proof_of_taxres'
+  post '/camera/tax', to: 'camera#tax'
+  get '/proof_of_taxres', to: 'docs_upload#proof_of_taxres', as: 'proof_of_taxres_display'
 
   get '/summary_page', to: 'summary_page#summary_page', as: 'summary_page'
   post 'summary_page/update_db', to: 'summary_page#update_db', as: 'summary_update_db'
 
   get '/end_of_application', to: 'summary_page#end_of_application', as: 'end_of_application'
-
-  resources :existing_customer, only: [:index, :show, :new, :edit, :create, :update, :destroy]
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
