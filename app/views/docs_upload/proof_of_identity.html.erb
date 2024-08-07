@@ -11,49 +11,40 @@
             <img id="photo" alt="The screen capture will appear in this box.">
         </div>
         <button id="RetakeButton" class="button">Retake Picture</button>
-        <div class="boxed">
-            <label for="result" id="text"></label><br>
-            <h4>Extracted Info</h4>
-            <%# <p id="docutype">text</p>
-            <p id="nationality"></p>
-            <p id="passport_expiry_date"></p>
-            <p id="name"></p>
-            <p id="gender"></p>
-            <p id="date_of_birth"></p> %>
-            <form id="textForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="docutype">Document Type</label>
-                        <input type="text" id="docutype" name="result" placeholder="Enter text here">
-                    </div>
-                    <div class="form-group">
-                        <label for="nationality">Nationality</label>
-                        <input type="text" id="nationality" name="result" placeholder="Enter text here">
-                    </div>
+        <%= form_with url: identity_update_db_path, method: :post do |f| %>
+            <%= f.hidden_field :id, value: session[:user_id] %>
+            <div class="form-row">
+                <div class="form-group">
+                <label for="docutype">Document Type</label>
+                <%= f.select :document_type, options_for_select(['Passport', 'Singapore NRIC', 'Malaysia NRIC']), { include_blank: 'Select Document Type' }, id: 'docutype' %>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="passport_expiry_date">Passport Expiry Date</label>
-                        <input type="text" id="passport_expiry_date" name="result" placeholder="Enter text here">
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="result" placeholder="Enter text here">
-                    </div>
+                <div class="form-group">
+                <label for="nationality">Nationality</label>
+                <%= f.text_field :nationality, id: 'nationality', placeholder: 'Enter text here' %>
                 </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="gender">Gender</label>
-                        <input type="text" id="gender" name="result" placeholder="Enter text here">
-                    </div>
-                    <div class="form-group">
-                        <label for="date_of_birth">Date Of Birth</label>
-                        <input type="text" id="date_of_birth" name="result" placeholder="Enter text here">
-                    </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                <label for="passport_expiry_date">Passport Expiry Date</label>
+                <%= f.text_field :passport_expiry_date, id: 'passport_expiry_date', placeholder: 'Enter text here' %>
                 </div>
-            </form>
-        </div>
-        <div>
-        <button id="nextButton" class="button">Next</button>
+                <div class="form-group">
+                <label for="name">Name</label>
+                <%= f.text_field :name, id: 'name', placeholder: 'Enter text here' %>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                <label for="gender">Gender</label>
+                <%= f.text_field :gender, id: 'gender', placeholder: 'Enter text here' %>
+                </div>
+                <div class="form-group">
+                <label for="date_of_birth">Date Of Birth</label>
+                <%= f.text_field :date_of_birth, id: 'date_of_birth', placeholder: 'Enter text here' %>
+                </div>
+            </div>
+            <%= f.submit 'Next', class: 'button' %>
+        <% end %>
+        <%# <button id="nextButton" class="button">Next</button> %>
     </div>
 </body>
