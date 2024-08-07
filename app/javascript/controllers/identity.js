@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Retrieve the base64 image data and text content from sessionStorage
     let data = sessionStorage.getItem("identity");
     let extracted_identity = sessionStorage.getItem("extracted_identity");
-    // var button = document.getElementById('nextButton');
-    // if (button) {
-    //   button.addEventListener('click', function() {
-    //     window.location.href = '/camera/employment';
-    //   });
-    // }
+    var button = document.getElementById('nextButton');
+    if (button) {
+      button.addEventListener('click', function() {
+        window.location.href = '/camera/employment';
+      });
+    }
     // Check if image data exists
     if (data) {
         // Select the photo element

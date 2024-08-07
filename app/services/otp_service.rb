@@ -10,9 +10,9 @@ class OtpService
   #SERVICE_SID = 'VA3f754ed3ff1cb0a1a7daeab5bda2cbd8'
 
   #Sahitya
-  # ACCOUNT_SID = 'AC7dceef9ae05b09e56cba20df269c2137'
-  # AUTH_TOKEN = '771079e7f426d60d7f706224306388fe'
-  # SERVICE_SID = 'VA820364bd514880809acb4257c8471029'
+  #ACCOUNT_SID = 'AC7dceef9ae05b09e56cba20df269c2137'
+  #AUTH_TOKEN = '771079e7f426d60d7f706224306388fe'
+  #SERVICE_SID = 'VA820364bd514880809acb4257c8471029'
 
   attr_reader :otp, :phone_number
 

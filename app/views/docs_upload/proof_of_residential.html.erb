@@ -1,4 +1,4 @@
-<%= stylesheet_link_tag 'camera', media: 'all' %>
+<%= stylesheet_link_tag 'document', media: 'all' %>
 <%= javascript_include_tag 'controllers/address', crossorigin: 'anonymous' %>
 <body>
     <div class="container">
@@ -9,15 +9,25 @@
         <div class="boxed">
             <h3>Extracted Info</h3>
             <form id="textForm">
-                <label for="result" id="text"></label><br>
-                <label for="result">Name</label><br>
-                <input type="text" id="name" name="result" placeholder="Enter text here"><br>
-                <label for="result">Postal Code</label><br>
-                <input type="text" id="postal" name="result" placeholder="Enter text here"><br>
-                <label for="result">Floor</label><br>
-                <input type="text" id="floor" name="result" placeholder="Enter text here"><br>
-                <label for="result">Unit Number</label><br>
-                <input type="text" id="unit" name="result" placeholder="Enter text here"><br>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="result">Name</label><br>
+                        <input type="text" id="name" name="result" placeholder="Enter text here"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="result">Postal Code</label><br>
+                        <input type="text" id="postal" name="result" placeholder="Enter text here"><br>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="result">Floor</label><br>
+                        <input type="text" id="floor" name="result" placeholder="Enter text here"><br>
+                    </div>
+                    <div class="form-group">
+                        <label for="result">Unit Number</label><br>
+                        <input type="text" id="unit" name="result" placeholder="Enter text here"><br>
+                    </div>
             </form>
         </div>
         <button id="nextButton" class="button">Next</button>

@@ -1,18 +1,19 @@
-<%= stylesheet_link_tag 'camera', media: 'all', crossorigin: 'anonymous' %>
-<%= javascript_include_tag 'controllers/webcam_identity', crossorigin: 'anonymous' %>
+<head>
+    <title>Camera</title>
+    <%= stylesheet_link_tag 'camera', media: 'all', crossorigin: 'anonymous' %>
+    <%= javascript_include_tag 'controllers/webcam_identity', crossorigin: 'anonymous' %>
+</head>
 
 <body>
     <div class="container">
-        <progress id="file" value="72" max="100"> 32% </progress>
         <h3>Proof of Identity</h3>
         <p>Identity Card (for Malaysians)</p>
-        <p>Passport (for all other nationalities)</p>
         <div class="camera">
-            <div class="video-wrapper">
-                <video id="video">Video stream not available.</video>
-                <canvas id="canvas"></canvas>
+            <video id="video">Video stream not available.</video>
+            <div class="box">
             </div>
             <button id="startbutton">Take photo</button>
-        </div>
+        <canvas id="canvas"></canvas>
     </div>
 </body>
+

@@ -1,15 +1,15 @@
-<%= stylesheet_link_tag 'camera', media: 'all' %>
+<%= stylesheet_link_tag 'document', media: 'all' %>
 <%= javascript_include_tag 'controllers/mobile', crossorigin: 'anonymous' %>
 <body>
     <div class="container">
         <progress id="file" value="72" max="100"> 32% </progress>
         <h3>Uploaded Document</h3>
         <canvas id="canvas"></canvas>
-        <img id="photo" alt="The screen capture will appear in this box.">
+        <img id="photo" alt="The screen capture will appear in this box."><br>
         <div class="boxed">
+            <label for="result" id="text"></label><br>
             <h3>Extracted Info</h3>
             <form id="textForm">
-                <label for="result" id="text"></label><br>
                 <label for="result">Name</label><br>
                 <input type="text" id="name" name="result" placeholder="Enter text here"><br>
                 <label for="result">Mobile Phone Number</label><br>
