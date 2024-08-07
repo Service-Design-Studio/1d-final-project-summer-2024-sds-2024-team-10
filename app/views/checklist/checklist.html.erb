@@ -7,16 +7,15 @@
         <!-- Progress bar -->
         <progress id="file" value="7.14" max="100"></progress><br><br>
 
-        <h1><%= t('checklist.title')%></h1>
-        <p><%= t('checklist.description')%></p>
+        <h1>Document Checklist</h1>
+        <p>Check the box when the document is ready.</p>
         
             <% @checklist_items.each do |key, label| %>
                 <div class="item">
                     <div class="tooltip">
                         <!-- Image tag with data attributes for modal handling -->
                         <%= image_tag("i.png", alt: label, class: 'sample-image', data: { target: "modal_#{key}" }) %>
-                        <span class="tooltiptext"><%= t('checklist.tooltip') %></span>
-
+                        <span class="tooltiptext">Click to See Sample</span>
                     </div>
                     <%= label[0] %>
                     <%= check_box_tag "checklist[#{key}]", '1', session[key.to_s] == '1', id: key, autocomplete: 'off', data: { testid: "checkbox_#{key}" } %>
@@ -38,7 +37,7 @@
                 </div>
             <% end %>
             <%= form_with url: checklist_path, method: :post, id: 'checklistForm' do %>
-        <%= submit_tag t('checklist.next_button'), class: 'button', id: 'nextButton' %>
+        <%= submit_tag 'Next', class: 'button', id: 'nextButton' %>
         <% end %>
     </div>
 </body>

@@ -7,15 +7,15 @@
             <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image' %>
         </div>
         <div class="form-container">
-            <h1><%= t('signup.title') %></h1>
+            <h1>Sign Up</h1>
             <% if flash[:alert] %>
-                <div class="alert alert-danger">
+                <div class="alert alert-danger" style="color: red">
                     <%= flash[:alert] %>
                 </div>
             <% end %>
             <%= form_with url: signup_authentication_path, method: :post, local: true do |f| %>
                 <div class="input-group">
-                    <%= f.text_field :full_name, placeholder: t('signup.full_name_placeholder'), required: true %>
+                    <%= f.text_field :full_name, placeholder: "Full Name", required: true %>
                 </div>
                 <div class="input-group">
                     <div class="phone-input">
@@ -37,32 +37,21 @@
                             ['🇿🇦 +27', '+27'],
                             ['🇰🇷 +82', '+82']
                         ], '+65'), required: true %>
-                        <%= f.telephone_field :phone_number, placeholder: t('signup.phone_number_placeholder'), required: true %>
+                        <%= f.telephone_field :phone_number, placeholder: "Phone Number", required: true %>
                     </div>
                 </div>
                 <div class="checkbox-group">
-                    <%= f.check_box :terms, required: false %>
-                    <label for="terms">
-                        <%= t('signup.terms_label1') %> 
-                        <a target="_blank" href="https://www.dbs.com.sg/iwov-resources/pdf/deposits/DBS_deposit_guide.pdf">
-                            <%= t('signup.terms_label2') %>
-                        </a> 
-                        <%= t('signup.and') %> 
-                        <a target="_blank" href="https://www.dbs.com/privacy/default.page#:~:text=We%20do%20not%20sell%20your,governs%20our%20relationship%20with%20you.">
-                            <%= t('signup.terms_label3') %>
-                        </a>
-                    </label>
+                    <%= f.check_box :terms, required: true %>
+                    <label for="terms">I have read and agree to the relevant <a target="_blank" href="https://www.dbs.com.sg/iwov-resources/pdf/deposits/DBS_deposit_guide.pdf">Terms & Conditions</a> and <a target="_blank" href="https://www.dbs.com/privacy/default.page#:~:text=We%20do%20not%20sell%20your,governs%20our%20relationship%20with%20you.">Privacy Policy</a></label>
                 </div>
                 <div class="checkbox-group">
                     <%= f.check_box :promotions %>
-                    <label for="promotions"><%= t('signup.promotions_label') %></label>
+                    <label for="promotions">Opt in to receive rewards, promotional offers and marketing communications.</label>
                 </div>
-                <%= f.submit t('signup.get_otp_button'), class: 'button', id: 'GetOTPButton' %>
-
-                <p class="login">
-                    <%= t('signup.already_have_account') %> <br>
-                    <%= link_to t('signup.login_instead'), login_path, class: 'btn', id: 'LogInInsteadButton' %>
-                </p>
+                <%= f.submit 'Get OTP', class: 'button', id: 'GetOTPButton' %>
+                <br><br>
+                <p class="login">Already have an account? <br><%= link_to 'Log In Instead', login_path, class: 'btn', id: 'LogInInsteadButton' %></p>
+        
             <% end %>
         </div>
     </div>

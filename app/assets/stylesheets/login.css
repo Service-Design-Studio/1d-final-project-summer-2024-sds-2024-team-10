@@ -14,8 +14,14 @@ body {
     height: auto; /* Maintain aspect ratio */
 }
 
+.biometrics {
+    width: 60px; /* Set your desired width */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 30px
+}
+
 .container {
-    background-color: #111;
+    background-color: #162333;
     padding: 0px;
     border-radius: 12px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -26,7 +32,7 @@ body {
 }
 
 .header {
-    background-color: #111;
+    background-color: #162333;
     padding: 20px;
     text-align: center;
 }
@@ -62,7 +68,7 @@ body {
     box-sizing: border-box;
     font-size: 20px;
     height: 60px;
-    border-color: #ff3333;
+    border-color: #162333;
 }
 
 .phone-input {
@@ -78,7 +84,7 @@ body {
     border-radius: 4px;
     font-size: 20px;
     height: 60px;
-    border-color: #ff3333;
+    border-color: #162333;
 }
 
 .phone-input input[type="tel"] {
@@ -89,21 +95,22 @@ body {
     box-sizing: border-box;
     font-size: 20px;
     height: 60px;
-    border-color: #ff3333;
+    border-color: #162333;
 }
 
 .checkbox-group {
     display: flex;
-    justify-content: flex-start;
+    justify-content: center; /* Center align the content horizontally */
+    align-items: center;
 }
 
 .checkbox-group input {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 
 .checkbox-group label {
-    font-size: 14px;
-    color: grey
+    font-size: 12px;
+    color: grey;
 }
 
 .checkbox-group a {
@@ -116,48 +123,38 @@ body {
 }
 
 .button {
-    color: red;
+    text-decoration: none;
+    color: white;
+    border: none;
     border-radius: 5px;
     padding: 12px 20px;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     transition: background-color 0.3s ease;
+    margin-top: 20px;
     font-weight: bold;
-    bottom: 20px;
 }
 
-#GetOTPButton {
-    text-decoration: none;
-    background-color: #ffffff;
+#Signin, #GetOTPButton {
+    background-color: #ff3333;
     border: 2px solid #ff3333;
-    color: #ff3333;
-    padding: 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    position: absolute;
-    bottom: 100px;
     width: 80%;
+    position: absolute;
+    bottom: 30px; 
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
 }
 
-#Biometrics {
-    text-decoration: none;
-    background-color: #ffffff;
-    border: 2px solid #ff3333;
+#Signin:hover, #GetOTPButton:hover {
+    background-color: white;
     color: #ff3333;
-    padding: 12px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease, color 0.3s ease;
-    position: absolute;
-    bottom: 30px;
+    border: 2px solid #ff3333;
+    font-weight: bolder;
     width: 80%;
+    position: absolute;
+    bottom: 30px; 
     left: 50%;
     transform: translateX(-50%);
-    text-align: center;
 }
 
 .login {

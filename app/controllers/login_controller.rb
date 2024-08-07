@@ -31,13 +31,18 @@ class LoginController < ApplicationController
     session[:phone_number] = phone_number
 
     if user      
-      if user.full_name == full_name
-        session[:user_id] = user.id
-        puts "user db record found, session[:user_id] set to #{session[:user_id]}"
+      session[:user_id] = user.id
+      puts "user db record found, session[:user_id] set to #{session[:user_id]}"
 
+      # find all users with this phone number
+      users = User.find_all_names_same_phone(phone_number)
+
+      if users.find { |user| user.full_name == full_name }
+        session[:user_id] = user.id
+        
         if user.application_status == "approved"
           puts "existing customer, route to login"
-          flash[:alert] = 'Account Application Complete, click Log In to proceed'
+          flash[:alert] = 'Account Application Completed, click Log In to proceed'
           redirect_to signup_path
         else
           puts "old application record"

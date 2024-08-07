@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'login#home'
 
-  get 'change_locale/:locale', to: 'application#change_locale', as: 'change_locale'
+  # post 'change_locale/:locale', to: 'application#change_locale', as: 'change_locale'
 
   get '/signup', to: 'login#signup', as: 'signup'
   post 'signup', to: 'login#signup_authentication', as: 'signup_authentication'

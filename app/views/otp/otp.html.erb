@@ -4,17 +4,17 @@
 <body>
     <div class="container">
         <div class="header">
-            <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image' %>
+            <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image'%>
         </div>
         <div class="form-container">
-            <h1><%= t('otp.title') %></h1>
-            <p><%= t('otp.message') %></p>
-            <p><%= t('otp.instruction') %></p>
+            <h1>One Time Password</h1>
+            <p>The OTP has been sent to your mobile number. </p>
+            <p>Please enter it below for verification.</p>
             <%= form_with url: verify_otp_path, method: :post, local: true do |f| %>
                 <div class="input-group">
-                    <%= f.text_field :otp, placeholder: t('otp.placeholder'), required: true %>
+                    <%= f.text_field :otp, placeholder: "Enter OTP", required: true %>
                 </div>
-                <%= f.submit t('otp.authenticate_button'), class: 'button', id: 'GetOTPButton' %>
+                <%= f.submit 'Authenticate', class: 'button', id: 'GetOTPButton' %>
             <% end %>
         </div>
     </div>

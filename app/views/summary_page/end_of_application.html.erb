@@ -1,82 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accordion in Modal Example</title>
-</head>
+<%= stylesheet_link_tag 'summary_page', media: 'all', crossorigin: 'anonymous' %>
+
 <body>
-
-<h2>Accordion in Modal Example</h2>
-
-<!-- Trigger button -->
-<button id="openModal">Open Modal</button>
-
-<!-- The Modal -->
-<div id="myModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <h2>Accordion within Modal</h2>
-
-        <button class="accordion">Section 1</button>
-        <div class="panel">
-            <img src="https://via.placeholder.com/400x200" alt="Image 1">
-            <p>This is the content of Section 1.</p>
+    <div class="container">
+        <div class="header">
+            <%= image_tag 'DBS-logo.jpg', alt: 'DBS', class: 'resized-image' %>
         </div>
-
-        <button class="accordion">Section 2</button>
-        <div class="panel">
-            <img src="https://via.placeholder.com/400x200" alt="Image 2">
-            <p>This is the content of Section 2.</p>
-        </div>
-
-        <button class="accordion">Section 3</button>
-        <div class="panel">
-            <img src="https://via.placeholder.com/400x200" alt="Image 3">
-            <p>This is the content of Section 3.</p>
+        <div class="form-container">
+            <h1 id="thanks">Thanks for <br>Completing Your Application!</h1>
+            <p>We appreciate your time and effort in completing the application process.</p>
+            
+            <footer>
+                <p>© 2024 SDS Team 10</p>
+                <p><b>Members: </b>Samuel, Ernest, Moulik, Sahitya, Wanwei, Ryan</p>
+                <p><b>Special thanks to our DBS mentors: </b>Jarene and Jie Ling</p>
+            </footer>
         </div>
     </div>
-</div>
-
-<script>
-    // Get modal element
-    var modal = document.getElementById("myModal");
-    var btn = document.getElementById("openModal");
-    var span = document.getElementsByClassName("close")[0];
-
-    // Open the modal
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    // Close the modal
-    span.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // Close the modal if clicked outside of the modal content
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
-    }
-
-    // Accordion functionality
-    var acc = document.getElementsByClassName("accordion");
-    var i;
-
-    for (i = 0; i < acc.length; i++) {
-        acc[i].addEventListener("click", function() {
-            this.classList.toggle("active");
-            var panel = this.nextElementSibling;
-            if (panel.style.display === "block") {
-                panel.style.display = "none";
-            } else {
-                panel.style.display = "block";
-            }
-        });
-    }
-</script>
-
 </body>
-</html>
