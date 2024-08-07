@@ -19,31 +19,78 @@ body {
     position: relative;
 }
 
-h2 {
-    margin-top: 40px;
-    font-size: 1.2em;
-    color: #333;
-}
 
-.form-group {
+.header {
+    display: flex;
+    align-items: center;
     margin-bottom: 20px;
-    text-align: left;
 }
 
-.form-group label {
-    display: block;
-    font-size: 1.1em;
-    color: #555;
-    margin-bottom: 5px;
+.back-button {
+    font-size: 24px;
+    cursor: pointer;
 }
 
-.form-group select {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid black;
-    border-radius: 4px;
-    font-size: 1em;
+
+.content h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
 }
+
+.options {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.option {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.info-box {
+    background-color: #e0e0e0;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    font-family: Arial, sans-serif;
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-box ul li {
+    margin: 5px 0;
+}
+
+.info-box a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info-box a:hover {
+    text-decoration: underline;
+}
+
+#tax-resident-fields {
+    margin-top: 20px !important;
+    width: 100% !important;
+}
+
+.tax-resident-fields input, .tax-resident-fields select {
+    width: calc(100%) !important;
+    padding: 15px !important;
+    border: 1px solid #ff3333 !important;
+    border-radius: 5px !important;
+    box-sizing: border-box !important;
+    font-size: 16px !important;
+    margin-top: 10px !important;
+}
+
+
 
 .btn {
     text-decoration: none;
@@ -72,19 +119,6 @@ h2 {
     background-color: #e60000;
 }
 
-.button {
-    text-decoration: none;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 12px 20px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
-    margin-top: 15px;
-    font-weight: bold;
-    position: absolute;
-}
 
 #backButton {
     background-color: transparent;
@@ -108,6 +142,40 @@ button:focus {
     outline: none;
 }
 
+
+/* Tooltip container */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 140px;
+    background-color: #ff3333;
+    color: #fff;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 18px;
+    position: absolute;
+    z-index: 1;
+    top: 105%; /* Position the tooltip below the tooltip container */
+    left: 50%;
+    transform: translateX(-50%);
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Progress bar styles */
 .progress-container {
     width: 100%;
     background-color: #f3f3f3;
@@ -154,6 +222,20 @@ progress::-moz-progress-bar {
     font-weight: bold;
 }
 
+
+.form-group {
+    max-height: 600px; /* Adjust this value as needed */
+    overflow-y: auto;
+    padding: 10px;
+    margin: 10px 0;
+    margin-top: 35px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
 .input-group {
     margin-bottom: 20px;
     width: 100%;
@@ -166,6 +248,23 @@ progress::-moz-progress-bar {
     border-radius: 5px;
     box-sizing: border-box;
     font-size: 16px;
-
 }
 
+
+ /* Placeholder color */
+input::placeholder {
+    color: black !important; /* Change this to any color you like */
+}
+
+input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: black !important;
+}
+input::-moz-placeholder { /* Firefox 19+ */
+    color: black !important;
+}
+input:-ms-input-placeholder { /* IE 10+ */
+    color: black !important;
+}
+input::-ms-input-placeholder { /* Edge */
+    color: black !important;
+}
