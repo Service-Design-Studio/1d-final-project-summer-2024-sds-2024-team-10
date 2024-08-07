@@ -12,11 +12,17 @@ document.addEventListener('DOMContentLoaded', function() {
     let data = sessionStorage.getItem("mobile");
     let extracted_identity = sessionStorage.getItem("extracted_mobile");
     var button = document.getElementById('nextButton');
+    var retake = document.getElementById('RetakeButton');
     if (button) {
       button.addEventListener('click', function() {
         window.location.href = '/camera/tax';
       });
     }
+    if (retake) {
+        retake.addEventListener('click', function() {
+          window.location.href = '/camera/mobile';
+        });
+      }
     // Check if image data exists
     if (data) {
         // Select the photo element

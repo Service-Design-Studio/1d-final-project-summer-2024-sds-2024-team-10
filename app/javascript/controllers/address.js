@@ -12,9 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let data = sessionStorage.getItem("address");
     let extracted_identity = sessionStorage.getItem("extracted_address");
     var button = document.getElementById('nextButton');
+    var retake = document.getElementById('RetakeButton');
     if (button) {
       button.addEventListener('click', function() {
         window.location.href = '/camera/mobile';
+      });
+    }
+    if (retake) {
+      retake.addEventListener('click', function() {
+        window.location.href = '/camera/address';
       });
     }
     // Check if image data exists

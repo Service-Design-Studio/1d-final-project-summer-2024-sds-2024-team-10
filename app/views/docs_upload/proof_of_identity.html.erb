@@ -10,8 +10,9 @@
         <div class="image-container">
             <img id="photo" alt="The screen capture will appear in this box.">
         </div>
-        <%= link_to 'Retake Image', proof_of_identity_path, class: 'button', id: 'RetakeButton' %>
+        <button id="RetakeButton" class="button">Retake Picture</button>
         <div class="boxed">
+            <label for="result" id="text"></label><br>
             <h4>Extracted Info</h4>
             <%# <p id="docutype">text</p>
             <p id="nationality"></p>

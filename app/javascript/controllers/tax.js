@@ -12,9 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
     let data = sessionStorage.getItem("tax");
     let extracted_identity = sessionStorage.getItem("extracted_tax");
     var button = document.getElementById('nextButton');
+    var retake = document.getElementById('RetakeButton');
     if (button) {
       button.addEventListener('click', function() {
         window.location.href = '/summary_page';
+      });
+    }
+    if (retake) {
+      retake.addEventListener('click', function() {
+        window.location.href = '/camera/tax';
       });
     }
     // Check if image data exists

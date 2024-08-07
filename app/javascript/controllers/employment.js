@@ -3,11 +3,17 @@ document.addEventListener('DOMContentLoaded', function() {
     let data = sessionStorage.getItem("employment");
     let extracted_identity = sessionStorage.getItem("extracted_employment");
     var button = document.getElementById('nextButton');
+    var retake = document.getElementById('RetakeButton');
     if (button) {
       button.addEventListener('click', function() {
         window.location.href = '/camera/address';
       });
     }
+    if (retake) {
+        retake.addEventListener('click', function() {
+          window.location.href = '/camera/employment';
+        });
+      }
     // Check if image data exists
     if (data) {
         // Select the photo element
