@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Retrieve the base64 image data and text content from sessionStorage
     let data = sessionStorage.getItem("identity");
     let extracted_identity = sessionStorage.getItem("extracted_identity");
-    var button = document.getElementById('nextButton');
-    if (button) {
-      button.addEventListener('click', function() {
-        window.location.href = '/camera/employment';
-      });
-    }
+    // var button = document.getElementById('nextButton');
+    // if (button) {
+    //   button.addEventListener('click', function() {
+    //     window.location.href = '/camera/employment';
+    //   });
+    // }
     // Check if image data exists
     if (data) {
         // Select the photo element
@@ -37,14 +37,14 @@ document.addEventListener('DOMContentLoaded', function() {
         let name = document.getElementById('name');
         let date_of_birth = document.getElementById('docutype');
         if (extracted_identity.includes('{')){
-        temp = JSON.parse(convertRubyToJsonString(extracted_identity));
-        // Set the text content of the result element
-        docutype.value = temp["document_type"];
-        nationality.value = temp["nationality"];
-        passport_expiry_date.value = temp["passport_expiry_date"];
-        name.value = temp["name"];
-        gender.value = temp["gender"];
-        date_of_birth.value = temp["date_of_birth"];
+          temp = JSON.parse(convertRubyToJsonString(extracted_identity));
+          // Set the text content of the result element
+          docutype.value = temp["document_type"];
+          nationality.value = temp["nationality"];
+          passport_expiry_date.value = temp["passport_expiry_date"];
+          name.value = temp["name"];
+          gender.value = temp["gender"];
+          date_of_birth.value = temp["date_of_birth"];
       }else {
         // Set the text content of the result element
         text.innerText = extracted_identity;

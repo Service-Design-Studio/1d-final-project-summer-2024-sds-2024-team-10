@@ -2,19 +2,58 @@ require_relative '../services/gemini_service'
 require 'base64'
 class CameraController < ApplicationController
 
-  # def update_db
-  #   id = params[:user][:id]
-  #   updates_hash = customer_info_params
+  def identity_update_db
+    user_id = params[:id]
+    updates_hash = {
+      identity_type: params[:document_type],
+      nationality: params[:nationality],
+      passport_expiry_date: params[:passport_expiry_date],
+      full_name: params[:name],
+      gender: params[:gender],
+      dob: params[:date_of_birth]
+    }
 
-  #   @user = User.find(id)
-  #   if @user.update(updates_hash)
-  #     puts "Customer info was successfully updated"
-  #     redirect_to proof_of_employment_path
-  #   else
-  #     puts "Update failed"
-  #     render :proof_of_identity
-  #   end
-  # end
+    @user = User.find(user_id)
+    if @user.update(updates_hash)
+      puts "Customer info was successfully updated"
+      redirect_to proof_of_employment_path
+    else
+      puts "Update failed"
+      render :proof_of_identity
+    end
+  end
+
+  def employment_update_db
+    # user_id = params[:id]
+    # updates_hash = {
+    #   full_name: params[:name],
+    # }
+    redirect_to proof_of_residential_path
+    # @user = User.find(user_id)
+    # if @user.update(updates_hash)
+    #   puts "Customer info was successfully updated"
+    #   redirect_to proof_of_residential_path
+    # else
+    #   puts "Update failed"
+    #   render :proof_of_employment
+    # end
+  end
+  
+  def residential_update_db
+    user_id = params[:id]
+    updates_hash = {
+      full_name: params[:name],
+    }
+
+    @user = User.find(user_id)
+    if @user.update(updates_hash)
+      puts "Customer info was successfully updated"
+      redirect_to proof_of_residential_path
+    else
+      puts "Update failed"
+      render :proof_of_mobile
+    end
+  end
   
   def identity
     image_data = params[:image_data].split(",")[1]
