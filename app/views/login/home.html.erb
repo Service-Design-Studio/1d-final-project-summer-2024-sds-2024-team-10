@@ -2,34 +2,26 @@
 <%= javascript_include_tag 'controllers/home', crossorigin: 'anonymous' %>
 
 <body>
-   <div class="container">
+  <div class="container">
     <%= image_tag 'DBS-Bank-logo.png', alt: 'DigiBank App Home Page', class: 'resized-image' %>
-        <div class="language-dropdown" style="position: absolute; top: 10px; right: 10px;">
-            <div class="dropdown">
-                <button class="dropbtn">
-                    <%= t("languages.#{I18n.locale}") %>
-                </button>
-                <div class="dropdown-content">
-                    <%= link_to "English", change_locale_path(:en), class: "dropdown-item" %>
-                    <%= link_to "தமிழ்", change_locale_path(:ta), class: "dropdown-item" %>
-                    <%= link_to "简体中文", change_locale_path(:'zh-CN'), class: "dropdown-item" %>
-                    <%= link_to "Bahasa Melayu", change_locale_path(:ms), class: "dropdown-item" %>
-                </div>
-            </div>
+    
+    <div class="language-dropdown" style="position: absolute; top: 10px; right: 10px;">
+      <div class="dropdown">
+        <button class="dropbtn">
+          <%= t("languages.#{I18n.locale}") %>
+        </button>
+        <div class="dropdown-content">
+          <%= link_to "English", change_locale_path(:en), class: "dropdown-item" %>
+          <%= link_to "தமிழ்", change_locale_path(:ta), class: "dropdown-item" %>
+          <%= link_to "简体中文", change_locale_path(:'zh-CN'), class: "dropdown-item" %>
+          <%= link_to "Bahasa Melayu", change_locale_path(:ms), class: "dropdown-item" %>
         </div>
-        <%# <div class="language-dropdown" style="position: absolute; top: 10px; right: 10px;">
-            <%= form_with url: change_locale_path, method: :post, data: { turbolinks: false } do 
-                <select name="language" onchange="this.form.submit()">
-                    <option value="en">English</option>
-                    <option value="zh">中文</option>
-                    <option value="ta">தமிழ்</option>
-                </select>
-            <% end 
-        </div>%>
-
-        <br>
-        <%= link_to 'Sign Up for Digibank', signup_path, class: 'button', id: 'SignUpforDigibankButton' %>
-        <br>
-        <%= link_to 'Log In', login_path, class: 'button', id: 'LogInButton' %>
+      </div>
     </div>
+
+    <br>
+    <%= link_to t('buttons.signup_digibank'), signup_path, class: 'button', id: 'SignUpforDigibankButton' %>
+    <br>
+    <%= link_to t('buttons.login'), login_path, class: 'button', id: 'LogInButton' %>
+  </div>
 </body>
