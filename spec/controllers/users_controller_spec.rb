@@ -125,7 +125,7 @@ RSpec.describe UsersController, type: :controller do
   end
 
   describe 'POST #create' do
-    context 'with attributes' do
+    context 'with valid attributes' do
       it 'creates a new user' do
         expect {
           post :create, params: { user: valid_attributes }
@@ -138,11 +138,22 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-  
+    context 'with invalid attributes' do
+      it 'does not create a new user' do
+        expect {
+          post :create, params: { user: invalid_attributes }
+        }.not_to change(User, :count)
+      end
+
+      it 'renders the new template' do
+        post :create, params: { user: invalid_attributes }
+        expect(response).to render_template(:new)
+      end
+    end
   end
 
   describe 'PATCH/PUT #update' do
-    context 'with attributes' do
+    context 'with valid attributes' do
       it 'updates the user' do
         patch :update, params: { id: user.id, user: { full_name: "Jane Doe" } }
         user.reload
@@ -155,7 +166,46 @@ RSpec.describe UsersController, type: :controller do
       end
     end
 
-  
+    context 'with invalid attributes' do
+      it 'does not update the user' do
+        patch :update, params: { id: user.id, user: invalid_attributes }
+        user.reload
+        expect(user.full_name).not_to eq(nil)
+      end
+
+      it 'renders the edit template' do
+        patch :update, params: { id: user.id, user: invalid_attributes }
+        expect(response).to render_template(:edit)
+      end
+    end
+  end
+
+  describe 'PATCH/PUT #update_db' do
+    let(:updates_hash) { { full_name: "Updated Name" } }
+    let(:list_of_updates) { updates_hash.keys.map(&:to_s) }
+
+    context 'with valid updates' do
+      it 'updates the user' do
+        patch :update_db, params: { id: user.id, user: updates_hash, list_of_updates: list_of_updates, next_path: user_path(user) }
+        user.reload
+        expect(user.full_name).to eq("Updated Name")
+      end
+
+      it 'redirects to the next path with a notice' do
+        patch :update_db, params: { id: user.id, user: updates_hash, list_of_updates: list_of_updates, next_path: user_path(user) }
+        expect(response).to redirect_to(user_path(user))
+        expect(flash[:notice]).to eq('User was successfully updated.')
+      end
+    end
+
+    context 'with invalid updates' do
+      it 'does not update the user' do
+        allow(UserUpdaterService).to receive(:update_user).and_return(false)
+        patch :update_db, params: { id: user.id, user: updates_hash, list_of_updates: list_of_updates, next_path: user_path(user) }
+        expect(response).to render_template(:edit)
+        expect(flash[:alert]).to eq('Update failed.')
+      end
+    end
   end
 
   describe 'DELETE #destroy' do
