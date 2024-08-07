@@ -29,6 +29,9 @@ module GlcoudTest
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    config.i18n.available_locales = [:en, :ta, :'zh-CN', :ms]
+    config.i18n.default_locale = :en
+
     # Ensure these lines are included:
     config.middleware.use ActionDispatch::Cookies
     config.middleware.use ActionDispatch::Session::CookieStore, key: 'DBS_Doc_Check'

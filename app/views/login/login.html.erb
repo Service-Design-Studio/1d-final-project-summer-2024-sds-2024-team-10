@@ -7,7 +7,7 @@
             <%= image_tag 'DBS-Bank-logo.png', alt: 'DBS', class: 'resized-image' %>
         </div>
         <div class="form-container">
-            <h1>Log In</h1>
+            <h1><%= t('buttons.login') %></h1>
             <% if flash[:alert] %>
                 <div class="alert alert-danger" style="color: red">
                     <%= flash[:alert] %>
@@ -15,20 +15,20 @@
             <% end %>
             <%= form_with url: login_authentication_path, method: :post, local: true do |f| %>
                 <div class="input-group">
-                    <%= f.text_field :display_name, placeholder: "User ID", required: true %>
+                    <%= f.text_field :display_name, placeholder: t('login.user_id'), required: true %>
                 </div>
                 <div class="input-group">
-                    <%= f.password_field :password, placeholder: "Enter PIN", required: true %>
+                    <%= f.password_field :password, placeholder: t('login.enter_pin'), required: true %>
                 </div>
                 <%= image_tag 'biometrics.png', alt: 'Biometrics', class: 'biometrics' %>
                 <div class="checkbox-group">
                     <%= f.check_box :remember %>
-                    <label for="remember">Remember Me</label>
+                    <label for="remember"><%= t('login.remember_me') %></label>
                 </div>
-                <%= f.submit 'Sign In ', class: 'button', id: 'Signin' %>
-                <p class="login">Don't have an account?<br><%= link_to 'Sign Up Now', signup_path, class: 'btn', id: 'SignUpforDigibankButton' %></p>
+                <%= f.submit t('login.sign_in'), class: 'button', id: 'Signin' %>
+                <p class="login"><%= t('login.no_account') %><br><%= link_to t('login.signup_now'), signup_path, class: 'btn', id: 'SignUpforDigibankButton' %></p>
             <% end %>
         </div>
     </div>
 </body>
-</html> 
+</html>
