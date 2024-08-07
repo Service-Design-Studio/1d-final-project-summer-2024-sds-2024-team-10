@@ -1,8 +1,8 @@
 class OtpService
   # Moulik
-  # ACCOUNT_SID = 'AC110fb22facbd03185bad17fbec1ca367'
-  # AUTH_TOKEN = 'b9ae2d7eb5c7c9c9e4db0ab3ab2768de'
-  # SERVICE_SID = 'VA2ffb34d016bf56de2c93a054a17410f6'
+  ACCOUNT_SID = 'AC110fb22facbd03185bad17fbec1ca367'
+  AUTH_TOKEN = 'b9ae2d7eb5c7c9c9e4db0ab3ab2768de'
+  SERVICE_SID = 'VA2ffb34d016bf56de2c93a054a17410f6'
 
   #Genee
   #ACCOUNT_SID = 'ACed085f22fdfebe937d7cd5d5dc3b5a59'
@@ -15,9 +15,9 @@ class OtpService
   #SERVICE_SID = 'VA820364bd514880809acb4257c8471029'
 
   #Wanwei
-  ACCOUNT_SID = 'ACaff98bf7072fb0c34a136ea4031c47a9'
-  AUTH_TOKEN = 'd32f2329c3c7a9b6f76cddaea8822b9d'
-  SERVICE_SID = 'VAa64470481352aefd5d0f036737ca76b3'
+  # ACCOUNT_SID = 'ACaff98bf7072fb0c34a136ea4031c47a9'
+  # AUTH_TOKEN = 'd32f2329c3c7a9b6f76cddaea8822b9d'
+  # SERVICE_SID = 'VAa64470481352aefd5d0f036737ca76b3'
 
   attr_reader :otp, :phone_number
 
