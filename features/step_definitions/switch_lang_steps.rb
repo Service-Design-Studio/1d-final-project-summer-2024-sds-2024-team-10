@@ -235,6 +235,16 @@ end
 
 
 
+And ('I fill in my information') do
+  fill_in 'user_display_name', with: 'Victor Joseph'
+  sleep 1
+  fill_in 'user_password', with: '654321'
+  sleep 1
+  fill_in 'user_email', with: 'Victor@gmail.com'
+  sleep 1
+  sleep 1
+end
+
 
 And("waitt") do
   sleep 4
@@ -245,9 +255,16 @@ And ("I land on the Sign up page") do
   visit '/signup'
 end
 When ("I enter a valid Name") do
-  fill_in 'full_name', with: 'SahityaaPettugani'
+  fill_in 'full_name', with: 'Benjamin Franklin'
   sleep 2
 end
+
+When ("I enter the name Victor") do
+  fill_in 'full_name', with: 'Victor'
+  sleep 2
+end
+
+
 And ("I enter a valid Phone Number") do
   fill_in 'phone_number', with: '82163240'
   sleep 2
@@ -278,6 +295,7 @@ Then ('I enter the OTP and press continue') do
 
 end
 And ("I proceed to the next page") do
+  sleep 5
   find('#toChecklistButtonNoSingpass').click
   sleep 2
 end
@@ -300,13 +318,18 @@ And ('I fill in my address particulars and press next') do
 end
 
 And ('I fill in my particulars') do
-  fill_in 'user_display_name', with: 'SahityaPettugani'
+  fill_in 'user_display_name', with: 'Benjamin Franklin'
   sleep 1
   fill_in 'user_password', with: '654321'
   sleep 1
-  fill_in 'user_email', with: 'Sahityaa@gmail.com'
+  fill_in 'user_email', with: 'Benjamin_Franklin@gmail.com'
   sleep 1
   sleep 1
+end
+
+
+Given('I navigate to the general info page') do
+  visit '/general_info_copy'
 end
 
 Given('I am on the user form page') do
@@ -317,7 +340,7 @@ When('I select {string} from the {string} dropdown') do |option, dropdown|
   select(option, from: dropdown)
 end
 
-And ('wait') do
+And ('waiit') do
   sleep 13
 end
 
