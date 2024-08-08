@@ -57,6 +57,11 @@ class CameraController < ApplicationController
   
   def identity
     image_data = params[:image_data].split(",")[1]
+
+    # Save the image_data to the Document table via DocumentsController
+    documents_controller = DocumentsController.new
+    response = documents_controller.save_image_data(session[:user_id], 1, "proof_of_identity", "testing")
+
     service = GeminiService.new
     result = service.generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not an legitimate document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the document type, Nationality,  Passport number, passport expiry date, name , gender, date of birth or the equivalent of these values from the  passport and return it as a separate key-value pair, the key values should be blurry,legitimate, document_type, Nationality, passport_expiry_date, name , gender, date_of_birth,fill in empty slots with null. Do not use JSON/python format for the output and all key values should be lowercase")
     result = result["candidates"][0]["content"]["parts"][0]["text"].split("\n")
@@ -93,6 +98,11 @@ class CameraController < ApplicationController
 
   def employment
     image_data = params["image_data"].split(",")[1]
+
+    # Save the image_data to the Document table via DocumentsController
+    documents_controller = DocumentsController.new
+    response = documents_controller.save_image_data(session[:user_id], 2, "proof_of_employment", "testing2")
+
     service = GeminiService.new
     result = service.generate_content(Base64.decode64(image_data),"Check if the uploaded image is blurry or not a legitimate employment document, and provide the results as boolean integer key-value pairs for both conditions. Additionally, extract the name and return it as a separate key-value pair. The key values should be blurry, legitimate and name with empty slots filled in with 'null.' Do not use JSON/python format for the output and all key values should be lowercase.")
     result = result["candidates"][0]["content"]["parts"][0]["text"].split("\n")

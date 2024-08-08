@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_02_091548) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_08_034645) do
+  create_table "documents", force: :cascade do |t|
+    t.string "proof_of_identity"
+    t.string "proof_of_residential_address"
+    t.string "employment_pass"
+    t.string "proof_of_mobile_phone_ownership"
+    t.string "proof_of_tax_residency"
+    t.integer "user_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_documents_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "full_name"
     t.string "display_name"
@@ -47,4 +59,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_02_091548) do
     t.string "tin"
   end
 
+  add_foreign_key "documents", "users"
 end

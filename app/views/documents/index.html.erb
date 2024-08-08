@@ -1,0 +1,27 @@
+<!-- app/views/documents/index.html.erb -->
+<h1>Documents for <%= @user.full_name %></h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Proof of Identity</th>
+      <th>Proof of Residential Address</th>
+      <th>Employment Pass</th>
+      <th>Proof of Mobile Phone Ownership</th>
+      <th>Proof of Tax Residency</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @documents.each do |document| %>
+      <tr>
+        <td><%= document.id %></td>
+        <td><%= document.proof_of_identity %></td>
+        <td><%= document.proof_of_residential_address %></td>
+        <td><%= document.employment_pass %></td>
+        <td><%= document.proof_of_mobile_phone_ownership %></td>
+        <td><%= document.proof_of_tax_residency %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

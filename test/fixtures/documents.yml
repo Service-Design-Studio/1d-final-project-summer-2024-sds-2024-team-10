@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  proof_of_identity: MyString
+  proof_of_residential_address: MyString
+  employment_pass: MyString
+  proof_of_mobile_phone_ownership: MyString
+  proof_of_tax_residency: MyString
+  user: one
+
+two:
+  proof_of_identity: MyString
+  proof_of_residential_address: MyString
+  employment_pass: MyString
+  proof_of_mobile_phone_ownership: MyString
+  proof_of_tax_residency: MyString
+  user: two

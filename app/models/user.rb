@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
+  has_many :documents, dependent: :destroy
 
   def self.find_record(params)
     user = find_by(params)
