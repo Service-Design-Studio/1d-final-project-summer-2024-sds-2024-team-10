@@ -236,18 +236,20 @@ end
 
 
 
-
+And("waitt") do
+  sleep 4
+end
 
 #signup
 And ("I land on the Sign up page") do
   visit '/signup'
 end
 When ("I enter a valid Name") do
-  fill_in 'full_name', with: 'Sahityaa P'
+  fill_in 'full_name', with: 'SahityaaPettugani'
   sleep 2
 end
 And ("I enter a valid Phone Number") do
-  fill_in 'phone_number', with: '84285208'
+  fill_in 'phone_number', with: '82163240'
   sleep 2
 end
 
@@ -298,7 +300,7 @@ And ('I fill in my address particulars and press next') do
 end
 
 And ('I fill in my particulars') do
-  fill_in 'user_display_name', with: 'Sahitya P'
+  fill_in 'user_display_name', with: 'SahityaPettugani'
   sleep 1
   fill_in 'user_password', with: '654321'
   sleep 1
