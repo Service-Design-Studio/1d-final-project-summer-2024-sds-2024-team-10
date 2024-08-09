@@ -1,3 +1,12 @@
+function convertRubyToJsonString(rubyString) {
+  // Replace Ruby hash rocket => with colon :
+  let jsonString = rubyString.replace(/=>/g, ':');
+  
+  // Replace single quotes with double quotes (if necessary)
+  jsonString = jsonString.replace(/'/g, '"');
+
+  return jsonString;
+}
 document.addEventListener('DOMContentLoaded', function() {
     // Retrieve the base64 image data and text content from sessionStorage
     let data = sessionStorage.getItem("employment");

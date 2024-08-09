@@ -8,9 +8,11 @@
         </div>
         <canvas id="canvas"></canvas>
         <div class="image-container">
-            <img id="photo" alt="The screen capture will appear in this box.">
+        <img id="photo" alt="The screen capture will appear in this box.">
         </div>
         <button id="RetakeButton" class="button">Retake Picture</button>
+        <label for="result" id="text" style="color: red;"></label><br>
+        <h3>Extracted Info</h3>
         <%= form_with url: identity_update_db_path, method: :post do |f| %>
             <%= f.hidden_field :id, value: session[:user_id] %>
             <div class="form-row">

@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let nationality = document.getElementById('nationality');
         let passport_expiry_date = document.getElementById('passport_expiry_date');
         let name = document.getElementById('name');
-        let date_of_birth = document.getElementById('docutype');
+        let date_of_birth = document.getElementById('date_of_birth');
         if (extracted_identity.includes('{')){
           temp = JSON.parse(convertRubyToJsonString(extracted_identity));
           // Set the text content of the result element
