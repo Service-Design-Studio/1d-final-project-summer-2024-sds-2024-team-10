@@ -6,13 +6,11 @@ This repository contains the source code for our 1D Final Project for the Summer
 - [Ruby Version](#ruby-version)
 - [System Dependencies](#system-dependencies)
 - [Configuration](#configuration)
-- [Database Creation](#database-creation)
 - [Database Initialization](#database-initialization)
 - [How to Run the Test Suite](#how-to-run-the-test-suite)
-- [Services](#services)
+- [MicroServices](#microservices)
 - [Deployment Instructions](#deployment-instructions)
 - [Design Workbook](#design-workbook)
-- [Deployed Application](#deployed-application)
 - [Contributors](#contributors)
 
 ## Ruby Version
