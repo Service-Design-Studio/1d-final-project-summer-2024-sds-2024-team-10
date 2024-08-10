@@ -33,9 +33,10 @@ To configure the application:
 
 1. Clone the repository:
    git clone https://github.com/Service-Design-Studio/1d-final-project-summer-2024-sds-2024-team-10.git
+   
    cd 1d-final-project-summer-2024-sds-2024-team-10
 
-2. Install the required gems:
+3. Install the required gems:
    bundle install
 
 ## Database Initialization
