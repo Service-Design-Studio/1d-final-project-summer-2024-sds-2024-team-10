@@ -21,4 +21,4 @@ dbs_test
 dbs_development-shm
 dbs_development-wal
 dbs_development
-Gemfile.lock
+
