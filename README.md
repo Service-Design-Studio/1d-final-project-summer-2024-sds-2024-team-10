@@ -75,7 +75,7 @@ For more details on the design, please refer to our [Design Workbook](https://do
 
 ## Contributors
 
-- **Team 10** - Service Design Studio, Summer 2024
+**Team 10** - Service Design Studio, Summer 2024
 - Lam Yu En - 1007103 - samuellam123
 - Ernest Tan Wei Yan - 1006883 - Qaisel
 - Pare Moulik - 1007158 - moulikpare
