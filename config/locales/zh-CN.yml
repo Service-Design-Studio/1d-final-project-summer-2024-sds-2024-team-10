@@ -8,7 +8,7 @@ zh-CN:
     signup_digibank: "注册数码银行"
     login: "登录"
   login:
-    title: "登录"
+    sign_in: "登录"
     user_id: "用户ID"
     enter_pin: "输入PIN"
     remember_me: "记住我"

@@ -8,7 +8,7 @@ ms:
     signup_digibank: "Daftar untuk Digibank"
     login: "Log Masuk"
   login:
-    title: "Log Masuk"
+    sign_in: "Log Masuk"
     user_id: "ID Pengguna"
     enter_pin: "Masukkan PIN"
     remember_me: "Ingat Saya"
