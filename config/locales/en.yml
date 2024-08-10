@@ -8,7 +8,7 @@ en:
     signup_digibank: "Sign Up for Digibank"
     login: "Log In"
   login:
-    title: "Log In"
+    sign_in: "Log In"
     user_id: "User ID"
     enter_pin: "Enter PIN"
     remember_me: "Remember Me"
