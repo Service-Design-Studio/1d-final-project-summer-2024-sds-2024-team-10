@@ -24,7 +24,8 @@ body {
 .info {
     color: #162333;
     margin: 0;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 0px;
 }
 
 #canvas {
@@ -84,6 +85,44 @@ input[type="text"] {
     border-radius: 4px;
     box-sizing: border-box;
     margin-bottom: 10px; /* Add a bit of margin between inputs */
+}
+
+
+/* Style the select dropdown */
+#docutype {
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background-color: white; /* Match the textboxes' background */
+    color: #162333;
+    font-size: 14px; /* Ensure the font size matches the textboxes */
+    margin-bottom: 10px; /* Same margin as the textboxes */
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url('data:image/svg+xml;charset=US-ASCII,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 4 5"><path fill="#162333" d="M2 0L0 2h4z"/></svg>');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+/* Remove the default arrow in Internet Explorer */
+#docutype::-ms-expand {
+    display: none;
+}
+
+/* Style the options */
+#docutype option {
+    background-color: white;
+    color: #162333;
+    font-size: 14px;
+}
+
+/* Focus state for the dropdown */
+#docutype:focus {
+    outline: none;
 }
 
 
