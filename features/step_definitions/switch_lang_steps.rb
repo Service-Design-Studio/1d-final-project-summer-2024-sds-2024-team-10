@@ -380,7 +380,7 @@ end
 #DOC UPLOAD
 Given ("I am on the document upload page") do
   sleep 2
-  visit current_path
+  visit '/camera/identity'
   sleep 2
 end
 
@@ -390,20 +390,50 @@ And ("I click on the camera button22 to take a picture of the document") do
 end
 
 Then ("I click on Take picture") do
-  sleep 2
-  visit current_path
   sleep 5
-  click_button 'startbutton'
+  find('#startbutton').click
   sleep 5
 end
+
+Given ("I am on the employment document upload page") do
+  sleep 2
+  visit '/camera/employment'
+  sleep 4
+end
+
+Given ("I am on the address document upload page") do
+  sleep 2
+  visit '/camera/address'
+  sleep 4
+end
+
+Given ("I am on the mobile document upload page") do
+  sleep 2
+  visit '/camera/mobile'
+  sleep 4
+end
+
+Given ("I am on the tax document upload page") do
+  sleep 2
+  visit '/camera/tax'
+  sleep 4
+end
+
+
+
+And ('I am on the summary page') do
+  visit '/summary_page'
+  sleep 5
+end
+
 
 
 And ("I get an error") do
-  sleep 4
+  sleep 14
 end
 
 And ("I can see the information extracted") do
-  sleep 4
+  sleep 15
 end
 
 And ("I am unable to proceed to the next step") do
